@@ -6,8 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour 
 {
     public float movementSpeedMultiplier = 5.0f;
+    public float dashDistance = 20f;
     PlayerControls controls;
-    Vector2 move;
+    Vector3 move;
 
     private void Awake()
     {
@@ -15,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
         controls.Gameplay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
         controls.Gameplay.Move.canceled += ctx => move = Vector2.zero;
+
+        controls.Gameplay.Dash.performed += ctx => Dash();
     }
 
     private void Update()
@@ -30,5 +33,8 @@ public class PlayerMovement : MonoBehaviour
     {
         controls.Gameplay.Disable();
     }
-
+    private void Dash()
+    {
+        transform.position += new Vector3(move.x, 0.0f, move.y) * dashDistance;
+    }
 }

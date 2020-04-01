@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3067259888826455617}
   - component: {fileID: 3067259888826455616}
   - component: {fileID: 3067259888826455644}
-  - component: {fileID: 3067259888826455645}
   - component: {fileID: 2557139337325027778}
+  - component: {fileID: -525830245303085504}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -112,19 +112,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &3067259888826455645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3067259888826455623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a131f0e7de1caef4aa7a1004fa61c910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeedMultiplier: 5
 --- !u!114 &2557139337325027778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,8 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 11600abbabc0d6948ba4d0f18d70dc91,
-    type: 3}
+  m_Actions: {fileID: 0}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -162,3 +148,17 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &-525830245303085504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067259888826455623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e8abb625c2f5844ac7af2952c3f52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  internalGCDTimer: 0
