@@ -2,24 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBasicState : PlayerIState
+public class PlayerAttackState : PlayerIState
 {
     private readonly PlayerStatePattern player;
+    public float internalStateTimer;
 
-    public PlayerBasicState(PlayerStatePattern statePatternPlayer)
+    public PlayerAttackState(PlayerStatePattern statePatternPlayer)
     {
         player = statePatternPlayer;
     }
     public void UpdateState()
     {
-        player.Movement();
+        //player.Attack();
+        ChangeState(player.basicState);
     }
     public void ChangeState(PlayerIState newState)
     {
-        if (player.internalGCDTimer > player.globalCD)
+        if (newState == player.basicState)
         {
-            player.internalGCDTimer = 0.0f;
             player.currentState = newState;
         }
+        else
+            Debug.Log("GCD Trigger");
     }
+
 }

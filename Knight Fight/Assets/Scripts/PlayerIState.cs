@@ -5,10 +5,5 @@ using UnityEngine;
 public interface PlayerIState
 {
     void UpdateState();
-    void ToBasicState();
-    void ToAttackState();
-    void ToHitState();
-    void ToDashState();
-    void ToPickupState();
-    void ToDeadState();
+    void ChangeState(PlayerIState newState);
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDashState : PlayerIState
 {
     private readonly PlayerStatePattern player;
+    public float internalStateTimer;
 
     public PlayerDashState(PlayerStatePattern statePatternPlayer)
     {
@@ -12,31 +13,17 @@ public class PlayerDashState : PlayerIState
     }
     public void UpdateState()
     {
-        player.Movement();
+        player.Dash();
+        ChangeState(player.basicState);
+    }
+    public void ChangeState(PlayerIState newState)
+    {
+        if (newState == player.basicState)
+        {
+            player.currentState = newState;
+        }
+        else
+            Debug.Log("GCD Trigger");
+    }
 
-    }
-    public void ToBasicState()
-    {
-
-    }
-    public void ToAttackState()
-    {
-        player.internalGCDTimer = 0.0f;
-    }
-    public void ToHitState()
-    {
-
-    }
-    public void ToDashState()
-    {
-        Debug.Log("Already in state");
-    }
-    public void ToPickupState()
-    {
-
-    }
-    public void ToDeadState()
-    {
-
-    }
 }

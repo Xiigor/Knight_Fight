@@ -4,29 +4,29 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerStatePattern : MonoBehaviour
 {
-    [HideInInspector] public PlayerIState currentState;
+    public PlayerIState currentState;
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerDashState dashState;
-    [HideInInspector] public Rigidbody rb;
+    [HideInInspector] public PlayerAttackState attackState;
     public  float globalCD = 0.5f;
     public  float internalGCDTimer = 0.0f;
-    public float attackStateDuration;
-    public float dashStateDuration;
-    public  float movementSpeedMultiplier;
-    public  float dashDistance = 20f;
+    public  float movementSpeedMultiplier = 35.0f;
+    public  float dashDistance = 10f;
 
     PlayerControls playerControls;
-    Vector3 moveDir;
+    Vector2 moveDir;
+    Vector3 m;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         basicState = new PlayerBasicState(this);
+        dashState = new PlayerDashState(this);
         
         playerControls = new PlayerControls();
         playerControls.Gameplay.Move.performed += ctx => moveDir = ctx.ReadValue<Vector2>();
         playerControls.Gameplay.Move.canceled += ctx => moveDir = Vector2.zero;
-        playerControls.Gameplay.Dash.performed += ctx => currentState = dashState;
+        playerControls.Gameplay.Dash.performed += ctx => currentState.ChangeState(dashState);
+
     }
     private void Start()
     {
@@ -34,22 +34,22 @@ public class PlayerStatePattern : MonoBehaviour
     }
     private void Update()
     {
-        if (internalGCDTimer > globalCD)
+        if (internalGCDTimer < globalCD)
         {
-            currentState.UpdateState();
-        }
-        else
             internalGCDTimer += Time.deltaTime;
+        }
+        currentState.UpdateState();
     }
+
     public void Movement()
     {
-        Vector3 m = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
+        m = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
         transform.Translate(m, Space.World);
     }
 
     public void Dash()
     {
-
+        transform.position += m * dashDistance;
     }
 
     private void OnEnable()
