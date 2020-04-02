@@ -13,12 +13,12 @@ public class PlayerBasicState : PlayerIState
     public void UpdateState()
     {
         player.Movement();
+
     }
     public void ChangeState(PlayerIState newState)
     {
-        if (player.internalGCDTimer > player.globalCD)
+        if (player.ValidStateChange(newState))
         {
-            player.internalGCDTimer = 0.0f;
             player.currentState = newState;
         }
     }

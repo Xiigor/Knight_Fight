@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDashState : PlayerIState
 {
     private readonly PlayerStatePattern player;
-    public float internalStateTimer;
+    private float internalStateTimer;
 
     public PlayerDashState(PlayerStatePattern statePatternPlayer)
     {
@@ -13,13 +13,30 @@ public class PlayerDashState : PlayerIState
     }
     public void UpdateState()
     {
-        player.Dash();
-        ChangeState(player.basicState);
+        internalStateTimer += Time.deltaTime;
+        if (player.canDash)
+        {
+            if(internalStateTimer < player.dashDuration)
+            {
+                player.Dash();
+            }
+            else
+            {
+                ChangeState(player.basicState);
+            }
+        }
+        else
+        {
+            ChangeState(player.basicState);
+        }
     }
     public void ChangeState(PlayerIState newState)
     {
         if (newState == player.basicState)
         {
+            internalStateTimer = 0f;
+            player.internalDashTimer = 0f;
+            player.internalGCDTimer = 0f;
             player.currentState = newState;
         }
         else
