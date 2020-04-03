@@ -1,6 +1,47 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2204395301649747829
+--- !u!114 &-8033731571888881263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Knight_Fight FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637215126172400664
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-7391430722235275792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Weapon_Sword_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Weapon_Sword_Attack
+  guid: 8e57da15a46868479ffd2c4007560807
+  Banks:
+  - {fileID: -8033731571888881263}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 687
+--- !u!114 &-7153621760777858858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17,6 +58,46 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-4113311391035673814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Player_Hurt_Generic
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Player_Hurt_Generic
+  guid: 6c5ce81482c40547bb0071e3cf64ca84
+  Banks:
+  - {fileID: -8033731571888881263}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 510
+--- !u!114 &-2204395301649747829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/Next Loop
+  m_EditorClassIdentifier: 
+  Name: Next Loop
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31,15 +112,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 8777830985683036688}
-  - {fileID: 3814369952875430855}
+  - {fileID: -8033731571888881263}
   EditorEvents:
   - {fileID: 3342755555633153571}
+  - {fileID: 6801534814747776684}
+  - {fileID: 8886501601461859427}
+  - {fileID: -4113311391035673814}
+  - {fileID: 8040326865666513500}
+  - {fileID: -7391430722235275792}
+  - {fileID: 7522485341394334992}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3814369952875430855}
+  - {fileID: -8033731571888881263}
   StringsBanks:
   - {fileID: 8777830985683036688}
-  stringsBankWriteTime: 637215083477453977
+  stringsBankWriteTime: 637215126172455724
   cacheVersion: 3
 --- !u!114 &3342755555633153571
 MonoBehaviour:
@@ -56,16 +143,33 @@ MonoBehaviour:
   Path: event:/BGM/Gameplay
   guid: e703cf655bc2ea4c85a80d6af4e832af
   Banks:
-  - {fileID: 3814369952875430855}
+  - {fileID: -8033731571888881263}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4669869881235062808}
-  - {fileID: -2204395301649747829}
+  - {fileID: 3359255275885270119}
+  - {fileID: -7153621760777858858}
   MinDistance: 0
   MaxDistance: 0
   Length: 57657
+--- !u!114 &3359255275885270119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/Victory
+  m_EditorClassIdentifier: 
+  Name: Victory
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &3814369952875430855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +187,7 @@ MonoBehaviour:
   lastModified: 637215083477398939
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &4669869881235062808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +204,76 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
+--- !u!114 &6801534814747776684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Weapon_Spear_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Weapon_Spear_Attack
+  guid: 3f2ba6e76df7444aa7858c17af3870ca
+  Banks:
+  - {fileID: -8033731571888881263}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 380
+--- !u!114 &7522485341394334992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Player_Dash
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Player_Dash
+  guid: ce4677baa51e9646ac27ea699e8eeee5
+  Banks:
+  - {fileID: -8033731571888881263}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 970
+--- !u!114 &8040326865666513500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Weapon_Pickup_Generic
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Weapon_Pickup_Generic
+  guid: 83a6a4b54bfe014094df3d6a102bfec1
+  Banks:
+  - {fileID: -8033731571888881263}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &8777830985683036688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,9 +288,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../Knight_Fight FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637215083477453977
+  lastModified: 637215126172455724
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 838
+    Value: 1172
   Exists: 1
+--- !u!114 &8886501601461859427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ui/Ui_Menu_Select
+  m_EditorClassIdentifier: 
+  Path: event:/Ui/Ui_Menu_Select
+  guid: 531faec631928c4fb635ef31b7ecdf7d
+  Banks:
+  - {fileID: -8033731571888881263}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1420
