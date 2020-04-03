@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!114 &-6555621553934238228
+=======
+--- !u!114 &-9016654520417229136
+>>>>>>> Progg-Choffe
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,6 +13,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Gameplay/Victory
   m_EditorClassIdentifier: 
@@ -18,6 +23,18 @@ MonoBehaviour:
   Default: 0
   Exists: 1
 --- !u!114 &-5432126490934331368
+=======
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Knight_Fight FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637215095317076798
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-5855861334637044670
+>>>>>>> Progg-Choffe
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26,6 +43,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/Weapons/Weapon_Sword_Attack
   m_EditorClassIdentifier: 
@@ -41,6 +59,17 @@ MonoBehaviour:
   MaxDistance: 20
   Length: 687
 --- !u!114 &-2495403025002887255
+=======
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/Victory
+  m_EditorClassIdentifier: 
+  Name: Victory
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-5258829369237667708
+>>>>>>> Progg-Choffe
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,6 +78,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/Ui/Ui_Menu_Select
   m_EditorClassIdentifier: 
@@ -63,6 +93,16 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1420
+=======
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/Next Loop
+  m_EditorClassIdentifier: 
+  Name: Next Loop
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+>>>>>>> Progg-Choffe
 --- !u!114 &-2204395301649747829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +245,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 8777830985683036688}
+<<<<<<< HEAD
   - {fileID: 228338589262220685}
+=======
+  - {fileID: -9016654520417229136}
+>>>>>>> Progg-Choffe
   EditorEvents:
   - {fileID: 3342755555633153571}
   - {fileID: 4848485289956498290}
@@ -218,10 +262,17 @@ MonoBehaviour:
   - {fileID: -815940192513303414}
   EditorParameters: []
   MasterBanks:
+<<<<<<< HEAD
   - {fileID: 228338589262220685}
   StringsBanks:
   - {fileID: 8777830985683036688}
   stringsBankWriteTime: 637215214000000000
+=======
+  - {fileID: -9016654520417229136}
+  StringsBanks:
+  - {fileID: 8777830985683036688}
+  stringsBankWriteTime: 637215095317106717
+>>>>>>> Progg-Choffe
   cacheVersion: 3
 --- !u!114 &228338589262220685
 MonoBehaviour:
@@ -296,13 +347,22 @@ MonoBehaviour:
   Path: event:/BGM/Gameplay
   guid: e703cf655bc2ea4c85a80d6af4e832af
   Banks:
+<<<<<<< HEAD
   - {fileID: 228338589262220685}
+=======
+  - {fileID: -9016654520417229136}
+>>>>>>> Progg-Choffe
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< HEAD
   - {fileID: -6555621553934238228}
   - {fileID: -1106260928429981243}
+=======
+  - {fileID: -5855861334637044670}
+  - {fileID: -5258829369237667708}
+>>>>>>> Progg-Choffe
   MinDistance: 0
   MaxDistance: 0
   Length: 57657
@@ -515,7 +575,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../Knight_Fight FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
+<<<<<<< HEAD
   lastModified: 637215214000000000
+=======
+  lastModified: 637215095317106717
+>>>>>>> Progg-Choffe
   LoadResult: 0
   FileSizes:
   - Name: Desktop
