@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
+    private PlayerIState stateChangeObserver;
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerDashState dashState;
     [HideInInspector] public PlayerAttackState attackState;
@@ -50,7 +51,7 @@ public class PlayerStatePattern : MonoBehaviour
     }
     private void Start()
     {
-        currentState = basicState;
+        currentState = stateChangeObserver = basicState;
     }
     private void FixedUpdate()
     {
@@ -85,6 +86,7 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalDashTimer += Time.deltaTime;
         }
+        StateUpdateObserver();
         currentState.UpdateState();
     }
 
@@ -114,6 +116,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (internalDashTimer >= dashCD)
                 {
+
                     return true;
                 }
                 else
@@ -162,5 +165,22 @@ public class PlayerStatePattern : MonoBehaviour
     private float Hypotenuse(float sideA, float sideB)
     {
         return Mathf.Sqrt(sideA * sideA + sideB * sideB);
+    }
+    private void StateUpdateObserver()
+    {
+        if(stateChangeObserver != currentState)
+        {
+            stateChangeObserver = currentState;
+            if(stateChangeObserver == basicState)
+            {
+                //spelaren gick precis in i basicState
+                Debug.Log("basicState");
+            }
+            if(stateChangeObserver == dashState)
+            {
+                //Spelaren gick precis in i dashState
+                Debug.Log("Dashstate");
+            }
+        }
     }
 }
