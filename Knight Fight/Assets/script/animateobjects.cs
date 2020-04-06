@@ -12,6 +12,7 @@ public class animateobjects : MonoBehaviour
     private bool randomPosSet;
     private static int count;
     private int number;
+    private int goToSpot;
     private int iRandom;
     private Vector3 startPos;
     void Start()
@@ -22,6 +23,11 @@ public class animateobjects : MonoBehaviour
         count++;
         number = count;
         moveTimer = 5;
+        goToSpot = number + 1;
+        if (number + 1 == animatedObjects.Length)
+        {
+            goToSpot = 1;
+        }
     }
 
     // Update is called once per frame
@@ -35,11 +41,10 @@ public class animateobjects : MonoBehaviour
         }
         if (moveTimer <= 0)
         {
-            for (int i = 0; i < animatedObjects.Length; i++)
-            {
-                transform.position = Vector3.Lerp(animatedObjects[i].transform.position, animatedObjects[Random.Range(1, count)].transform.position + new Vector3(0,300), 0.1f);
-            }
             
+            transform.position = Vector3.Lerp(transform.position, animatedObjects[goToSpot].transform.position, 0.1f);
+
+
             if (moveTimer <= -1f)
             {
 
