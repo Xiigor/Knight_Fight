@@ -43,4 +43,8 @@ public class PlayerDashState : PlayerIState
             Debug.Log("GCD Trigger");
     }
 
+    public void TakeDamage(WeaponBase weapon)
+    {
+        Debug.Log("Immune to damage while dashing");
+    }
 }

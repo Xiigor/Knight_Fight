@@ -1,5 +1,5 @@
 ﻿// Author Joakim Karlsteen 
-// 01-04-2020
+// 02-04-2020
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,11 +28,7 @@ public class WeaponSpear : WeaponBase
     // Meleeattack kollar om en sfär överlappar med en annan spelare om så är fallet så tar spelaren dmg
     public override void MeleeAttack(Transform attackPoint, float attackRange, GameObject attackingPlayer)
     {
-        //Skjuter utspjutet i samma riktning som splearen kollar
-        attackPoint.position = attackPoint.position + new Vector3();
-       
-        
-        
+
         Collider[] hitPlayer = Physics.OverlapSphere(attackPoint.position, attackrange);
         foreach (Collider enemy in hitPlayer)
         {
@@ -45,8 +41,7 @@ public class WeaponSpear : WeaponBase
 
 
         }
-        //Spjutet åkertillbaka till samma avstånd från spelaren
-        attackPoint.position = attackPoint.position + new Vector3();
+        
     }
     void OnDrawGizmos()
     {

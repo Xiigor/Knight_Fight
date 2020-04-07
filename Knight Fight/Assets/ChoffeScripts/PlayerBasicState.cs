@@ -17,9 +17,17 @@ public class PlayerBasicState : PlayerIState
     }
     public void ChangeState(PlayerIState newState)
     {
-        if (player.ValidStateChange(newState))
+        if(newState == player.deadState)
         {
             player.currentState = newState;
         }
+        else if (player.ValidStateChange(newState))
+        {
+            player.currentState = newState;
+        }
+    }
+    public void TakeDamage(WeaponBase weapon)
+    {
+        player.health -= weapon.damage;
     }
 }
