@@ -7,52 +7,18 @@ public class basicmovement : MonoBehaviour
     // Start is called before the first frame update
     private Transform transform;
     private Vector3 moveDirection;
+    [SerializeField]
     private float moveSpeed;
     void Start()
     {
         transform = GetComponent<Transform>();
-        moveSpeed = 200;
+        moveSpeed = 400;
     }
 
     // Update is called once per frame
     void Update()
     {
         Controls();
-    //  if (Input.GetAxis("Horizontal") > 0)
-    //  {
-    //      moveDirection.x = 1;
-    //
-    //  }
-    //
-    //  else if (Input.GetAxis("Horizontal") < 0)
-    //  {
-    //      moveDirection.x = -1;
-    //
-    //  }
-    //  else
-    //  {
-    //      moveDirection.x = 0;
-    //  }
-    //  if (Input.GetAxis("Vertical") > 0)
-    //  {
-    //      moveDirection.z = 1;
-    //
-    //  }
-    //  else if (Input.GetAxis("Vertical") < 0)
-    //  {
-    //      moveDirection.z = -1;
-    //
-    //  }
-    //  else
-    //  {
-    //      moveDirection.z = 0;
-    //  }
-    // //if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-    // //{
-    // //    transform.rotation = Quaternion.LookRotation(moveDirection);
-    // //}
-    //  transform.Translate(moveDirection);
-
     }
     void Controls()
     {
