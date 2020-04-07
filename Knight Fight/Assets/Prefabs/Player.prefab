@@ -160,5 +160,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e8abb625c2f5844ac7af2952c3f52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  globalCD: 0.5
+  dashCD: 0.2
   internalGCDTimer: 0
+  internalDashTimer: 0
+  movementSpeedMultiplier: 10
+  dashDuration: 0.1
+  dashSpeed: 700
+  movementInputForDashDirThreshhold: 1
+  canDash: 1
+  throwAnimDuration: 0.2
+  weapon: {fileID: 0}
+  weaponTag: Weapon
+  environmentTag: Environment
+  moveDir: {x: 0, y: 0}
+  maxHealth: 100
+  health: 0
