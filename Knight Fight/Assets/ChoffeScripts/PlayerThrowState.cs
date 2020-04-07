@@ -6,7 +6,6 @@ public class PlayerThrowState : PlayerIState
 {
     private readonly PlayerStatePattern player;
     private float internalStateTimer;
-    private bool itemThrown = false;
 
     public PlayerThrowState(PlayerStatePattern statePatternPlayer)
     {
@@ -24,14 +23,21 @@ public class PlayerThrowState : PlayerIState
     }
     public void ChangeState(PlayerIState newState)
     {
-        if (newState == player.basicState)
+        if(newState == player.deadState)
+        {
+            player.currentState = newState;
+        }
+        else if (newState == player.basicState)
         {
             internalStateTimer = 0f;
-            itemThrown = false;
             player.internalGCDTimer = 0f;
             player.currentState = newState;
         }
         else
             Debug.Log("GCD Trigger");
+    }
+    public void TakeDamage(WeaponBase weapon)
+    {
+        //player.health -= weapon.damage;
     }
 }

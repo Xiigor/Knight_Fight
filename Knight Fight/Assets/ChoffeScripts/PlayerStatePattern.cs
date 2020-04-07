@@ -4,15 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerStatePattern : MonoBehaviour
 {
-    //ITEMS SOM Blir kastade plockas direkt upp av spelaren igen eftersom deras colliders överlappar... det är ju inte jättebra
-    //Fix next session men man kan iaf se i loggen att items kastas och man bör kunna lägga in ljud för det.
-
     public PlayerIState currentState;
     private PlayerIState stateChangeObserver;
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerDashState dashState;
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
+    [HideInInspector] public PlayerDeadState deadState;
 
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
@@ -28,14 +26,11 @@ public class PlayerStatePattern : MonoBehaviour
     private float internalDashRayDist = 1.1f;
     public bool canDash = true;
 
-    public float throwStrength = 10f;
     public float throwAnimDuration = 0.2f;
 
-    public GameObject currentWeapon = null;
-    private WeaponPickup currentWepScript = null;
-    public Transform handChild;
-
+    public GameObject weapon;
     public string weaponTag = "Weapon";
+
     public string environmentTag = "Environment";
 
     PlayerControls playerControls;
@@ -43,14 +38,19 @@ public class PlayerStatePattern : MonoBehaviour
     Vector2 moveLastDir;
     Vector3 move;
     Vector3 lastMove;
+    public float maxHealth = 100f;
+    [HideInInspector] public float health;
 
     private void Awake()
     {
+        health = maxHealth;
         basicState = new PlayerBasicState(this);
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
+        deadState = new PlayerDeadState(this);
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;
+
         
         playerControls = new PlayerControls();
         playerControls.Gameplay.Move.performed += ctx => moveDir  = ctx.ReadValue<Vector2>();
@@ -83,6 +83,10 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void Update()
     {
+        if(health <= 0)
+        {
+            currentState.ChangeState(deadState);
+        }
         if(Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
             moveLastDir = moveDir;
@@ -101,11 +105,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == weaponTag)
-        {
-            PickUpItem(collision);
-        }
-        else if(currentState == dashState)
+        if (currentState == dashState)
         {
             currentState.ChangeState(basicState);
         }
@@ -129,7 +129,7 @@ public class PlayerStatePattern : MonoBehaviour
             }
             if(newState == throwState)
             {
-                if(currentWeapon != null)
+                if(weapon != null)
                 {
                     Debug.Log("throw wep");
                     return true;
@@ -166,24 +166,10 @@ public class PlayerStatePattern : MonoBehaviour
         transform.position += lastMove * dashSpeed *Time.deltaTime;
     }
 
-    public void PickUpItem(Collision other)
-    {
-        currentWeapon = other.gameObject;
-        currentWepScript = currentWeapon.GetComponent<WeaponPickup>();
-        //fungerar tillsvidare
-        currentWeapon.transform.SetParent(handChild);
-        currentWepScript.SetParent();
-        currentWepScript.SetPos();
-    }
-
     public void ThrowItem()
     {
-        Debug.Log("throwitem function trigger");
-        currentWeapon.transform.parent = null;
-        currentWepScript.RemoveParent();
-        currentWepScript.rb.AddForce(moveLastDir * throwStrength);
-        currentWeapon = null;
-        currentWepScript = null;
+            weapon.GetComponent<WeaponPickup>().Throw();
+            weapon = null;
     }
 
     private void OnEnable()
