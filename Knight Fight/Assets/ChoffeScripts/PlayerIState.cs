@@ -6,5 +6,5 @@ public interface PlayerIState
 {
     void UpdateState();
     void ChangeState(PlayerIState newState);
-    void TakeDamage(WeaponBase weapon);
+    void TakeDamage(float damage);
 }
