@@ -27,8 +27,8 @@ public class PlayerAttackState : PlayerIState
             Debug.Log("GCD Trigger");
     }
 
-    public void TakeDamage(WeaponBase weapon)
+    public void TakeDamage(float damage)
     {
-        //player.health -= weapon.damage;
+        player.health -= damage;
     }
 }

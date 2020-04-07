@@ -46,6 +46,7 @@ public class WeaponSword : WeaponBase
                 {
                     Durability(this.gameObject);
                     //Scriptet med removehelth i RemoveHealth(damage); Skickar med hur mycket dmg och på vem
+                    
                     RemoveHealth(damage, enemy);
 
                 }
