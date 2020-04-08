@@ -8,7 +8,9 @@ public class PlayerStatePattern : MonoBehaviour
     private PlayerIState stateChangeObserver;
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerDashState dashState;
+    [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
+    [HideInInspector] public PlayerDeadState deadState;
 
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
@@ -24,10 +26,11 @@ public class PlayerStatePattern : MonoBehaviour
     private float internalDashRayDist = 1.1f;
     public bool canDash = true;
 
-    public GameObject currentWeapon = null;
-    public Transform handChild;
+    public float throwAnimDuration = 0.2f;
 
+    public GameObject weapon;
     public string weaponTag = "Weapon";
+
     public string environmentTag = "Environment";
 
     PlayerControls playerControls;
@@ -35,19 +38,28 @@ public class PlayerStatePattern : MonoBehaviour
     Vector2 moveLastDir;
     Vector3 move;
     Vector3 lastMove;
-
+    public float maxHealth = 100f;
+    [HideInInspector] public float health;
+    [HideInInspector] public Collider col;
+    [HideInInspector] List<Collider> ignoredColliders;
     private void Awake()
     {
+        health = maxHealth;
         basicState = new PlayerBasicState(this);
         dashState = new PlayerDashState(this);
+        throwState = new PlayerThrowState(this);
+        deadState = new PlayerDeadState(this);
+        col = GetComponent<Collider>();
+        ignoredColliders = new List<Collider>();
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;
+
         
         playerControls = new PlayerControls();
         playerControls.Gameplay.Move.performed += ctx => moveDir  = ctx.ReadValue<Vector2>();
         playerControls.Gameplay.Move.canceled += ctx => moveDir = Vector2.zero;
         playerControls.Gameplay.Dash.performed += ctx => currentState.ChangeState(dashState);
-
+        playerControls.Gameplay.ThrowWep.performed += ctx => currentState.ChangeState(throwState);
     }
     private void Start()
     {
@@ -74,6 +86,10 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void Update()
     {
+        if(health <= 0)
+        {
+            currentState.ChangeState(deadState);
+        }
         if(Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
             moveLastDir = moveDir;
@@ -90,24 +106,37 @@ public class PlayerStatePattern : MonoBehaviour
         currentState.UpdateState();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == weaponTag)
-        {
-            other.transform.parent = handChild;
-            other.transform.position = handChild.position;
-            //other.rigidbody.isKinematic = true;
-            currentWeapon = other.gameObject;
-        }
-    }
-
     private void OnCollisionEnter(Collision collision)
-    {
-        if(currentState == dashState)
+    {   
+        // Ifall spelaren håller i ett vapen så läggs alla andra vapen hen går över till i en lista av ignorerade colliders, listan clearas när spelaren kastar sitt vapen
+        if (collision.gameObject.tag == weaponTag)
+        {
+            if (weapon != null)
+            {
+                Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), col, true);
+                ignoredColliders.Add(collision.gameObject.GetComponent<Collider>());
+            }
+        }
+        // kanske måste lägga till att ignorera vapen
+        if (currentState == dashState)
         {
             currentState.ChangeState(basicState);
         }
     }
+
+    public void RestoreIgnoredColliders()
+    {
+        if(ignoredColliders.Count != 0)
+        {
+            foreach (Collider igC in ignoredColliders)
+            {
+                Physics.IgnoreCollision(igC, col, false);
+            }
+            ignoredColliders.Clear();
+        }
+        
+    }
+
     public bool ValidStateChange(PlayerIState newState)
     {
         if (internalGCDTimer >= globalCD)
@@ -125,6 +154,19 @@ public class PlayerStatePattern : MonoBehaviour
                     return false;
                 }
             }
+            if(newState == throwState)
+            {
+                if(weapon != null)
+                {
+                    Debug.Log("throw wep");
+                    return true;
+                }
+                else
+                {
+                    Debug.Log("nothing to throw");
+                    return false;
+                }
+            }
             else
             {
                 Debug.Log("invalid state");
@@ -138,7 +180,6 @@ public class PlayerStatePattern : MonoBehaviour
         }
     }
 
-
     public void Movement()
     {
         move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
@@ -150,6 +191,18 @@ public class PlayerStatePattern : MonoBehaviour
     public void Dash()
     {
         transform.position += lastMove * dashSpeed *Time.deltaTime;
+    }
+
+    public void ThrowItem()
+    {
+            weapon.GetComponent<WeaponBaseClass>().ThrowWep();
+            weapon = null;
+            RestoreIgnoredColliders();
+    }
+
+    public void OnHit(float damage)
+    {
+        currentState.TakeDamage(damage);
     }
 
     private void OnEnable()
@@ -166,6 +219,7 @@ public class PlayerStatePattern : MonoBehaviour
     {
         return Mathf.Sqrt(sideA * sideA + sideB * sideB);
     }
+
     private void StateUpdateObserver()
     {
         if(stateChangeObserver != currentState)
@@ -180,6 +234,11 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 //Spelaren gick precis in i dashState
                 Debug.Log("Dashstate");
+            }
+            if (stateChangeObserver == throwState)
+            {
+                //Spelaren gick precis in i throwState
+                Debug.Log("throwstate");
             }
         }
     }

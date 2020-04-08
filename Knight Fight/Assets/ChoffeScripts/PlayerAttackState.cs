@@ -11,6 +11,7 @@ public class PlayerAttackState : PlayerIState
     {
         player = statePatternPlayer;
     }
+
     public void UpdateState()
     {
         //player.Attack();
@@ -26,4 +27,8 @@ public class PlayerAttackState : PlayerIState
             Debug.Log("GCD Trigger");
     }
 
+    public void TakeDamage(float damage)
+    {
+        player.health -= damage;
+    }
 }

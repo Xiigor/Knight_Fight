@@ -10,7 +10,11 @@ public class WeaponSword : WeaponBase
    public Transform attackPoint;
    //private GameObject attackingPlayer;
    //public Animation Sword;
-    
+   
+   void Start()
+    {
+        //attackPoint = this.transform;
+    }     
    void Update()
     {
         //SwingSword();
@@ -40,7 +44,9 @@ public class WeaponSword : WeaponBase
                 }
                 else
                 {
+                    Durability(this.gameObject);
                     //Scriptet med removehelth i RemoveHealth(damage); Skickar med hur mycket dmg och på vem
+                    
                     RemoveHealth(damage, enemy);
 
                 }
