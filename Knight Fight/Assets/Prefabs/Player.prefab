@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3067259888826455617}
   - component: {fileID: 3067259888826455616}
   - component: {fileID: 3067259888826455644}
+  - component: {fileID: 9165390950706606816}
   - component: {fileID: 2557139337325027778}
   m_Layer: 0
   m_Name: Player
@@ -111,6 +112,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &9165390950706606816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067259888826455623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167d2b7c5162c064db6810c252b7bf3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalCD: 0.5
+  dashCD: 0.2
+  internalGCDTimer: 0
+  internalDashTimer: 0
+  movementSpeedMultiplier: 35
+  dashDuration: 0.1
+  dashSpeed: 500
+  movementInputForDashDirThreshhold: 0.25
+  canDash: 1
+  throwAnimDuration: 0.2
+  weapon: {fileID: 0}
+  weaponTag: Weapon
+  environmentTag: Environment
+  moveDir: {x: 0, y: 0}
+  maxHealth: 100
+  health: 0
+  col: {fileID: 0}
 --- !u!114 &2557139337325027778
 MonoBehaviour:
   m_ObjectHideFlags: 0
