@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract public class WeaponBase : MonoBehaviour
+abstract public class WeaponBaseClass : MonoBehaviour
 {
     public PlayerStatePattern parentPlayer = null;
     public WeaponIState currentState;
