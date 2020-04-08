@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{14e85c6c-c482-4705-bb00-71e3cf64ca84}">
 		<property name="name">
-			<value>Player_Hurt_Generic</value>
+			<value>Player_Hurt_Generic_Male</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -511,7 +511,11 @@
 	</object>
 	<object class="MixerBusPanner" id="{047cf367-5c9e-473e-84ff-c243f9c62ec8}" />
 	<object class="MixerBusFader" id="{e9bcfcfc-9308-4636-87d8-e66b8fa8050d}" />
-	<object class="SpatialiserEffect" id="{3c94d5dd-1d3b-47ed-8ff7-9c47c14899fa}" />
+	<object class="SpatialiserEffect" id="{3c94d5dd-1d3b-47ed-8ff7-9c47c14899fa}">
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{02478a5a-798c-45eb-ae0b-e3b6b1756f6d}">
 		<property name="position">
 			<value>0.37999999999999995</value>
