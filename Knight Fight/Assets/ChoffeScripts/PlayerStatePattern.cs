@@ -189,7 +189,7 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if (moveDir != Vector2.zero)
         {
-            playerRunning.SetParameter();
+            //playerRunning.SetParameter();
 
         }
         if (moveDir == Vector2.zero)
