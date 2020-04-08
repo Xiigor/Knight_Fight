@@ -2,10 +2,10 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{018decfa-dcbc-4f5a-b6a3-7d8f7cc14b84}">
 		<property name="name">
-			<value>Player_Dash new</value>
+			<value>Player_Dash</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{dd5c3df6-d113-4c5d-92aa-f6edfca9a17f}</destination>
@@ -164,6 +164,7 @@
 	<object class="MixerBusEffectChain" id="{11710b57-a852-46f7-8860-dfe8fb86ac2c}">
 		<relationship name="effects">
 			<destination>{814a91bc-f1b1-40b5-b222-fe4cfe04a889}</destination>
+			<destination>{46f06bb6-8f58-4427-a962-d7a46a905a46}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9abdb7f6-b6ad-48da-b41e-f2ee83332c0b}" />
@@ -241,6 +242,11 @@
 	</object>
 	<object class="MixerBusPanner" id="{ef272a6f-6db3-47cb-9af3-b557d30fc093}" />
 	<object class="MixerBusFader" id="{814a91bc-f1b1-40b5-b222-fe4cfe04a889}" />
+	<object class="SpatialiserEffect" id="{46f06bb6-8f58-4427-a962-d7a46a905a46}">
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{ce89ff43-34fc-4c86-bd97-a35004b62510}">
 		<property name="position">
 			<value>0.13999999999999993</value>

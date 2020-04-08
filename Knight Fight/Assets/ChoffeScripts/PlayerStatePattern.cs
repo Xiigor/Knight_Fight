@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
@@ -12,6 +13,8 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
 
+    public StudioEventEmitter playerDashing;
+    public StudioEventEmitter playerRunning;
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
     [HideInInspector]  public  float internalGCDTimer;
@@ -181,7 +184,18 @@ public class PlayerStatePattern : MonoBehaviour
     }
 
     public void Movement()
+
     {
+        if (moveDir != Vector2.zero)
+        {
+           // playerRunning.Play();
+
+        }
+        if (moveDir == Vector2.zero)
+        {
+           // playerRunning.Stop();
+
+        }
         move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
         lastMove = new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier;
         transform.Translate(move, Space.World);
@@ -232,6 +246,7 @@ public class PlayerStatePattern : MonoBehaviour
             }
             if(stateChangeObserver == dashState)
             {
+                playerDashing.Play();
                 //Spelaren gick precis in i dashState
                 Debug.Log("Dashstate");
             }
