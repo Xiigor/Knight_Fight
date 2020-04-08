@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3067259888826455616}
   - component: {fileID: 3067259888826455644}
   - component: {fileID: 2557139337325027778}
-  - component: {fileID: -525830245303085504}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -61,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 555eb0b080f14ac40bacc82e2ba2f16d, type: 2}
+  - {fileID: 2100000, guid: a176ccc9dc474ae4b9c849b17dce30ae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -148,31 +147,3 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &-525830245303085504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3067259888826455623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3e8abb625c2f5844ac7af2952c3f52d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  globalCD: 0.5
-  dashCD: 0.2
-  internalGCDTimer: 0
-  internalDashTimer: 0
-  movementSpeedMultiplier: 10
-  dashDuration: 0.1
-  dashSpeed: 700
-  movementInputForDashDirThreshhold: 1
-  canDash: 1
-  throwAnimDuration: 0.2
-  weapon: {fileID: 0}
-  weaponTag: Weapon
-  environmentTag: Environment
-  moveDir: {x: 0, y: 0}
-  maxHealth: 100
-  health: 0
