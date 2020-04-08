@@ -26,7 +26,7 @@ public class PlayerDeadState : PlayerIState
         else
             Debug.Log("GCD Trigger");
     }
-    public void TakeDamage(WeaponBase weapon)
+    public void TakeDamage(float damage)
     {
         //cant be dealt more damage
     }

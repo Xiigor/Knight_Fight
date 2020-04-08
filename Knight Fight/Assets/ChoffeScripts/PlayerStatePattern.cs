@@ -40,7 +40,8 @@ public class PlayerStatePattern : MonoBehaviour
     Vector3 lastMove;
     public float maxHealth = 100f;
     [HideInInspector] public float health;
-
+    [HideInInspector] public Collider col;
+    [HideInInspector] List<Collider> ignoredColliders;
     private void Awake()
     {
         health = maxHealth;
@@ -48,6 +49,8 @@ public class PlayerStatePattern : MonoBehaviour
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
         deadState = new PlayerDeadState(this);
+        col = GetComponent<Collider>();
+        ignoredColliders = new List<Collider>();
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;
 
@@ -104,12 +107,36 @@ public class PlayerStatePattern : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
+    {   
+        // Ifall spelaren håller i ett vapen så läggs alla andra vapen hen går över till i en lista av ignorerade colliders, listan clearas när spelaren kastar sitt vapen
+        if (collision.gameObject.tag == weaponTag)
+        {
+            if (weapon != null)
+            {
+                Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), col, true);
+                ignoredColliders.Add(collision.gameObject.GetComponent<Collider>());
+            }
+        }
+        // kanske måste lägga till att ignorera vapen
         if (currentState == dashState)
         {
             currentState.ChangeState(basicState);
         }
     }
+
+    public void RestoreIgnoredColliders()
+    {
+        if(ignoredColliders.Count != 0)
+        {
+            foreach (Collider igC in ignoredColliders)
+            {
+                Physics.IgnoreCollision(igC, col, false);
+            }
+            ignoredColliders.Clear();
+        }
+        
+    }
+
     public bool ValidStateChange(PlayerIState newState)
     {
         if (internalGCDTimer >= globalCD)
@@ -168,8 +195,14 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void ThrowItem()
     {
-            weapon.GetComponent<WeaponPickup>().Throw();
+            weapon.GetComponent<WeaponBaseClass>().ThrowWep();
             weapon = null;
+            RestoreIgnoredColliders();
+    }
+
+    public void OnHit(float damage)
+    {
+        currentState.TakeDamage(damage);
     }
 
     private void OnEnable()

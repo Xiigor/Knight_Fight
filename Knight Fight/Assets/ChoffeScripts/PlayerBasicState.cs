@@ -26,8 +26,8 @@ public class PlayerBasicState : PlayerIState
             player.currentState = newState;
         }
     }
-    public void TakeDamage(WeaponBase weapon)
+    public void TakeDamage(float damage)
     {
-        player.health -= weapon.damage;
+        player.health -= damage;
     }
 }
