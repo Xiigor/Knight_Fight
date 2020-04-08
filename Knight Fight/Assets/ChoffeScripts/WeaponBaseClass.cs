@@ -4,22 +4,30 @@ using UnityEngine;
 
 abstract public class WeaponBaseClass : MonoBehaviour
 {
-    public PlayerStatePattern parentPlayer = null;
+    public GameObject parentPlayer = null;
     public WeaponIState currentState;
     public WeaponIState stateChangeObserver;
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
+    
     public float durability;
     public float damage;
     public float thrownDamage;
     public float thrownForce;
-    public string playerTag;
+    public float throwAngle;
+
+    public float pickupBlockTimer = 2f;
+    public bool pickupBool = true;
+
+    public string environmentTag = "Environment";
+    public string playerTag = "Player";
+    public string projectileTag = "Projectile";
+    public string weaponTag = "Weapon";
     public Vector3 heldPosition;
     public Vector3 heldRotation;
     public Rigidbody rb;
     public Collider col;
-
     public abstract void Attack();
     public void ThrowWep()
     {
@@ -27,6 +35,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     }
     public abstract void ThrownAttack(Collision col);
     public abstract void ChangeDurability(float durabilityDecrement);
+
     public void HeldPos()
     {
         transform.localPosition = heldPosition;
@@ -40,7 +49,10 @@ abstract public class WeaponBaseClass : MonoBehaviour
     {
         //sätter spelaren till förälder
         transform.SetParent(collision.transform.GetChild(0));
-        parentPlayer = collision.gameObject.GetComponent<PlayerStatePattern>(); //osäker på ifall detta behövs... 
+
+        parentPlayer = collision.gameObject;
+
+        //parentPlayer = collision.gameObject.GetComponent<PlayerStatePattern>(); //osäker på ifall detta behövs... 
         // ...bra referens för att Unequipped vapen ska kunna kolla ifall spelaren redan har ett vapen
         // spelaren kommer kunna behöva anropa vapnets funktioner baserat på input men kanske inte tvärt om
     }

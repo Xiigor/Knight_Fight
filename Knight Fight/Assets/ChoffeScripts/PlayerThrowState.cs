@@ -15,11 +15,8 @@ public class PlayerThrowState : PlayerIState
     {
         internalStateTimer += Time.deltaTime;
 
-        if(internalStateTimer >= player.throwAnimDuration)
-        {
-            player.ThrowItem();
-            ChangeState(player.basicState);
-        }
+        player.ThrowItem();
+        ChangeState(player.basicState);
     }
     public void ChangeState(PlayerIState newState)
     {

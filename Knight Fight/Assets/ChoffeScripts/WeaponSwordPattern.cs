@@ -6,7 +6,6 @@ public class WeaponSwordPattern : WeaponBaseClass
 {
     // FIXA BUGGAR FÖRST INNAN DU FORTSÄTTER, SPELAREN ROTERAR INNAN VAPNET KASTAS IVÄG OCH DET ÄR FUCKING WEIRD. VAPNET KASTAS INTE ALLTID RAKT FRAM HELLER
     private float currentDurability;
-
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
@@ -24,6 +23,13 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     private void Update()
     {
+        if (pickupBlockTimer >= 2.5f)
+        {
+            pickupBool = true;
+            
+        }
+
+        currentState.UpdateState();
         StateChangeObserver();
     }
 
@@ -34,7 +40,11 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     public override void ThrownAttack(Collision col)
     {
-        col.gameObject.GetComponent<PlayerStatePattern>().OnHit(thrownDamage);
+        if(col.gameObject != transform.parent.gameObject)
+        {
+            col.gameObject.GetComponent<PlayerStatePattern>().OnHit(thrownDamage);
+        }
+        //col.gameObject.GetComponent<PlayerStatePattern>().OnHit(thrownDamage);
     }
 
     public override void ChangeDurability(float durabilityDecrement)
@@ -44,6 +54,13 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     public override void OnCollisionEnter(Collision collision)
     {
+        if(currentState == thrownState)
+        {
+            if(collision.gameObject.tag == playerTag)
+            {
+                //Debug.Log(gameObject.name + "Hit player");
+            }
+        }
         currentState.HandleCollision(collision);
     }
 }

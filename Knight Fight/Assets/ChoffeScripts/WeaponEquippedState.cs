@@ -15,6 +15,12 @@ public class WeaponEquippedState : WeaponIState
     {
         ChangePhysics();
         weapon.HeldPos();
+        Debug.Log("hello?");
+        weapon.gameObject.tag = weapon.projectileTag;
+    }
+    public void UpdateState()
+    {
+
     }
 
     public void ChangePhysics()

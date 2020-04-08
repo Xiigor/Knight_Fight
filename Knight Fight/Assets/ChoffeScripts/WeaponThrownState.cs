@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponThrownState : WeaponIState
 {
     private readonly WeaponBaseClass weapon;
+    private Vector3 throwVector;
 
     public WeaponThrownState(WeaponBaseClass weaponBase)
     {
@@ -13,9 +14,15 @@ public class WeaponThrownState : WeaponIState
 
     public void OnStateEnter()
     {
-        weapon.RemoveParentPlayer();
+        weapon.pickupBlockTimer = 0f;
+        weapon.pickupBool = false;
         ChangePhysics();
         AddThrownForce();
+        weapon.RemoveParentPlayer();
+    }
+    public void UpdateState()
+    {
+
     }
     public void ChangePhysics()
     {
@@ -34,28 +41,15 @@ public class WeaponThrownState : WeaponIState
 
     public void HandleCollision(Collision col)
     {
-        if(col.gameObject.tag == weapon.playerTag)
-        {
-            if(col.gameObject == weapon.parentPlayer)
-            {
-                //Physics.IgnoreCollision(col.gameObject.GetComponent<Collider>(), weapon.col);
-            }
-            //if (col.gameObject != weapon.parentPlayer)
-            else
-            {
-                col.gameObject.GetComponent<PlayerStatePattern>().OnHit(weapon.thrownDamage);
-            }
-        }
-        else
-        {
-            ChangeState(weapon.unequippedState);
-        }
+        Debug.Log(weapon.gameObject.name + " Hits " + col.gameObject.name);
+        ChangeState(weapon.unequippedState);
     }
+
     public void AddThrownForce()
     {
         //Throw the weapon the way the player is facing
-        //weapon.rb.AddForce(weapon.parentPlayer.transform.up * weapon.thrownForce);
-        weapon.rb.velocity += weapon.parentPlayer.transform.forward * weapon.thrownForce;
+        throwVector = new Vector3(weapon.parentPlayer.transform.forward.x, weapon.throwAngle, weapon.parentPlayer.transform.forward.z);
+        weapon.rb.velocity += throwVector * weapon.thrownForce;
     }
 
 }
