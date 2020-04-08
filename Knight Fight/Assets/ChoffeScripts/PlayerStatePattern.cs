@@ -149,12 +149,12 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if (moveDir != Vector2.zero)
         {
-            playerRunning.SetParameter();
+           // playerRunning.Play();
 
         }
         if (moveDir == Vector2.zero)
         {
-            playerRunning.Stop();
+           // playerRunning.Stop();
 
         }
         move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
