@@ -1215,7 +1215,7 @@ Transform:
   m_LocalScale: {x: 0.020127945, y: -1.2270964, z: 0.08715586}
   m_Children: []
   m_Father: {fileID: 1008007849}
-  m_RootOrder: 38
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: -134.58601, z: 0}
 --- !u!65 &346269712
 BoxCollider:
@@ -3354,9 +3354,9 @@ Transform:
   - {fileID: 103324984}
   - {fileID: 959053499}
   - {fileID: 1217460268}
+  - {fileID: 346269711}
   - {fileID: 266590489}
   - {fileID: 1768707489}
-  - {fileID: 346269711}
   - {fileID: 2105627475}
   - {fileID: 869286788}
   - {fileID: 1874386911}
@@ -4344,6 +4344,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662545, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662544, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
         type: 3}

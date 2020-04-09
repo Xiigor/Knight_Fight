@@ -12,7 +12,6 @@ public class basicmovement : MonoBehaviour
     void Start()
     {
         transform = GetComponent<Transform>();
-        moveSpeed = 400;
     }
 
     // Update is called once per frame
