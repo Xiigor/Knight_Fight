@@ -10,7 +10,6 @@ public class Trap : MonoBehaviour
     private bool broken;
     public Material brokenMat;
     private GameObject currentGameObj;
-    private bool onTrap;
     void Start()
     {
         breakTime = 1;
@@ -29,10 +28,6 @@ public class Trap : MonoBehaviour
             broken = true;
 
         }
-        if(broken && onTrap)
-        {
-            currentGameObj.transform.position -= Vector3.down * Time.deltaTime * Physics.gravity.y;
-        }
 
 
 
@@ -42,9 +37,7 @@ public class Trap : MonoBehaviour
         currentGameObj = other.gameObject;
         if (other.gameObject.tag == "Player")
         {
-            onTrap = true;
             breaking = true;
-            Debug.Log("On Trap");
         }
         if (broken)
         {
@@ -61,7 +54,6 @@ public class Trap : MonoBehaviour
         currentGameObj = null;
         if (other.tag == "Player")
         {
-            onTrap = false;
             breaking = false;
         }
     }
