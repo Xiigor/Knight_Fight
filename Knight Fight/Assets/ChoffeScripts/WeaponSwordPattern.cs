@@ -38,7 +38,7 @@ public class WeaponSwordPattern : WeaponBaseClass
             // delar endast ut dmg på spelaren och inte andra objekt som råkar bli träffad och inte på sig själv
             if (enemy.gameObject.layer == 8)
             {
-                if (enemy.gameObject.name == this.gameObject.GetComponentInParent<GameObject>().name) 
+                if (enemy.gameObject.name == parentPlayer.gameObject.name) 
                 {
                     //Gör inget 
                     // Debug.Log(attackingPlayer.name + " Hit my self " + enemy.gameObject.name); 
@@ -50,7 +50,6 @@ public class WeaponSwordPattern : WeaponBaseClass
                 }
             }
         }
-        Debug.Log("Attack");
     }
 
     public override void ThrownAttack(Collision col)
