@@ -26,7 +26,7 @@ public class WeaponUnequippedState : WeaponIState
     }
     public void UpdateState()
     {
-        weapon.pickupBlockTimer += Time.deltaTime;
+
     }
     public void ChangePhysics()
     {
@@ -39,7 +39,7 @@ public class WeaponUnequippedState : WeaponIState
     {
         if(newState == weapon.equippedState)
         {
-            weapon.currentState = newState;
+            weapon.ChangeState(newState);
         }
         else
         {
@@ -54,13 +54,10 @@ public class WeaponUnequippedState : WeaponIState
             //if the player is not holding a weapon already, pick up this one
             if(col.gameObject.GetComponent<PlayerStatePattern>().weapon == null)
             {
-                if (weapon.pickupBool == true)
-                {
-                    weapon.SetParentPlayer(col);
-                    col.gameObject.GetComponent<PlayerStatePattern>().weapon = weapon.gameObject;
-                    Physics.IgnoreCollision(weapon.parentPlayer.GetComponent<Collider>(), weapon.col, true);
-                    ChangeState(weapon.equippedState);
-                }
+                weapon.SetParentPlayer(col);
+                col.gameObject.GetComponent<PlayerStatePattern>().weapon = weapon.gameObject;
+                Physics.IgnoreCollision(weapon.parentPlayer.GetComponent<Collider>(), weapon.col, true);
+                ChangeState(weapon.equippedState);
             }
         }
     }

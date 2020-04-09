@@ -34,7 +34,7 @@ public class WeaponEquippedState : WeaponIState
     {
         if(newState == weapon.thrownState)
         {
-            weapon.currentState = newState;
+            weapon.ChangeState(newState);
         }
     }
 

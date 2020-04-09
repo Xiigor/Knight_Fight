@@ -127,11 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6018984424140851412, guid: db2a332b1d13eae408c3261e600ba9d6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: movementSpeedMultiplier
       value: 25
@@ -150,6 +145,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018984424140851412, guid: db2a332b1d13eae408c3261e600ba9d6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3067259888826455619, guid: db2a332b1d13eae408c3261e600ba9d6,
         type: 3}
@@ -275,11 +275,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6018984424140851412, guid: db2a332b1d13eae408c3261e600ba9d6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: movementSpeedMultiplier
       value: 25
@@ -298,6 +293,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018984424140851412, guid: db2a332b1d13eae408c3261e600ba9d6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3067259888826455619, guid: db2a332b1d13eae408c3261e600ba9d6,
         type: 3}
@@ -954,7 +954,7 @@ PrefabInstance:
     - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: thrownForce
-      value: 75
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -970,6 +970,26 @@ PrefabInstance:
         type: 3}
       propertyPath: heldRotation.x
       value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: throwAngle
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328222, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328222, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328222, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}

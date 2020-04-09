@@ -17,9 +17,6 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public float thrownForce;
     public float throwAngle;
 
-    public float pickupBlockTimer = 2f;
-    public bool pickupBool = true;
-
     public string environmentTag = "Environment";
     public string playerTag = "Player";
     public string projectileTag = "Projectile";
@@ -33,7 +30,6 @@ abstract public class WeaponBaseClass : MonoBehaviour
     {
         currentState.ChangeState(thrownState);
     }
-    public abstract void ThrownAttack(Collision col);
     public abstract void ChangeDurability(float durabilityDecrement);
 
     public void HeldPos()
@@ -61,13 +57,5 @@ abstract public class WeaponBaseClass : MonoBehaviour
         transform.parent = null;
     }
     public abstract void OnCollisionEnter(Collision collision);
-    public void StateChangeObserver()
-    {
-        if (stateChangeObserver != currentState)
-        {
-            stateChangeObserver = currentState;
-            Debug.Log(currentState);
-            currentState.OnStateEnter();
-        }
-    }
+    public abstract void ChangeState(WeaponIState newState);
 }

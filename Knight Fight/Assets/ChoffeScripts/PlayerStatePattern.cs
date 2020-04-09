@@ -102,10 +102,10 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log(gameObject.name + "hit by" + collision.gameObject.tag);
         // Ifall spelaren håller i ett vapen så läggs alla andra vapen hen går över till i en lista av ignorerade colliders, listan clearas när spelaren kastar sitt vapen
         if (collision.gameObject.tag == projectileTag)
         {
+            OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
             Debug.Log(gameObject.name + "Hit by wep in projectile state!!");
         }
         
