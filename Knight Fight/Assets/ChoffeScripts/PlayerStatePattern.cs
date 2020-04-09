@@ -14,7 +14,7 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public PlayerDeadState deadState;
 
     public StudioEventEmitter playerDashing;
-    public StudioEventEmitter playerRunning;
+    public StudioEventEmitter playerThrowing;
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
     [HideInInspector]  public  float internalGCDTimer;
@@ -252,6 +252,7 @@ public class PlayerStatePattern : MonoBehaviour
             }
             if (stateChangeObserver == throwState)
             {
+                playerThrowing.Play();
                 //Spelaren gick precis in i throwState
                 Debug.Log("throwstate");
             }

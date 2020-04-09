@@ -5,7 +5,7 @@
 			<value>Weapon_Throw</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{adfe8f58-6b21-497d-88cd-035930d204c8}</destination>
@@ -30,6 +30,9 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{f7305a4e-1420-4752-b58e-a593baa7aaa1}</destination>
+		</relationship>
+		<relationship name="parameters">
+			<destination>{53c8fa28-fea9-4772-a60d-25e9765cec49}</destination>
 		</relationship>
 		<relationship name="banks">
 			<destination>{fc34b2e6-7e7d-444c-8dd0-13ad6733b8a1}</destination>
@@ -71,6 +74,11 @@
 			<destination>{c4490847-6f95-44b3-9680-12d5bdb6f1e1}</destination>
 		</relationship>
 	</object>
+	<object class="ParameterProxy" id="{53c8fa28-fea9-4772-a60d-25e9765cec49}">
+		<relationship name="preset">
+			<destination>{f66daa26-0cf4-4d7c-a6a4-12c78d6deb8c}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{0a54ad79-63ae-4ef6-9ba3-881954384b6f}">
 		<relationship name="effectChain">
 			<destination>{f5fdf7c1-95c3-466d-9326-bcab38d19fda}</destination>
@@ -92,7 +100,6 @@
 		<property name="length">
 			<value>0.37000000000000011</value>
 		</property>
-		<property name="name" />
 		<relationship name="sounds">
 			<destination>{db226738-eaed-4a85-9241-1edccfc83c92}</destination>
 			<destination>{22dfa3e1-8912-4115-ab60-b483cb5e3d61}</destination>
@@ -116,6 +123,7 @@
 	<object class="MixerBusEffectChain" id="{f5fdf7c1-95c3-466d-9326-bcab38d19fda}">
 		<relationship name="effects">
 			<destination>{3ca017f2-6526-4093-845e-20a539e5ed66}</destination>
+			<destination>{48c7051a-7811-46f7-bb17-0fe88e407f73}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5c4d161a-4be2-47be-ac7c-32ea88d2a0ca}" />
@@ -142,5 +150,10 @@
 	</object>
 	<object class="MixerBusPanner" id="{6f4bb7d3-1e37-4e59-bd3f-64ab01522b14}" />
 	<object class="MixerBusFader" id="{3ca017f2-6526-4093-845e-20a539e5ed66}" />
+	<object class="SpatialiserEffect" id="{48c7051a-7811-46f7-bb17-0fe88e407f73}">
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{258bebf5-81ce-4db7-bb16-1b87fc0490df}" />
 </objects>

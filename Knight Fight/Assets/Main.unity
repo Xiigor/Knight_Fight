@@ -120,6 +120,62 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &237919582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 237919583}
+  - component: {fileID: 237919584}
+  m_Layer: 0
+  m_Name: Crowd_Manager Emitter1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &237919583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237919582}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.9514693, y: -0.32112694, z: -2.1671047}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 950376265}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &237919584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237919582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Ambience/Crowd_Manager
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: CrowdMood
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &405370066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -330,12 +386,19 @@ PrefabInstance:
       propertyPath: throwStrength
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: -525830245303085504, guid: db2a332b1d13eae408c3261e600ba9d6,
+        type: 3}
+      propertyPath: playerRunning
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -525830245303085504, guid: db2a332b1d13eae408c3261e600ba9d6,
+        type: 3}
       propertyPath: playerDashing
       value: 
       objectReference: {fileID: 541502193}
     - target: {fileID: -525830245303085504, guid: db2a332b1d13eae408c3261e600ba9d6,
         type: 3}
-      propertyPath: playerRunning
+      propertyPath: playerThrowing
       value: 
       objectReference: {fileID: 541502194}
     - target: {fileID: 3067259888826455616, guid: db2a332b1d13eae408c3261e600ba9d6,
@@ -363,11 +426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdce106a35c2684c8138714527c78cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerWeapon: 
-  playerDash: event:/Player/Player_Dash
-  playerLand: 
-  playerDeath: 
-  playerRunning: event:/Player/PlayerWalk
 --- !u!114 &541502193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,16 +462,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Player/PlayerWalk
+  Event: event:/Weapons/Weapon_Throw
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
-  Preload: 1
+  Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 100
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +563,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &950376264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950376265}
+  m_Layer: 0
+  m_Name: AudioEmitters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &950376265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950376264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.034246232, y: 9.691128, z: 15.297148}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 237919583}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
