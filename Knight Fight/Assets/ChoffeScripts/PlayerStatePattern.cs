@@ -11,8 +11,6 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
-
-    public GameObject swordDamagePrefab;
     
 
     public  float globalCD = 0.5f;
@@ -138,9 +136,9 @@ public class PlayerStatePattern : MonoBehaviour
         {
            if(weapon.GetComponent<WeaponSwordPattern>())
             {
-                GameObject temp = GameObject.Instantiate(swordDamagePrefab, transform,false);
-                temp.GetComponent<WeaponDamageZone>().damage = weapon.gameObject.GetComponent<WeaponSwordPattern>().damage;
-                
+                //GameObject temp = GameObject.Instantiate(swordDamagePrefab, transform,false);
+                //temp.GetComponent<WeaponDamageZone>().damage = weapon.gameObject.GetComponent<WeaponSwordPattern>().damage;
+                Debug.Log("Attacks with sword");
             }
         }
         else

@@ -20,7 +20,7 @@ public class WeaponUnequippedState : WeaponIState
             weapon.parentPlayer.GetComponent<PlayerStatePattern>().weapon = null;
             weapon.parentPlayer.GetComponent<PlayerStatePattern>().RestoreIgnoredColliders();
             weapon.parentPlayer = null;
-            weapon.damageZoneObject.transform.position = weapon.transform.position;
+            //weapon.damageZoneObject.transform.position = weapon.transform.position;
             weapon.gameObject.tag = weapon.weaponTag;
         }
         
