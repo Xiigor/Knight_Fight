@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2765844868840328219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.065376, y: 8.36, z: -0.50286883}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -123,13 +123,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
-  damageZoneObejct: {fileID: 1067299064744838038, guid: f07985546e377d14d8ba6e4fb116f73e,
-    type: 3}
+  damageZoneObject: {fileID: 0}
   durability: 10
   damage: 5
   thrownDamage: 2
-  thrownForce: 20
-  throwAngle: 0
+  thrownForce: 75
+  throwAngle: 0.1
   environmentTag: Environment
   playerTag: Player
   projectileTag: Projectile
