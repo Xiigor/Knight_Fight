@@ -20,6 +20,7 @@ public class WeaponUnequippedState : WeaponIState
             weapon.parentPlayer.GetComponent<PlayerStatePattern>().weapon = null;
             weapon.parentPlayer.GetComponent<PlayerStatePattern>().RestoreIgnoredColliders();
             weapon.parentPlayer = null;
+            weapon.damageZoneObject.transform.position = weapon.transform.position;
             weapon.gameObject.tag = weapon.weaponTag;
         }
         
@@ -57,6 +58,8 @@ public class WeaponUnequippedState : WeaponIState
                 weapon.SetParentPlayer(col);
                 col.gameObject.GetComponent<PlayerStatePattern>().weapon = weapon.gameObject;
                 Physics.IgnoreCollision(weapon.parentPlayer.GetComponent<Collider>(), weapon.col, true);
+                //weapon.damageZoneObject.transform.position = weapon.parentPlayer.transform.position;
+               
                 ChangeState(weapon.equippedState);
             }
         }

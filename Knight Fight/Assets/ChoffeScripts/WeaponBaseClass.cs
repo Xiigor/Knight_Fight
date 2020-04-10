@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 abstract public class WeaponBaseClass : MonoBehaviour
 {
     public GameObject parentPlayer = null;
+    public GameObject damageZoneObject = null;
+
     public WeaponIState currentState;
-    public WeaponIState stateChangeObserver;
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
@@ -21,6 +21,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public string playerTag = "Player";
     public string projectileTag = "Projectile";
     public string weaponTag = "Weapon";
+    public Vector3 damageZonePosition;
     public Vector3 heldPosition;
     public Vector3 heldRotation;
     public Rigidbody rb;

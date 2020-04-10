@@ -123,12 +123,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
+  damageZoneObejct: {fileID: 1067299064744838038, guid: f07985546e377d14d8ba6e4fb116f73e,
+    type: 3}
   durability: 10
   damage: 5
   thrownDamage: 2
   thrownForce: 20
+  throwAngle: 0
+  environmentTag: Environment
   playerTag: Player
+  projectileTag: Projectile
+  weaponTag: Weapon
+  damageZonePosition: {x: 0, y: 0, z: 0}
   heldPosition: {x: 0, y: 0, z: 0}
   heldRotation: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   col: {fileID: 0}
+  attackZone: 0
+  durabilityDecrement: 0

@@ -15,8 +15,7 @@ public class WeaponEquippedState : WeaponIState
     {
         ChangePhysics();
         weapon.HeldPos();
-        Debug.Log("hello?");
-        weapon.gameObject.tag = weapon.projectileTag;
+        weapon.damageZoneObject.transform.position = weapon.parentPlayer.transform.position;
     }
     public void UpdateState()
     {

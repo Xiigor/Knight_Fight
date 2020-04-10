@@ -12,11 +12,16 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
 
+    public GameObject swordDamagePrefab;
+    
+
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
+    public float attackCD = 0.5f;
     [HideInInspector]  public  float internalGCDTimer;
-    [HideInInspector] public float internalDashTimer;   
-    
+    [HideInInspector] public float internalDashTimer;
+    [HideInInspector] public float internalAttackTimer;
+
 
     public float movementSpeedMultiplier = 35.0f;
 
@@ -47,6 +52,7 @@ public class PlayerStatePattern : MonoBehaviour
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
         deadState = new PlayerDeadState(this);
+        attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
         ignoredColliders = new List<Collider>();
         internalGCDTimer = globalCD;
@@ -58,6 +64,7 @@ public class PlayerStatePattern : MonoBehaviour
         playerControls.Gameplay.Move.canceled += ctx => moveDir = Vector2.zero;
         playerControls.Gameplay.Dash.performed += ctx => currentState.ChangeState(dashState);
         playerControls.Gameplay.ThrowWep.performed += ctx => currentState.ChangeState(throwState);
+        playerControls.Gameplay.Attack.performed += ctx => currentState.ChangeState(attackState);
     }
     private void Start()
     {
@@ -96,6 +103,10 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalDashTimer += Time.deltaTime;
         }
+        if (internalAttackTimer < attackCD)
+        {
+            internalAttackTimer += Time.deltaTime;
+        }
         StateUpdateObserver();
         currentState.UpdateState();
     }
@@ -121,6 +132,23 @@ public class PlayerStatePattern : MonoBehaviour
             currentState.ChangeState(basicState);
         }
     }
+    public void Attack()
+    {
+        if(weapon != null)
+        {
+           if(weapon.GetComponent<WeaponSwordPattern>())
+            {
+                GameObject temp = GameObject.Instantiate(swordDamagePrefab, transform,false);
+                temp.GetComponent<WeaponDamageZone>().damage = weapon.gameObject.GetComponent<WeaponSwordPattern>().damage;
+                
+            }
+        }
+        else
+        {
+            //do basic punch attack.
+        }
+    }
+    
 
     public void RestoreIgnoredColliders()
     {
@@ -162,6 +190,27 @@ public class PlayerStatePattern : MonoBehaviour
                 else
                 {
                     Debug.Log("nothing to throw");
+                    return false;
+                }
+            }
+            if (newState == attackState)
+            {
+                if (internalAttackTimer >= attackCD)
+                {
+                    if (weapon != null)
+                    {
+                        Debug.Log("attack with wep");
+                        return true;
+                    }
+                    else
+                    {
+                        Debug.Log("nothing to attack with");
+                        return false;
+                    }
+                }
+                else
+                {
+                    Debug.Log("Attack on cooldown");
                     return false;
                 }
             }
