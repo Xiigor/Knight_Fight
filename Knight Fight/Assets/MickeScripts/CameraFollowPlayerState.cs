@@ -18,7 +18,7 @@ public class CameraFollowPlayerState : CameraAbstractClass
 
     public override void Execute()
     {
-        p_camera.ZoomAcceleration();
+        p_camera.ViewChangeAcceleration();
         p_camera.SmoothnessNormalizer();
 
         FollowPlayer();
@@ -29,13 +29,13 @@ public class CameraFollowPlayerState : CameraAbstractClass
 
     }
 
-    void FollowPlayer()
+    private void FollowPlayer()
     {
         Vector3 position = new Vector3();
 
-        position.x = p_camera.playerObject.position.x;
-        position.y = p_camera.playerObject.position.y + p_camera.distFromPlayerY;
-        position.z = p_camera.playerObject.position.z - p_camera.distFromPlayerZ;
+        position.x = p_camera.focusedObject.position.x;
+        position.y = p_camera.focusedObject.position.y + p_camera.offsetFromFocusY;
+        position.z = p_camera.focusedObject.position.z - p_camera.offsetFromFocusZ;
 
         p_camera.transform.position = Vector3.SmoothDamp(p_camera.transform.position, position, ref p_camera.velocity, p_camera.initialSmoothness);
     }

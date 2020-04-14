@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.InputAction;
+using UnityEngine.InputSystem;
 
 public class PlayerStatePattern : MonoBehaviour
 {
@@ -29,7 +28,7 @@ public class PlayerStatePattern : MonoBehaviour
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
     [Range(0.0f, 1.0f)] public float movementInputForDashDirThreshhold = 0.25f;
-    public float internalDashRayDist = 1.1f;
+    public float internalDashRayDist = 1.3f;
     public bool canDash = true;
 
     public GameObject weapon;
@@ -37,7 +36,6 @@ public class PlayerStatePattern : MonoBehaviour
     public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
 
-    PlayerControls playerControls;
     [HideInInspector] public Vector2 moveDir;
     Vector2 moveLastDir;
     Vector3 move;
@@ -48,10 +46,15 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] List<Collider> ignoredColliders;
     private Rigidbody rb;
 
+
+    [SerializeField] private int playerIndex;
+
+
     private void Awake()
     {
         health = maxHealth;
         basicState = new PlayerBasicState(this);
+
         currentState = stateChangeObserver = basicState;
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
@@ -61,11 +64,7 @@ public class PlayerStatePattern : MonoBehaviour
         ignoredColliders = new List<Collider>();
         rb = GetComponent<Rigidbody>();
         internalGCDTimer = globalCD;
-        internalDashTimer = dashCD;
-
-        
-        playerControls = new PlayerControls();
-        
+        internalDashTimer = dashCD;  
 
     }
 
@@ -108,6 +107,10 @@ public class PlayerStatePattern : MonoBehaviour
             internalAttackTimer += Time.deltaTime;
         }
     }
+    public int GetPlayerIndex()
+    {
+        return playerIndex;
+    }
 
 
     private void OnCollisionEnter(Collision collision)
@@ -145,22 +148,7 @@ public class PlayerStatePattern : MonoBehaviour
             //do basic punch attack.
         }
     }
-    public void OnMove(CallbackContext context)
-    {
-        moveDir = context.ReadValue<Vector2>();
-    }
-    public void OnDash()
-    {
-        currentState.ChangeState(dashState);
-    }
-    public void OnThrowWep()
-    {
-        currentState.ChangeState(throwState);
-    }
-    public void OnAttack()
-    {
-        currentState.ChangeState(attackState);
-    }
+
     public void RestoreIgnoredColliders()
     {
         if(ignoredColliders.Count != 0)
@@ -265,16 +253,6 @@ public class PlayerStatePattern : MonoBehaviour
     public void OnHit(float damage)
     {
         currentState.TakeDamage(damage);
-    }
-
-    private void OnEnable()
-    {
-        playerControls.Gameplay.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerControls.Gameplay.Disable();
     }
 
     private float Hypotenuse(float sideA, float sideB)
