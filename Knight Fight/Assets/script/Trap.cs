@@ -41,9 +41,11 @@ public class Trap : MonoBehaviour
         }
         if (broken)
         {
-            other.gameObject.transform.position -= Vector3.down * Time.deltaTime * Physics.gravity.y;
 
-            currentGameObj.GetComponent<BoxCollider>().enabled = false;
+            //Bättre att vi gör ett mer detaljerat skript längre fram 
+            //other.gameObject.transform.position -= Vector3.down * Time.deltaTime * Physics.gravity.y;
+
+            //currentGameObj.GetComponent<BoxCollider>().enabled = false;
 
 
         }

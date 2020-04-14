@@ -29,7 +29,7 @@ public class PlayerStatePattern : MonoBehaviour
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
     [Range(0.0f, 1.0f)] public float movementInputForDashDirThreshhold = 0.25f;
-    private float internalDashRayDist = 1.1f;
+    public float internalDashRayDist = 1.1f;
     public bool canDash = true;
 
     public GameObject weapon;
@@ -41,12 +41,13 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public Vector2 moveDir;
     Vector2 moveLastDir;
     Vector3 move;
-    Vector3 lastMove;
+    public Vector3 lastMove;
     public float maxHealth = 100f;
     public float health;
     [HideInInspector] public Collider col;
     [HideInInspector] List<Collider> ignoredColliders;
     private Rigidbody rb;
+
     private void Awake()
     {
         health = maxHealth;
@@ -70,6 +71,8 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void FixedUpdate()
     {
+        StateUpdateObserver();
+        currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
 
@@ -84,7 +87,6 @@ public class PlayerStatePattern : MonoBehaviour
         {
             canDash = true;
         }
-
     }
 
     private void Update()
@@ -105,10 +107,7 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalAttackTimer += Time.deltaTime;
         }
-        StateUpdateObserver();
-        currentState.UpdateState();
     }
-
 
 
     private void OnCollisionEnter(Collision collision)
@@ -247,15 +246,15 @@ public class PlayerStatePattern : MonoBehaviour
         {
             moveLastDir = moveDir;
         }
-        transform.Translate(move, Space.World);
-        
+        //transform.Translate(move, Space.World);
+        rb.velocity = move * movementSpeedMultiplier;
         
         transform.forward = lastMove;
     }
 
     public void Dash()
     {
-        transform.position += lastMove * dashSpeed *Time.deltaTime;
+        transform.Translate(lastMove * dashSpeed * Time.deltaTime, Space.World);
     }
 
     public void ThrowItem()
