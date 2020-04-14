@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
+
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
     private PlayerIState stateChangeObserver;
+    //IdleState ?? 
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerDashState dashState;
     [HideInInspector] public PlayerThrowState throwState;
@@ -43,31 +46,28 @@ public class PlayerStatePattern : MonoBehaviour
     public float health;
     [HideInInspector] public Collider col;
     [HideInInspector] List<Collider> ignoredColliders;
+    private Rigidbody rb;
     private void Awake()
     {
         health = maxHealth;
         basicState = new PlayerBasicState(this);
+        currentState = stateChangeObserver = basicState;
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
         deadState = new PlayerDeadState(this);
         attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
         ignoredColliders = new List<Collider>();
+        rb = GetComponent<Rigidbody>();
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;
 
         
         playerControls = new PlayerControls();
-        playerControls.Gameplay.Move.performed += ctx => moveDir  = ctx.ReadValue<Vector2>();
-        playerControls.Gameplay.Move.canceled += ctx => moveDir = Vector2.zero;
-        playerControls.Gameplay.Dash.performed += ctx => currentState.ChangeState(dashState);
-        playerControls.Gameplay.ThrowWep.performed += ctx => currentState.ChangeState(throwState);
-        playerControls.Gameplay.Attack.performed += ctx => currentState.ChangeState(attackState);
+        
+
     }
-    private void Start()
-    {
-        currentState = stateChangeObserver = basicState;
-    }
+
     private void FixedUpdate()
     {
         Ray environmentRay = new Ray(transform.position, lastMove);
@@ -109,6 +109,8 @@ public class PlayerStatePattern : MonoBehaviour
         currentState.UpdateState();
     }
 
+
+
     private void OnCollisionEnter(Collision collision)
     {
         // Ifall spelaren håller i ett vapen så läggs alla andra vapen hen går över till i en lista av ignorerade colliders, listan clearas när spelaren kastar sitt vapen
@@ -136,8 +138,6 @@ public class PlayerStatePattern : MonoBehaviour
         {
            if(weapon.GetComponent<WeaponSwordPattern>())
             {
-                //GameObject temp = GameObject.Instantiate(swordDamagePrefab, transform,false);
-                //temp.GetComponent<WeaponDamageZone>().damage = weapon.gameObject.GetComponent<WeaponSwordPattern>().damage;
                 Debug.Log("Attacks with sword");
             }
         }
@@ -146,8 +146,22 @@ public class PlayerStatePattern : MonoBehaviour
             //do basic punch attack.
         }
     }
-    
-
+    public void OnMove(CallbackContext context)
+    {
+        moveDir = context.ReadValue<Vector2>();
+    }
+    public void OnDash()
+    {
+        currentState.ChangeState(dashState);
+    }
+    public void OnThrowWep()
+    {
+        currentState.ChangeState(throwState);
+    }
+    public void OnAttack()
+    {
+        currentState.ChangeState(attackState);
+    }
     public void RestoreIgnoredColliders()
     {
         if(ignoredColliders.Count != 0)
@@ -227,15 +241,15 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void Movement()
     {
-
         move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
         lastMove = new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier;
-
         if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
             moveLastDir = moveDir;
         }
         transform.Translate(move, Space.World);
+        
+        
         transform.forward = lastMove;
     }
 

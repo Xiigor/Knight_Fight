@@ -18,7 +18,6 @@ public class WeaponThrownState : WeaponIState
         movementApplied = false;
         ChangePhysics();
         weapon.gameObject.tag = weapon.projectileTag;
-        //weapon.damageZoneObject.SetActive(false);
         AddThrownForce();
         weapon.RemoveParentPlayer();
     }
