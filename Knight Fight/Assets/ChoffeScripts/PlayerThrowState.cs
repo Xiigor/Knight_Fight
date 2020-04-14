@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerThrowState : PlayerIState
 {
     private readonly PlayerStatePattern player;
-    private float internalStateTimer;
 
     public PlayerThrowState(PlayerStatePattern statePatternPlayer)
     {
@@ -13,13 +12,9 @@ public class PlayerThrowState : PlayerIState
     }
     public void UpdateState()
     {
-        internalStateTimer += Time.deltaTime;
 
-        if(internalStateTimer >= player.throwAnimDuration)
-        {
-            player.ThrowItem();
-            ChangeState(player.basicState);
-        }
+        player.ThrowItem();
+        ChangeState(player.basicState);
     }
     public void ChangeState(PlayerIState newState)
     {
@@ -29,7 +24,6 @@ public class PlayerThrowState : PlayerIState
         }
         else if (newState == player.basicState)
         {
-            internalStateTimer = 0f;
             player.internalGCDTimer = 0f;
             player.currentState = newState;
         }

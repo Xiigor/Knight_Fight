@@ -14,7 +14,7 @@ public class PlayerAttackState : PlayerIState
 
     public void UpdateState()
     {
-        //player.Attack();
+        player.Attack();
         ChangeState(player.basicState);
     }
     public void ChangeState(PlayerIState newState)

@@ -15,6 +15,11 @@ public class WeaponEquippedState : WeaponIState
     {
         ChangePhysics();
         weapon.HeldPos();
+        //weapon.damageZoneObject.transform.position = weapon.parentPlayer.transform.position;
+    }
+    public void UpdateState()
+    {
+
     }
 
     public void ChangePhysics()
@@ -28,7 +33,7 @@ public class WeaponEquippedState : WeaponIState
     {
         if(newState == weapon.thrownState)
         {
-            weapon.currentState = newState;
+            weapon.ChangeState(newState);
         }
     }
 

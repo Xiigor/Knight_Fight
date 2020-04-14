@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class WeaponSwordPattern : WeaponBaseClass
 {
-    // FIXA BUGGAR FÖRST INNAN DU FORTSÄTTER, SPELAREN ROTERAR INNAN VAPNET KASTAS IVÄG OCH DET ÄR FUCKING WEIRD. VAPNET KASTAS INTE ALLTID RAKT FRAM HELLER
+    
+    public float attackZone;
+    public float durabilityDecrement;
     private float currentDurability;
-
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
@@ -24,26 +25,33 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     private void Update()
     {
-        StateChangeObserver();
+        currentState.UpdateState();
     }
 
     public override void Attack()
     {
-        //do this weapons specific attack
-    }
 
-    public override void ThrownAttack(Collision col)
-    {
-        col.gameObject.GetComponent<PlayerStatePattern>().OnHit(thrownDamage);
     }
 
     public override void ChangeDurability(float durabilityDecrement)
     {
         currentDurability -= durabilityDecrement;
     }
-
+    public override void ChangeState(WeaponIState newState)
+    {
+        currentState = newState;
+        currentState.OnStateEnter();
+    }
     public override void OnCollisionEnter(Collision collision)
     {
         currentState.HandleCollision(collision);
+    }
+
+    //visuellt visa träffzonen
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.transform.position, attackZone);
+
     }
 }

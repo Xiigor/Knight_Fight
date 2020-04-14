@@ -12,14 +12,17 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
+    public StudioEventEmitter PlayerDashing;
+    public StudioEventEmitter PlayerThrowing;
+    public StudioEventEmitter PlayerHurtingMale;
 
-    public StudioEventEmitter playerDashing;
-    public StudioEventEmitter playerThrowing;
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
+    public float attackCD = 0.5f;
     [HideInInspector]  public  float internalGCDTimer;
-    [HideInInspector] public float internalDashTimer;   
-    
+    [HideInInspector] public float internalDashTimer;
+    [HideInInspector] public float internalAttackTimer;
+
 
     public float movementSpeedMultiplier = 35.0f;
 
@@ -29,11 +32,9 @@ public class PlayerStatePattern : MonoBehaviour
     private float internalDashRayDist = 1.1f;
     public bool canDash = true;
 
-    public float throwAnimDuration = 0.2f;
-
     public GameObject weapon;
     public string weaponTag = "Weapon";
-
+    public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
 
     PlayerControls playerControls;
@@ -42,7 +43,7 @@ public class PlayerStatePattern : MonoBehaviour
     Vector3 move;
     Vector3 lastMove;
     public float maxHealth = 100f;
-    [HideInInspector] public float health;
+    public float health;
     [HideInInspector] public Collider col;
     [HideInInspector] List<Collider> ignoredColliders;
     private void Awake()
@@ -52,6 +53,7 @@ public class PlayerStatePattern : MonoBehaviour
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
         deadState = new PlayerDeadState(this);
+        attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
         ignoredColliders = new List<Collider>();
         internalGCDTimer = globalCD;
@@ -63,6 +65,7 @@ public class PlayerStatePattern : MonoBehaviour
         playerControls.Gameplay.Move.canceled += ctx => moveDir = Vector2.zero;
         playerControls.Gameplay.Dash.performed += ctx => currentState.ChangeState(dashState);
         playerControls.Gameplay.ThrowWep.performed += ctx => currentState.ChangeState(throwState);
+        playerControls.Gameplay.Attack.performed += ctx => currentState.ChangeState(attackState);
     }
     private void Start()
     {
@@ -93,10 +96,6 @@ public class PlayerStatePattern : MonoBehaviour
         {
             currentState.ChangeState(deadState);
         }
-        if(Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
-        {
-            moveLastDir = moveDir;
-        }
         if (internalGCDTimer < globalCD)
         {
             internalGCDTimer += Time.deltaTime;
@@ -105,20 +104,28 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalDashTimer += Time.deltaTime;
         }
+        if (internalAttackTimer < attackCD)
+        {
+            internalAttackTimer += Time.deltaTime;
+        }
         StateUpdateObserver();
         currentState.UpdateState();
     }
 
     private void OnCollisionEnter(Collision collision)
-    {   
+    {
         // Ifall spelaren håller i ett vapen så läggs alla andra vapen hen går över till i en lista av ignorerade colliders, listan clearas när spelaren kastar sitt vapen
-        if (collision.gameObject.tag == weaponTag)
+        if (collision.gameObject.tag == projectileTag)
         {
-            if (weapon != null)
-            {
-                Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), col, true);
-                ignoredColliders.Add(collision.gameObject.GetComponent<Collider>());
-            }
+            OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+            Debug.Log(gameObject.name + "Hit by wep in projectile state!!");
+        }
+        
+        if (collision.gameObject.tag == weaponTag && weapon != null)
+        {
+            Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), col, true);
+            ignoredColliders.Add(collision.gameObject.GetComponent<Collider>());
+
         }
         // kanske måste lägga till att ignorera vapen
         if (currentState == dashState)
@@ -126,6 +133,23 @@ public class PlayerStatePattern : MonoBehaviour
             currentState.ChangeState(basicState);
         }
     }
+    public void Attack()
+    {
+        if(weapon != null)
+        {
+           if(weapon.GetComponent<WeaponSwordPattern>())
+            {
+                //GameObject temp = GameObject.Instantiate(swordDamagePrefab, transform,false);
+                //temp.GetComponent<WeaponDamageZone>().damage = weapon.gameObject.GetComponent<WeaponSwordPattern>().damage;
+                Debug.Log("Attacks with sword");
+            }
+        }
+        else
+        {
+            //do basic punch attack.
+        }
+    }
+    
 
     public void RestoreIgnoredColliders()
     {
@@ -170,6 +194,27 @@ public class PlayerStatePattern : MonoBehaviour
                     return false;
                 }
             }
+            if (newState == attackState)
+            {
+                if (internalAttackTimer >= attackCD)
+                {
+                    if (weapon != null)
+                    {
+                        Debug.Log("attack with wep");
+                        return true;
+                    }
+                    else
+                    {
+                        Debug.Log("nothing to attack with");
+                        return false;
+                    }
+                }
+                else
+                {
+                    Debug.Log("Attack on cooldown");
+                    return false;
+                }
+            }
             else
             {
                 Debug.Log("invalid state");
@@ -184,20 +229,15 @@ public class PlayerStatePattern : MonoBehaviour
     }
 
     public void Movement()
-
     {
-        if (moveDir != Vector2.zero)
-        {
-           // playerRunning.Play();
 
-        }
-        if (moveDir == Vector2.zero)
-        {
-           // playerRunning.Stop();
-
-        }
         move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
         lastMove = new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier;
+
+        if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
+        {
+            moveLastDir = moveDir;
+        }
         transform.Translate(move, Space.World);
         transform.forward = lastMove;
     }
@@ -210,8 +250,6 @@ public class PlayerStatePattern : MonoBehaviour
     public void ThrowItem()
     {
             weapon.GetComponent<WeaponBaseClass>().ThrowWep();
-            weapon = null;
-            RestoreIgnoredColliders();
     }
 
     public void OnHit(float damage)
@@ -246,13 +284,13 @@ public class PlayerStatePattern : MonoBehaviour
             }
             if(stateChangeObserver == dashState)
             {
-                playerDashing.Play();
+                PlayerDashing.Play();
                 //Spelaren gick precis in i dashState
                 Debug.Log("Dashstate");
             }
             if (stateChangeObserver == throwState)
             {
-                playerThrowing.Play();
+                PlayerThrowing.Play();
                 //Spelaren gick precis in i throwState
                 Debug.Log("throwstate");
             }
