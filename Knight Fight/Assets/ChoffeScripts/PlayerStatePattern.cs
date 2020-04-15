@@ -12,9 +12,7 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
-    public StudioEventEmitter PlayerDashing;
-    public StudioEventEmitter PlayerThrowing;
-    public StudioEventEmitter PlayerHurtingMale;
+    public AudioHub audioHub;
 
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
@@ -284,13 +282,13 @@ public class PlayerStatePattern : MonoBehaviour
             }
             if(stateChangeObserver == dashState)
             {
-                PlayerDashing.Play();
+                audioHub.PlayerDashing.Play();
                 //Spelaren gick precis in i dashState
                 Debug.Log("Dashstate");
             }
             if (stateChangeObserver == throwState)
             {
-                PlayerThrowing.Play();
+                audioHub.PlayerThrowing.Play();
                 //Spelaren gick precis in i throwState
                 Debug.Log("throwstate");
             }
