@@ -273,6 +273,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db2a332b1d13eae408c3261e600ba9d6, type: 3}
+--- !u!1 &537302442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3067259888826455623, guid: db2a332b1d13eae408c3261e600ba9d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 541502184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &537302443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537302442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70453bd007f82954e96677afc576396b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHurtMale: {fileID: 0}
+  PlayerHurtFemale: {fileID: 0}
+  Crowd: {fileID: 0}
+  playerAttack: event:/Weapons/Weapon_Sword_Attack
+  playerDash: event:/Player/Player_Dash
+  playerThrow: event:/Weapons/Weapon_Throw
 --- !u!1001 &541502184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,6 +438,16 @@ PrefabInstance:
       propertyPath: throwAnimDuration
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -525830245303085504, guid: db2a332b1d13eae408c3261e600ba9d6,
+        type: 3}
+      propertyPath: audioHub
+      value: 
+      objectReference: {fileID: 537302443}
+    - target: {fileID: -525830245303085504, guid: db2a332b1d13eae408c3261e600ba9d6,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 537302443}
     - target: {fileID: 3067259888826455616, guid: db2a332b1d13eae408c3261e600ba9d6,
         type: 3}
       propertyPath: m_Material
