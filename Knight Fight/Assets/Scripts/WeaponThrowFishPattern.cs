@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponSwordPattern : WeaponBaseClass
+public class WeaponThrowFishPattern : WeaponBaseClass
 {
-    
-    public float attackZone;
     public float durabilityDecrement;
-    // FIXA BUGGAR FÖRST INNAN DU FORTSÄTTER, SPELAREN ROTERAR INNAN VAPNET KASTAS IVÄG OCH DET ÄR FUCKING WEIRD. VAPNET KASTAS INTE ALLTID RAKT FRAM HELLER
+    public GameObject weaponAmmo;
     private float currentDurability;
-
+    private Collision apa; // Funkar inte utan att skicka med denna
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
@@ -23,27 +21,20 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-        
     }
 
     private void Update()
     {
         StateChangeObserver();
+       
     }
 
     public override void Attack(Collision enemy)
     {
-            // delar endast ut dmg på spelaren och inte andra objekt som råkar bli träffad
-            if (enemy.gameObject.layer == 8)
-            {
-               ChangeDurability(durabilityDecrement);
-               enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);  
-            }
-    }
-
-    public override void ThrownAttack(Collision col)
-    {
-        col.gameObject.GetComponent<PlayerStatePattern>().OnHit(thrownDamage);
+        //launch projectile and instanciate projectile 
+        // Projectile i eget script med en OnCollisonEnter kollar om träffat en spelare och isfall gå in i enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);
+        ChangeDurability(durabilityDecrement);
+        Instantiate(weaponAmmo);
     }
 
     public override void ChangeDurability(float durabilityDecrement)
@@ -54,16 +45,14 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void OnCollisionEnter(Collision collision)
     {
         currentState.HandleCollision(collision);
-        Attack(collision);
     }
-    
 
-
-    //visuellt visa träffzonen
-    //void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(this.transform.position, attackZone);
-
-    //}
+    public override void ThrownAttack(Collision col)
+    {
+        col.gameObject.GetComponent<PlayerStatePattern>().OnHit(thrownDamage);
     }
+   
+
+
+
+}

@@ -20,7 +20,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public Rigidbody rb;
     public Collider col;
 
-    public abstract void Attack();
+    public abstract void Attack(Collision enemy);
     public void ThrowWep()
     {
         currentState.ChangeState(thrownState);
@@ -58,4 +58,5 @@ abstract public class WeaponBaseClass : MonoBehaviour
             currentState.OnStateEnter();
         }
     }
+
 }
