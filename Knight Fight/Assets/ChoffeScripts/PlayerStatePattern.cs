@@ -7,8 +7,9 @@ public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
     private PlayerIState stateChangeObserver;
-    //IdleState ?? 
+
     [HideInInspector] public PlayerBasicState basicState;
+    [HideInInspector] public PlayerIdleState idleState;
     [HideInInspector] public PlayerDashState dashState;
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
@@ -54,8 +55,9 @@ public class PlayerStatePattern : MonoBehaviour
     {
         health = maxHealth;
         basicState = new PlayerBasicState(this);
+        idleState = new PlayerIdleState(this);
+        currentState = stateChangeObserver = idleState;
 
-        currentState = stateChangeObserver = basicState;
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
         deadState = new PlayerDeadState(this);
@@ -119,6 +121,7 @@ public class PlayerStatePattern : MonoBehaviour
         if (collision.gameObject.tag == projectileTag)
         {
             OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+
             Debug.Log(gameObject.name + "Hit by wep in projectile state!!");
         }
         
@@ -131,7 +134,7 @@ public class PlayerStatePattern : MonoBehaviour
         // kanske måste lägga till att ignorera vapen
         if (currentState == dashState)
         {
-            currentState.ChangeState(basicState);
+            currentState.ChangeState(idleState);
         }
     }
     public void Attack()
@@ -226,18 +229,21 @@ public class PlayerStatePattern : MonoBehaviour
         }
     }
 
-    public void Movement()
+    public void ChangeDirection()
     {
         move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
-        lastMove = new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier;
         if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
             moveLastDir = moveDir;
         }
-        //transform.Translate(move, Space.World);
-        rb.velocity = move * movementSpeedMultiplier;
-        
+
+        lastMove = Vector3.Normalize(new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier);
         transform.forward = lastMove;
+    }
+
+    public void Movement()
+    {
+        rb.velocity = move * movementSpeedMultiplier;
     }
 
     public void Dash()
@@ -265,9 +271,14 @@ public class PlayerStatePattern : MonoBehaviour
         if(stateChangeObserver != currentState)
         {
             stateChangeObserver = currentState;
-            if(stateChangeObserver == basicState)
+            if (stateChangeObserver == idleState)
             {
-                //spelaren gick precis in i basicState
+                //spelaren gick precis in i idleState
+                Debug.Log("idleState");
+            }
+            if (stateChangeObserver == basicState)
+            {
+                //spelaren gick precis in i "MoveState"
                 Debug.Log("basicState");
             }
             if(stateChangeObserver == dashState)

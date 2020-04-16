@@ -4,18 +4,42 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerIState
 {
-    public void ChangeState(PlayerIState newState)
+    private readonly PlayerStatePattern player;
+
+    public PlayerIdleState(PlayerStatePattern statePatternPlayer)
     {
-        throw new System.NotImplementedException();
+        player = statePatternPlayer;
     }
 
-    public void TakeDamage(float damage)
+    public void ChangeState(PlayerIState newState)
     {
-        throw new System.NotImplementedException();
+        if (newState == player.deadState)
+        {
+            player.currentState = newState;
+        }
+
+        else if (newState == player.basicState)
+        {
+            player.currentState = newState;
+        }
+
+        else if (player.ValidStateChange(newState))
+        {
+            player.currentState = newState;
+        }
     }
 
     public void UpdateState()
     {
-        throw new System.NotImplementedException();
+        player.ChangeDirection();
+        if (player.moveDir != Vector2.zero)
+        {
+            ChangeState(player.basicState);
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        player.health -= damage;
     }
 }
