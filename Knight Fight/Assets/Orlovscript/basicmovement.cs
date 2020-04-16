@@ -7,10 +7,11 @@ public class basicmovement : MonoBehaviour
     // Start is called before the first frame update
     private Transform transform;
     private Vector3 moveDirection;
-    [SerializeField]
-    private float moveSpeed;
+    public float moveSpeed;
+    private float baseSpeed;
     void Start()
     {
+        baseSpeed = moveSpeed;
         transform = GetComponent<Transform>();
     }
 
@@ -30,5 +31,9 @@ public class basicmovement : MonoBehaviour
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
         float angle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, -angle, 0));
+    }
+    public void ResetSpeed()
+    {
+        moveSpeed = baseSpeed;
     }
 }
