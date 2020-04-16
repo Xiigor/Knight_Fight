@@ -28,7 +28,7 @@ public class basicmovement : MonoBehaviour
 
         Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         Vector3 moveAngle = new Vector3(0, +0, 45);
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        GetComponent<Rigidbody>().AddForce(moveDirection * moveSpeed * Time.deltaTime);
         float angle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, -angle, 0));
     }

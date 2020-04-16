@@ -2948,7 +2948,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150500155}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -3491,7 +3491,7 @@ PrefabInstance:
     - target: {fileID: 8721846196060662544, guid: 9d034632e4738134d9444e9c073150ac,
         type: 3}
       propertyPath: moveSpeed
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
         type: 3}
@@ -3501,7 +3501,7 @@ PrefabInstance:
     - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 226.8
+      value: 227.08
       objectReference: {fileID: 0}
     - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
         type: 3}
@@ -3562,6 +3562,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662571, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662571, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662571, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662571, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d034632e4738134d9444e9c073150ac, type: 3}
@@ -3697,7 +3717,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464631943}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -4078,7 +4098,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591984854}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

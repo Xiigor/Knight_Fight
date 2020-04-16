@@ -5,30 +5,37 @@ using UnityEngine;
 public class SlowZone : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    private Vector3 velocityOnEnter; 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag == "Player")
+        velocityOnEnter = collision.gameObject.GetComponent<Rigidbody>().velocity;
+        collision.gameObject.GetComponent<Rigidbody>().velocity *= 0.01f;
+
+        if(collision.tag == "Player")
         {
-            collision.gameObject.GetComponent<basicmovement>().moveSpeed *= 0.5f;
+            collision.GetComponent<basicmovement>().moveSpeed *= 0.25f;
         }
+
     }
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.tag == "Player")
+        collision.gameObject.GetComponent<Rigidbody>().velocity = collision.gameObject.GetComponent<Rigidbody>().velocity.normalized * velocityOnEnter.magnitude;
+        if (collision.tag == "Player")
         {
-            collision.gameObject.GetComponent<basicmovement>().ResetSpeed();
+            collision.GetComponent<basicmovement>().ResetSpeed();
         }
     }
 }
