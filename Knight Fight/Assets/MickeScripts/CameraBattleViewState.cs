@@ -83,6 +83,6 @@ public class CameraBattleViewState : CameraAbstractClass
             arenaBounds.Encapsulate(p_camera.objectsFollowedByCamera[i].position);
         }
 
-        return arenaBounds.size.x;
+        return arenaBounds.size.x + arenaBounds.size.z;
     }
 }
