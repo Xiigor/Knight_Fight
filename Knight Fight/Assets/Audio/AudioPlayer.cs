@@ -4,11 +4,21 @@ using UnityEngine;
 using FMODUnity;
 public class AudioPlayer : MonoBehaviour
 {
-  
-  
-    public StudioEventEmitter PlayerHurtMale;
-    public StudioEventEmitter PlayerHurtFemale;
-    public StudioEventEmitter Crowd;
+
+
+
+
+    [EventRef]
+    public string playerHurt;
+    public FMOD.Studio.EventInstance playerHurting;
+
+    [EventRef]
+    public string playerHurtMale;
+    public FMOD.Studio.EventInstance playerHurtingMale;
+
+    [EventRef]
+    public string playerHurtFemale;
+    public FMOD.Studio.EventInstance playerHurtingFemale;
 
     [EventRef]
     public string playerAttack;
@@ -22,6 +32,9 @@ public class AudioPlayer : MonoBehaviour
     public string playerThrow;
     public FMOD.Studio.EventInstance playerThrowing;
 
+    [EventRef]
+    public string playerThrowMale;
+    public FMOD.Studio.EventInstance playerThrowingMale;
 
 
 
@@ -44,5 +57,23 @@ public class AudioPlayer : MonoBehaviour
         playerAttacking = RuntimeManager.CreateInstance(playerAttack);
         RuntimeManager.PlayOneShot(playerAttack, transform.position);
         playerAttacking.start();
+    }
+    public void PlayerHurting() //Spelar alla vapenljud för female
+    {
+        playerHurting = RuntimeManager.CreateInstance(playerHurt);
+        RuntimeManager.PlayOneShot(playerHurt, transform.position);
+        playerHurting.start();
+    }
+    public void PlayerHurtingMale() //Spelar alla vapenljud för male
+    {
+        playerHurtingMale = RuntimeManager.CreateInstance(playerHurtMale);
+        RuntimeManager.PlayOneShot(playerHurtMale, transform.position);
+        playerHurtingMale.start();
+    }
+    public void PlayerHurtingFemale() //Spelar alla vapenljud för female
+    {
+        playerHurtingMale = RuntimeManager.CreateInstance(playerHurtFemale);
+        RuntimeManager.PlayOneShot(playerHurtFemale, transform.position);
+        playerHurtingFemale.start();
     }
 }
