@@ -11,9 +11,6 @@ public class AudioPlayer : MonoBehaviour
         givenGender = Random.Range(0, 2);
     }
 
-    [EventRef]
-    public string playerHurt;
-    public FMOD.Studio.EventInstance playerHurting;
 
     [EventRef]
     public string playerHurtMale;
@@ -69,9 +66,7 @@ public class AudioPlayer : MonoBehaviour
         {
             PlayerHurtingMale();
         }
-        playerHurting = RuntimeManager.CreateInstance(playerHurt);
-        RuntimeManager.PlayOneShot(playerHurt, transform.position);
-        playerHurting.start();
+
     }
     private void PlayerHurtingMale() //Spelar alla vapenljud för male
     {
