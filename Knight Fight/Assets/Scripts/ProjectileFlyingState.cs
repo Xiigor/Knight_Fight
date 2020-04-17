@@ -23,29 +23,6 @@ public class ProjectileFlyingState : ProjectileIState
         }
     }
 
-    //EJ FÄRDIG
-    public void HandleCollision(Collision col)
-    {
-        if (col.gameObject.tag == projectile.playerTag)
-        {
-            if (col.gameObject == projectile.parentPlayer)
-            {
-                //Physics.IgnoreCollision(col.gameObject.GetComponent<Collider>(), weapon.col);
-            }
-            //if (col.gameObject != weapon.parentPlayer)
-            else
-            {
-                col.gameObject.GetComponent<PlayerStatePattern>().OnHit(projectile.damage);
-              
-            }
-        }
-        else
-        {
-            ChangeState(projectile.groundedState);
-        }
-        // Sätter hastigheten till 0 oavsett va den kolliderar med
-        projectile.rb.velocity = new Vector3(0, 0, 0);
-    }
 
     public void OnStateEnter()
     {
@@ -55,10 +32,7 @@ public class ProjectileFlyingState : ProjectileIState
 
     public void LaunchFish()
     {
-        //Throw the weapon the way the player is facing 
-        //Avnågon anledning funkade det inte med transform.forward då det va 90 grader fel så fick använda transform.right
-        projectile.rb.velocity += projectile.Player.transform.right * projectile.ProjectileSpeed;
-        
+        projectile.rb.velocity += projectile.Player.transform.forward * projectile.ProjectileSpeed;   
     }
 
 }

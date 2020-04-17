@@ -21,6 +21,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
+        
     }
 
     private void Update()
@@ -29,7 +30,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
        
     }
 
-    public override void Attack(Collision enemy)
+    public override void Attack()
     {
         //launch projectile and instanciate projectile 
         // Projectile i eget script med en OnCollisonEnter kollar om träffat en spelare och isfall gå in i enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);

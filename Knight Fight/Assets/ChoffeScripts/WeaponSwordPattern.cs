@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class WeaponSwordPattern : WeaponBaseClass
 {
-    
-    public float attackZone;
+    public string attackAnimName;
     public float durabilityDecrement;
     // FIXA BUGGAR FÖRST INNAN DU FORTSÄTTER, SPELAREN ROTERAR INNAN VAPNET KASTAS IVÄG OCH DET ÄR FUCKING WEIRD. VAPNET KASTAS INTE ALLTID RAKT FRAM HELLER
     private float currentDurability;
-
+    
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
@@ -24,21 +23,24 @@ public class WeaponSwordPattern : WeaponBaseClass
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
         
+        
     }
 
     private void Update()
     {
         StateChangeObserver();
+
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackAnimName)) // tror den checkar om animatinen är klar
+        {
+            gameObject.GetComponent<Collider>().enabled = false;
+        }
     }
 
-    public override void Attack(Collision enemy)
+    public override void Attack()
     {
-            // delar endast ut dmg på spelaren och inte andra objekt som råkar bli träffad
-            if (enemy.gameObject.layer == 8)
-            {
-               ChangeDurability(durabilityDecrement);
-               enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);  
-            }
+        gameObject.GetComponent<Collider>().enabled = true;
+        anim = parentPlayer.GetComponent<Animator>();    //Hämta parent animator Så kan kolla om färdig
+        // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 
     public override void ThrownAttack(Collision col)
@@ -54,7 +56,7 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void OnCollisionEnter(Collision collision)
     {
         currentState.HandleCollision(collision);
-        Attack(collision);
+        
     }
     
 

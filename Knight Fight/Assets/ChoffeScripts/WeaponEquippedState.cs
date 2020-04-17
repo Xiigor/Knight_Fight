@@ -15,6 +15,7 @@ public class WeaponEquippedState : WeaponIState
     {
         ChangePhysics();
         weapon.HeldPos();
+        
     }
 
     public void ChangePhysics()

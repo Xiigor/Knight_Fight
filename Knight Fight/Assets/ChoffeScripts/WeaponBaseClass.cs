@@ -19,8 +19,9 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public Vector3 heldRotation;
     public Rigidbody rb;
     public Collider col;
+    [HideInInspector] public Animator anim;
 
-    public abstract void Attack(Collision enemy);
+    public abstract void Attack();
     public void ThrowWep()
     {
         currentState.ChangeState(thrownState);

@@ -40,8 +40,6 @@ public class ProjectileFish : ProjectileBase
 
     //public override void LaunchFish()
     //{
-    //    //Throw the weapon the way the player is facing 
-    //    //Avnågon anledning funkade det inte med transform.forward då det va 90 grader fel så fick använda transform.right
     //    rb.velocity += Player.transform.right * ProjectileSpeed;    
     //}
 }

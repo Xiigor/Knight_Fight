@@ -32,7 +32,7 @@ public class WeaponSpearPattern : WeaponBaseClass
         StateChangeObserver();
     }
 
-    public override void Attack(Collision enemy)
+    public override void Attack()
     {
         
         //Vector3 attackZoneCenter = this.gameObject.transform.TransformPoint(offestAttackZonePos);
@@ -40,23 +40,23 @@ public class WeaponSpearPattern : WeaponBaseClass
         //foreach (Collider enemy in hitPlayer)
         //{
             
-            // delar endast ut dmg på spelaren och inte andra objekt som råkar bli träffad och inte på sig själv
-            if (enemy.gameObject.layer == 8)
-            {
-                if (enemy.gameObject.name == parentPlayer.gameObject.name)
-                {
-                  //Gör inget 
-                  //Debug.Log(this.gameObject.GetComponentInParent<GameObject>().name + " Hit my self " + enemy.gameObject.name); 
+            //// delar endast ut dmg på spelaren och inte andra objekt som råkar bli träffad och inte på sig själv
+            //if (enemy.gameObject.layer == 8)
+            //{
+            //    if (enemy.gameObject.name == parentPlayer.gameObject.name)
+            //    {
+            //      //Gör inget 
+            //      //Debug.Log(this.gameObject.GetComponentInParent<GameObject>().name + " Hit my self " + enemy.gameObject.name); 
                  
-                }
-                else
-                {
-                  ChangeDurability(durabilityDecrement);
-                  enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);
-                  Debug.Log("Attack");
+            //    }
+            //    else
+            //    {
+            //      ChangeDurability(durabilityDecrement);
+            //      enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);
+            //      Debug.Log("Attack");
 
-                }
-            }
+            //    }
+            //}
         //}
        
     }
