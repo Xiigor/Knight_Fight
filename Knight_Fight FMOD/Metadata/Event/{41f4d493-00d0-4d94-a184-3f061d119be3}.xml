@@ -69,6 +69,7 @@
 		<relationship name="modules">
 			<destination>{8585c807-af9c-4718-b3e3-562a03ad7352}</destination>
 			<destination>{f6fa2bbb-66ca-4312-9a59-5f9212da2cb8}</destination>
+			<destination>{b4d2d563-8da1-45fb-a209-527385bb9678}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{76361d40-134c-4ad2-997d-c5bcc5c4f771}</destination>
@@ -85,6 +86,7 @@
 	<object class="ParameterProxy" id="{2ef5d32f-fbdc-471e-86ee-38f47213edca}">
 		<relationship name="modules">
 			<destination>{f6fa2bbb-66ca-4312-9a59-5f9212da2cb8}</destination>
+			<destination>{b4d2d563-8da1-45fb-a209-527385bb9678}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{ddc9b910-36d1-40a5-8228-e8f507252046}</destination>
@@ -139,10 +141,10 @@
 	</object>
 	<object class="SingleSound" id="{f6fa2bbb-66ca-4312-9a59-5f9212da2cb8}">
 		<property name="start">
-			<value>1.1000000000000001</value>
+			<value>1.5</value>
 		</property>
 		<property name="length">
-			<value>0.89999999999999991</value>
+			<value>0.5</value>
 		</property>
 		<property name="pitch">
 			<value>-3</value>
@@ -152,6 +154,14 @@
 		</relationship>
 		<relationship name="audioFile">
 			<destination>{2c41c431-6ab9-4d6f-98d2-b87a21616ade}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{b4d2d563-8da1-45fb-a209-527385bb9678}">
+		<property name="length">
+			<value>0.5</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{a703afe5-ba6b-48b1-82c0-32dba0f9c7e7}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{76361d40-134c-4ad2-997d-c5bcc5c4f771}">
