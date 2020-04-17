@@ -18,9 +18,9 @@ public class CameraArenaViewState : CameraAbstractClass
 
     public override void Execute()
     {
-        p_camera.ZoomAcceleration();
+        p_camera.ViewChangeAcceleration();
 
-        MenuView();
+        ViewEntireArena();
     }
 
     public override void Exit()
@@ -28,7 +28,7 @@ public class CameraArenaViewState : CameraAbstractClass
 
     }
 
-    void MenuView()
+    private void ViewEntireArena()
     {
         Vector3 position = new Vector3();
 

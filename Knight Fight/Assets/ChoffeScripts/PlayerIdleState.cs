@@ -2,32 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBasicState : PlayerIState
+public class PlayerIdleState : PlayerIState
 {
     private readonly PlayerStatePattern player;
 
-    public PlayerBasicState(PlayerStatePattern statePatternPlayer)
+    public PlayerIdleState(PlayerStatePattern statePatternPlayer)
     {
         player = statePatternPlayer;
     }
-    public void UpdateState()
-    {
-        player.ChangeDirection();
-        player.Movement();
-        if (player.moveDir == Vector2.zero)
-        {
-            ChangeState(player.idleState);
-        }
 
-    }
     public void ChangeState(PlayerIState newState)
     {
-        if(newState == player.deadState)
+        if (newState == player.deadState)
         {
             player.currentState = newState;
         }
 
-        else if (newState == player.idleState)
+        else if (newState == player.basicState)
         {
             player.currentState = newState;
         }
@@ -37,6 +28,16 @@ public class PlayerBasicState : PlayerIState
             player.currentState = newState;
         }
     }
+
+    public void UpdateState()
+    {
+        player.ChangeDirection();
+        if (player.moveDir != Vector2.zero)
+        {
+            ChangeState(player.basicState);
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         player.health -= damage;

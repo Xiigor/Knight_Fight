@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using FMODUnity;
+
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
     private PlayerIState stateChangeObserver;
+
     [HideInInspector] public PlayerBasicState basicState;
+    [HideInInspector] public PlayerIdleState idleState;
     [HideInInspector] public PlayerDashState dashState;
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
-    public AudioPlayer audioPlayer;
+    
 
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
@@ -26,8 +28,9 @@ public class PlayerStatePattern : MonoBehaviour
 
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
-    [Range(0.0f, 1.0f)] public float movementInputForDashDirThreshhold = 0.25f;
-    private float internalDashRayDist = 1.1f;
+    public float attackAnimDuration;
+    private float movementInputForDashDirThreshhold = 0.25f; //Fixa så att movement är 0 eller 1
+    public float internalDashRayDist = 1.3f;
     public bool canDash = true;
 
     public GameObject weapon;
@@ -35,42 +38,44 @@ public class PlayerStatePattern : MonoBehaviour
     public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
 
-    PlayerControls playerControls;
     [HideInInspector] public Vector2 moveDir;
     Vector2 moveLastDir;
     Vector3 move;
-    Vector3 lastMove;
+    public Vector3 lastMove;
     public float maxHealth = 100f;
     public float health;
     [HideInInspector] public Collider col;
     [HideInInspector] List<Collider> ignoredColliders;
+    private Rigidbody rb;
+    public AudioPlayer audioPlayer;
+
+    [SerializeField] private int playerIndex;
+
+
     private void Awake()
     {
         health = maxHealth;
         basicState = new PlayerBasicState(this);
+        idleState = new PlayerIdleState(this);
+        currentState = stateChangeObserver = idleState;
+
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
         deadState = new PlayerDeadState(this);
         attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
         ignoredColliders = new List<Collider>();
+        rb = GetComponent<Rigidbody>();
+        audioPlayer = GetComponent<AudioPlayer>();
         internalGCDTimer = globalCD;
-        internalDashTimer = dashCD;
+        internalDashTimer = dashCD;  
 
-        
-        playerControls = new PlayerControls();
-        playerControls.Gameplay.Move.performed += ctx => moveDir  = ctx.ReadValue<Vector2>();
-        playerControls.Gameplay.Move.canceled += ctx => moveDir = Vector2.zero;
-        playerControls.Gameplay.Dash.performed += ctx => currentState.ChangeState(dashState);
-        playerControls.Gameplay.ThrowWep.performed += ctx => currentState.ChangeState(throwState);
-        playerControls.Gameplay.Attack.performed += ctx => currentState.ChangeState(attackState);
     }
-    private void Start()
-    {
-        currentState = stateChangeObserver = basicState;
-    }
+
     private void FixedUpdate()
     {
+        StateUpdateObserver();
+        currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
 
@@ -85,7 +90,6 @@ public class PlayerStatePattern : MonoBehaviour
         {
             canDash = true;
         }
-
     }
 
     private void Update()
@@ -106,9 +110,12 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalAttackTimer += Time.deltaTime;
         }
-        StateUpdateObserver();
-        currentState.UpdateState();
     }
+    public int GetPlayerIndex()
+    {
+        return playerIndex;
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -116,6 +123,7 @@ public class PlayerStatePattern : MonoBehaviour
         if (collision.gameObject.tag == projectileTag)
         {
             OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+
             Debug.Log(gameObject.name + "Hit by wep in projectile state!!");
         }
         
@@ -128,7 +136,7 @@ public class PlayerStatePattern : MonoBehaviour
         // kanske måste lägga till att ignorera vapen
         if (currentState == dashState)
         {
-            currentState.ChangeState(basicState);
+            currentState.ChangeState(idleState);
         }
     }
     public void Attack()
@@ -137,17 +145,16 @@ public class PlayerStatePattern : MonoBehaviour
         {
            if(weapon.GetComponent<WeaponSwordPattern>())
             {
-                //GameObject temp = GameObject.Instantiate(swordDamagePrefab, transform,false);
-                //temp.GetComponent<WeaponDamageZone>().damage = weapon.gameObject.GetComponent<WeaponSwordPattern>().damage;
                 Debug.Log("Attacks with sword");
+                
             }
         }
         else
         {
+            //audioPlayer.PlayerUnarmedAttack(); --- detta får nog vänta lite
             //do basic punch attack.
         }
     }
-    
 
     public void RestoreIgnoredColliders()
     {
@@ -226,43 +233,38 @@ public class PlayerStatePattern : MonoBehaviour
         }
     }
 
-    public void Movement()
+    public void ChangeDirection()
     {
-
         move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
-        lastMove = new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier;
-
         if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
             moveLastDir = moveDir;
         }
-        transform.Translate(move, Space.World);
+
+        lastMove = Vector3.Normalize(new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier);
         transform.forward = lastMove;
+    }
+
+    public void Movement()
+    {
+        rb.velocity = move * movementSpeedMultiplier;
     }
 
     public void Dash()
     {
-        transform.position += lastMove * dashSpeed *Time.deltaTime;
+        transform.Translate(lastMove * dashSpeed * Time.deltaTime, Space.World);
     }
 
     public void ThrowItem()
     {
-            weapon.GetComponent<WeaponBaseClass>().ThrowWep();
+        audioPlayer.PlayerThrowing();
+        weapon.GetComponent<WeaponBaseClass>().ThrowWep();
     }
 
     public void OnHit(float damage)
     {
+        audioPlayer.PlayerHurting();
         currentState.TakeDamage(damage);
-    }
-
-    private void OnEnable()
-    {
-        playerControls.Gameplay.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerControls.Gameplay.Disable();
     }
 
     private float Hypotenuse(float sideA, float sideB)
@@ -275,28 +277,28 @@ public class PlayerStatePattern : MonoBehaviour
         if(stateChangeObserver != currentState)
         {
             stateChangeObserver = currentState;
-            if(stateChangeObserver == basicState)
+            if (stateChangeObserver == idleState)
             {
-                //spelaren gick precis in i basicState
-                Debug.Log("basicState");
+                //spelaren gick precis in i idleState
+            }
+            if (stateChangeObserver == basicState)
+            {
+                //spelaren gick precis in i "MoveState"
             }
             if(stateChangeObserver == dashState)
             {
-                audioPlayer.PlayerDashing();
                 //Spelaren gick precis in i dashState
-                Debug.Log("Dashstate");
+                audioPlayer.PlayerDashing();
             }
             if (stateChangeObserver == throwState)
             {
-                audioPlayer.PlayerThrowing();
                 //Spelaren gick precis in i throwState
-                Debug.Log("throwstate");
+                audioPlayer.PlayerThrowing();
             }
             if (stateChangeObserver == attackState)
             {
-                audioPlayer.PlayerAttacking();
                 //Spelaren gick precis in i attackState
-                Debug.Log("attackstate");
+                
             }
         }
     }

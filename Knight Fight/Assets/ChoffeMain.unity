@@ -912,7 +912,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1141650061
+--- !u!1 &1208885380
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -920,8 +920,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1141650063}
-  - component: {fileID: 1141650062}
+  - component: {fileID: 1208885382}
+  - component: {fileID: 1208885381}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -929,20 +929,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1141650062
+--- !u!114 &1208885381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141650061}
+  m_GameObject: {fileID: 1208885380}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 0
-  m_MaxPlayerCount: 1
+  m_MaxPlayerCount: 2
   m_AllowJoining: 1
   m_JoinBehavior: 0
   m_PlayerJoinedEvent:
@@ -977,15 +977,15 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!4 &1141650063
+--- !u!4 &1208885382
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141650061}
+  m_GameObject: {fileID: 1208885380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.45, y: 77.6, z: -81.2}
+  m_LocalPosition: {x: -7.720813, y: 1.3, z: -17.17055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1471,7 +1471,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712193731}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8ebff57b27775a642980f5d6f9fade25, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

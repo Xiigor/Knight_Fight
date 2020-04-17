@@ -4,9 +4,12 @@ using UnityEngine;
 using FMODUnity;
 public class AudioPlayer : MonoBehaviour
 {
+    public int givenGender;
 
-
-
+    public void OnEnable()
+    {
+        givenGender = Random.Range(0, 2);
+    }
 
     [EventRef]
     public string playerHurt;
@@ -20,9 +23,9 @@ public class AudioPlayer : MonoBehaviour
     public string playerHurtFemale;
     public FMOD.Studio.EventInstance playerHurtingFemale;
 
-    [EventRef]
-    public string playerAttack;
-    public FMOD.Studio.EventInstance playerAttacking;
+    //[EventRef]
+    //public string playerAttack;
+    //public FMOD.Studio.EventInstance playerAttacking;
 
     [EventRef]
     public string playerDash;
@@ -32,14 +35,15 @@ public class AudioPlayer : MonoBehaviour
     public string playerThrow;
     public FMOD.Studio.EventInstance playerThrowing;
 
-    [EventRef]
-    public string playerThrowMale;
-    public FMOD.Studio.EventInstance playerThrowingMale;
+    //[EventRef]
+    //public string playerThrowMale;
+    //public FMOD.Studio.EventInstance playerThrowingMale;
 
 
 
     public void PlayerThrowing()
     {
+        Debug.Log("Player throwing sound");
         playerThrowing = RuntimeManager.CreateInstance(playerThrow);
         RuntimeManager.PlayOneShot(playerThrow, transform.position);
         playerThrowing.start();
@@ -47,33 +51,40 @@ public class AudioPlayer : MonoBehaviour
 
     public void PlayerDashing()
     {
+        Debug.Log("Player dashing sound");
         playerDashing = RuntimeManager.CreateInstance(playerDash);
         RuntimeManager.PlayOneShot(playerDash, transform.position);
         playerDashing.start();
     }
 
-    public void PlayerAttacking()
+    
+
+    public void PlayerHurting()
     {
-        playerAttacking = RuntimeManager.CreateInstance(playerAttack);
-        RuntimeManager.PlayOneShot(playerAttack, transform.position);
-        playerAttacking.start();
-    }
-    public void PlayerHurting() //Spelar alla vapenljud för female
-    {
+        if(givenGender == 0)
+        {
+            PlayerHurtingFemale();
+        }
+        else
+        {
+            PlayerHurtingMale();
+        }
         playerHurting = RuntimeManager.CreateInstance(playerHurt);
         RuntimeManager.PlayOneShot(playerHurt, transform.position);
         playerHurting.start();
     }
-    public void PlayerHurtingMale() //Spelar alla vapenljud för male
+    private void PlayerHurtingMale() //Spelar alla vapenljud för male
     {
+        Debug.Log("MalePlayer got hurt");
         playerHurtingMale = RuntimeManager.CreateInstance(playerHurtMale);
         RuntimeManager.PlayOneShot(playerHurtMale, transform.position);
         playerHurtingMale.start();
     }
-    public void PlayerHurtingFemale() //Spelar alla vapenljud för female
+    private void PlayerHurtingFemale() //Spelar alla vapenljud för female
     {
-        playerHurtingMale = RuntimeManager.CreateInstance(playerHurtFemale);
-        RuntimeManager.PlayOneShot(playerHurtFemale, transform.position);
-        playerHurtingFemale.start();
+        Debug.Log("femalePlayer got hurt");
+       playerHurtingMale = RuntimeManager.CreateInstance(playerHurtFemale);
+       RuntimeManager.PlayOneShot(playerHurtFemale, transform.position);
+       playerHurtingFemale.start();
     }
 }
