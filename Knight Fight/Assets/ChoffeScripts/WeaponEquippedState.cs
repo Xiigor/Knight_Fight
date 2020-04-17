@@ -13,6 +13,7 @@ public class WeaponEquippedState : WeaponIState
 
     public void OnStateEnter()
     {
+        weapon.gameObject.layer = weapon.EquippedLayer;
         ChangePhysics();
         weapon.HeldPos();
         

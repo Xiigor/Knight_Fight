@@ -7,6 +7,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public GameObject damageZoneObject = null;
 
     public WeaponIState currentState;
+    public WeaponIState stateChangeObserver;
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
@@ -21,6 +22,10 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public string playerTag = "Player";
     public string projectileTag = "Projectile";
     public string weaponTag = "Weapon";
+
+    public int UnequippedLayer = 13;
+    public int EquippedLayer = 14;
+
     public Vector3 damageZonePosition;
     public Vector3 heldPosition;
     public Vector3 heldRotation;
@@ -40,14 +45,17 @@ abstract public class WeaponBaseClass : MonoBehaviour
         transform.localPosition = heldPosition;
         transform.localEulerAngles = heldRotation;
     }
+
     public void BreakWeapon()
     {
         //destroy the weapon and all traces of it
     }
+
     public void SetParentPlayer(Collision collision)
     {
         //sätter spelaren till förälder
-        transform.SetParent(collision.transform.GetChild(0));
+        transform.SetParent(collision.transform.GetChild(0)); // ----- när spelaren senare får flera childobjects kommer detta gå sönder
+
 
         parentPlayer = collision.gameObject;
 

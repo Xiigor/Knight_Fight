@@ -17,7 +17,7 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     private void Start()
     {
-        currentState = unequippedState;
+        currentState = stateChangeObserver = unequippedState;
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
@@ -30,10 +30,10 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentState.UpdateState();
         StateChangeObserver();
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackAnimName)) // tror den checkar om animatinen är klar
-        {
-            gameObject.GetComponent<Collider>().enabled = false;
-        }
+        //if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackAnimName)) // tror den checkar om animatinen är klar
+        //{
+        //    gameObject.GetComponent<Collider>().enabled = false;
+        //}
     }
 
     public override void Attack()
@@ -41,8 +41,6 @@ public class WeaponSwordPattern : WeaponBaseClass
         gameObject.GetComponent<Collider>().enabled = true;
         anim = parentPlayer.GetComponent<Animator>();    //Hämta parent animator Så kan kolla om färdig
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
-    }
-
     }
 
     public override void ChangeDurability(float durabilityDecrement)
@@ -59,14 +57,4 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentState.HandleCollision(collision);
         
     }
-    
-
-
-    //visuellt visa träffzonen
-    //void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(this.transform.position, attackZone);
-
-    //}
-    }
+}

@@ -26,8 +26,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
 
     private void Update()
     {
-        StateChangeObserver();
-       
+        StateChangeObserver(); 
     }
 
     public override void Attack()
@@ -48,12 +47,9 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         currentState.HandleCollision(collision);
     }
 
-    public override void ThrownAttack(Collision col)
+    public override void ChangeState(WeaponIState newState)
     {
-        col.gameObject.GetComponent<PlayerStatePattern>().OnHit(thrownDamage);
+        currentState = newState;
+        currentState.OnStateEnter();
     }
-   
-
-
-
 }
