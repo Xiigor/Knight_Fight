@@ -4,7 +4,7 @@ using UnityEngine;
 abstract public class WeaponBaseClass : MonoBehaviour
 {
     public GameObject parentPlayer = null;
-    public GameObject damageZoneObject = null;
+    public AudioWeapon audioPlayer;
 
     public WeaponIState currentState;
     public WeaponIState stateChangeObserver;
@@ -74,7 +74,6 @@ abstract public class WeaponBaseClass : MonoBehaviour
         if (stateChangeObserver != currentState)
         {
             stateChangeObserver = currentState;
-            Debug.Log(currentState);
             currentState.OnStateEnter();
         }
     }

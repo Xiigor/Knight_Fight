@@ -15,6 +15,7 @@ public class WeaponThrownState : WeaponIState
 
     public void OnStateEnter()
     {
+        weapon.audioPlayer.WeaponBeingThrown();
         movementApplied = false;
         ChangePhysics();
         weapon.gameObject.tag = weapon.projectileTag;
@@ -48,7 +49,11 @@ public class WeaponThrownState : WeaponIState
 
     public void HandleCollision(Collision col)
     {
-        Debug.Log(weapon.gameObject.name + " Hits " + col.gameObject.name);
+        // här kan man lägga in att olika ljud ska spelas baserat på föremål man träffar.
+        if(col.gameObject.tag == weapon.environmentTag)
+        {
+            weapon.audioPlayer.ThrownWepHittingEnvironment();
+        }
     }
 
     public void AddThrownForce()

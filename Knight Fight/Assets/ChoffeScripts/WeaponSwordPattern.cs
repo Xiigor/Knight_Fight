@@ -21,8 +21,7 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-        
-        
+        audioPlayer = GetComponent<AudioWeapon>();  
     }
 
     private void Update()
