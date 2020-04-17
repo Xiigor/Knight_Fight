@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 7360429787406286957}
   - component: {fileID: 8054881271533271027}
   - component: {fileID: 3749114024072953969}
-  - component: {fileID: -2617013292636139360}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player
@@ -331,7 +330,7 @@ MonoBehaviour:
   movementSpeedMultiplier: 35
   dashDuration: 0.1
   dashSpeed: 210
-  attackAnimDuration: 0
+  movementInputForDashDirThreshhold: 0.25
   internalDashRayDist: 1.1
   canDash: 1
   weapon: {fileID: 0}
@@ -343,27 +342,3 @@ MonoBehaviour:
   maxHealth: 100
   health: 0
   col: {fileID: 0}
-  audioPlayer: {fileID: -2617013292636139360}
-  UnequippedLayer: 13
-  EquippedLayer: 14
-  playerIndex: 0
---- !u!114 &-2617013292636139360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7360429787406286966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70453bd007f82954e96677afc576396b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  givenGender: 0
-  playerHurt: 
-  playerHurtMale: event:/Player/Player_Hurt_Generic_Male
-  playerHurtFemale: event:/Player/Player_Hurt_Fish_Female
-  playerAttack: 
-  playerDash: event:/Player/Player_Dash
-  playerThrow: event:/Weapons/Weapon_Throw
-  playerThrowMale: 

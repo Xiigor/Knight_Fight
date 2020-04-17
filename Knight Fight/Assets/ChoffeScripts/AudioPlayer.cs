@@ -11,7 +11,6 @@ public class AudioPlayer : MonoBehaviour
         givenGender = Random.Range(0, 2);
     }
 
-
     [EventRef]
     public string playerHurtMale;
     public FMOD.Studio.EventInstance playerHurtingMale;
@@ -20,10 +19,6 @@ public class AudioPlayer : MonoBehaviour
     public string playerHurtFemale;
     public FMOD.Studio.EventInstance playerHurtingFemale;
 
-    //[EventRef]
-    //public string playerAttack;
-    //public FMOD.Studio.EventInstance playerAttacking;
-
     [EventRef]
     public string playerDash;
     public FMOD.Studio.EventInstance playerDashing;
@@ -31,11 +26,6 @@ public class AudioPlayer : MonoBehaviour
     [EventRef]
     public string playerThrow;
     public FMOD.Studio.EventInstance playerThrowing;
-
-    //[EventRef]
-    //public string playerThrowMale;
-    //public FMOD.Studio.EventInstance playerThrowingMale;
-
 
 
     public void PlayerThrowing()
@@ -54,8 +44,6 @@ public class AudioPlayer : MonoBehaviour
         playerDashing.start();
     }
 
-    
-
     public void PlayerHurting()
     {
         if(givenGender == 0)
@@ -66,7 +54,6 @@ public class AudioPlayer : MonoBehaviour
         {
             PlayerHurtingMale();
         }
-
     }
     private void PlayerHurtingMale() //Spelar alla vapenljud för male
     {
@@ -78,8 +65,8 @@ public class AudioPlayer : MonoBehaviour
     private void PlayerHurtingFemale() //Spelar alla vapenljud för female
     {
         Debug.Log("femalePlayer got hurt");
-       playerHurtingMale = RuntimeManager.CreateInstance(playerHurtFemale);
-       RuntimeManager.PlayOneShot(playerHurtFemale, transform.position);
-       playerHurtingFemale.start();
+        playerHurtingMale = RuntimeManager.CreateInstance(playerHurtFemale);
+        RuntimeManager.PlayOneShot(playerHurtFemale, transform.position);
+        playerHurtingFemale.start();
     }
 }
