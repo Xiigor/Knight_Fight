@@ -28,7 +28,8 @@ public class PlayerStatePattern : MonoBehaviour
 
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
-    [Range(0.0f, 1.0f)] public float movementInputForDashDirThreshhold = 0.25f;
+    public float attackAnimDuration;
+    private float movementInputForDashDirThreshhold = 0.25f; //Fixa så att movement är 0 eller 1
     public float internalDashRayDist = 1.3f;
     public bool canDash = true;
 
@@ -46,7 +47,7 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public Collider col;
     [HideInInspector] List<Collider> ignoredColliders;
     private Rigidbody rb;
-
+    public AudioPlayer audioPlayer;
 
     [SerializeField] private int playerIndex;
 
@@ -65,6 +66,7 @@ public class PlayerStatePattern : MonoBehaviour
         col = GetComponent<Collider>();
         ignoredColliders = new List<Collider>();
         rb = GetComponent<Rigidbody>();
+        audioPlayer = GetComponent<AudioPlayer>();
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;  
 
@@ -144,10 +146,12 @@ public class PlayerStatePattern : MonoBehaviour
            if(weapon.GetComponent<WeaponSwordPattern>())
             {
                 Debug.Log("Attacks with sword");
+                
             }
         }
         else
         {
+            //audioPlayer.PlayerUnarmedAttack(); --- detta får nog vänta lite
             //do basic punch attack.
         }
     }
@@ -253,11 +257,13 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void ThrowItem()
     {
-            weapon.GetComponent<WeaponBaseClass>().ThrowWep();
+        audioPlayer.PlayerThrowing();
+        weapon.GetComponent<WeaponBaseClass>().ThrowWep();
     }
 
     public void OnHit(float damage)
     {
+        audioPlayer.PlayerHurting();
         currentState.TakeDamage(damage);
     }
 
@@ -274,22 +280,25 @@ public class PlayerStatePattern : MonoBehaviour
             if (stateChangeObserver == idleState)
             {
                 //spelaren gick precis in i idleState
-                Debug.Log("idleState");
             }
             if (stateChangeObserver == basicState)
             {
                 //spelaren gick precis in i "MoveState"
-                Debug.Log("basicState");
             }
             if(stateChangeObserver == dashState)
             {
                 //Spelaren gick precis in i dashState
-                Debug.Log("Dashstate");
+                audioPlayer.PlayerDashing();
             }
             if (stateChangeObserver == throwState)
             {
                 //Spelaren gick precis in i throwState
-                Debug.Log("throwstate");
+                audioPlayer.PlayerThrowing();
+            }
+            if (stateChangeObserver == attackState)
+            {
+                //Spelaren gick precis in i attackState
+                
             }
         }
     }
