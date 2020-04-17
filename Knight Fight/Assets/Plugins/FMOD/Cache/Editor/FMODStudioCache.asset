@@ -18,6 +18,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-7056613477746407697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/Victory
+  m_EditorClassIdentifier: 
+  Name: Victory
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-5855861334637044670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,17 +99,42 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 8777830985683036688}
-  - {fileID: -9016654520417229136}
+  - {fileID: 4007747714478557160}
+  - {fileID: 6429618785931395084}
   EditorEvents:
-  - {fileID: 3342755555633153571}
+  - {fileID: 2646655931218552779}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -9016654520417229136}
+  - {fileID: 6429618785931395084}
   StringsBanks:
-  - {fileID: 8777830985683036688}
-  stringsBankWriteTime: 637215095317106717
+  - {fileID: 4007747714478557160}
+  stringsBankWriteTime: 637227287845760550
   cacheVersion: 3
+--- !u!114 &2646655931218552779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/Gameplay
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/Gameplay
+  guid: e703cf655bc2ea4c85a80d6af4e832af
+  Banks:
+  - {fileID: 6429618785931395084}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -7056613477746407697}
+  - {fileID: 6226615804357272478}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 57657
 --- !u!114 &3342755555633153571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +178,26 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &4007747714478557160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../Knight_Fight FMOD/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637227287845760550
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 838
+  Exists: 1
 --- !u!114 &4669869881235062808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +214,41 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+  Exists: 1
+--- !u!114 &6226615804357272478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/Next Loop
+  m_EditorClassIdentifier: 
+  Name: Next Loop
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &6429618785931395084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Knight_Fight FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637227287845710496
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &8777830985683036688
 MonoBehaviour:
