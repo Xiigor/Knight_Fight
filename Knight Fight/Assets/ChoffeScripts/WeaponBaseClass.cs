@@ -26,6 +26,8 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public Vector3 heldRotation;
     public Rigidbody rb;
     public Collider col;
+    [HideInInspector] public Animator anim;
+
     public abstract void Attack();
     public void ThrowWep()
     {
@@ -59,4 +61,14 @@ abstract public class WeaponBaseClass : MonoBehaviour
     }
     public abstract void OnCollisionEnter(Collision collision);
     public abstract void ChangeState(WeaponIState newState);
+    public void StateChangeObserver()
+    {
+        if (stateChangeObserver != currentState)
+        {
+            stateChangeObserver = currentState;
+            Debug.Log(currentState);
+            currentState.OnStateEnter();
+        }
+    }
+
 }
