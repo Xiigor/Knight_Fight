@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45035917, g: 0.5003778, b: 0.575274, a: 1}
+  m_IndirectSpecularColor: {r: 0.45035887, g: 0.50037706, b: 0.575273, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3544,13 +3544,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70453bd007f82954e96677afc576396b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHurt: 
-  playerHurtMale: 
-  playerHurtFemale: 
-  playerAttack: 
-  playerDash: 
-  playerThrow: 
-  playerThrowMale: 
+  givenGender: 0
+  playerHurtMale: event:/Player/Player_Hurt_Generic_Male
+  playerHurtFemale: event:/Player/Player_Hurt_Generic_Female
+  playerDash: event:/Player/Player_Dash
+  playerThrow: event:/Weapons/Weapon_Throw
 --- !u!1001 &890467172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3978,13 +3976,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70453bd007f82954e96677afc576396b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHurt: 
-  playerHurtMale: 
-  playerHurtFemale: 
-  playerAttack: 
-  playerDash: 
-  playerThrow: 
-  playerThrowMale: 
+  givenGender: 0
+  playerHurtMale: event:/Player/Player_Hurt_Generic_Male
+  playerHurtFemale: event:/Player/Player_Hurt_Generic_Female
+  playerDash: event:/Player/Player_Dash
+  playerThrow: event:/Weapons/Weapon_Throw
 --- !u!4 &999065209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
@@ -4814,7 +4810,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1210366976}
-  - component: {fileID: 1210366975}
   - component: {fileID: 1210366977}
   m_Layer: 0
   m_Name: GameManager
@@ -4823,54 +4818,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1210366975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210366974}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NotificationBehavior: 0
-  m_MaxPlayerCount: 2
-  m_AllowJoining: 1
-  m_JoinBehavior: 2
-  m_PlayerJoinedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.InputSystem.PlayerInputManager+PlayerJoinedEvent, Unity.InputSystem,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_PlayerLeftEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.InputSystem.PlayerInputManager+PlayerLeftEvent, Unity.InputSystem,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_JoinAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Join
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 0ff87ea6-2bb4-4e31-b58f-99c14410db60
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-    m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 5637299219437966504, guid: a6db1f7ffa7842045a4548ff88464daa,
-    type: 3}
-  m_SplitScreen: 0
-  m_MaintainAspectRatioInSplitScreen: 0
-  m_FixedNumberOfSplitScreens: -1
-  m_SplitScreenRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!4 &1210366976
 Transform:
   m_ObjectHideFlags: 0
@@ -4901,13 +4848,13 @@ MonoBehaviour:
     type: 3}
   player1: 1
   player1Object: {fileID: 888531735}
-  player2: 1
+  player2: 0
   player2Object: {fileID: 987941614}
   player3: 0
   player3Object: {fileID: 0}
   player4: 0
   player4Object: {fileID: 0}
-  trigger: 1
+  trigger: 0
   triggered: 0
 --- !u!1 &1217460267
 GameObject:
@@ -8459,6 +8406,11 @@ PrefabInstance:
       propertyPath: movementInputForDashDirThreshhold
       value: 0.26
       objectReference: {fileID: 0}
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 888531736}
     m_RemovedComponents:
     - {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
@@ -8564,6 +8516,11 @@ PrefabInstance:
       propertyPath: movementInputForDashDirThreshhold
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 987941615}
     m_RemovedComponents:
     - {fileID: 7595446105044283237, guid: 85cbae8dd56505844be748e046e20472, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 85cbae8dd56505844be748e046e20472, type: 3}
