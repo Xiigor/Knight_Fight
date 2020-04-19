@@ -13,16 +13,15 @@ public class WeaponUnequippedState : WeaponIState
 
     public void OnStateEnter()
     {
+        weapon.gameObject.layer = weapon.UnequippedLayer;
         ChangePhysics();
         if (weapon.parentPlayer != null)
         {
             Physics.IgnoreCollision(weapon.parentPlayer.GetComponent<Collider>(), weapon.col, false);
-            weapon.parentPlayer.GetComponent<PlayerStatePattern>().weapon = null;
-            weapon.parentPlayer.GetComponent<PlayerStatePattern>().RestoreIgnoredColliders();
             weapon.parentPlayer = null;
-            weapon.gameObject.tag = weapon.weaponTag;
         }
-        
+        weapon.gameObject.tag = weapon.weaponTag;
+
     }
     public void UpdateState()
     {
@@ -55,11 +54,14 @@ public class WeaponUnequippedState : WeaponIState
             if(col.gameObject.GetComponent<PlayerStatePattern>().weapon == null)
             {
                 weapon.SetParentPlayer(col);
-                col.gameObject.GetComponent<PlayerStatePattern>().weapon = weapon.gameObject;
-                Physics.IgnoreCollision(weapon.parentPlayer.GetComponent<Collider>(), weapon.col, true);
-               
+
+                col.gameObject.GetComponent<PlayerStatePattern>().PickupItem(weapon.gameObject);
+                //col.gameObject.GetComponent<PlayerStatePattern>().weapon = weapon.gameObject;
+                //Physics.IgnoreCollision(weapon.parentPlayer.GetComponent<Collider>(), weapon.col, true);
+
                 ChangeState(weapon.equippedState);
             }
         }
     }
+   
 }
