@@ -7,19 +7,36 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    private PlayerInput playerInput;
+    //private PlayerInput playerInput;
+    private PlayerConfiguration playerConfig;
     private PlayerMover mover;
 
+    [SerializeField]
+    private MeshRenderer playerMesh;
+
+    private PlayerControls controls;
     private void Awake()
     {
-        playerInput = GetComponent<PlayerInput>();
-        var movers = FindObjectsOfType<PlayerMover>();  //Assign the right mover to the current playerInputHandler that gets "spawned".
-        var index = playerInput.playerIndex;    //index 0 = player 1, index 1 = player 2 osv
+        mover = GetComponent<PlayerMover>();  //Assign the right mover to the current playerInputHandler that gets "spawned".
+        controls = new PlayerControls();
 
-
-        mover = movers.FirstOrDefault(m => m.GetPlayerIndex() == index);
         //Gets our PlayerMover object
-        //mover = GetComponent<PlayerMover>();
+    }
+
+    //Lets the player change color
+    public void InitializePlayer(PlayerConfiguration pc)
+    {
+        playerConfig = pc;
+        playerMesh.material = pc.PlayerMaterial;
+        playerConfig.Input.onActionTriggered += Input_onActionTriggered;    //Using onActionTriggered because we use C# events
+    }
+
+    private void Input_onActionTriggered(CallbackContext obj)
+    {
+        if (obj.action.name == controls.PlayerMovement.MovementForGamepad.name) //MovementForGamepad can be changed depending on the name for Actions in Input Actions
+        {
+            OnMove(obj);
+        }
     }
 
     public void OnMove(CallbackContext context)

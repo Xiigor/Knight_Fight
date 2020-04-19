@@ -7,8 +7,6 @@ public class PlayerMover : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 3f;
 
-    [SerializeField]
-    private int playerIndex = 0;
 
     private CharacterController controller;
 
@@ -22,10 +20,6 @@ public class PlayerMover : MonoBehaviour
     
     }
 
-    public int GetPlayerIndex()
-    {
-        return playerIndex;
-    }
     public void SetInputVector(Vector2 direction)
     {
         //Sets the direction where we want to move

@@ -33,6 +33,11 @@ public class PlayerConfigurationManager : MonoBehaviour
         }
     }
 
+    public List<PlayerConfiguration> GetPlayerConfigs()
+    {
+        return playerConfigs;
+    }
+
     //Method for player to set their colors
     public void SetPlayerColor(int index, Material color)
     {

@@ -12,6 +12,14 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "SelectButtonOnGamepad",
+                    "type": "Button",
+                    "id": "699faa6c-883a-4c27-b408-a178297f6769",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -80,6 +88,17 @@
                     "action": "MovementForGamepad",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "a1b56ca4-e3ac-4eeb-a146-659c6180701c",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectButtonOnGamepad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
