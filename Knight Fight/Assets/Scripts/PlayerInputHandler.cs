@@ -14,11 +14,11 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField]
     private MeshRenderer playerMesh;
 
-    private PlayerControls controls;
+    private PlayerControlsInput controls;
     private void Awake()
     {
         mover = GetComponent<PlayerMover>();  //Assign the right mover to the current playerInputHandler that gets "spawned".
-        controls = new PlayerControls();
+        controls = new PlayerControlsInput();
 
         //Gets our PlayerMover object
     }
