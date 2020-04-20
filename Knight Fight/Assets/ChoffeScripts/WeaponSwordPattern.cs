@@ -6,7 +6,6 @@ public class WeaponSwordPattern : WeaponBaseClass
 {
     public string attackAnimName;
     public float durabilityDecrement;
-    // FIXA BUGGAR FÖRST INNAN DU FORTSÄTTER, SPELAREN ROTERAR INNAN VAPNET KASTAS IVÄG OCH DET ÄR FUCKING WEIRD. VAPNET KASTAS INTE ALLTID RAKT FRAM HELLER
     private float currentDurability;
     
     private void Awake()
@@ -18,22 +17,22 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     private void Start()
     {
-        currentState = unequippedState;
+        currentState = stateChangeObserver = unequippedState;
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-        
-        
+        audioPlayer = GetComponent<AudioWeapon>();  
     }
 
     private void Update()
     {
+        currentState.UpdateState();
         StateChangeObserver();
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackAnimName)) // tror den checkar om animatinen är klar
-        {
-            gameObject.GetComponent<Collider>().enabled = false;
-        }
+        //if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackAnimName)) // tror den checkar om animatinen är klar
+        //{
+        //    gameObject.GetComponent<Collider>().enabled = false;
+        //}
     }
 
     public override void Attack()
@@ -43,29 +42,18 @@ public class WeaponSwordPattern : WeaponBaseClass
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 
-    public override void ThrownAttack(Collision col)
-    {
-        col.gameObject.GetComponent<PlayerStatePattern>().OnHit(thrownDamage);
-    }
-
     public override void ChangeDurability(float durabilityDecrement)
     {
         currentDurability -= durabilityDecrement;
     }
-
+    public override void ChangeState(WeaponIState newState)
+    {
+        currentState = newState;
+        currentState.OnStateEnter();
+    }
     public override void OnCollisionEnter(Collision collision)
     {
         currentState.HandleCollision(collision);
         
     }
-    
-
-
-    //visuellt visa träffzonen
-    //void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(this.transform.position, attackZone);
-
-    //}
-    }
+}

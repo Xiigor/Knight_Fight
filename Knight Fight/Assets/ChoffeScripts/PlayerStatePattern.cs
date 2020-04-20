@@ -2,71 +2,79 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
     private PlayerIState stateChangeObserver;
+
     [HideInInspector] public PlayerBasicState basicState;
+    [HideInInspector] public PlayerIdleState idleState;
     [HideInInspector] public PlayerDashState dashState;
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
+    
 
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
+    public float attackCD = 0.5f;
     [HideInInspector]  public  float internalGCDTimer;
-    [HideInInspector] public float internalDashTimer;   
-    
+    [HideInInspector] public float internalDashTimer;
+    [HideInInspector] public float internalAttackTimer;
+
 
     public float movementSpeedMultiplier = 35.0f;
 
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
-    [Range(0.0f, 1.0f)] public float movementInputForDashDirThreshhold = 0.25f;
-    private float internalDashRayDist = 1.1f;
+    public float attackAnimDuration;
+    private float movementInputForDashDirThreshhold = 0.25f; //Fixa så att movement är 0 eller 1
+    public float internalDashRayDist = 1.3f;
     public bool canDash = true;
-
-    public float throwAnimDuration = 0.2f;
 
     public GameObject weapon;
     public string weaponTag = "Weapon";
-
+    public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
 
-    PlayerControls playerControls;
     [HideInInspector] public Vector2 moveDir;
     Vector2 moveLastDir;
     Vector3 move;
-    Vector3 lastMove;
+    public Vector3 lastMove;
     public float maxHealth = 100f;
-    [HideInInspector] public float health;
+    public float health;
     [HideInInspector] public Collider col;
-    [HideInInspector] List<Collider> ignoredColliders;
+    private Rigidbody rb;
+    public AudioPlayer audioPlayer;
+    public int UnequippedLayer = 13;
+    public int EquippedLayer = 14;
+    [SerializeField] private int playerIndex;
+
+
     private void Awake()
     {
         health = maxHealth;
         basicState = new PlayerBasicState(this);
+        idleState = new PlayerIdleState(this);
+        currentState = stateChangeObserver = idleState;
+
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
         deadState = new PlayerDeadState(this);
+        attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
-        ignoredColliders = new List<Collider>();
+        rb = GetComponent<Rigidbody>();
+        audioPlayer = GetComponent<AudioPlayer>();
         internalGCDTimer = globalCD;
-        internalDashTimer = dashCD;
+        internalDashTimer = dashCD;  
 
-        
-        playerControls = new PlayerControls();
-        playerControls.Gameplay.Move.performed += ctx => moveDir  = ctx.ReadValue<Vector2>();
-        playerControls.Gameplay.Move.canceled += ctx => moveDir = Vector2.zero;
-        playerControls.Gameplay.Dash.performed += ctx => currentState.ChangeState(dashState);
-        playerControls.Gameplay.ThrowWep.performed += ctx => currentState.ChangeState(throwState);
     }
-    private void Start()
-    {
-        currentState = stateChangeObserver = basicState;
-    }
+
     private void FixedUpdate()
     {
+        StateUpdateObserver();
+        currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
 
@@ -81,7 +89,6 @@ public class PlayerStatePattern : MonoBehaviour
         {
             canDash = true;
         }
-
     }
 
     private void Update()
@@ -89,10 +96,6 @@ public class PlayerStatePattern : MonoBehaviour
         if(health <= 0)
         {
             currentState.ChangeState(deadState);
-        }
-        if(Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
-        {
-            moveLastDir = moveDir;
         }
         if (internalGCDTimer < globalCD)
         {
@@ -102,39 +105,44 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalDashTimer += Time.deltaTime;
         }
-        StateUpdateObserver();
-        currentState.UpdateState();
+        if (internalAttackTimer < attackCD)
+        {
+            internalAttackTimer += Time.deltaTime;
+        }
     }
+    public int GetPlayerIndex()
+    {
+        return playerIndex;
+    }
+
 
     private void OnCollisionEnter(Collision collision)
-    {   
-        // Ifall spelaren håller i ett vapen så läggs alla andra vapen hen går över till i en lista av ignorerade colliders, listan clearas när spelaren kastar sitt vapen
-        if (collision.gameObject.tag == weaponTag)
+    {
+        if (collision.gameObject.tag == projectileTag)
         {
-            if (weapon != null)
-            {
-                Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), col, true);
-                ignoredColliders.Add(collision.gameObject.GetComponent<Collider>());
-            }
+            OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
         }
-        // kanske måste lägga till att ignorera vapen
         if (currentState == dashState)
         {
-            currentState.ChangeState(basicState);
+            currentState.ChangeState(idleState);
         }
     }
-
-    public void RestoreIgnoredColliders()
+    public void Attack()
     {
-        if(ignoredColliders.Count != 0)
+        if(weapon != null)
         {
-            foreach (Collider igC in ignoredColliders)
+           if(weapon.GetComponent<WeaponSwordPattern>())
             {
-                Physics.IgnoreCollision(igC, col, false);
+                weapon.GetComponent<AudioWeapon>().Attacking();
+                Debug.Log("Attacks with sword");
+                
             }
-            ignoredColliders.Clear();
         }
-        
+        else
+        {
+            //audioPlayer.PlayerUnarmedAttack(); --- detta får nog vänta lite
+            //do basic punch attack.
+        }
     }
 
     public bool ValidStateChange(PlayerIState newState)
@@ -167,6 +175,27 @@ public class PlayerStatePattern : MonoBehaviour
                     return false;
                 }
             }
+            if (newState == attackState)
+            {
+                if (internalAttackTimer >= attackCD)
+                {
+                    if (weapon != null)
+                    {
+                        Debug.Log("attack with wep");
+                        return true;
+                    }
+                    else
+                    {
+                        Debug.Log("nothing to attack with");
+                        return false;
+                    }
+                }
+                else
+                {
+                    Debug.Log("Attack on cooldown");
+                    return false;
+                }
+            }
             else
             {
                 Debug.Log("invalid state");
@@ -180,39 +209,47 @@ public class PlayerStatePattern : MonoBehaviour
         }
     }
 
-    public void Movement()
+    public void ChangeDirection()
     {
         move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
-        lastMove = new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier;
-        transform.Translate(move, Space.World);
+        if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
+        {
+            moveLastDir = moveDir;
+        }
+
+        lastMove = Vector3.Normalize(new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier);
         transform.forward = lastMove;
+    }
+
+    public void Movement()
+    {
+        rb.velocity = move * movementSpeedMultiplier;
     }
 
     public void Dash()
     {
-        transform.position += lastMove * dashSpeed *Time.deltaTime;
+        transform.Translate(lastMove * dashSpeed * Time.deltaTime, Space.World);
     }
 
     public void ThrowItem()
     {
-            weapon.GetComponent<WeaponBaseClass>().ThrowWep();
-            weapon = null;
-            RestoreIgnoredColliders();
+        audioPlayer.PlayerThrowing();
+        weapon.GetComponent<WeaponBaseClass>().ThrowWep();
+        weapon = null;
+        Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
+    }
+
+    public void PickupItem(GameObject weaponObject)
+    {
+        weapon = weaponObject;
+        Physics.IgnoreCollision(col, weapon.GetComponent<Collider>(), true);
+        Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, true);
     }
 
     public void OnHit(float damage)
     {
+        audioPlayer.PlayerHurting();
         currentState.TakeDamage(damage);
-    }
-
-    private void OnEnable()
-    {
-        playerControls.Gameplay.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerControls.Gameplay.Disable();
     }
 
     private float Hypotenuse(float sideA, float sideB)
@@ -225,20 +262,28 @@ public class PlayerStatePattern : MonoBehaviour
         if(stateChangeObserver != currentState)
         {
             stateChangeObserver = currentState;
-            if(stateChangeObserver == basicState)
+            if (stateChangeObserver == idleState)
             {
-                //spelaren gick precis in i basicState
-                Debug.Log("basicState");
+                //spelaren gick precis in i idleState
+            }
+            if (stateChangeObserver == basicState)
+            {
+                //spelaren gick precis in i "MoveState"
             }
             if(stateChangeObserver == dashState)
             {
                 //Spelaren gick precis in i dashState
-                Debug.Log("Dashstate");
+                audioPlayer.PlayerDashing();
             }
             if (stateChangeObserver == throwState)
             {
                 //Spelaren gick precis in i throwState
-                Debug.Log("throwstate");
+                audioPlayer.PlayerThrowing();
+            }
+            if (stateChangeObserver == attackState)
+            {
+                //Spelaren gick precis in i attackState
+                
             }
         }
     }

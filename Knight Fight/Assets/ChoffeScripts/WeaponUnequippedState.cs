@@ -13,12 +13,20 @@ public class WeaponUnequippedState : WeaponIState
 
     public void OnStateEnter()
     {
+        weapon.gameObject.layer = weapon.UnequippedLayer;
         ChangePhysics();
-        //Physics.IgnoreCollision(weapon.parentPlayer.col, weapon.col, false);
-        weapon.parentPlayer = null;
-        //weapon.RemoveParentPlayer();
-    }
+        if (weapon.parentPlayer != null)
+        {
+            Physics.IgnoreCollision(weapon.parentPlayer.GetComponent<Collider>(), weapon.col, false);
+            weapon.parentPlayer = null;
+        }
+        weapon.gameObject.tag = weapon.weaponTag;
 
+    }
+    public void UpdateState()
+    {
+
+    }
     public void ChangePhysics()
     {
         weapon.rb.isKinematic = false;
@@ -30,7 +38,7 @@ public class WeaponUnequippedState : WeaponIState
     {
         if(newState == weapon.equippedState)
         {
-            weapon.currentState = newState;
+            weapon.ChangeState(newState);
         }
         else
         {
@@ -46,10 +54,12 @@ public class WeaponUnequippedState : WeaponIState
             if(col.gameObject.GetComponent<PlayerStatePattern>().weapon == null)
             {
                 weapon.SetParentPlayer(col);
-                col.gameObject.GetComponent<PlayerStatePattern>().weapon = weapon.gameObject;
-                //Physics.IgnoreCollision(col.gameObject.GetComponent<Collider>(), weapon.col, true);
+
+                col.gameObject.GetComponent<PlayerStatePattern>().PickupItem(weapon.gameObject);
+                //col.gameObject.GetComponent<PlayerStatePattern>().weapon = weapon.gameObject;
+                //Physics.IgnoreCollision(weapon.parentPlayer.GetComponent<Collider>(), weapon.col, true);
+
                 ChangeState(weapon.equippedState);
-               
             }
         }
     }

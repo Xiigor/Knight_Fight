@@ -22,7 +22,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""Move"",
                     ""type"": ""Button"",
                     ""id"": ""0f16c0ee-573c-4e97-af4f-adf35d02cf15"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -38,6 +38,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""ThrowWep"",
                     ""type"": ""Button"",
                     ""id"": ""f333faed-cc0e-4877-a7da-ef77e264d505"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""53f458f9-940b-459d-857c-a95f67605689"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
@@ -76,6 +84,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""ThrowWep"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6f9825a-b45e-400d-8e80-982354b548c9"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -87,6 +106,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
         m_Gameplay_ThrowWep = m_Gameplay.FindAction("ThrowWep", throwIfNotFound: true);
+        m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -139,6 +159,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Dash;
     private readonly InputAction m_Gameplay_ThrowWep;
+    private readonly InputAction m_Gameplay_Attack;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -146,6 +167,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Dash => m_Wrapper.m_Gameplay_Dash;
         public InputAction @ThrowWep => m_Wrapper.m_Gameplay_ThrowWep;
+        public InputAction @Attack => m_Wrapper.m_Gameplay_Attack;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -164,6 +186,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @ThrowWep.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnThrowWep;
                 @ThrowWep.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnThrowWep;
                 @ThrowWep.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnThrowWep;
+                @Attack.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -177,6 +202,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @ThrowWep.started += instance.OnThrowWep;
                 @ThrowWep.performed += instance.OnThrowWep;
                 @ThrowWep.canceled += instance.OnThrowWep;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
             }
         }
     }
@@ -186,5 +214,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnThrowWep(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }

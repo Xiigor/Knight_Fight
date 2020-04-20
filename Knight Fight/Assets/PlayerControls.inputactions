@@ -9,7 +9,7 @@
                     "name": "Move",
                     "type": "Button",
                     "id": "0f16c0ee-573c-4e97-af4f-adf35d02cf15",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -25,6 +25,14 @@
                     "name": "ThrowWep",
                     "type": "Button",
                     "id": "f333faed-cc0e-4877-a7da-ef77e264d505",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "53f458f9-940b-459d-857c-a95f67605689",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
@@ -61,6 +69,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ThrowWep",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6f9825a-b45e-400d-8e80-982354b548c9",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

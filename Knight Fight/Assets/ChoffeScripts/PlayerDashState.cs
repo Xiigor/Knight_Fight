@@ -45,6 +45,6 @@ public class PlayerDashState : PlayerIState
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("Immune to damage while dashing");
+        player.health -= damage;
     }
 }

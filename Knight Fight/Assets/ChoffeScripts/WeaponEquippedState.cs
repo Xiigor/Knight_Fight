@@ -13,9 +13,15 @@ public class WeaponEquippedState : WeaponIState
 
     public void OnStateEnter()
     {
+        weapon.audioPlayer.WeaponBeingPickedUp();
+        weapon.gameObject.layer = weapon.EquippedLayer;
         ChangePhysics();
         weapon.HeldPos();
         
+    }
+    public void UpdateState()
+    {
+
     }
 
     public void ChangePhysics()
@@ -29,12 +35,15 @@ public class WeaponEquippedState : WeaponIState
     {
         if(newState == weapon.thrownState)
         {
-            weapon.currentState = newState;
+            weapon.ChangeState(newState);
         }
     }
 
     public void HandleCollision(Collision col)
     {
-        // this state ignores all collisions
+        if(col.gameObject.tag == weapon.playerTag)
+        {
+            weapon.audioPlayer.AttackHittingPlayer();
+        }
     }
 }

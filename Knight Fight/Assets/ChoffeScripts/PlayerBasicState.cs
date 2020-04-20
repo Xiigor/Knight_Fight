@@ -12,7 +12,12 @@ public class PlayerBasicState : PlayerIState
     }
     public void UpdateState()
     {
+        player.ChangeDirection();
         player.Movement();
+        if (player.moveDir == Vector2.zero)
+        {
+            ChangeState(player.idleState);
+        }
 
     }
     public void ChangeState(PlayerIState newState)
@@ -21,6 +26,12 @@ public class PlayerBasicState : PlayerIState
         {
             player.currentState = newState;
         }
+
+        else if (newState == player.idleState)
+        {
+            player.currentState = newState;
+        }
+
         else if (player.ValidStateChange(newState))
         {
             player.currentState = newState;

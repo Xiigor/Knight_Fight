@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttackState : PlayerIState
 {
     private readonly PlayerStatePattern player;
-    public float internalStateTimer;
+    public float internalStateTimer = 0f;
 
     public PlayerAttackState(PlayerStatePattern statePatternPlayer)
     {
@@ -14,11 +14,18 @@ public class PlayerAttackState : PlayerIState
 
     public void UpdateState()
     {
-        //player.Attack();
-        ChangeState(player.basicState);
+        player.Attack();
+        if (internalStateTimer >= player.attackAnimDuration)
+        {
+            ChangeState(player.basicState);
+        }
+        else
+            internalStateTimer += Time.deltaTime;
+        
     }
     public void ChangeState(PlayerIState newState)
     {
+        internalStateTimer = 0f;
         if (newState == player.basicState)
         {
             player.currentState = newState;

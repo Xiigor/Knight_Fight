@@ -27,11 +27,6 @@ public class WeaponSpearPattern : WeaponBaseClass
         col = GetComponent<Collider>();
     }
 
-    private void Update()
-    {
-        StateChangeObserver();
-    }
-
     public override void Attack()
     {
         
@@ -61,14 +56,14 @@ public class WeaponSpearPattern : WeaponBaseClass
        
     }
 
-    public override void ThrownAttack(Collision col)
-    {
-        col.gameObject.GetComponent<PlayerStatePattern>().OnHit(thrownDamage);
-    }
-
     public override void ChangeDurability(float durabilityDecrement)
     {
         currentDurability -= durabilityDecrement;
+    }
+    public override void ChangeState(WeaponIState newState)
+    {
+        currentState = newState;
+        currentState.OnStateEnter();
     }
 
     public override void OnCollisionEnter(Collision collision)
