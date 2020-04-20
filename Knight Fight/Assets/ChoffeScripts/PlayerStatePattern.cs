@@ -50,14 +50,14 @@ public class PlayerStatePattern : MonoBehaviour
     public int UnequippedLayer = 13;
     public int EquippedLayer = 14;
     [SerializeField] private int playerIndex;
+    public GameObject spawnPosition;
 
 
     private void Awake()
     {
-        health = maxHealth;
         basicState = new PlayerBasicState(this);
         idleState = new PlayerIdleState(this);
-        currentState = stateChangeObserver = idleState;
+        //currentState = stateChangeObserver = idleState;
 
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
@@ -65,10 +65,17 @@ public class PlayerStatePattern : MonoBehaviour
         attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
-        audioPlayer = GetComponent<AudioPlayer>();
-        internalGCDTimer = globalCD;
-        internalDashTimer = dashCD;  
+        audioPlayer = GetComponent<AudioPlayer>(); 
 
+    }
+
+    public void OnEnable()
+    {
+        transform.position = spawnPosition.transform.position;
+        health = maxHealth;
+        currentState = stateChangeObserver = idleState;
+        internalGCDTimer = globalCD;
+        internalDashTimer = dashCD;
     }
 
     private void FixedUpdate()
