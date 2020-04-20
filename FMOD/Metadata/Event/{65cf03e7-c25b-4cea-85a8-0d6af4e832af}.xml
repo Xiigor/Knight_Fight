@@ -154,9 +154,16 @@
 		<property name="length">
 			<value>11.999999999999996</value>
 		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
 		<relationship name="sounds">
 			<destination>{edc2d019-37b8-4752-9584-da1cf66ba349}</destination>
 			<destination>{3d9bc29e-3a3c-49c0-81ed-6d8e5185b07b}</destination>
+		</relationship>
+		<relationship name="playPercentages">
+			<destination>{2fd2933d-da5b-4984-8db9-aaed239c1bcf}</destination>
+			<destination>{46dc84ed-aa7a-4c26-8566-750ab1198409}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{be9bf9bc-f359-4d8f-9b48-3319a3bfc029}">
@@ -307,6 +314,22 @@
 		</property>
 		<relationship name="audioFile">
 			<destination>{6c41b83c-b490-492e-98e3-3286e8839b48}</destination>
+		</relationship>
+	</object>
+	<object class="PlayPercentage" id="{2fd2933d-da5b-4984-8db9-aaed239c1bcf}">
+		<property name="percentage">
+			<value>30</value>
+		</property>
+		<relationship name="sound">
+			<destination>{edc2d019-37b8-4752-9584-da1cf66ba349}</destination>
+		</relationship>
+	</object>
+	<object class="PlayPercentage" id="{46dc84ed-aa7a-4c26-8566-750ab1198409}">
+		<property name="percentage">
+			<value>70</value>
+		</property>
+		<relationship name="sound">
+			<destination>{3d9bc29e-3a3c-49c0-81ed-6d8e5185b07b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{54d2f726-ad6b-4290-95b4-d1f68504e895}">
