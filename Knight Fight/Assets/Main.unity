@@ -146,11 +146,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 6018984424140851412, guid: db2a332b1d13eae408c3261e600ba9d6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3067259888826455619, guid: db2a332b1d13eae408c3261e600ba9d6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -205,6 +200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067259888826455616, guid: db2a332b1d13eae408c3261e600ba9d6,
+        type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3067259888826455644, guid: db2a332b1d13eae408c3261e600ba9d6,
         type: 3}
@@ -261,10 +261,10 @@ PrefabInstance:
       propertyPath: throwAnimDuration
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3067259888826455616, guid: db2a332b1d13eae408c3261e600ba9d6,
+    - target: {fileID: 6018984424140851412, guid: db2a332b1d13eae408c3261e600ba9d6,
         type: 3}
-      propertyPath: m_Material
-      value: 
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7560115908967856198, guid: db2a332b1d13eae408c3261e600ba9d6,
         type: 3}
@@ -298,11 +298,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018984424140851412, guid: db2a332b1d13eae408c3261e600ba9d6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3067259888826455619, guid: db2a332b1d13eae408c3261e600ba9d6,
         type: 3}
@@ -359,6 +354,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3067259888826455616, guid: db2a332b1d13eae408c3261e600ba9d6,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3067259888826455644, guid: db2a332b1d13eae408c3261e600ba9d6,
         type: 3}
       propertyPath: m_UseGravity
@@ -414,10 +414,15 @@ PrefabInstance:
       propertyPath: throwAnimDuration
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3067259888826455616, guid: db2a332b1d13eae408c3261e600ba9d6,
+    - target: {fileID: -525830245303085504, guid: db2a332b1d13eae408c3261e600ba9d6,
         type: 3}
-      propertyPath: m_Material
+      propertyPath: audioPlayer
       value: 
+      objectReference: {fileID: 748805786}
+    - target: {fileID: 6018984424140851412, guid: db2a332b1d13eae408c3261e600ba9d6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db2a332b1d13eae408c3261e600ba9d6, type: 3}
@@ -512,6 +517,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &748805785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3067259888826455623, guid: db2a332b1d13eae408c3261e600ba9d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 541502184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &748805786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748805785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70453bd007f82954e96677afc576396b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  givenGender: 0
+  playerHurt: 
+  playerHurtMale: event:/Player/Player_Hurt_Generic_Male
+  playerHurtFemale: event:/Player/Player_Hurt_Generic_Female
+  playerDash: event:/Player/Player_Dash
+  playerThrow: event:/Weapons/Weapon_Throw
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

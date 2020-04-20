@@ -45,10 +45,10 @@ public class PlayerStatePattern : MonoBehaviour
     public float maxHealth = 100f;
     public float health;
     [HideInInspector] public Collider col;
+    [HideInInspector] List<Collider> ignoredColliders;
     private Rigidbody rb;
     public AudioPlayer audioPlayer;
-    public int UnequippedLayer = 13;
-    public int EquippedLayer = 14;
+
     [SerializeField] private int playerIndex;
 
 
@@ -64,6 +64,7 @@ public class PlayerStatePattern : MonoBehaviour
         deadState = new PlayerDeadState(this);
         attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
+        ignoredColliders = new List<Collider>();
         rb = GetComponent<Rigidbody>();
         audioPlayer = GetComponent<AudioPlayer>();
         internalGCDTimer = globalCD;
@@ -118,10 +119,21 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // Ifall spelaren håller i ett vapen så läggs alla andra vapen hen går över till i en lista av ignorerade colliders, listan clearas när spelaren kastar sitt vapen
         if (collision.gameObject.tag == projectileTag)
         {
             OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+
+            Debug.Log(gameObject.name + "Hit by wep in projectile state!!");
         }
+        
+        if (collision.gameObject.tag == weaponTag && weapon != null)
+        {
+            Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), col, true);
+            ignoredColliders.Add(collision.gameObject.GetComponent<Collider>());
+
+        }
+        // kanske måste lägga till att ignorera vapen
         if (currentState == dashState)
         {
             currentState.ChangeState(idleState);
@@ -133,7 +145,6 @@ public class PlayerStatePattern : MonoBehaviour
         {
            if(weapon.GetComponent<WeaponSwordPattern>())
             {
-                weapon.GetComponent<AudioWeapon>().Attacking();
                 Debug.Log("Attacks with sword");
                 
             }
@@ -143,6 +154,19 @@ public class PlayerStatePattern : MonoBehaviour
             //audioPlayer.PlayerUnarmedAttack(); --- detta får nog vänta lite
             //do basic punch attack.
         }
+    }
+
+    public void RestoreIgnoredColliders()
+    {
+        if(ignoredColliders.Count != 0)
+        {
+            foreach (Collider igC in ignoredColliders)
+            {
+                Physics.IgnoreCollision(igC, col, false);
+            }
+            ignoredColliders.Clear();
+        }
+        
     }
 
     public bool ValidStateChange(PlayerIState newState)
@@ -235,15 +259,6 @@ public class PlayerStatePattern : MonoBehaviour
     {
         audioPlayer.PlayerThrowing();
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
-        weapon = null;
-        Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
-    }
-
-    public void PickupItem(GameObject weaponObject)
-    {
-        weapon = weaponObject;
-        Physics.IgnoreCollision(col, weapon.GetComponent<Collider>(), true);
-        Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, true);
     }
 
     public void OnHit(float damage)
