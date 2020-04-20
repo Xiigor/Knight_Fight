@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45035917, g: 0.5003778, b: 0.575274, a: 1}
+  m_IndirectSpecularColor: {r: 0.450359, g: 0.5003774, b: 0.5752734, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2694,7 +2694,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 8, y: -11, z: 8, w: 1.5e-44}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3544,13 +3544,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70453bd007f82954e96677afc576396b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHurt: 
-  playerHurtMale: 
-  playerHurtFemale: 
-  playerAttack: 
-  playerDash: 
-  playerThrow: 
-  playerThrowMale: 
+  givenGender: 0
+  playerHurt: event:/Implementation/Player_Hurt_Male_Manager
+  playerHurtMale: event:/Player/Player_Hurt_Fish_Male
+  playerHurtFemale: event:/Implementation/Weapon_Throw_Female_Manager
+  playerDash: event:/Player/Player_Dash
+  playerThrow: event:/Implementation/Weapon_Throw_Male_Manager
 --- !u!1001 &890467172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3978,13 +3977,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70453bd007f82954e96677afc576396b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  givenGender: 0
   playerHurt: 
   playerHurtMale: 
   playerHurtFemale: 
-  playerAttack: 
   playerDash: 
   playerThrow: 
-  playerThrowMale: 
 --- !u!4 &999065209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
@@ -4901,7 +4899,7 @@ MonoBehaviour:
     type: 3}
   player1: 1
   player1Object: {fileID: 888531735}
-  player2: 1
+  player2: 0
   player2Object: {fileID: 987941614}
   player3: 0
   player3Object: {fileID: 0}
