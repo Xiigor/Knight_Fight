@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
-public class PlayerInputHandler : MonoBehaviour
+public class PlayerInputHandler2 : MonoBehaviour
 {
     //private PlayerInput playerInput;
     private PlayerConfiguration playerConfig;
@@ -35,7 +35,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (obj.action.name == controls.PlayerMovement.MovementForGamepad.name) //MovementForGamepad can be changed depending on the name for Actions in Input Actions
         {
-            OnMove(obj);
+            //OnMove(obj);
         }
     }
 

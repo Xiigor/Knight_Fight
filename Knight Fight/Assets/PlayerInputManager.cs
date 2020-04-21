@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class PlayerInputManager : MonoBehaviour
+public class PlayerInputManager2 : MonoBehaviour
 {
     public GameObject inputHandlerPrefab;
     public bool player1;
