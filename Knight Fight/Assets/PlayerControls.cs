@@ -111,14 +111,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""StartGame"",
-                    ""type"": ""Button"",
-                    ""id"": ""33b9c1b0-6a60-419e-9fc9-0926b2c7add4"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Leave"",
                     ""type"": ""Button"",
                     ""id"": ""2d07fe4d-0c9f-4155-a989-05aef151110d"",
@@ -139,22 +131,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6c66f8bf-e1ff-482c-92dd-3f70c6e3bf0f"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Join"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""755a2a0b-0ae0-4897-a354-fbef75feeed6"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""StartGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -194,7 +175,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // MenuInput
         m_MenuInput = asset.FindActionMap("MenuInput", throwIfNotFound: true);
         m_MenuInput_Join = m_MenuInput.FindAction("Join", throwIfNotFound: true);
-        m_MenuInput_StartGame = m_MenuInput.FindAction("StartGame", throwIfNotFound: true);
         m_MenuInput_Leave = m_MenuInput.FindAction("Leave", throwIfNotFound: true);
         m_MenuInput_ToMenu = m_MenuInput.FindAction("ToMenu", throwIfNotFound: true);
     }
@@ -304,7 +284,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_MenuInput;
     private IMenuInputActions m_MenuInputActionsCallbackInterface;
     private readonly InputAction m_MenuInput_Join;
-    private readonly InputAction m_MenuInput_StartGame;
     private readonly InputAction m_MenuInput_Leave;
     private readonly InputAction m_MenuInput_ToMenu;
     public struct MenuInputActions
@@ -312,7 +291,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         private @PlayerControls m_Wrapper;
         public MenuInputActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Join => m_Wrapper.m_MenuInput_Join;
-        public InputAction @StartGame => m_Wrapper.m_MenuInput_StartGame;
         public InputAction @Leave => m_Wrapper.m_MenuInput_Leave;
         public InputAction @ToMenu => m_Wrapper.m_MenuInput_ToMenu;
         public InputActionMap Get() { return m_Wrapper.m_MenuInput; }
@@ -327,9 +305,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Join.started -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnJoin;
                 @Join.performed -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnJoin;
                 @Join.canceled -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnJoin;
-                @StartGame.started -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnStartGame;
-                @StartGame.performed -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnStartGame;
-                @StartGame.canceled -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnStartGame;
                 @Leave.started -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnLeave;
                 @Leave.performed -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnLeave;
                 @Leave.canceled -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnLeave;
@@ -343,9 +318,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Join.started += instance.OnJoin;
                 @Join.performed += instance.OnJoin;
                 @Join.canceled += instance.OnJoin;
-                @StartGame.started += instance.OnStartGame;
-                @StartGame.performed += instance.OnStartGame;
-                @StartGame.canceled += instance.OnStartGame;
                 @Leave.started += instance.OnLeave;
                 @Leave.performed += instance.OnLeave;
                 @Leave.canceled += instance.OnLeave;
@@ -366,7 +338,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IMenuInputActions
     {
         void OnJoin(InputAction.CallbackContext context);
-        void OnStartGame(InputAction.CallbackContext context);
         void OnLeave(InputAction.CallbackContext context);
         void OnToMenu(InputAction.CallbackContext context);
     }

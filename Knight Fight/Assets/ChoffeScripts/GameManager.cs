@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     public void OnJoin(CallbackContext context)
     {
-        if(gameState == menuState)
+        if (gameState == menuState)
         {
             if(context.control.device == inputDevices[0])
             {
@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
 
     public void ToMenu()
     {
-        if(gameState == gameplayState)
+        if (gameState == gameplayState)
         {
             gameState = menuState;
             gameState.OnStateEnter();

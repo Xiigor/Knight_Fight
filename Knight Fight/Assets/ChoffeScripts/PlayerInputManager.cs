@@ -16,12 +16,12 @@ public class PlayerInputManager : MonoBehaviour
     public bool trigger;
     public bool triggered;
     private List<Gamepad> inputDevices;
-    private List<GameObject> inputHandlers;
+    public List<PlayerInput> inputHandlers;
 
     private void Start()
     {
         inputDevices = new List<Gamepad>();
-        inputHandlers = new List<GameObject>();
+        inputHandlers = new List<PlayerInput>();
         foreach (Gamepad index in Gamepad.all)
             inputDevices.Add(index);
     }
@@ -44,11 +44,22 @@ public class PlayerInputManager : MonoBehaviour
         if (player1 == true && player1InputHandler == null)
         {
             player1InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 0, null,1, inputDevices[0].device);
-            
+            inputHandlers.Add(player1InputHandler);
         }
-        if (player2)
+        if (player2 == true && player2InputHandler == null)
         {
             player2InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 1, null, 1, inputDevices[1].device);
+            inputHandlers.Add(player2InputHandler);
+        }
+        if (player3 == true && player3InputHandler == null)
+        {
+            player3InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 0, null, 1, inputDevices[0].device);
+            inputHandlers.Add(player3InputHandler);
+        }
+        if (player4 == true && player4InputHandler == null)
+        {
+            player4InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 0, null, 1, inputDevices[0].device);
+            inputHandlers.Add(player4InputHandler);
         }
 
     }

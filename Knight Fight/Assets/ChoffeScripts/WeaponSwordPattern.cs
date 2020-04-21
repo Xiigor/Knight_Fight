@@ -27,7 +27,7 @@ public class WeaponSwordPattern : WeaponBaseClass
     private void Update()
     {
         currentState.UpdateState();
-        StateChangeObserver();
+        //StateChangeObserver();
 
         //if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackAnimName)) // tror den checkar om animatinen är klar
         //{

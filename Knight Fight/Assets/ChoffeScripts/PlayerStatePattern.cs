@@ -141,8 +141,7 @@ public class PlayerStatePattern : MonoBehaviour
            if(weapon.GetComponent<WeaponSwordPattern>())
             {
                 weapon.GetComponent<AudioWeapon>().Attacking();
-                Debug.Log("Attacks with sword");
-                
+                Debug.Log("Attacks with sword"); 
             }
         }
         else
@@ -160,7 +159,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (internalDashTimer >= dashCD)
                 {
-
+                    audioPlayer.PlayerDashing(); // --- trigger dash sound, try if it works better being placed here
                     return true;
                 }
                 else
@@ -173,6 +172,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if(weapon != null)
                 {
+                    audioPlayer.PlayerThrowing();
                     Debug.Log("throw wep");
                     return true;
                 }
@@ -240,7 +240,6 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void ThrowItem()
     {
-        audioPlayer.PlayerThrowing();
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
         weapon = null;
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
@@ -280,12 +279,11 @@ public class PlayerStatePattern : MonoBehaviour
             if(stateChangeObserver == dashState)
             {
                 //Spelaren gick precis in i dashState
-                audioPlayer.PlayerDashing();
             }
             if (stateChangeObserver == throwState)
             {
                 //Spelaren gick precis in i throwState
-                audioPlayer.PlayerThrowing();
+                Debug.Log("player entered throwstate");
             }
             if (stateChangeObserver == attackState)
             {
