@@ -254,7 +254,7 @@
 	<object class="MixerBusEffectChain" id="{cd5c140e-a2cd-4c1d-be1a-ec3b7cd91159}">
 		<relationship name="effects">
 			<destination>{78fe80c0-41d2-446d-9bf0-e1badb9a6c70}</destination>
-			<destination>{2a263e39-23d2-48a4-abbe-eb52ae3715a3}</destination>
+			<destination>{aae42770-3dde-4efc-86e0-2807d152d855}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{61ccfbe9-16c1-4219-8537-4a8358351b76}" />
@@ -412,9 +412,15 @@
 	</object>
 	<object class="MixerBusPanner" id="{894aaaa3-abb4-4104-aec3-4624024948fc}" />
 	<object class="MixerBusFader" id="{78fe80c0-41d2-446d-9bf0-e1badb9a6c70}" />
-	<object class="SpatialiserEffect" id="{2a263e39-23d2-48a4-abbe-eb52ae3715a3}">
+	<object class="SpatialiserEffect" id="{aae42770-3dde-4efc-86e0-2807d152d855}">
 		<property name="maximumDistance">
 			<value>100</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>50</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{29435c2e-f873-4928-95c3-16c63553ca43}">

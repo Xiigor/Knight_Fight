@@ -484,6 +484,11 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1272903664}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1 &255558346
@@ -1902,10 +1907,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: event:/Weapons/Weapon_Sword_Attack
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
   attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder_Male
   throwWep: event:/Weapons/Weapon_Throw
-  ThrownWepHitEnvironment: 
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
   weaponPickup: event:/Weapons/Weapon_Pickup_Generic
 --- !u!1 &705507993
 GameObject:
@@ -2172,6 +2177,11 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 906124486}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1001 &768076161
@@ -2678,11 +2688,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder_Male
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
 --- !u!1 &959053498
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,6 +3514,11 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1551744721}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1 &1165751735
@@ -3947,11 +3962,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder_Female
+  throwWep: event:/Weapons/Weapon_Throw_Heavy_Male
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
 --- !u!1001 &1294420602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4157,11 +4172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Generic_Male
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
 --- !u!1 &1569278036
 GameObject:
   m_ObjectHideFlags: 0
@@ -4520,6 +4535,11 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1832322524}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1 &1695502360
@@ -4724,11 +4744,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Generic_Male
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
 --- !u!1 &1848587531
 GameObject:
   m_ObjectHideFlags: 0
