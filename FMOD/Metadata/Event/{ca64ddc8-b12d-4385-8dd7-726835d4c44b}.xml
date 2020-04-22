@@ -99,9 +99,6 @@
 		<property name="triggerProbabilityEnabled">
 			<value>true</value>
 		</property>
-		<property name="triggerProbability">
-			<value>59.5</value>
-		</property>
 		<property name="length">
 			<value>0.10000000000000001</value>
 		</property>
@@ -111,7 +108,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{035eda3e-271e-4c2b-8e69-3481c284ec79}">
 		<property name="volume">
-			<value>-7.5</value>
+			<value>-8</value>
 		</property>
 		<property name="name">
 			<value>Thud</value>
@@ -142,6 +139,9 @@
 	<object class="MixerBusPanner" id="{aa652064-a840-41aa-a68a-f8a44531b2a2}" />
 	<object class="MixerBusFader" id="{48e79d40-ada7-4609-8321-1941b16700e0}" />
 	<object class="SpatialiserEffect" id="{5a6e3ae8-40c5-4264-bc0e-4e2122247a70}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
 		<property name="maximumDistance">
 			<value>100</value>
 		</property>
