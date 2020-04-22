@@ -21,7 +21,7 @@ public class PlayerThrowState : PlayerIState
         {
             player.currentState = newState;
         }
-        else if (newState == player.basicState)
+        else if (newState == player.basicState || newState == player.idleState)
         {
             player.internalGCDTimer = 0f;
             player.currentState = newState;
@@ -32,5 +32,9 @@ public class PlayerThrowState : PlayerIState
     public void TakeDamage(float damage)
     {
         player.health -= damage;
+        if (player.health <= 0)
+        {
+            player.Die();
+        }
     }
 }
