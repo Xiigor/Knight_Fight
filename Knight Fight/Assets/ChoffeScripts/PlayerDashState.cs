@@ -32,7 +32,7 @@ public class PlayerDashState : PlayerIState
     }
     public void ChangeState(PlayerIState newState)
     {
-        if (newState == player.basicState)
+        if (newState == player.basicState || newState == player.idleState)
         {
             internalStateTimer = 0f;
             player.internalDashTimer = 0f;
@@ -46,5 +46,9 @@ public class PlayerDashState : PlayerIState
     public void TakeDamage(float damage)
     {
         player.health -= damage;
+        if (player.health <= 0)
+        {
+            player.Die();
+        }
     }
 }

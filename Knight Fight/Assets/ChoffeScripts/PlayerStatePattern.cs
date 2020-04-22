@@ -80,7 +80,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void FixedUpdate()
     {
-        StateUpdateObserver();
+        //StateUpdateObserver();
         currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
@@ -100,10 +100,6 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void Update()
     {
-        if(health <= 0)
-        {
-            currentState.ChangeState(deadState);
-        }
         if (internalGCDTimer < globalCD)
         {
             internalGCDTimer += Time.deltaTime;
@@ -138,11 +134,7 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if(weapon != null)
         {
-           if(weapon.GetComponent<WeaponSwordPattern>())
-            {
-                weapon.GetComponent<AudioWeapon>().Attacking();
-                Debug.Log("Attacks with sword"); 
-            }
+            weapon.GetComponent<WeaponBaseClass>().Attack();
         }
         else
         {
@@ -188,7 +180,9 @@ public class PlayerStatePattern : MonoBehaviour
                 {
                     if (weapon != null)
                     {
+                        Attack(); // ---- anropet till attackfunktionen, spelaren går in i attackstate och går in i idle när animationen är färdig.
                         Debug.Log("attack with wep");
+                        weapon.GetComponent<AudioWeapon>().Attacking();
                         return true;
                     }
                     else
@@ -256,6 +250,10 @@ public class PlayerStatePattern : MonoBehaviour
     {
         audioPlayer.PlayerHurting();
         currentState.TakeDamage(damage);
+    }
+    public void Die()
+    {
+        currentState.ChangeState(deadState);
     }
 
     private float Hypotenuse(float sideA, float sideB)

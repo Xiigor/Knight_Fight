@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45035887, g: 0.50037706, b: 0.575273, a: 1}
+  m_IndirectSpecularColor: {r: 0.45035917, g: 0.5003778, b: 0.575274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -484,11 +484,6 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
-    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: audioPlayer
-      value: 
-      objectReference: {fileID: 1272903664}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1 &204915939
@@ -4109,10 +4104,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   givenGender: 0
-  playerHurtMale: event:/Player/Player_Hurt_Generic_Male
-  playerHurtFemale: event:/Player/Player_Hurt_Generic_Female
-  playerDash: event:/Player/Player_Dash
-  playerThrow: event:/Weapons/Weapon_Throw
+  playerHurt: 
+  playerHurtMale: 
+  playerHurtFemale: 
+  playerAttack: 
+  playerDash: 
+  playerThrow: 
+  playerThrowMale: 
 --- !u!1 &906124479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
@@ -4428,8 +4426,8 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194229}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4437,19 +4435,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &963194226
-MonoBehaviour:
+--- !u!81 &963194226
+AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: -1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -4888,10 +4881,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   givenGender: 0
-  playerHurtMale: event:/Player/Player_Hurt_Generic_Male
-  playerHurtFemale: event:/Player/Player_Hurt_Excaliboulder_Female
-  playerDash: event:/Player/Player_Dash
-  playerThrow: event:/Weapons/Weapon_Throw
+  playerHurt: 
+  playerHurtMale: 
+  playerHurtFemale: 
+  playerAttack: 
+  playerDash: 
+  playerThrow: 
+  playerThrowMale: 
 --- !u!1 &1008007845
 GameObject:
   m_ObjectHideFlags: 0
@@ -5483,11 +5479,6 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
-    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: audioPlayer
-      value: 
-      objectReference: {fileID: 1551744721}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1 &1165751735
@@ -6274,11 +6265,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: event:/Weapons/Weapon_Excaliboulder_Attack
-  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder_Female
-  throwWep: event:/Weapons/Weapon_Throw
-  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
-  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
+  attack: 
+  attackHitPlayer: 
+  throwWep: 
+  ThrownWepHitEnvironment: 
+  weaponPickup: 
   weaponBreak: 
 --- !u!1001 &1294420602
 PrefabInstance:
@@ -6962,11 +6953,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: event:/Weapons/Weapon_Excaliboulder_Attack
-  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder_Male
-  throwWep: event:/Weapons/Weapon_Throw
-  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
-  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
+  attack: 
+  attackHitPlayer: 
+  throwWep: 
+  ThrownWepHitEnvironment: 
+  weaponPickup: 
   weaponBreak: 
 --- !u!1 &1569278036
 GameObject:
@@ -9110,9 +9101,9 @@ PrefabInstance:
       objectReference: {fileID: 944540185}
     - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
-      propertyPath: audioPlayer
-      value: 
-      objectReference: {fileID: 888531736}
+      propertyPath: attackAnimDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
@@ -9230,9 +9221,9 @@ PrefabInstance:
       objectReference: {fileID: 1533725321}
     - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
-      propertyPath: audioPlayer
-      value: 
-      objectReference: {fileID: 987941615}
+      propertyPath: attackAnimDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2521545258423596769, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
       propertyPath: m_Layer
