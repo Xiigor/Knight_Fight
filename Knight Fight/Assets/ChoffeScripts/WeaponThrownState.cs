@@ -38,14 +38,6 @@ public class WeaponThrownState : WeaponIState
         weapon.rb.useGravity = true;
     }
 
-    public void ChangeState(WeaponIState newState)
-    {
-       if(newState == weapon.unequippedState)
-        {
-            weapon.currentState = newState;
-        }
-    }
-
     public void HandleCollision(Collision col)
     {
         Debug.Log(weapon.gameObject.name + " Hits " + col.gameObject.name);

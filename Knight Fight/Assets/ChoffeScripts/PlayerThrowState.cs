@@ -12,7 +12,6 @@ public class PlayerThrowState : PlayerIState
     }
     public void UpdateState()
     {
-
         player.ThrowItem();
         ChangeState(player.basicState);
     }
