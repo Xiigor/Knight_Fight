@@ -25,9 +25,9 @@ public class AudioWeapon : MonoBehaviour
     public string weaponPickup;
     public FMOD.Studio.EventInstance weaponBeingPickedUp;
 
-    //[EventRef]
-   //public string weaponBreak;
-    //public FMOD.Studio.EventInstance weaponBreaking;
+    [EventRef]
+    public string weaponBreak;
+    public FMOD.Studio.EventInstance weaponBreaking;
 
     public void Attacking()
     {
@@ -64,10 +64,10 @@ public class AudioWeapon : MonoBehaviour
         weaponBeingPickedUp.start();
     }
 
-    //public void WeaponBreaking()
-    //{
+    public void WeaponBreaking()
+    {
         //detta scenarion existerar inte kodmässigt än.
-    //}
+    }
 
 
 

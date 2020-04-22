@@ -133,7 +133,6 @@ public class PlayerStatePattern : MonoBehaviour
         {
            if(weapon.GetComponent<WeaponSwordPattern>())
             {
-                weapon.GetComponent<AudioWeapon>().Attacking();
                 Debug.Log("Attacks with sword");
                 
             }

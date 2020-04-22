@@ -409,16 +409,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: m_Name
-      value: weapon (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -474,6 +464,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Name
+      value: weapon (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: thrownDamage
@@ -488,9 +488,33 @@ PrefabInstance:
         type: 3}
       propertyPath: audioPlayer
       value: 
-      objectReference: {fileID: 1272903664}
+      objectReference: {fileID: 201162599}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
+--- !u!1 &201162598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+    type: 3}
+  m_PrefabInstance: {fileID: 201162597}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &201162599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201162598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: 
+  throwWep: 
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
+  weaponBreak: 
 --- !u!1 &255558346
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,16 +798,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -853,6 +867,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -1053,16 +1077,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1133,6 +1147,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: -0.52531594
       objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
 --- !u!4 &346812724 stripped
@@ -1148,16 +1172,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1227,6 +1241,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -1433,16 +1457,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1512,6 +1526,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -1889,29 +1913,6 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -111.937004, z: 0}
---- !u!1 &698910225 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-    type: 3}
-  m_PrefabInstance: {fileID: 768076161}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &698910232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698910225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: event:/Weapons/Weapon_Excaliboulder_Attack
-  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder_Male
-  throwWep: event:/Weapons/Weapon_Throw
-  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
-  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,16 +2103,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: m_Name
-      value: weapon (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2167,6 +2158,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Name
+      value: weapon (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: thrownDamage
@@ -2177,11 +2178,6 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
-    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: audioPlayer
-      value: 
-      objectReference: {fileID: 906124486}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1001 &768076161
@@ -2191,16 +2187,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: m_Name
-      value: weapon (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2256,6 +2242,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Name
+      value: weapon (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: thrownDamage
@@ -2266,11 +2262,6 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
-    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: audioPlayer
-      value: 
-      objectReference: {fileID: 698910232}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1001 &777379139
@@ -2280,16 +2271,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2359,6 +2340,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -2467,16 +2458,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2546,6 +2527,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -2670,29 +2661,6 @@ MonoBehaviour:
   playerHurtFemale: event:/Player/Player_Hurt_Generic_Female
   playerDash: event:/Player/Player_Dash
   playerThrow: event:/Weapons/Weapon_Throw
---- !u!1 &906124479 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-    type: 3}
-  m_PrefabInstance: {fileID: 746884335}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &906124486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906124479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: event:/Weapons/Weapon_Excaliboulder_Attack
-  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder_Male
-  throwWep: event:/Weapons/Weapon_Throw
-  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
-  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
 --- !u!1 &959053498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,10 +2887,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   givenGender: 0
-  playerHurtMale: event:/Player/Player_Hurt_Generic_Male
-  playerHurtFemale: event:/Player/Player_Hurt_Generic_Female
-  playerDash: event:/Player/Player_Dash
-  playerThrow: event:/Weapons/Weapon_Throw
+  playerHurtMale: 
+  playerHurtFemale: 
+  playerDash: 
+  playerThrow: 
 --- !u!1 &1008007845
 GameObject:
   m_ObjectHideFlags: 0
@@ -3439,16 +3407,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: m_Name
-      value: weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3504,6 +3462,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Name
+      value: weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: thrownDamage
@@ -3518,9 +3486,33 @@ PrefabInstance:
         type: 3}
       propertyPath: audioPlayer
       value: 
-      objectReference: {fileID: 1551744721}
+      objectReference: {fileID: 1143554127}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
+--- !u!1 &1143554126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+    type: 3}
+  m_PrefabInstance: {fileID: 1143554125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1143554127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143554126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: 
+  throwWep: 
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
+  weaponBreak: 
 --- !u!1 &1165751735
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,7 +3659,7 @@ MonoBehaviour:
   player4: 0
   player4Object: {fileID: 0}
   trigger: 1
-  triggered: 0
+  triggered: 1
 --- !u!1 &1217460267
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,29 +3936,6 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -216.027, z: 0}
---- !u!1 &1272903657 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-    type: 3}
-  m_PrefabInstance: {fileID: 201162597}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1272903664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272903657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: event:/Weapons/Weapon_Excaliboulder_Attack
-  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder_Female
-  throwWep: event:/Weapons/Weapon_Throw_Heavy_Male
-  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
-  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
 --- !u!1001 &1294420602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3974,16 +3943,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4053,6 +4012,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -4154,29 +4123,6 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 39.803, z: 0}
---- !u!1 &1551744714 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-    type: 3}
-  m_PrefabInstance: {fileID: 1143554125}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1551744721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551744714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: event:/Weapons/Weapon_Excaliboulder_Attack
-  attackHitPlayer: event:/Player/Player_Hurt_Generic_Male
-  throwWep: event:/Weapons/Weapon_Throw
-  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
-  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
 --- !u!1 &1569278036
 GameObject:
   m_ObjectHideFlags: 0
@@ -4460,16 +4406,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: m_Name
-      value: weapon (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4525,6 +4461,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Name
+      value: weapon (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: thrownDamage
@@ -4539,9 +4485,33 @@ PrefabInstance:
         type: 3}
       propertyPath: audioPlayer
       value: 
-      objectReference: {fileID: 1832322524}
+      objectReference: {fileID: 1668593524}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
+--- !u!1 &1668593523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+    type: 3}
+  m_PrefabInstance: {fileID: 1668593522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1668593524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668593523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: 
+  throwWep: 
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
+  weaponBreak: 
 --- !u!1 &1695502360
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,29 +4696,6 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: -141.024, z: 0}
---- !u!1 &1832322517 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
-    type: 3}
-  m_PrefabInstance: {fileID: 1668593522}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1832322524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832322517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: event:/Weapons/Weapon_Excaliboulder_Attack
-  attackHitPlayer: event:/Player/Player_Hurt_Generic_Male
-  throwWep: event:/Weapons/Weapon_Throw
-  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
-  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
 --- !u!1 &1848587531
 GameObject:
   m_ObjectHideFlags: 0
@@ -4848,16 +4795,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4927,6 +4864,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -5035,16 +4982,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5114,6 +5051,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -5222,16 +5169,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5301,6 +5238,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -5409,16 +5356,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5488,6 +5425,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -5596,16 +5543,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7360429787406286966, guid: 2c576bfc1e3461b419c41780dde5c959,
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
-      propertyPath: m_Name
-      value: Player 1
+      propertyPath: dashSpeed
+      value: 75
       objectReference: {fileID: 0}
-    - target: {fileID: 7360429787406286966, guid: 2c576bfc1e3461b419c41780dde5c959,
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: dashDuration
+      value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: movementInputForDashDirThreshhold
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 888531736}
     - target: {fileID: 7360429787406286962, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5659,6 +5616,16 @@ PrefabInstance:
     - target: {fileID: 7360429787406286962, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360429787406286966, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: m_Name
+      value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360429787406286966, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959,
@@ -5964,26 +5931,6 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
-        type: 3}
-      propertyPath: dashSpeed
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
-        type: 3}
-      propertyPath: dashDuration
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
-        type: 3}
-      propertyPath: movementInputForDashDirThreshhold
-      value: 0.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
-        type: 3}
-      propertyPath: audioPlayer
-      value: 
-      objectReference: {fileID: 888531736}
     m_RemovedComponents:
     - {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
@@ -5994,6 +5941,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2521545258423596769, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: playerIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: dashDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: movementInputForDashDirThreshhold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6955143107841644768, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
       propertyPath: m_Name
@@ -6073,36 +6045,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnMove
-      objectReference: {fileID: 0}
-    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
-        type: 3}
-      propertyPath: playerIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
-        type: 3}
-      propertyPath: dashDuration
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
-        type: 3}
-      propertyPath: dashSpeed
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
-        type: 3}
-      propertyPath: movementInputForDashDirThreshhold
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
-        type: 3}
-      propertyPath: audioPlayer
-      value: 
-      objectReference: {fileID: 987941615}
-    - target: {fileID: 2521545258423596769, guid: 85cbae8dd56505844be748e046e20472,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7595446105044283237, guid: 85cbae8dd56505844be748e046e20472, type: 3}

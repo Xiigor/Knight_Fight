@@ -13,7 +13,6 @@ public class WeaponEquippedState : WeaponIState
 
     public void OnStateEnter()
     {
-        weapon.audioPlayer.WeaponBeingPickedUp();
         weapon.gameObject.layer = weapon.EquippedLayer;
         ChangePhysics();
         weapon.HeldPos();
@@ -41,9 +40,6 @@ public class WeaponEquippedState : WeaponIState
 
     public void HandleCollision(Collision col)
     {
-        if(col.gameObject.tag == weapon.playerTag)
-        {
-            weapon.audioPlayer.AttackHittingPlayer();
-        }
+        // this state ignores all collisions
     }
 }
