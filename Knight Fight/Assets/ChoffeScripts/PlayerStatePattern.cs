@@ -50,14 +50,14 @@ public class PlayerStatePattern : MonoBehaviour
     public int UnequippedLayer = 13;
     public int EquippedLayer = 14;
     [SerializeField] private int playerIndex;
+    public GameObject spawnPosition;
 
 
     private void Awake()
     {
-        health = maxHealth;
         basicState = new PlayerBasicState(this);
         idleState = new PlayerIdleState(this);
-        currentState = stateChangeObserver = idleState;
+        //currentState = stateChangeObserver = idleState;
 
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
@@ -65,10 +65,17 @@ public class PlayerStatePattern : MonoBehaviour
         attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
-        audioPlayer = GetComponent<AudioPlayer>();
-        internalGCDTimer = globalCD;
-        internalDashTimer = dashCD;  
+        audioPlayer = GetComponent<AudioPlayer>(); 
 
+    }
+
+    public void OnEnable()
+    {
+        transform.position = spawnPosition.transform.position;
+        health = maxHealth;
+        currentState = stateChangeObserver = idleState;
+        internalGCDTimer = globalCD;
+        internalDashTimer = dashCD;
     }
 
     private void FixedUpdate()
@@ -133,8 +140,8 @@ public class PlayerStatePattern : MonoBehaviour
         {
            if(weapon.GetComponent<WeaponSwordPattern>())
             {
-                Debug.Log("Attacks with sword");
-                
+                weapon.GetComponent<AudioWeapon>().Attacking();
+                Debug.Log("Attacks with sword"); 
             }
         }
         else
@@ -152,7 +159,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (internalDashTimer >= dashCD)
                 {
-
+                    audioPlayer.PlayerDashing(); // --- trigger dash sound, try if it works better being placed here
                     return true;
                 }
                 else
@@ -165,6 +172,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if(weapon != null)
                 {
+                    audioPlayer.PlayerThrowing();
                     Debug.Log("throw wep");
                     return true;
                 }
@@ -232,7 +240,6 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void ThrowItem()
     {
-        audioPlayer.PlayerThrowing();
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
         weapon = null;
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
@@ -272,12 +279,11 @@ public class PlayerStatePattern : MonoBehaviour
             if(stateChangeObserver == dashState)
             {
                 //Spelaren gick precis in i dashState
-                audioPlayer.PlayerDashing();
             }
             if (stateChangeObserver == throwState)
             {
                 //Spelaren gick precis in i throwState
-                audioPlayer.PlayerThrowing();
+                Debug.Log("player entered throwstate");
             }
             if (stateChangeObserver == attackState)
             {

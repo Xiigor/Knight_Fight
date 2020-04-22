@@ -10,10 +10,12 @@ public class PlayerInputHandler : MonoBehaviour
     private PlayerInput playerInput;
     private PlayerStatePattern playerStatePattern;
 
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         var playerStatePatterns = FindObjectsOfType<PlayerStatePattern>();
+       
         var index = playerInput.playerIndex;
         playerStatePattern = playerStatePatterns.FirstOrDefault(m => m.GetPlayerIndex() == index);
     }
