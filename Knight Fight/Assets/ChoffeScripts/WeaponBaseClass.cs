@@ -32,6 +32,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public Rigidbody rb;
     public Collider col;
     [HideInInspector] public Animator anim;
+    [HideInInspector] public GameObject gameManager;
 
     public abstract void Attack();
     public void ThrowWep()

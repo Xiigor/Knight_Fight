@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2765844868840328221}
   - component: {fileID: 2765844868840328220}
   m_Layer: 0
-  m_Name: weapon
+  m_Name: Sword
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
-  damageZoneObject: {fileID: 0}
+  audioPlayer: {fileID: 0}
   durability: 10
   damage: 5
   thrownDamage: 2
@@ -133,10 +133,13 @@ MonoBehaviour:
   playerTag: Player
   projectileTag: Projectile
   weaponTag: Weapon
+  UnequippedLayer: 13
+  EquippedLayer: 14
   damageZonePosition: {x: 0, y: 0, z: 0}
   heldPosition: {x: 0, y: 0, z: 0}
   heldRotation: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   col: {fileID: 0}
-  attackZone: 0
+  anim: {fileID: 0}
+  attackAnimName: 
   durabilityDecrement: 0

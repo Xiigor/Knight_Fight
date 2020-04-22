@@ -7,6 +7,8 @@ public class WeaponSwordPattern : WeaponBaseClass
     public string attackAnimName;
     public float durabilityDecrement;
     private float currentDurability;
+   
+   
     
     private void Awake()
     {
@@ -21,13 +23,20 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-        audioPlayer = GetComponent<AudioWeapon>();  
+        audioPlayer = GetComponent<AudioWeapon>();
+        gameManager = GameObject.Find("GameManager");
     }
 
     private void Update()
     {
+        
         currentState.UpdateState();
         StateChangeObserver();
+        if (currentDurability <= 0)
+        {
+            gameManager.GetComponent<WeaponSpawnManager>().activeWeapons -= 1;
+            Destroy(this);
+        }
 
         //if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackAnimName)) // tror den checkar om animatinen är klar
         //{
