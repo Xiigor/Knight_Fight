@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45035917, g: 0.5003778, b: 0.575274, a: 1}
+  m_IndirectSpecularColor: {r: 0.45035887, g: 0.50037706, b: 0.575273, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -484,6 +484,11 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1272903664}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1 &204915939
@@ -3112,11 +3117,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
   weaponBreak: 
 --- !u!1 &705507993
 GameObject:
@@ -3625,6 +3630,11 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 906124486}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1001 &768076161
@@ -3709,6 +3719,11 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 698910232}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1001 &777379139
@@ -4104,13 +4119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   givenGender: 0
-  playerHurt: 
-  playerHurtMale: 
-  playerHurtFemale: 
-  playerAttack: 
-  playerDash: 
-  playerThrow: 
-  playerThrowMale: 
+  playerHurtMale: event:/Player/Player_Hurt_Generic_Male
+  playerHurtFemale: event:/Player/Player_Hurt_Generic_Female
+  playerDash: event:/Player/Player_Dash
+  playerThrow: event:/Weapons/Weapon_Throw_Light
 --- !u!1 &906124479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
@@ -4129,11 +4141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
   weaponBreak: 
 --- !u!1 &932620766
 GameObject:
@@ -4881,13 +4893,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   givenGender: 0
-  playerHurt: 
-  playerHurtMale: 
-  playerHurtFemale: 
-  playerAttack: 
-  playerDash: 
-  playerThrow: 
-  playerThrowMale: 
+  playerHurtMale: event:/Player/Player_Hurt_Generic_Male
+  playerHurtFemale: event:/Player/Player_Hurt_Generic_Female
+  playerDash: event:/Player/Player_Dash
+  playerThrow: event:/Weapons/Weapon_Throw_Light
 --- !u!1 &1008007845
 GameObject:
   m_ObjectHideFlags: 0
@@ -5479,6 +5488,11 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1551744721}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1 &1165751735
@@ -5573,6 +5587,35 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 115.742004, z: 0}
+--- !u!1 &1168909935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 271541532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1168909941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168909935}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &1183309494
 GameObject:
   m_ObjectHideFlags: 0
@@ -6265,11 +6308,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
   weaponBreak: 
 --- !u!1001 &1294420602
 PrefabInstance:
@@ -6953,11 +6996,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
   weaponBreak: 
 --- !u!1 &1569278036
 GameObject:
@@ -7317,6 +7360,11 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1832322524}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1 &1695502360
@@ -7551,11 +7599,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
   weaponBreak: 
 --- !u!1 &1848587531
 GameObject:
@@ -9104,6 +9152,11 @@ PrefabInstance:
       propertyPath: attackAnimDuration
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 888531736}
     m_RemovedComponents:
     - {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
@@ -9224,6 +9277,11 @@ PrefabInstance:
       propertyPath: attackAnimDuration
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 987941615}
     - target: {fileID: 2521545258423596769, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
       propertyPath: m_Layer
