@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]public PlayerInputManager inputManagerScript;
     private List<Gamepad> inputDevices;
     public List<GameObject> readyPlayers;
+    public AudioMenu audioManager;
 
     public GameObject player1;
     public GameObject player1Ready;
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
         gameState = menuState;
         cameraScript = cameraObject.GetComponent<CameraStatePattern>();
         inputManagerScript = inputManagerObject.GetComponent<PlayerInputManager>();
+        audioManager = GetComponent<AudioMenu>();
 
         inputDevices = new List<Gamepad>();
         readyPlayers = new List<GameObject>();
@@ -75,6 +77,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!readyPlayers.Contains(player1))
                 {
+                    audioManager.PlayerJoined();
                     player1NotReady.SetActive(false);
                     player1Ready.SetActive(true);
                     inputManagerScript.player1 = true;
@@ -85,6 +88,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!readyPlayers.Contains(player2))
                 {
+                    audioManager.PlayerJoined();
                     player2NotReady.SetActive(false);
                     player2Ready.SetActive(true);
                     inputManagerScript.player2 = true;
@@ -96,6 +100,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!readyPlayers.Contains(player3))
                 {
+                    audioManager.PlayerJoined();
                     player3NotReady.SetActive(false);
                     player3Ready.SetActive(true);
                     inputManagerScript.player3 = true;
@@ -107,6 +112,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!readyPlayers.Contains(player4))
                 {
+                    audioManager.PlayerJoined();
                     player4NotReady.SetActive(false);
                     player4Ready.SetActive(true);
                     inputManagerScript.player4 = true;
@@ -124,6 +130,7 @@ public class GameManager : MonoBehaviour
         {
             if (readyPlayers.Contains(player1))
             {
+                audioManager.PlayerLeft();
                 player1NotReady.SetActive(true);
                 player1Ready.SetActive(false);
                 inputManagerScript.player1 = false;
@@ -135,6 +142,7 @@ public class GameManager : MonoBehaviour
         {
             if (readyPlayers.Contains(player2))
             {
+                audioManager.PlayerLeft();
                 player2NotReady.SetActive(true);
                 player2Ready.SetActive(false);
                 inputManagerScript.player2 = false;
@@ -146,6 +154,7 @@ public class GameManager : MonoBehaviour
         {
             if (readyPlayers.Contains(player3))
             {
+                audioManager.PlayerLeft();
                 player3NotReady.SetActive(true);
                 player3Ready.SetActive(false);
                 inputManagerScript.player3 = false;
@@ -157,6 +166,7 @@ public class GameManager : MonoBehaviour
         {
             if (readyPlayers.Contains(player4))
             {
+                audioManager.PlayerLeft();
                 player4NotReady.SetActive(true);
                 player4Ready.SetActive(false);
                 inputManagerScript.player4 = false;
