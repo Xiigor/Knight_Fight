@@ -12,6 +12,8 @@ public class AudioPlayer : MonoBehaviour
     }
 
    
+    //Event ref
+    // public string playerTest;
 
     [EventRef]
     public string playerHurtMale;
@@ -74,3 +76,7 @@ public class AudioPlayer : MonoBehaviour
         playerHurtingFemale.start();
     }
 }
+
+
+// Public void PlayerTest()
+//RuntimeManager.PlayOneShot(playerTest, transform.position);
