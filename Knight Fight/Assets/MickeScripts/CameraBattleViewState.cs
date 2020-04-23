@@ -55,13 +55,7 @@ public class CameraBattleViewState : CameraAbstractClass
     {
         if (p_camera.objectsFollowedByCamera.Count == 1)
         {
-            Vector3 position = new Vector3();
-
-            position.x = p_camera.objectsFollowedByCamera[0].position.x;
-            position.y = p_camera.objectsFollowedByCamera[0].position.y + p_camera.offsetFromObjects.y;
-            position.z = p_camera.objectsFollowedByCamera[0].position.z - p_camera.offsetFromObjects.z;
-
-            p_camera.transform.position = Vector3.SmoothDamp(p_camera.transform.position, position, ref p_camera.velocity, p_camera.initialSmoothness);
+            p_camera.ChangeState(p_camera.followPlayerState);
         }
 
         var arenaBounds = new Bounds(p_camera.objectsFollowedByCamera[0].position, Vector3.zero);
