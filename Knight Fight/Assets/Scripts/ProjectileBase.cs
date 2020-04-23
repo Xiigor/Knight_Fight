@@ -9,7 +9,6 @@ abstract public class ProjectileBase : MonoBehaviour
     public PlayerStatePattern parentPlayer = null;
     [HideInInspector] public GameObject Player;
     [HideInInspector] public Transform projectileTransform;
-    [HideInInspector] public int i = 1;
     [HideInInspector] public ProjectileFlyingState flyingState;
     [HideInInspector] public ProjectileGroundedState groundedState;
     public Rigidbody rb;
