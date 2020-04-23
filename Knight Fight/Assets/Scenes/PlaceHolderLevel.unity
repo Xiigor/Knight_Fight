@@ -668,6 +668,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 969376071}
+        m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 969376070}
         m_MethodName: OnExit
         m_Mode: 1
@@ -4554,6 +4565,7 @@ GameObject:
   - component: {fileID: 969376069}
   - component: {fileID: 969376068}
   - component: {fileID: 969376070}
+  - component: {fileID: 969376071}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4705,6 +4717,7 @@ MonoBehaviour:
   inputManagerObject: {fileID: 1210366974}
   inputManagerScript: {fileID: 0}
   readyPlayers: []
+  audioManager: {fileID: 0}
   player1: {fileID: 888531735}
   player1Ready: {fileID: 725105058}
   player1NotReady: {fileID: 1539635728}
@@ -4717,6 +4730,24 @@ MonoBehaviour:
   player4: {fileID: 0}
   player4Ready: {fileID: 1449523568}
   player4NotReady: {fileID: 298155081}
+--- !u!114 &969376071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969376067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e053f60cc8f1b429d21bf29699630c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPress: 
+  startPress: 
+  playerJoin: 
+  playerLeft: 
+  menuMusic: 
+  gameplayMusic: 
 --- !u!1 &977975347
 GameObject:
   m_ObjectHideFlags: 0
@@ -6713,6 +6744,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 969376070}
         m_MethodName: OnStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 969376071}
+        m_MethodName: StartPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9113,6 +9155,11 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 944540185}
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: attackAnimDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
@@ -9228,6 +9275,11 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 1533725321}
+    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: attackAnimDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2521545258423596769, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
       propertyPath: m_Layer

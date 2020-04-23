@@ -26,7 +26,7 @@ public class PlayerAttackState : PlayerIState
     public void ChangeState(PlayerIState newState)
     {
         internalStateTimer = 0f;
-        if (newState == player.basicState)
+        if (newState == player.basicState || newState == player.idleState)
         {
             player.currentState = newState;
         }
@@ -37,5 +37,9 @@ public class PlayerAttackState : PlayerIState
     public void TakeDamage(float damage)
     {
         player.health -= damage;
+        if (player.health <= 0)
+        {
+            player.Die();
+        }
     }
 }

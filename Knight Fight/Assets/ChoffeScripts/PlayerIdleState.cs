@@ -41,5 +41,9 @@ public class PlayerIdleState : PlayerIState
     public void TakeDamage(float damage)
     {
         player.health -= damage;
+        if (player.health <= 0)
+        {
+            player.Die();
+        }
     }
 }
