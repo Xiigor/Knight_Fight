@@ -8,7 +8,9 @@ public class WeaponSpawnManager : MonoBehaviour
     [HideInInspector] public List<GameObject> activeWeaponsList = new List<GameObject>();
     public List<GameObject> weaponsList = new List<GameObject>();
     public int maxWeaponsActive; 
-    public float weaponSpawnRate = 5.0f;
+    public float weaponMaxSpawnTime = 5;
+    public float weaponMinSpawnTime = 5;
+    private float weaponSpawnRate = 5.0f;
     private float spawnTimer = 0;
     [HideInInspector] public int activeWeapons;
     private int SpawnPointCount;
@@ -20,6 +22,7 @@ public class WeaponSpawnManager : MonoBehaviour
         activeWeaponsList.AddRange(GameObject.FindGameObjectsWithTag("Weapon"));
         SpawnPointCount = weaponSpawnPointList.Count;
         WeaponsCount = weaponsList.Count;
+        weaponSpawnRate = Random.Range(weaponMinSpawnTime, weaponMaxSpawnTime);
     }
 
     void Update()
@@ -33,6 +36,7 @@ public class WeaponSpawnManager : MonoBehaviour
                 SpawnWeapon();
                 activeWeapons++;
                 spawnTimer = 0;
+                weaponSpawnRate = Random.Range(weaponMinSpawnTime, weaponMaxSpawnTime); //New spawn time
             }
             
         }
@@ -52,6 +56,7 @@ public class WeaponSpawnManager : MonoBehaviour
         newWeapon.transform.rotation = spawnPoint.transform.rotation;
         newWeapon.GetComponent<Rigidbody>().velocity += (newWeapon.transform.forward * spawnPoint.GetComponent<WeaponSpawnPoint>().forwardSpeed) + (newWeapon.transform.up * spawnPoint.GetComponent<WeaponSpawnPoint>().upSpeed);
         activeWeaponsList.Add(newWeapon);
+
     }
 
 }
