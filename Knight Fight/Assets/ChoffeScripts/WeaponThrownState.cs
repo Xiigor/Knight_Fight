@@ -39,14 +39,6 @@ public class WeaponThrownState : WeaponIState
         weapon.rb.useGravity = true;
     }
 
-    public void ChangeState(WeaponIState newState)
-    {
-       if(newState == weapon.unequippedState)
-        {
-            weapon.currentState = newState;
-        }
-    }
-
     public void HandleCollision(Collision col)
     {
         // här kan man lägga in att olika ljud ska spelas baserat på föremål man träffar.

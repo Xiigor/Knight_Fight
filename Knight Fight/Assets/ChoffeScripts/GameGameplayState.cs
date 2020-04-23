@@ -11,9 +11,15 @@ public class GameGameplayState : GameIState
     }
     public void OnStateEnter()
     {
+        manager.audioManager.StartGameplayMusic();
         manager.AddPlayersForCamera();
         manager.cameraScript.ChangeState(manager.cameraScript.battleViewState);
         manager.menuCanvas.gameObject.SetActive(false);
         manager.inputManagerScript.trigger = true;
+    }
+
+    public void UpdateState()
+    {
+        manager.weaponSpawnManager.TimerUpdater();
     }
 }

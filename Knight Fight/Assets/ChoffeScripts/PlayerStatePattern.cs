@@ -45,8 +45,8 @@ public class PlayerStatePattern : MonoBehaviour
     public float maxHealth = 100f;
     public float health;
     [HideInInspector] public Collider col;
-    private Rigidbody rb;
-    public AudioPlayer audioPlayer;
+    [HideInInspector] private Rigidbody rb;
+    [HideInInspector] public AudioPlayer audioPlayer;
     public int UnequippedLayer = 13;
     public int EquippedLayer = 14;
     [SerializeField] private int playerIndex;
@@ -76,11 +76,13 @@ public class PlayerStatePattern : MonoBehaviour
         currentState = stateChangeObserver = idleState;
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;
+        weapon = null;
+        Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
     private void FixedUpdate()
     {
-        StateUpdateObserver();
+        //StateUpdateObserver();
         currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
@@ -100,10 +102,6 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void Update()
     {
-        if(health <= 0)
-        {
-            currentState.ChangeState(deadState);
-        }
         if (internalGCDTimer < globalCD)
         {
             internalGCDTimer += Time.deltaTime;
@@ -138,12 +136,7 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if(weapon != null)
         {
-           if(weapon.GetComponent<WeaponSwordPattern>())
-            {
-                weapon.GetComponent<AudioWeapon>().Attacking();
-                Debug.Log("Attacks with sword");
-                
-            }
+            weapon.GetComponent<WeaponBaseClass>().Attack();
         }
         else
         {
@@ -160,7 +153,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (internalDashTimer >= dashCD)
                 {
-
+                    audioPlayer.PlayerDashing(); // --- trigger dash sound, try if it works better being placed here
                     return true;
                 }
                 else
@@ -173,6 +166,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if(weapon != null)
                 {
+                    audioPlayer.PlayerThrowing();
                     Debug.Log("throw wep");
                     return true;
                 }
@@ -188,7 +182,9 @@ public class PlayerStatePattern : MonoBehaviour
                 {
                     if (weapon != null)
                     {
+                        Attack(); // ---- anropet till attackfunktionen, spelaren går in i attackstate och går in i idle när animationen är färdig.
                         Debug.Log("attack with wep");
+                        weapon.GetComponent<AudioWeapon>().Attacking();
                         return true;
                     }
                     else
@@ -218,7 +214,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void ChangeDirection()
     {
-        move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
+        move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
         if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
             moveLastDir = moveDir;
@@ -240,7 +236,6 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void ThrowItem()
     {
-        audioPlayer.PlayerThrowing();
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
         weapon = null;
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
@@ -257,6 +252,10 @@ public class PlayerStatePattern : MonoBehaviour
     {
         audioPlayer.PlayerHurting();
         currentState.TakeDamage(damage);
+    }
+    public void Die()
+    {
+        currentState.ChangeState(deadState);
     }
 
     private float Hypotenuse(float sideA, float sideB)
@@ -280,12 +279,11 @@ public class PlayerStatePattern : MonoBehaviour
             if(stateChangeObserver == dashState)
             {
                 //Spelaren gick precis in i dashState
-                audioPlayer.PlayerDashing();
             }
             if (stateChangeObserver == throwState)
             {
                 //Spelaren gick precis in i throwState
-                audioPlayer.PlayerThrowing();
+                Debug.Log("player entered throwstate");
             }
             if (stateChangeObserver == attackState)
             {

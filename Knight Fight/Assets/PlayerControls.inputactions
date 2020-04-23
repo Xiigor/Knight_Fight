@@ -33,7 +33,7 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "53f458f9-940b-459d-857c-a95f67605689",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -54,7 +54,7 @@
                     "name": "",
                     "id": "df5c4572-57d1-4e44-9a89-ef698c4935a5",
                     "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Dash",
@@ -65,7 +65,7 @@
                     "name": "",
                     "id": "11dac243-63c3-4d15-8d20-113875faa6bc",
                     "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "ThrowWep",
@@ -76,7 +76,7 @@
                     "name": "",
                     "id": "f6f9825a-b45e-400d-8e80-982354b548c9",
                     "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
@@ -94,14 +94,6 @@
                     "type": "Button",
                     "id": "27949091-c09b-4a61-ad7e-1cdc3cbe9d7d",
                     "expectedControlType": "",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "StartGame",
-                    "type": "Button",
-                    "id": "33b9c1b0-6a60-419e-9fc9-0926b2c7add4",
-                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -126,22 +118,11 @@
                 {
                     "name": "",
                     "id": "6c66f8bf-e1ff-482c-92dd-3f70c6e3bf0f",
-                    "path": "<Gamepad>/start",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Join",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "755a2a0b-0ae0-4897-a354-fbef75feeed6",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "StartGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
