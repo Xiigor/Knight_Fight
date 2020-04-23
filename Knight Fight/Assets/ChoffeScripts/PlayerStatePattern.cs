@@ -45,8 +45,8 @@ public class PlayerStatePattern : MonoBehaviour
     public float maxHealth = 100f;
     public float health;
     [HideInInspector] public Collider col;
-    private Rigidbody rb;
-    public AudioPlayer audioPlayer;
+    [HideInInspector] private Rigidbody rb;
+    [HideInInspector] public AudioPlayer audioPlayer;
     public int UnequippedLayer = 13;
     public int EquippedLayer = 14;
     [SerializeField] private int playerIndex;
