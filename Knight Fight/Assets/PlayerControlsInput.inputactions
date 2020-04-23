@@ -1,0 +1,107 @@
+{
+    "name": "CubeInput",
+    "maps": [
+        {
+            "name": "PlayerMovement",
+            "id": "84346c3a-fabb-43a9-8b8f-07b7ec2572b7",
+            "actions": [
+                {
+                    "name": "MovementForGamepad",
+                    "type": "Button",
+                    "id": "97aecc9a-046d-47fc-af43-0d2cb103f51f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SelectButtonOnGamepad",
+                    "type": "Button",
+                    "id": "699faa6c-883a-4c27-b408-a178297f6769",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9305ad9f-40e6-45c0-b402-6bd7c385315f",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementForGamepad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "WASD",
+                    "id": "b49d8ad8-d77d-4d77-8ed3-3acb851d4bdf",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementForGamepad",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "6a014ec8-c4e1-4fb0-920a-19d5b0e54f54",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementForGamepad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "abbb5bd3-6508-491b-8880-7cc6d1286f96",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementForGamepad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "4f4b2601-e8ba-4a63-ab16-ca89ce921d2d",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementForGamepad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "5d97f1fd-f814-47ce-b720-59ffbd0866ec",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementForGamepad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "a1b56ca4-e3ac-4eeb-a146-659c6180701c",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectButtonOnGamepad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -27,6 +27,23 @@ public class WeaponSpawnManager : MonoBehaviour
 
     void Update()
     {
+        //spawnTimer = spawnTimer + Time.deltaTime;
+        //if (spawnTimer >= weaponSpawnRate)
+        //{
+        //    Debug.Log(activeWeaponsList.Count);
+        //    if (activeWeaponsList.Count < maxWeaponsActive)
+        //    {
+        //        SpawnWeapon();
+        //        activeWeapons++;
+        //        spawnTimer = 0;
+        //        weaponSpawnRate = Random.Range(weaponMinSpawnTime, weaponMaxSpawnTime); //New spawn time
+        //    }
+            
+        //}
+
+    }
+    public void TimerUpdater()
+    {
         spawnTimer = spawnTimer + Time.deltaTime;
         if (spawnTimer >= weaponSpawnRate)
         {
@@ -38,9 +55,7 @@ public class WeaponSpawnManager : MonoBehaviour
                 spawnTimer = 0;
                 weaponSpawnRate = Random.Range(weaponMinSpawnTime, weaponMaxSpawnTime); //New spawn time
             }
-            
         }
-
     }
 
     void SpawnWeapon()
@@ -57,6 +72,16 @@ public class WeaponSpawnManager : MonoBehaviour
         newWeapon.GetComponent<Rigidbody>().velocity += (newWeapon.transform.forward * spawnPoint.GetComponent<WeaponSpawnPoint>().forwardSpeed) + (newWeapon.transform.up * spawnPoint.GetComponent<WeaponSpawnPoint>().upSpeed);
         activeWeaponsList.Add(newWeapon);
 
+    }
+
+    public void DestroyWeapons()
+    {
+        foreach(GameObject weapon in activeWeaponsList)
+        {
+            GameObject.Destroy(weapon);
+        }
+        activeWeaponsList.Clear();
+        activeWeapons = 0;
     }
 
 }

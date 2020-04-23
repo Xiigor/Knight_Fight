@@ -26,18 +26,16 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public int UnequippedLayer = 13;
     public int EquippedLayer = 14;
 
-    public Vector3 damageZonePosition;
     public Vector3 heldPosition;
     public Vector3 heldRotation;
     public Rigidbody rb;
     public Collider col;
     [HideInInspector] public Animator anim;
-    [HideInInspector] public GameObject gameManager;
 
     public abstract void Attack();
     public void ThrowWep()
     {
-        currentState.ChangeState(thrownState);
+        ChangeState(thrownState);
     }
     public abstract void ChangeDurability(float durabilityDecrement);
 

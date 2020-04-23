@@ -46,7 +46,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""53f458f9-940b-459d-857c-a95f67605689"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -67,7 +67,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""df5c4572-57d1-4e44-9a89-ef698c4935a5"",
                     ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Dash"",
@@ -78,7 +78,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""11dac243-63c3-4d15-8d20-113875faa6bc"",
                     ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ThrowWep"",
@@ -89,10 +89,75 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""f6f9825a-b45e-400d-8e80-982354b548c9"",
                     ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""MenuInput"",
+            ""id"": ""796bcb0d-6305-44dd-a961-77f8f1684b01"",
+            ""actions"": [
+                {
+                    ""name"": ""Join"",
+                    ""type"": ""Button"",
+                    ""id"": ""27949091-c09b-4a61-ad7e-1cdc3cbe9d7d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Leave"",
+                    ""type"": ""Button"",
+                    ""id"": ""2d07fe4d-0c9f-4155-a989-05aef151110d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ToMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""b79cf0bb-555c-4463-8311-e6b56c900a37"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""6c66f8bf-e1ff-482c-92dd-3f70c6e3bf0f"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Join"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f6c6e9a-ed26-4113-ae87-9c46054769f0"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Leave"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""576f4b50-ec12-44b4-9793-40706481ca45"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -107,6 +172,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
         m_Gameplay_ThrowWep = m_Gameplay.FindAction("ThrowWep", throwIfNotFound: true);
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
+        // MenuInput
+        m_MenuInput = asset.FindActionMap("MenuInput", throwIfNotFound: true);
+        m_MenuInput_Join = m_MenuInput.FindAction("Join", throwIfNotFound: true);
+        m_MenuInput_Leave = m_MenuInput.FindAction("Leave", throwIfNotFound: true);
+        m_MenuInput_ToMenu = m_MenuInput.FindAction("ToMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -209,11 +279,66 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
+
+    // MenuInput
+    private readonly InputActionMap m_MenuInput;
+    private IMenuInputActions m_MenuInputActionsCallbackInterface;
+    private readonly InputAction m_MenuInput_Join;
+    private readonly InputAction m_MenuInput_Leave;
+    private readonly InputAction m_MenuInput_ToMenu;
+    public struct MenuInputActions
+    {
+        private @PlayerControls m_Wrapper;
+        public MenuInputActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Join => m_Wrapper.m_MenuInput_Join;
+        public InputAction @Leave => m_Wrapper.m_MenuInput_Leave;
+        public InputAction @ToMenu => m_Wrapper.m_MenuInput_ToMenu;
+        public InputActionMap Get() { return m_Wrapper.m_MenuInput; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuInputActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuInputActions instance)
+        {
+            if (m_Wrapper.m_MenuInputActionsCallbackInterface != null)
+            {
+                @Join.started -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnJoin;
+                @Join.performed -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnJoin;
+                @Join.canceled -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnJoin;
+                @Leave.started -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnLeave;
+                @Leave.performed -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnLeave;
+                @Leave.canceled -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnLeave;
+                @ToMenu.started -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnToMenu;
+                @ToMenu.performed -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnToMenu;
+                @ToMenu.canceled -= m_Wrapper.m_MenuInputActionsCallbackInterface.OnToMenu;
+            }
+            m_Wrapper.m_MenuInputActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Join.started += instance.OnJoin;
+                @Join.performed += instance.OnJoin;
+                @Join.canceled += instance.OnJoin;
+                @Leave.started += instance.OnLeave;
+                @Leave.performed += instance.OnLeave;
+                @Leave.canceled += instance.OnLeave;
+                @ToMenu.started += instance.OnToMenu;
+                @ToMenu.performed += instance.OnToMenu;
+                @ToMenu.canceled += instance.OnToMenu;
+            }
+        }
+    }
+    public MenuInputActions @MenuInput => new MenuInputActions(this);
     public interface IGameplayActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnThrowWep(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+    }
+    public interface IMenuInputActions
+    {
+        void OnJoin(InputAction.CallbackContext context);
+        void OnLeave(InputAction.CallbackContext context);
+        void OnToMenu(InputAction.CallbackContext context);
     }
 }

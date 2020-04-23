@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 2765844868840328222}
   - component: {fileID: 2765844868840328221}
   - component: {fileID: 2765844868840328220}
-  m_Layer: 0
-  m_Name: Sword
+  - component: {fileID: 698910232}
+  m_Layer: 13
+  m_Name: weapon
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,8 +127,8 @@ MonoBehaviour:
   audioPlayer: {fileID: 0}
   durability: 10
   damage: 5
-  thrownDamage: 2
-  thrownForce: 75
+  thrownDamage: 20
+  thrownForce: 65
   throwAngle: 0.1
   environmentTag: Environment
   playerTag: Player
@@ -135,7 +136,6 @@ MonoBehaviour:
   weaponTag: Weapon
   UnequippedLayer: 13
   EquippedLayer: 14
-  damageZonePosition: {x: 0, y: 0, z: 0}
   heldPosition: {x: 0, y: 0, z: 0}
   heldRotation: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
@@ -143,3 +143,21 @@ MonoBehaviour:
   anim: {fileID: 0}
   attackAnimName: 
   durabilityDecrement: 0
+--- !u!114 &698910232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2765844868840328219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
+  weaponBreak: event:/Ui/Ui_Menu_Select

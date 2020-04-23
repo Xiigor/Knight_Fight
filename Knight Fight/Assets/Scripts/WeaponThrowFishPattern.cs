@@ -21,18 +21,12 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-        gameManager = GameObject.Find("GameManager");
-
+        
     }
 
     private void Update()
     {
-        StateChangeObserver();
-        if (currentDurability <= 0)
-        {
-            gameManager.GetComponent<WeaponSpawnManager>().activeWeaponsList.Remove(this.gameObject);
-            Destroy(this.gameObject);
-        }
+        StateChangeObserver(); 
     }
 
     public override void Attack()
