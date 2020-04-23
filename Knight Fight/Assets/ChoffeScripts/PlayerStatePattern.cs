@@ -76,6 +76,8 @@ public class PlayerStatePattern : MonoBehaviour
         currentState = stateChangeObserver = idleState;
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;
+        weapon = null;
+        Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
     private void FixedUpdate()
@@ -212,7 +214,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void ChangeDirection()
     {
-        move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
+        move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
         if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
             moveLastDir = moveDir;

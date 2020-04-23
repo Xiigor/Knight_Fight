@@ -74,4 +74,14 @@ public class WeaponSpawnManager : MonoBehaviour
 
     }
 
+    public void DestroyWeapons()
+    {
+        foreach(GameObject weapon in activeWeaponsList)
+        {
+            GameObject.Destroy(weapon);
+        }
+        activeWeaponsList.Clear();
+        activeWeapons = 0;
+    }
+
 }
