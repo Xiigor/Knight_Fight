@@ -31,4 +31,9 @@ public class GameMenuState : GameIState
         manager.inputManagerScript.triggered = false;
         manager.RemovePlayersForCamera();
     }
+
+    public void UpdateState()
+    {
+        //gör inget för tillfället
+    }
 }
