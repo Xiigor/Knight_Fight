@@ -484,6 +484,11 @@ PrefabInstance:
       propertyPath: thrownForce
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 2765844868840328220, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
+        type: 3}
+      propertyPath: durabilityDecrement
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
 --- !u!1 &255558346
@@ -3775,10 +3780,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e7deeba8f3b2a24195bd181f30129a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeWeaponsList: []
   weaponsList:
   - {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
   - {fileID: 3718967327079925850, guid: 7236afd258d554248bb743331f5b655b, type: 3}
-  maxWeaponsActive: 25
+  maxWeaponsActive: 5
   weaponSpawnRate: 1
   activeWeapons: 5
 --- !u!4 &1210366976
@@ -5842,7 +5848,7 @@ PrefabInstance:
     - target: {fileID: 2027200284440624271, guid: 2048936ecae1c3e4fa5c2d609c1bcf9e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2027200284440624269, guid: 2048936ecae1c3e4fa5c2d609c1bcf9e,
         type: 3}

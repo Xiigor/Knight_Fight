@@ -30,8 +30,8 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         StateChangeObserver();
         if (currentDurability <= 0)
         {
-            gameManager.GetComponent<WeaponSpawnManager>().activeWeapons -= 1;
-            Destroy(this);
+            gameManager.GetComponent<WeaponSpawnManager>().activeWeaponsList.Remove(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 
