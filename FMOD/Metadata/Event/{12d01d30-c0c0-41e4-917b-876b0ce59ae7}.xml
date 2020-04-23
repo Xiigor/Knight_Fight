@@ -107,6 +107,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{ebf4afd2-c3f5-42bf-af59-43d6abda7d43}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<property name="name">
 			<value>Woosh</value>
 		</property>
@@ -123,7 +126,7 @@
 	<object class="MixerBusEffectChain" id="{f5fdf7c1-95c3-466d-9326-bcab38d19fda}">
 		<relationship name="effects">
 			<destination>{3ca017f2-6526-4093-845e-20a539e5ed66}</destination>
-			<destination>{48c7051a-7811-46f7-bb17-0fe88e407f73}</destination>
+			<destination>{3007ea53-3f48-45c8-bdf0-855bf9e50fb7}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5c4d161a-4be2-47be-ac7c-32ea88d2a0ca}" />
@@ -150,9 +153,15 @@
 	</object>
 	<object class="MixerBusPanner" id="{6f4bb7d3-1e37-4e59-bd3f-64ab01522b14}" />
 	<object class="MixerBusFader" id="{3ca017f2-6526-4093-845e-20a539e5ed66}" />
-	<object class="SpatialiserEffect" id="{48c7051a-7811-46f7-bb17-0fe88e407f73}">
+	<object class="SpatialiserEffect" id="{3007ea53-3f48-45c8-bdf0-855bf9e50fb7}">
 		<property name="maximumDistance">
 			<value>100</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>50</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{258bebf5-81ce-4db7-bb16-1b87fc0490df}" />
