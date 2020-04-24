@@ -31,37 +31,27 @@ public class AudioWeapon : MonoBehaviour
 
     public void Attacking()
     {
-        attacking = RuntimeManager.CreateInstance(attack);
         RuntimeManager.PlayOneShot(attack, transform.position);
-        attacking.start();
     }
 
     public void AttackHittingPlayer()
     {
-        attackHittingPlayer = RuntimeManager.CreateInstance(attackHitPlayer);
         RuntimeManager.PlayOneShot(attackHitPlayer, transform.position);
-        attackHittingPlayer.start();
     }
 
     public void WeaponBeingThrown()
     {
-        weaponBeingThrown = RuntimeManager.CreateInstance(throwWep);
         RuntimeManager.PlayOneShot(throwWep, transform.position);
-        weaponBeingThrown.start();
     }
 
     public void ThrownWepHittingEnvironment()
     {
-        thrownWepHittingEnvironment = RuntimeManager.CreateInstance(ThrownWepHitEnvironment);
         RuntimeManager.PlayOneShot(ThrownWepHitEnvironment, transform.position);
-        thrownWepHittingEnvironment.start();
     }
 
     public void WeaponBeingPickedUp()
     {
-        weaponBeingPickedUp = RuntimeManager.CreateInstance(weaponPickup);
         RuntimeManager.PlayOneShot(weaponPickup, transform.position);
-        weaponBeingPickedUp.start();
     }
 
     public void WeaponBreaking()
