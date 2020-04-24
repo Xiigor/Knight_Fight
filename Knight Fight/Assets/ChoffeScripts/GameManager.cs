@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
     {
         if(readyPlayers.Count >= 1)
         {
+            audioManager.StartPressed();
             gameState = gameplayState;
             gameState.OnStateEnter();
         }
@@ -77,6 +78,7 @@ public class GameManager : MonoBehaviour
 
     public void OnExit()
     {
+        audioManager.ButtonPressed();
         //exit game
     }
 
