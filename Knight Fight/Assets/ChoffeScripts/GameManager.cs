@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        gameState.UpdateState();
+        //gameState.UpdateState();
     }
 
     public void OnStart()
