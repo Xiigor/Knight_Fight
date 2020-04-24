@@ -25,7 +25,7 @@ public class SlowZone : MonoBehaviour
 
         if(collision.tag == "Player")
         {
-            collision.GetComponent<basicmovement>().moveSpeed *= 0.25f;
+          //  collision.GetComponent<basicmovement>().moveSpeed *= 0.25f;
         }
 
     }
@@ -35,7 +35,7 @@ public class SlowZone : MonoBehaviour
         collision.gameObject.GetComponent<Rigidbody>().velocity = collision.gameObject.GetComponent<Rigidbody>().velocity.normalized * velocityOnEnter.magnitude;
         if (collision.tag == "Player")
         {
-            collision.GetComponent<basicmovement>().ResetSpeed();
+           // collision.GetComponent<basicmovement>().ResetSpeed();
         }
     }
 }
