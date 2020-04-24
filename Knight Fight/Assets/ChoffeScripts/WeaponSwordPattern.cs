@@ -7,12 +7,14 @@ public class WeaponSwordPattern : WeaponBaseClass
     public string attackAnimName;
     public float durabilityDecrement;
     private float currentDurability;
+    Weapontype thisWeaponType;
     
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
         equippedState = new WeaponEquippedState(this);
         thrownState = new WeaponThrownState(this);
+        thisWeaponType = Weapontype.oneHSword;
     }
 
     private void Start()

@@ -8,11 +8,13 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     public GameObject weaponAmmo;
     private float currentDurability;
     private Collision apa; // Funkar inte utan att skicka med denna
+    Weapontype thisWeaponType;
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
         equippedState = new WeaponEquippedState(this);
         thrownState = new WeaponThrownState(this);
+        thisWeaponType = Weapontype.spellbook;
     }
 
     private void Start()

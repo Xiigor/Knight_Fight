@@ -11,6 +11,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
+    public enum Weapontype{ oneHSword, twoHSword, spellbook };
     
     public float durability;
     public float damage;
