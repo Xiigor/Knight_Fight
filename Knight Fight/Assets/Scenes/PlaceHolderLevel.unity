@@ -126,6 +126,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5945956326042383396}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &23066744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2105627474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &23066745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23066744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
+--- !u!1 &35177516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 549177678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &35177517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35177516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &103324980
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +276,64 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: -209.131, z: 0}
+--- !u!1 &146683734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 869286787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &146683735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146683734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
+--- !u!1 &153059225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 777379139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &153059226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153059225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &173400925
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +573,7 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -579,7 +695,7 @@ RectTransform:
   - {fileID: 1957232861}
   - {fileID: 2042011598}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -668,7 +784,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 969376071}
         m_MethodName: ButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -3013,6 +3129,35 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 7.7690005, z: 0}
+--- !u!1 &670378471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1294420602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &670378472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670378471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &671058920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,7 +3363,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 37.305, y: -30.000002, z: 0}
 --- !u!1 &706991227
 GameObject:
@@ -3303,7 +3448,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &713896428
 GameObject:
@@ -3609,7 +3754,7 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -3638,6 +3783,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
+--- !u!1 &750935617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1859414475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &750935618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750935617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1001 &768076161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3693,7 +3867,7 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -4330,7 +4504,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &959053498
 GameObject:
@@ -4509,9 +4683,10 @@ Transform:
   m_LocalRotation: {x: 0.5254717, y: 0, z: 0, w: 0.8508111}
   m_LocalPosition: {x: 1.6, y: 69.1, z: -37.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 969376069}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 63.4, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -4680,11 +4855,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969376067}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 421.0951, y: 238.52228, z: -234.71024}
+  m_LocalRotation: {x: -0.5254717, y: -0, z: -0, w: 0.8508111}
+  m_LocalPosition: {x: 419.4951, y: -100.08261, z: -239.59528}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 963194228}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &969376070
@@ -4731,11 +4906,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPress: event:/Ui/Ui_Menu_Select
-  startPress: event:/Ui/Ui_Menu_Select
-  playerJoin: event:/Ui/Ui_Menu_Select
-  playerLeft: event:/Ui/Ui_Menu_Select
-  menuMusic: event:/Ui/Ui_Menu_Select
-  gameplayMusic: event:/Ui/Ui_Menu_Select
+  startPress: event:/Ui/Ui_Menu_Start
+  playerJoin: event:/Ui/Ui_Player_Joined
+  playerLeft: event:/Ui/Ui_Player_Left
+  menuMusic: event:/BGM/Menu
+  gameplayMusic: event:/BGM/Gameplay
 --- !u!1 &977975347
 GameObject:
   m_ObjectHideFlags: 0
@@ -5057,8 +5232,37 @@ Transform:
   - {fileID: 549177679}
   - {fileID: 271541533}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1071041715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 271541532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1071041716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071041715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &1103579998
 GameObject:
   m_ObjectHideFlags: 0
@@ -5482,7 +5686,7 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -5790,7 +5994,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1205381916
 GameObject:
@@ -5978,7 +6182,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1210366977
 MonoBehaviour:
@@ -6396,6 +6600,35 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1294420602}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1409761462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 356111390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1409761463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409761462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &1432436407
 GameObject:
   m_ObjectHideFlags: 0
@@ -6645,6 +6878,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449523568}
   m_CullTransparentMesh: 0
+--- !u!1 &1466584237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 346812723}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1466584238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466584237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &1471906336
 GameObject:
   m_ObjectHideFlags: 0
@@ -6738,7 +7000,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 969376071}
         m_MethodName: StartPressed
         m_Mode: 1
         m_Arguments:
@@ -6817,7 +7079,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539635728
 GameObject:
@@ -7331,7 +7593,7 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -7480,7 +7742,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1807706228
 GameObject:
@@ -8204,6 +8466,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957232860}
   m_CullTransparentMesh: 0
+--- !u!1 &2022784847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1874386910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2022784848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022784847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &2031182620
 GameObject:
   m_ObjectHideFlags: 0
@@ -8653,6 +8944,35 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2105627474}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2141106017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2101775779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2141106018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141106017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &2141246414
 GameObject:
   m_ObjectHideFlags: 0
@@ -8800,7 +9120,7 @@ PrefabInstance:
     - target: {fileID: 7360429787406286962, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7360429787406286962, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
@@ -9208,7 +9528,7 @@ PrefabInstance:
     - target: {fileID: 6955143107841644772, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6955143107841644772, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}

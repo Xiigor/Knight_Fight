@@ -15,7 +15,7 @@ public class AudioMenu : MonoBehaviour
 
     [EventRef]
     public string playerJoin;
-    public FMOD.Studio.EventInstance playerJoined;
+   
 
     [EventRef]
     public string playerLeft;
@@ -47,9 +47,9 @@ public class AudioMenu : MonoBehaviour
 
     public void PlayerJoined()
     {
-        playerJoined = RuntimeManager.CreateInstance(playerJoin);
+       
         RuntimeManager.PlayOneShot(playerJoin, transform.position);
-        playerJoined.start();
+       
     }
 
     public void PlayerLeft()
