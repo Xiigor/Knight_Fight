@@ -7,14 +7,13 @@ public class WeaponSwordPattern : WeaponBaseClass
     public string attackAnimName;
     public float durabilityDecrement;
     private float currentDurability;
-    Weapontype thisWeaponType;
     
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
         equippedState = new WeaponEquippedState(this);
         thrownState = new WeaponThrownState(this);
-        thisWeaponType = Weapontype.oneHSword;
+        thisWepType = Weapontype.oneHSword;
     }
 
     private void Start()
@@ -55,17 +54,11 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     public override void SetWeaponType()
     {
-        if(thisWeaponType == Weapontype.oneHSword)
-        {
-            parentPlayer.GetComponent<PlayerStatePattern>().currentWeaponIs1HSword = true;
-        }
+        parentPlayer.GetComponent<Animator>().SetBool("1hSword", true);
     }
 
     public override void RemoveWeaponType()
     {
-        if (thisWeaponType == Weapontype.oneHSword)
-        {
-            parentPlayer.GetComponent<PlayerStatePattern>().currentWeaponIs1HSword = false;
-        }
+        parentPlayer.GetComponent<Animator>().SetBool("1hSword", false);
     }
 }

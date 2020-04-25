@@ -12,6 +12,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
     public enum Weapontype{ oneHSword, twoHSword, spellbook };
+    public Weapontype thisWepType;
     
     public float durability;
     public float damage;
@@ -57,15 +58,17 @@ abstract public class WeaponBaseClass : MonoBehaviour
 
     public void SetParentPlayer(Collision collision)
     {
-        //sätter spelaren till förälder
-        transform.SetParent(collision.transform.GetChild(0)); // ----- när spelaren senare får flera childobjects kommer detta gå sönder
 
 
         parentPlayer = collision.gameObject;
-
-        //parentPlayer = collision.gameObject.GetComponent<PlayerStatePattern>(); //osäker på ifall detta behövs... 
-        // ...bra referens för att Unequipped vapen ska kunna kolla ifall spelaren redan har ett vapen
-        // spelaren kommer kunna behöva anropa vapnets funktioner baserat på input men kanske inte tvärt om
+        if(thisWepType == Weapontype.spellbook)
+        {
+            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().leftHandGameobject.transform);
+        }
+        else
+        {
+            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
+        }
     }
     public void RemoveParentPlayer()
     {

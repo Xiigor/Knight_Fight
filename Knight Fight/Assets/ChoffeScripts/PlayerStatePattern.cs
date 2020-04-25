@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
-    private PlayerIState stateChangeObserver;
 
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerIdleState idleState;
@@ -14,7 +13,10 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
-    
+
+    public GameObject rightHandGameobject = null;
+    public GameObject leftHandGameobject = null;
+
 
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
@@ -33,7 +35,7 @@ public class PlayerStatePattern : MonoBehaviour
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
     public float attackAnimDuration;
-    private float movementInputForDashDirThreshhold = 0.25f; //Fixa så att movement är 0 eller 1
+    private float movementInputForDashDirThreshhold = 0.15f; //Fixa så att movement är 0 eller 1
     public float internalDashRayDist = 1.3f;
     public bool canDash = true;
 
@@ -70,7 +72,6 @@ public class PlayerStatePattern : MonoBehaviour
     {
         basicState = new PlayerBasicState(this);
         idleState = new PlayerIdleState(this);
-        //currentState = stateChangeObserver = idleState;
 
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
@@ -87,7 +88,7 @@ public class PlayerStatePattern : MonoBehaviour
     {
         transform.position = spawnPosition.transform.position;
         health = maxHealth;
-        currentState = stateChangeObserver = idleState;
+        currentState = idleState;
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;
         weapon = null;
@@ -96,7 +97,6 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //StateUpdateObserver();
         currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
@@ -234,9 +234,10 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void ChangeDirection()
     {
-        move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
+        //move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
         if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
+            move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
             moveLastDir = moveDir;
         }
 
@@ -282,35 +283,5 @@ public class PlayerStatePattern : MonoBehaviour
     private float Hypotenuse(float sideA, float sideB)
     {
         return Mathf.Sqrt(sideA * sideA + sideB * sideB);
-    }
-
-    private void StateUpdateObserver()
-    {
-        if(stateChangeObserver != currentState)
-        {
-            stateChangeObserver = currentState;
-            if (stateChangeObserver == idleState)
-            {
-                //spelaren gick precis in i idleState
-            }
-            if (stateChangeObserver == basicState)
-            {
-                //spelaren gick precis in i "MoveState"
-            }
-            if(stateChangeObserver == dashState)
-            {
-                //Spelaren gick precis in i dashState
-            }
-            if (stateChangeObserver == throwState)
-            {
-                //Spelaren gick precis in i throwState
-                Debug.Log("player entered throwstate");
-            }
-            if (stateChangeObserver == attackState)
-            {
-                //Spelaren gick precis in i attackState
-                
-            }
-        }
     }
 }
