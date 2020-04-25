@@ -10,6 +10,12 @@ public class PlayerThrowState : PlayerIState
     {
         player = statePatternPlayer;
     }
+
+    public void OnStateEnter()
+    {
+        player.animator.SetBool("Throw", true);
+    }
+
     public void UpdateState()
     {
         player.ThrowItem();
@@ -17,14 +23,15 @@ public class PlayerThrowState : PlayerIState
     }
     public void ChangeState(PlayerIState newState)
     {
-        if(newState == player.deadState)
+        player.animator.SetBool("Throw", false);
+        if (newState == player.deadState)
         {
-            player.currentState = newState;
+            player.StateChanger(newState);
         }
         else if (newState == player.basicState || newState == player.idleState)
         {
             player.internalGCDTimer = 0f;
-            player.currentState = newState;
+            player.StateChanger(newState);
         }
         else
             Debug.Log("GCD Trigger");

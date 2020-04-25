@@ -12,6 +12,12 @@ public class PlayerAttackState : PlayerIState
         player = statePatternPlayer;
     }
 
+    public void OnStateEnter()
+    {
+
+    }
+
+
     public void UpdateState()
     {
         player.Attack();
@@ -28,7 +34,7 @@ public class PlayerAttackState : PlayerIState
         internalStateTimer = 0f;
         if (newState == player.basicState || newState == player.idleState)
         {
-            player.currentState = newState;
+            player.StateChanger(newState);
         }
         else
             Debug.Log("GCD Trigger");

@@ -34,19 +34,28 @@ public class PlayerStatePattern : MonoBehaviour
     public bool canDash = true;
 
     public GameObject weapon;
+
+    //tags
     public string weaponTag = "Weapon";
     public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
 
+    //values
     [HideInInspector] public Vector2 moveDir;
     Vector2 moveLastDir;
     Vector3 move;
     public Vector3 lastMove;
     public float maxHealth = 100f;
     public float health;
+
+
     [HideInInspector] public Collider col;
     [HideInInspector] private Rigidbody rb;
     [HideInInspector] public AudioPlayer audioPlayer;
+    public Animator animator;
+
+
+
     public int UnequippedLayer = 13;
     public int EquippedLayer = 14;
     [SerializeField] private int playerIndex;
@@ -65,7 +74,8 @@ public class PlayerStatePattern : MonoBehaviour
         attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
-        audioPlayer = GetComponent<AudioPlayer>(); 
+        audioPlayer = GetComponent<AudioPlayer>();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -212,6 +222,12 @@ public class PlayerStatePattern : MonoBehaviour
         }
     }
 
+    public void StateChanger(PlayerIState newState)
+    {
+        currentState = newState;
+        currentState.OnStateEnter();
+    }
+
     public void ChangeDirection()
     {
         move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
@@ -244,6 +260,7 @@ public class PlayerStatePattern : MonoBehaviour
     public void PickupItem(GameObject weaponObject)
     {
         weapon = weaponObject;
+
         Physics.IgnoreCollision(col, weapon.GetComponent<Collider>(), true);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, true);
     }
