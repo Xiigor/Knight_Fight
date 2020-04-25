@@ -23,6 +23,10 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public float internalDashTimer;
     [HideInInspector] public float internalAttackTimer;
 
+    //weapontype for the currently equipped weapon
+    public bool currentWeaponIs1HSword = false;
+    public bool currentWeaponIs2HSword = false;
+    public bool currentWeaponIsSpellbook = false;
 
     public float movementSpeedMultiplier = 35.0f;
 

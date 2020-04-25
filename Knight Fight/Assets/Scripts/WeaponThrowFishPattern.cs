@@ -54,4 +54,21 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         currentState = newState;
         currentState.OnStateEnter();
     }
+
+    public override void SetWeaponType()
+    {
+        if (thisWeaponType == Weapontype.twoHSword)
+        {
+            parentPlayer.GetComponent<PlayerStatePattern>().currentWeaponIsSpellbook = true;
+        }
+
+    }
+
+    public override void RemoveWeaponType()
+    {
+        if (thisWeaponType == Weapontype.twoHSword)
+        {
+            parentPlayer.GetComponent<PlayerStatePattern>().currentWeaponIsSpellbook = false;
+        }
+    }
 }

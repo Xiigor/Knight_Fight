@@ -52,4 +52,20 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentState.HandleCollision(collision);
         
     }
+
+    public override void SetWeaponType()
+    {
+        if(thisWeaponType == Weapontype.oneHSword)
+        {
+            parentPlayer.GetComponent<PlayerStatePattern>().currentWeaponIs1HSword = true;
+        }
+    }
+
+    public override void RemoveWeaponType()
+    {
+        if (thisWeaponType == Weapontype.oneHSword)
+        {
+            parentPlayer.GetComponent<PlayerStatePattern>().currentWeaponIs1HSword = false;
+        }
+    }
 }

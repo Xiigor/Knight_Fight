@@ -51,6 +51,10 @@ abstract public class WeaponBaseClass : MonoBehaviour
         //destroy the weapon and all traces of it
     }
 
+    public abstract void SetWeaponType();
+    public abstract void RemoveWeaponType();
+
+
     public void SetParentPlayer(Collision collision)
     {
         //sätter spelaren till förälder
