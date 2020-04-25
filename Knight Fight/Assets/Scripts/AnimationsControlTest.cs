@@ -50,6 +50,9 @@ public class AnimationsControlTest : MonoBehaviour
         {
             animator.SetTrigger("Sword Run");
         }
-
+        if (Input.GetKeyDown("r"))
+        {
+            animator.SetTrigger("Sword Attack");
+        }
     }
 }
