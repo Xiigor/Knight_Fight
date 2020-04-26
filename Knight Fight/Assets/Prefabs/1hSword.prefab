@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8437895737867728456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.48, y: 6.36, z: 29.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
+  thisWepType: 0
   durability: 10
   damage: 5
   thrownDamage: 20
@@ -107,8 +108,8 @@ MonoBehaviour:
   weaponTag: Weapon
   UnequippedLayer: 13
   EquippedLayer: 14
-  heldPosition: {x: 0, y: -0.045, z: 0.656}
-  heldRotation: {x: 88.79, y: 0, z: 0}
+  heldPosition: {x: 0.107, y: 0.052, z: -0.443}
+  heldRotation: {x: -89.14301, y: 0.002, z: -9.665001}
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}
