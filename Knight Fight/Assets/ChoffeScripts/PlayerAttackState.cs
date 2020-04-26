@@ -12,9 +12,17 @@ public class PlayerAttackState : PlayerIState
         player = statePatternPlayer;
     }
 
+    public void OnStateEnter()
+    {
+        player.animator.SetBool("Attack", true);
+        Debug.Log("hur ofta händer detta?");
+        player.Attack();
+    }
+
+
     public void UpdateState()
     {
-        player.Attack();
+        //player.Attack();
         if (internalStateTimer >= player.attackAnimDuration)
         {
             ChangeState(player.basicState);
@@ -25,10 +33,12 @@ public class PlayerAttackState : PlayerIState
     }
     public void ChangeState(PlayerIState newState)
     {
+        player.animator.SetBool("Attack", false);
         internalStateTimer = 0f;
         if (newState == player.basicState || newState == player.idleState)
         {
-            player.currentState = newState;
+            
+            player.StateChanger(newState);
         }
         else
             Debug.Log("GCD Trigger");

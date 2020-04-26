@@ -5,15 +5,24 @@ using UnityEngine;
 public class ProjectileFlyingState : ProjectileIState
 {
     private readonly ProjectileBase projectile;
+    private bool velocityApplied = false;
 
     public ProjectileFlyingState(ProjectileBase projectileBase)
     {
         projectile = projectileBase;
     }
-    //public void ChangePhysics()
-    //{
-    //    throw new System.NotImplementedException();
-    //}
+
+    public void UpdateState()
+    {
+        if (velocityApplied)
+        {
+           if(projectile.rb.velocity == Vector3.zero)
+            {
+                    ChangeState(projectile.groundedState);
+            }
+        }
+
+    }
 
     public void ChangeState(ProjectileIState newState)
     {
@@ -26,13 +35,16 @@ public class ProjectileFlyingState : ProjectileIState
 
     public void OnStateEnter()
     {
+        velocityApplied = false;
         LaunchFish();
         Debug.Log("FlyingState");
     }
 
     public void LaunchFish()
     {
-        projectile.rb.velocity += projectile.Player.transform.forward * projectile.ProjectileSpeed;   
+        projectile.rb.velocity = projectile.Player.transform.forward * projectile.ProjectileSpeed;
+        velocityApplied = true;
     }
+
 
 }

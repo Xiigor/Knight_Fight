@@ -5,7 +5,7 @@
 			<value>Ui_Menu_Select</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{e0d6e294-4282-4fdc-95a3-c31642b72e3a}</destination>
@@ -86,6 +86,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{544b9404-4967-4e9a-bab2-84d11baf2d4c}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{44f9db7e-6702-4d74-839e-33cfc02f8188}</destination>
 		</relationship>
@@ -165,6 +168,7 @@
 	<object class="MixerBusEffectChain" id="{44f9db7e-6702-4d74-839e-33cfc02f8188}">
 		<relationship name="effects">
 			<destination>{e336a709-0ee2-402b-9f11-519a6bfb66f1}</destination>
+			<destination>{85dba04b-a399-4d4c-9e73-02900c76cd97}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{48a81b21-c323-478e-9ba6-acd4b893d65b}" />
@@ -214,6 +218,20 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{e336a709-0ee2-402b-9f11-519a6bfb66f1}" />
+	<object class="SpatialiserEffect" id="{85dba04b-a399-4d4c-9e73-02900c76cd97}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>10000</value>
+		</property>
+		<property name="minimumExtent">
+			<value>360</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{e2da0dee-44a0-437b-8582-8da4fc703517}">
 		<property name="position">
 			<value>0.91999999999999993</value>

@@ -47,10 +47,11 @@ public class GameManager : MonoBehaviour
         gameplayState = new GameGameplayState(this);
         menuState = new GameMenuState(this);
         gameState = menuState;
-
+        
         cameraScript = cameraObject.GetComponent<CameraStatePattern>();
         inputManagerScript = inputManagerObject.GetComponent<PlayerInputManager>();
         audioManager = GetComponent<AudioMenu>();
+        audioManager.StartMenuMusic();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
 
         inputDevices = new List<Gamepad>();
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
     {
         if(readyPlayers.Count >= 1)
         {
+            audioManager.StartPressed();
             gameState = gameplayState;
             gameState.OnStateEnter();
         }
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
 
     public void OnExit()
     {
+        audioManager.ButtonPressed();
         //exit game
     }
 
@@ -210,7 +213,6 @@ public class GameManager : MonoBehaviour
         }
         readyPlayers.Clear();
         cameraScript.objectsFollowedByCamera.Clear();
-
     }
 
     public void ToMenu()

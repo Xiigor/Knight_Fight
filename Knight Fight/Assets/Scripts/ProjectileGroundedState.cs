@@ -9,10 +9,7 @@ public class ProjectileGroundedState : ProjectileIState
     {
         projectile = projectileBase;
     }
-    //public void ChangePhysics()
-    //{
-    //    throw new System.NotImplementedException();
-    //}
+
 
     public void ChangeState(ProjectileIState newState)
     {
@@ -24,5 +21,10 @@ public class ProjectileGroundedState : ProjectileIState
         projectile.damage = 0;
         Debug.Log("Grounded");
 
+    }
+
+    public void UpdateState()
+    {
+        
     }
 }

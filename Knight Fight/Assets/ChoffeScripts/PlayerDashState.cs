@@ -11,8 +11,15 @@ public class PlayerDashState : PlayerIState
     {
         player = statePatternPlayer;
     }
+
+    public void OnStateEnter()
+    {
+        player.animator.SetBool("Dash", true);
+    }
+
     public void UpdateState()
     {
+        player.animator.SetBool("Dash", false);
         internalStateTimer += Time.deltaTime;
         if (player.canDash)
         {
@@ -37,7 +44,7 @@ public class PlayerDashState : PlayerIState
             internalStateTimer = 0f;
             player.internalDashTimer = 0f;
             player.internalGCDTimer = 0f;
-            player.currentState = newState;
+            player.StateChanger(newState);
         }
         else
             Debug.Log("GCD Trigger");

@@ -13,6 +13,7 @@ public class WeaponSwordPattern : WeaponBaseClass
         unequippedState = new WeaponUnequippedState(this);
         equippedState = new WeaponEquippedState(this);
         thrownState = new WeaponThrownState(this);
+        thisWepType = Weapontype.oneHSword;
     }
 
     private void Start()
@@ -49,5 +50,15 @@ public class WeaponSwordPattern : WeaponBaseClass
     {
         currentState.HandleCollision(collision);
         
+    }
+
+    public override void SetWeaponType()
+    {
+        parentPlayer.GetComponent<Animator>().SetBool("1hSword", true);
+    }
+
+    public override void RemoveWeaponType()
+    {
+        parentPlayer.GetComponent<Animator>().SetBool("1hSword", false);
     }
 }

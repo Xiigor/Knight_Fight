@@ -6,6 +6,7 @@ public interface ProjectileIState
 {
     void OnStateEnter();
     //void ChangePhysics();
+    void UpdateState();
     void ChangeState(ProjectileIState newState);
     //void HandleCollision(Collision col);
 }

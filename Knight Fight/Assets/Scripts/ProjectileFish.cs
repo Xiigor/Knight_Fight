@@ -10,7 +10,9 @@ public class ProjectileFish : ProjectileBase
     {
         flyingState = new ProjectileFlyingState(this);
         groundedState = new ProjectileGroundedState(this);
-        Player = GameObject.Find(playerTag);
+        rb = GetComponent<Rigidbody>();
+        parentObject = transform.parent.gameObject;
+        Player = parentObject.GetComponent<WeaponThrowFishPattern>().parentPlayer.GetComponent<PlayerStatePattern>().rightHandGameobject;
         projectileTransform = gameObject.transform;  
     }
 
@@ -23,17 +25,13 @@ public class ProjectileFish : ProjectileBase
     // Update is called once per frame
     void Update()
     {
-        if (rb.velocity == new Vector3(0,0,0) && currentState == flyingState)
-        {
-            currentState = groundedState;
-            currentState.OnStateEnter();
-        }
+        currentState.UpdateState();
     }
 
     public override void LaunchPos(GameObject parent)
     {
         //sätter projektilen på spelarens hand Kommer hit efter initsieringen av projektilen 
-        projectileTransform.position = parent.transform.GetChild(1).position;
+        projectileTransform.position = Player.transform.position;
         currentState.OnStateEnter();
         //LaunchFish();
     }
