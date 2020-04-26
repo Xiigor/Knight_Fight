@@ -22,10 +22,10 @@ public class PlayerAttackState : PlayerIState
 
     public void UpdateState()
     {
-        //player.Attack();
+        player.ChangeDirection();
         if (internalStateTimer >= player.attackAnimDuration)
         {
-            ChangeState(player.basicState);
+            ChangeState(player.idleState);
         }
         else
             internalStateTimer += Time.deltaTime;
@@ -34,10 +34,10 @@ public class PlayerAttackState : PlayerIState
     public void ChangeState(PlayerIState newState)
     {
         player.animator.SetBool("Attack", false);
-        internalStateTimer = 0f;
         if (newState == player.basicState || newState == player.idleState)
         {
-            
+            player.internalGCDTimer = 0f;
+            internalStateTimer = 0f;
             player.StateChanger(newState);
         }
         else

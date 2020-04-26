@@ -34,8 +34,9 @@ public class PlayerStatePattern : MonoBehaviour
 
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
-    public float attackAnimDuration;
-    private float movementInputForDashDirThreshhold = 0.15f; //Fixa så att movement är 0 eller 1
+    public float attackAnimDuration = 0.5f;
+    public float throwAnimDuration = 0.5f;
+    private float movementInputForDashDirThreshhold = 0.15f; 
     public float internalDashRayDist = 1.3f;
     public bool canDash = true;
 
@@ -146,6 +147,7 @@ public class PlayerStatePattern : MonoBehaviour
             currentState.ChangeState(idleState);
         }
     }
+
     public void Attack()
     {
         if(weapon != null)
@@ -196,9 +198,7 @@ public class PlayerStatePattern : MonoBehaviour
                 {
                     if (weapon != null)
                     {
-                        Attack(); // ---- anropet till attackfunktionen, spelaren går in i attackstate och går in i idle när animationen är färdig.
                         Debug.Log("attack with wep");
-                        weapon.GetComponent<AudioWeapon>().Attacking();
                         return true;
                     }
                     else

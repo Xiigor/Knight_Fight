@@ -38,6 +38,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         // Projectile i eget script med en OnCollisonEnter kollar om träffat en spelare och isfall gå in i enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);
         ChangeDurability(durabilityDecrement);
         //Instantiate(weaponAmmo);
+        audioPlayer.Attacking();
         Instantiate(weaponAmmo, this.transform);
     }
 
