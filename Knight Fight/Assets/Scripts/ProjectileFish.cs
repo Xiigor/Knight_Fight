@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileFish : ProjectileBase
 {
-
+    GameObject playerPos;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -13,12 +13,14 @@ public class ProjectileFish : ProjectileBase
         rb = GetComponent<Rigidbody>();
         parentObject = transform.parent.gameObject;
         Player = parentObject.GetComponent<WeaponThrowFishPattern>().parentPlayer.GetComponent<PlayerStatePattern>().rightHandGameobject;
+        playerPos = parentObject.GetComponent<WeaponThrowFishPattern>().parentPlayer;
         projectileTransform = gameObject.transform;  
     }
 
     private void Start()
     {
         currentState = flyingState;
+        Physics.IgnoreLayerCollision(Player.layer, 15);
         LaunchPos(Player);
     }
 
@@ -31,7 +33,9 @@ public class ProjectileFish : ProjectileBase
     public override void LaunchPos(GameObject parent)
     {
         //sätter projektilen på spelarens hand Kommer hit efter initsieringen av projektilen 
-        projectileTransform.position = Player.transform.position;
+
+        projectileTransform.position = playerPos.transform.position;
+        projectileTransform.rotation = playerPos.transform.rotation;
         currentState.OnStateEnter();
         //LaunchFish();
     }

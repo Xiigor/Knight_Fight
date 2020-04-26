@@ -42,7 +42,7 @@ public class ProjectileFlyingState : ProjectileIState
 
     public void LaunchFish()
     {
-        projectile.rb.velocity = projectile.Player.transform.forward * projectile.ProjectileSpeed;
+        projectile.rb.velocity = projectile.transform.forward * projectile.ProjectileSpeed;
         velocityApplied = true;
     }
 

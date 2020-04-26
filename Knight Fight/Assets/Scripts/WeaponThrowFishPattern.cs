@@ -7,8 +7,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     public float durabilityDecrement;
     public GameObject weaponAmmo;
     private float currentDurability;
-    private Collision apa; // Funkar inte utan att skicka med denna
-
+  
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
@@ -40,6 +39,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         //Instantiate(weaponAmmo);
         audioPlayer.Attacking();
         Instantiate(weaponAmmo, this.transform);
+        transform.DetachChildren();
     }
 
     public override void ChangeDurability(float durabilityDecrement)
