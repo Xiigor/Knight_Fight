@@ -39,6 +39,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         ChangeDurability(durabilityDecrement);
         //Instantiate(weaponAmmo);
         Instantiate(weaponAmmo, this.transform);
+        transform.DetachChildren();
     }
 
     public override void ChangeDurability(float durabilityDecrement)
