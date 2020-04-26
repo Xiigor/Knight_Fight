@@ -196,9 +196,7 @@ public class PlayerStatePattern : MonoBehaviour
                 {
                     if (weapon != null)
                     {
-                        Attack(); // ---- anropet till attackfunktionen, spelaren går in i attackstate och går in i idle när animationen är färdig.
-                        Debug.Log("attack with wep");
-                        weapon.GetComponent<AudioWeapon>().Attacking();
+                        
                         return true;
                     }
                     else

@@ -19,6 +19,7 @@ public class ProjectileFish : ProjectileBase
     private void Start()
     {
         currentState = flyingState;
+        Physics.IgnoreLayerCollision(Player.layer, 15);
         LaunchPos(Player);
     }
 
@@ -31,7 +32,9 @@ public class ProjectileFish : ProjectileBase
     public override void LaunchPos(GameObject parent)
     {
         //sätter projektilen på spelarens hand Kommer hit efter initsieringen av projektilen 
+
         projectileTransform.position = Player.transform.position;
+        projectileTransform.rotation = new Quaternion(0,0,0,0);
         currentState.OnStateEnter();
         //LaunchFish();
     }
