@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     public void OnExit()
     {
         audioManager.ButtonPressed();
-        //exit game
+        Application.Quit();
     }
 
     public void SpawnPlayers()

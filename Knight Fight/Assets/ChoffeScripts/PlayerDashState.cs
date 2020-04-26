@@ -15,6 +15,10 @@ public class PlayerDashState : PlayerIState
     public void OnStateEnter()
     {
         player.animator.SetBool("Dash", true);
+        if (player.weapon != null)
+        {
+            player.weapon.GetComponent<Collider>().enabled = true;
+        }
     }
 
     public void UpdateState()
@@ -44,6 +48,12 @@ public class PlayerDashState : PlayerIState
             internalStateTimer = 0f;
             player.internalDashTimer = 0f;
             player.internalGCDTimer = 0f;
+
+            if(player.weapon != null)
+            {
+                player.weapon.GetComponent<Collider>().enabled = false;
+            }
+
             player.StateChanger(newState);
         }
         else

@@ -43,6 +43,9 @@ public class PlayerAttackState : PlayerIState
             player.StateChanger(newState);
         }
         else
+        {
+            ChangeState(player.idleState);
+        }
             Debug.Log("GCD Trigger");
     }
 

@@ -142,6 +142,20 @@ public class PlayerStatePattern : MonoBehaviour
         {
             OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
         }
+        if(collision.gameObject.tag == weaponTag)
+        {
+            if(collision.gameObject.layer == EquippedLayer)
+            {
+                if(collision.gameObject != weapon.gameObject)
+                {
+                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
+                }
+                
+            }
+            
+        }
+
+
         if (currentState == dashState)
         {
             currentState.ChangeState(idleState);

@@ -15,14 +15,14 @@ public class PlayerInputManager : MonoBehaviour
     private PlayerInput player4InputHandler = null;
     public bool trigger;
     public bool triggered;
-    private List<Gamepad> inputDevices;
+    private List<InputDevice> inputDevices;
     public List<PlayerInput> inputHandlers;
 
     private void Start()
     {
-        inputDevices = new List<Gamepad>();
+        inputDevices = new List<InputDevice>();
         inputHandlers = new List<PlayerInput>();
-        foreach (Gamepad index in Gamepad.all)
+        foreach (InputDevice index in InputDevice.all)
             inputDevices.Add(index);
     }
 
