@@ -76,7 +76,7 @@ public class WeaponSpearPattern : WeaponBaseClass
     {
         if (thisWeaponType == Weapontype.twoHSword)
         {
-            parentPlayer.GetComponent<PlayerStatePattern>().currentWeaponIs2HSword = true;
+            parentPlayer.GetComponent<Animator>().SetBool("2hSword", true);
         }
 
     }
@@ -85,7 +85,7 @@ public class WeaponSpearPattern : WeaponBaseClass
     {
         if (thisWeaponType == Weapontype.twoHSword)
         {
-            parentPlayer.GetComponent<PlayerStatePattern>().currentWeaponIs2HSword = false;
+            parentPlayer.GetComponent<Animator>().SetBool("2hSword", false);
         }
     }
 }

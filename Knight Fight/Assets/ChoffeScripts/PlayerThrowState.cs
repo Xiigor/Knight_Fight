@@ -15,7 +15,7 @@ public class PlayerThrowState : PlayerIState
     public void OnStateEnter()
     {
         player.animator.SetBool("Throw", true);
-        player.ThrowItem();
+        //player.ThrowItem();
     }
 
     public void UpdateState()
@@ -23,6 +23,7 @@ public class PlayerThrowState : PlayerIState
         player.ChangeDirection();
         if (internalStateTimer >= player.throwAnimDuration)
         {
+            player.ThrowItem();
             ChangeState(player.idleState);
         }
         else
@@ -30,15 +31,16 @@ public class PlayerThrowState : PlayerIState
     }
     public void ChangeState(PlayerIState newState)
     {
-        player.animator.SetBool("Throw", false);
         if (newState == player.deadState)
         {
+            player.animator.SetBool("Throw", false);
             player.StateChanger(newState);
         }
         else if (newState == player.basicState || newState == player.idleState)
         {
             player.internalGCDTimer = 0f;
             internalStateTimer = 0f;
+            player.animator.SetBool("Throw", false);
             player.StateChanger(newState);
         }
         else

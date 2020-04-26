@@ -28,7 +28,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
 
     private void Update()
     {
-        StateChangeObserver(); 
+        currentState.UpdateState();
     }
 
     public override void Attack()

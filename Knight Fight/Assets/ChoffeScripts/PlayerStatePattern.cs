@@ -25,11 +25,6 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public float internalDashTimer;
     [HideInInspector] public float internalAttackTimer;
 
-    //weapontype for the currently equipped weapon
-    public bool currentWeaponIs1HSword = false;
-    public bool currentWeaponIs2HSword = false;
-    public bool currentWeaponIsSpellbook = false;
-
     public float movementSpeedMultiplier = 35.0f;
 
     public float dashDuration = 0.1f;
@@ -44,6 +39,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     //tags
     public string weaponTag = "Weapon";
+    public string weaponProjectileTag = "WeaponProjectile";
     public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
 
@@ -138,9 +134,13 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == projectileTag)
+        if (collision.gameObject.tag == weaponProjectileTag)
         {
             OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+        }
+        if (collision.gameObject.tag == projectileTag)
+        {
+            OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
         }
         if (currentState == dashState)
         {

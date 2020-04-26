@@ -22,7 +22,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
 
     public string environmentTag = "Environment";
     public string playerTag = "Player";
-    public string projectileTag = "Projectile";
+    public string projectileTag = "WeaponProjectile";
     public string weaponTag = "Weapon";
 
     public int UnequippedLayer = 13;

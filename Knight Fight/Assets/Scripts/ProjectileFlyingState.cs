@@ -28,7 +28,7 @@ public class ProjectileFlyingState : ProjectileIState
     {
         if (newState == projectile.groundedState)
         {
-            projectile.currentState = newState;
+            projectile.StateChanger(projectile.groundedState);
         }
     }
 

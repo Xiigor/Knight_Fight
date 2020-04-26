@@ -19,7 +19,6 @@ public class PlayerDashState : PlayerIState
 
     public void UpdateState()
     {
-        player.animator.SetBool("Dash", false);
         internalStateTimer += Time.deltaTime;
         if (player.canDash)
         {
@@ -41,6 +40,7 @@ public class PlayerDashState : PlayerIState
     {
         if (newState == player.basicState || newState == player.idleState)
         {
+            player.animator.SetBool("Dash", false);
             internalStateTimer = 0f;
             player.internalDashTimer = 0f;
             player.internalGCDTimer = 0f;

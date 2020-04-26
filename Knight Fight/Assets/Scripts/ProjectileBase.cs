@@ -19,5 +19,6 @@ abstract public class ProjectileBase : MonoBehaviour
     public string playerTag = "Player";
 
     public abstract void LaunchPos(GameObject parent);
+    public abstract void StateChanger(ProjectileIState newState);
     
 }

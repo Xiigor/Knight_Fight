@@ -89,7 +89,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3105903073570637870}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b3e8e30ad097b744a9d647ad5443e066, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -128,9 +128,9 @@ MonoBehaviour:
   thisWepType: 2
   durability: 5
   damage: 5
-  thrownDamage: 10
-  thrownForce: 25
-  throwAngle: 0.35
+  thrownDamage: 5
+  thrownForce: 20
+  throwAngle: 0.25
   environmentTag: Environment
   playerTag: Player
   projectileTag: Projectile
@@ -157,9 +157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
+  attack: event:/Weapons/Weapon_FishBook_Attack
+  attackHitPlayer: event:/Player/Player_Dash
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
   weaponBreak: 

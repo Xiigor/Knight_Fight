@@ -20,7 +20,7 @@ public class ProjectileFish : ProjectileBase
     private void Start()
     {
         currentState = flyingState;
-        Physics.IgnoreLayerCollision(Player.layer, 15);
+        Physics.IgnoreLayerCollision(Player.layer, gameObject.layer,true);
         LaunchPos(Player);
     }
 
@@ -36,12 +36,13 @@ public class ProjectileFish : ProjectileBase
 
         projectileTransform.position = playerPos.transform.position;
         projectileTransform.rotation = playerPos.transform.rotation;
-        currentState.OnStateEnter();
+        StateChanger(flyingState);
         //LaunchFish();
     }
 
-    //public override void LaunchFish()
-    //{
-    //    rb.velocity += Player.transform.right * ProjectileSpeed;    
-    //}
+    public override void StateChanger(ProjectileIState newState)
+    {
+        currentState = newState;
+        currentState.OnStateEnter();
+    }
 }

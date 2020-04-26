@@ -16,7 +16,7 @@ public class PlayerAttackState : PlayerIState
     {
         player.animator.SetBool("Attack", true);
         Debug.Log("hur ofta händer detta?");
-        player.Attack();
+        
     }
 
 
@@ -25,6 +25,7 @@ public class PlayerAttackState : PlayerIState
         player.ChangeDirection();
         if (internalStateTimer >= player.attackAnimDuration)
         {
+            player.Attack();
             ChangeState(player.idleState);
         }
         else
@@ -33,11 +34,12 @@ public class PlayerAttackState : PlayerIState
     }
     public void ChangeState(PlayerIState newState)
     {
-        player.animator.SetBool("Attack", false);
         if (newState == player.basicState || newState == player.idleState)
         {
+
             player.internalGCDTimer = 0f;
             internalStateTimer = 0f;
+            player.animator.SetBool("Attack", false);
             player.StateChanger(newState);
         }
         else
