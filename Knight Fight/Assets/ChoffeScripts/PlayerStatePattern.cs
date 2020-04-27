@@ -146,8 +146,11 @@ public class PlayerStatePattern : MonoBehaviour
         {
             if(collision.gameObject.layer == EquippedLayer)
             {
-                //OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
-
+                if(collision.gameObject != weapon.gameObject)
+                {
+                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage); // UPPDATERA INNAN BUILD, DETTA BORDE INTE FUNGERA I MULTIPLAYER
+                }
+                
             }
             
         }
