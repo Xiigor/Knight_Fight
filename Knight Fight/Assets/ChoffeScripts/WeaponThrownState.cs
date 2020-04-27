@@ -47,6 +47,10 @@ public class WeaponThrownState : WeaponIState
         {
             weapon.audioPlayer.ThrownWepHittingEnvironment();
         }
+        if(col.gameObject.tag == weapon.playerTag)
+        {
+            weapon.audioPlayer.AttackHittingPlayer();
+        }
     }
 
     public void AddThrownForce()

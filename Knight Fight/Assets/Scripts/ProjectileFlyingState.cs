@@ -28,6 +28,7 @@ public class ProjectileFlyingState : ProjectileIState
     {
         if (newState == projectile.groundedState)
         {
+            velocityApplied = false;
             projectile.StateChanger(projectile.groundedState);
         }
     }

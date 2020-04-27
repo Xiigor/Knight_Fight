@@ -5630,7 +5630,7 @@ MonoBehaviour:
   cameraPositionY: 34.95
   cameraPositionZ: -19.24
   objectsFollowedByCamera: []
-  offsetFromObjects: {x: 0, y: 50, z: -32}
+  offsetFromObjects: {x: 0, y: 15, z: -10}
   minZoom: 68
   maxZoom: 45
   zoomLimiter: 50
@@ -5848,9 +5848,10 @@ MonoBehaviour:
   activeWeaponsList: []
   weaponsList:
   - {fileID: 3105903073570637870, guid: fff86f02ab488444faa70f5aa56fcd1c, type: 3}
-  maxWeaponsActive: 5
-  weaponMaxSpawnTime: 5
-  weaponMinSpawnTime: 2
+  - {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
+  maxWeaponsActive: 10
+  weaponMaxSpawnTime: 20
+  weaponMinSpawnTime: 7
   activeWeapons: 0
 --- !u!1001 &1000659543
 PrefabInstance:
