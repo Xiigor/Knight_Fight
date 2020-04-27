@@ -35,7 +35,7 @@ public class ProjectileFish : ProjectileBase
         //sätter projektilen på spelarens hand Kommer hit efter initsieringen av projektilen 
         GameObject SpawnPos = playerPos.transform.Find("ProjectileSpawnPoint").gameObject;
         projectileTransform.position = SpawnPos.transform.position;
-        projectileTransform.rotation = playerPos.transform.rotation;
+        projectileTransform.rotation = SpawnPos.transform.rotation;
         StateChanger(flyingState);
         //LaunchFish();
     }

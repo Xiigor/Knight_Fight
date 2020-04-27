@@ -45,6 +45,11 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     public override void ChangeDurability(float durabilityDecrement)
     {
         currentDurability -= durabilityDecrement;
+        if (currentDurability <= 0)
+        {
+            //Ta bort som child på spelaren innan destroy
+            Destroy(this.gameObject);
+        }
     }
 
     public override void OnCollisionEnter(Collision collision)
