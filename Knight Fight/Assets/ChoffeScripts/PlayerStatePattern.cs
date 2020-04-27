@@ -16,6 +16,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     public GameObject rightHandGameobject = null;
     public GameObject leftHandGameobject = null;
+    public GameObject projectileSpawnPos = null;
 
 
     public  float globalCD = 0.5f;
@@ -148,7 +149,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if(collision.gameObject != weapon.gameObject)
                 {
-                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
+                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage); // UPPDATERA INNAN BUILD, DETTA BORDE INTE FUNGERA I MULTIPLAYER
                 }
                 
             }
