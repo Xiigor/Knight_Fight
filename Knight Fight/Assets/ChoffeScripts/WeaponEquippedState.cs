@@ -15,7 +15,7 @@ public class WeaponEquippedState : WeaponIState
     {
         weapon.SetWeaponType();
         weapon.audioPlayer.WeaponBeingPickedUp();
-        weapon.gameObject.layer = weapon.EquippedLayer;
+        //weapon.gameObject.layer = weapon.EquippedLayer;
         ChangePhysics();
         weapon.HeldPos();
         

@@ -145,14 +145,22 @@ public class PlayerStatePattern : MonoBehaviour
         }
         if(collision.gameObject.tag == weaponTag)
         {
-            if(collision.gameObject.layer == EquippedLayer)
+            if (collision.gameObject.layer == EquippedLayer)
             {
-                if(collision.gameObject != weapon.gameObject)
-                {
-                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage); // UPPDATERA INNAN BUILD, DETTA BORDE INTE FUNGERA I MULTIPLAYER
-                }
-                
+
+                OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
+                //if(weapon != null && collision.gameObject != weapon.gameObject)
+                //{
+                //    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage); // UPPDATERA INNAN BUILD, DETTA BORDE INTE FUNGERA I MULTIPLAYER
+                //}
+
             }
+            else if(collision.gameObject.layer == UnequippedLayer)
+            {
+                PickupItem(collision.gameObject);
+            }
+
+
             
         }
 
@@ -280,7 +288,7 @@ public class PlayerStatePattern : MonoBehaviour
     public void PickupItem(GameObject weaponObject)
     {
         weapon = weaponObject;
-
+        weapon.gameObject.layer = EquippedLayer;
         Physics.IgnoreCollision(col, weapon.GetComponent<Collider>(), true);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, true);
     }
