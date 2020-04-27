@@ -38,8 +38,9 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         ChangeDurability(durabilityDecrement);
         //Instantiate(weaponAmmo);
         audioPlayer.Attacking();
-        Instantiate(weaponAmmo, this.transform);
-        transform.DetachChildren();
+        GameObject temp =Instantiate(weaponAmmo, parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos.transform.position,Quaternion.identity);
+        temp.GetComponent<ProjectileFish>().parentObject = parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos;
+        //transform.DetachChildren();
     }
 
     public override void ChangeDurability(float durabilityDecrement)
