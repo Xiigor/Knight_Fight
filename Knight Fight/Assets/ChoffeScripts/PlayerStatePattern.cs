@@ -16,6 +16,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     public GameObject rightHandGameobject = null;
     public GameObject leftHandGameobject = null;
+    public GameObject projectileSpawnPos = null;
 
 
     public  float globalCD = 0.5f;
