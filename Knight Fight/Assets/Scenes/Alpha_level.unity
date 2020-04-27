@@ -4392,7 +4392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783957656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.008, y: -0.19400024, z: 0.904}
+  m_LocalPosition: {x: -0.008, y: -0.19400024, z: 1.003}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 583162907}
@@ -4984,6 +4984,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264535049619471, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.11764706
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8add0326abcc6ed4fa4f0ad956abffe1, type: 3}
@@ -5625,7 +5630,7 @@ MonoBehaviour:
   cameraPositionY: 34.95
   cameraPositionZ: -19.24
   objectsFollowedByCamera: []
-  offsetFromObjects: {x: 0, y: 50, z: -32}
+  offsetFromObjects: {x: 0, y: 15, z: -10}
   minZoom: 68
   maxZoom: 45
   zoomLimiter: 50
@@ -5844,8 +5849,8 @@ MonoBehaviour:
   weaponsList:
   - {fileID: 3105903073570637870, guid: fff86f02ab488444faa70f5aa56fcd1c, type: 3}
   - {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
-  maxWeaponsActive: 5
-  weaponMaxSpawnTime: 15
+  maxWeaponsActive: 10
+  weaponMaxSpawnTime: 20
   weaponMinSpawnTime: 7
   activeWeapons: 0
 --- !u!1001 &1000659543
@@ -7126,7 +7131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167141597}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.008000056, y: -0.19400024, z: 0.904}
+  m_LocalPosition: {x: -0.008000056, y: -0.19400024, z: 1.003}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 511543390}
@@ -7340,6 +7345,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 1d1977d8572ea3e43a9322176217b817,
     type: 3}
   m_PrefabInstance: {fileID: 1223890941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1229234116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1027788650, guid: 2c576bfc1e3461b419c41780dde5c959,
+    type: 3}
+  m_PrefabInstance: {fileID: 5945956326042383396}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1238178222
 GameObject:
@@ -9907,7 +9918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048057891}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.008, y: -0.19400024, z: 0.904}
+  m_LocalPosition: {x: -0.008, y: -0.19400024, z: 1.003}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 1898531458}
@@ -10483,6 +10494,11 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 1617081871}
+    - target: {fileID: 4534145848469080405, guid: e3432f0e36f48d6409025e8f4455c873,
+        type: 3}
+      propertyPath: projectileSpawnPos
+      value: 
+      objectReference: {fileID: 1167141597}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3432f0e36f48d6409025e8f4455c873, type: 3}
 --- !u!1001 &5945956326042383396
@@ -10562,9 +10578,14 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 943147545}
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: projectileSpawnPos
+      value: 
+      objectReference: {fileID: 1229234116}
     - target: {fileID: 1027788651, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.904
+      value: 1.003
       objectReference: {fileID: 0}
     - target: {fileID: 1027788651, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10649,6 +10670,11 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 1686351810}
+    - target: {fileID: 5008412012202379332, guid: 6d56b38eb60ece647adb7b23647054ce,
+        type: 3}
+      propertyPath: projectileSpawnPos
+      value: 
+      objectReference: {fileID: 2048057891}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d56b38eb60ece647adb7b23647054ce, type: 3}
 --- !u!1001 &7625142928305920216
@@ -10728,5 +10754,15 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 484245594}
+    - target: {fileID: 8470561797977531358, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: playerIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470561797977531358, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: projectileSpawnPos
+      value: 
+      objectReference: {fileID: 783957656}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85cbae8dd56505844be748e046e20472, type: 3}

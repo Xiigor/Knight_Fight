@@ -11,16 +11,16 @@ public class ProjectileFish : ProjectileBase
         flyingState = new ProjectileFlyingState(this);
         groundedState = new ProjectileGroundedState(this);
         rb = GetComponent<Rigidbody>();
-        parentObject = transform.parent.gameObject;
-        Player = parentObject.GetComponent<WeaponThrowFishPattern>().parentPlayer.GetComponent<PlayerStatePattern>().rightHandGameobject;
-        playerPos = parentObject.GetComponent<WeaponThrowFishPattern>().parentPlayer;
+        //parentObject = transform.parent.gameObject;
+        //Player = parentObject.GetComponent<WeaponThrowFishPattern>().parentPlayer.GetComponent<PlayerStatePattern>().rightHandGameobject;
+        //playerPos = parentObject.GetComponent<WeaponThrowFishPattern>().parentPlayer;
         projectileTransform = gameObject.transform;  
     }
 
     private void Start()
     {
         currentState = flyingState;
-        Physics.IgnoreLayerCollision(Player.layer, gameObject.layer,true);
+        //Physics.IgnoreLayerCollision(Player.layer, gameObject.layer,true);
         LaunchPos(Player);
     }
 
@@ -33,9 +33,15 @@ public class ProjectileFish : ProjectileBase
     public override void LaunchPos(GameObject parent)
     {
         //sätter projektilen på spelarens hand Kommer hit efter initsieringen av projektilen 
+<<<<<<< HEAD
         GameObject SpawnPos = playerPos.transform.Find("ProjectileSpawnPoint").gameObject;
         projectileTransform.position = SpawnPos.transform.position;
-        projectileTransform.rotation = playerPos.transform.rotation;
+        projectileTransform.rotation = SpawnPos.transform.rotation;
+=======
+        //GameObject SpawnPos = playerPos.transform.Find("ProjectileSpawnPoint").gameObject;
+        //projectileTransform.position = SpawnPos.transform.position;
+        //projectileTransform.rotation = playerPos.transform.rotation;
+>>>>>>> c8d0c4f73d9f92f1ba1b1a65d935fc26a16e18e0
         StateChanger(flyingState);
         //LaunchFish();
     }

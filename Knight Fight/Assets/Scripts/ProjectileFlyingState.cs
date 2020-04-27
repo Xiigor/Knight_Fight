@@ -28,6 +28,7 @@ public class ProjectileFlyingState : ProjectileIState
     {
         if (newState == projectile.groundedState)
         {
+            velocityApplied = false;
             projectile.StateChanger(projectile.groundedState);
         }
     }
@@ -42,7 +43,7 @@ public class ProjectileFlyingState : ProjectileIState
 
     public void LaunchFish()
     {
-        projectile.rb.velocity = projectile.transform.forward * projectile.ProjectileSpeed;
+        projectile.rb.velocity = projectile.parentObject.transform.forward * projectile.ProjectileSpeed;
         velocityApplied = true;
     }
 
