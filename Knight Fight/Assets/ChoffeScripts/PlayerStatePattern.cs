@@ -146,11 +146,8 @@ public class PlayerStatePattern : MonoBehaviour
         {
             if(collision.gameObject.layer == EquippedLayer)
             {
-                if(collision.gameObject != weapon.gameObject)
-                {
-                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
-                }
-                
+                //OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
+
             }
             
         }

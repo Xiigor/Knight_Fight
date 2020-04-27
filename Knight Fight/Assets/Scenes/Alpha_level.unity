@@ -4943,6 +4943,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7519264535049619471, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.11764706
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8add0326abcc6ed4fa4f0ad956abffe1, type: 3}
 --- !u!1001 &869286787
@@ -5801,10 +5806,9 @@ MonoBehaviour:
   activeWeaponsList: []
   weaponsList:
   - {fileID: 3105903073570637870, guid: fff86f02ab488444faa70f5aa56fcd1c, type: 3}
-  - {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
   maxWeaponsActive: 5
-  weaponMaxSpawnTime: 15
-  weaponMinSpawnTime: 7
+  weaponMaxSpawnTime: 5
+  weaponMinSpawnTime: 2
   activeWeapons: 0
 --- !u!1001 &1000659543
 PrefabInstance:
@@ -11093,5 +11097,10 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 484245594}
+    - target: {fileID: 8470561797977531358, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: playerIndex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85cbae8dd56505844be748e046e20472, type: 3}

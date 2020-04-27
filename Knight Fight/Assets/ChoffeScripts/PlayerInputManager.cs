@@ -6,13 +6,13 @@ public class PlayerInputManager : MonoBehaviour
 {
     public GameObject inputHandlerPrefab;
     public bool player1;
-    private PlayerInput player1InputHandler = null;
+    public  PlayerInput player1InputHandler = null;
     public bool player2;
-    private PlayerInput player2InputHandler = null;
+    public PlayerInput player2InputHandler = null;
     public bool player3;
-    private PlayerInput player3InputHandler = null;
+    public PlayerInput player3InputHandler = null;
     public bool player4;
-    private PlayerInput player4InputHandler = null;
+    public PlayerInput player4InputHandler = null;
     public bool trigger;
     public bool triggered;
     private List<InputDevice> inputDevices;
