@@ -42,8 +42,6 @@ public class WeaponUnequippedState : WeaponIState
             if(col.gameObject.GetComponent<PlayerStatePattern>().weapon == null)
             {
                 weapon.SetParentPlayer(col);
-
-                //col.gameObject.GetComponent<PlayerStatePattern>().PickupItem(weapon.gameObject);
                 weapon.ChangeState(weapon.equippedState);
             }
         }

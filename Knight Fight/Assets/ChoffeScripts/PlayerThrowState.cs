@@ -15,7 +15,7 @@ public class PlayerThrowState : PlayerIState
     public void OnStateEnter()
     {
         player.animator.SetBool("Throw", true);
-        //player.ThrowItem();
+        player.audioPlayer.PlayerThrowing();
     }
 
     public void UpdateState()
@@ -24,27 +24,18 @@ public class PlayerThrowState : PlayerIState
         if (internalStateTimer >= player.throwAnimDuration)
         {
             player.ThrowItem();
-            ChangeState(player.idleState);
+            player.RunOrIdleDecider();
+
         }
         else
             internalStateTimer += Time.deltaTime;
     }
     public void ChangeState(PlayerIState newState)
     {
-        if (newState == player.deadState)
-        {
-            player.animator.SetBool("Throw", false);
-            player.StateChanger(newState);
-        }
-        else if (newState == player.basicState || newState == player.idleState)
-        {
-            player.internalGCDTimer = 0f;
-            internalStateTimer = 0f;
-            player.animator.SetBool("Throw", false);
-            player.StateChanger(newState);
-        }
-        else
-            Debug.Log("GCD Trigger");
+        player.animator.SetBool("Throw", false);
+        internalStateTimer = 0f;
+        player.internalGCDTimer = 0f;
+        player.StateChanger(newState);
     }
     public void TakeDamage(float damage)
     {

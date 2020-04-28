@@ -7,7 +7,6 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public AudioWeapon audioPlayer;
 
     public WeaponIState currentState;
-    public WeaponIState stateChangeObserver;
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
@@ -52,9 +51,6 @@ abstract public class WeaponBaseClass : MonoBehaviour
         //destroy the weapon and all traces of it
     }
 
-    public abstract void SetWeaponType();
-    public abstract void RemoveWeaponType();
-
 
     public void SetParentPlayer(Collision collision)
     {
@@ -76,13 +72,4 @@ abstract public class WeaponBaseClass : MonoBehaviour
     }
     public abstract void OnCollisionEnter(Collision collision);
     public abstract void ChangeState(WeaponIState newState);
-    public void StateChangeObserver()
-    {
-        if (stateChangeObserver != currentState)
-        {
-            stateChangeObserver = currentState;
-            currentState.OnStateEnter();
-        }
-    }
-
 }

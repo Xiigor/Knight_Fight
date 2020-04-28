@@ -5765,7 +5765,7 @@ MonoBehaviour:
     m_ActionId: b79cf0bb-555c-4463-8311-e6b56c900a37
     m_ActionName: MenuInput/ToMenu[/DualShock4GamepadHID/start]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: New control scheme
+  m_DefaultControlScheme: 
   m_DefaultActionMap: MenuInput
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -5848,10 +5848,9 @@ MonoBehaviour:
   activeWeaponsList: []
   weaponsList:
   - {fileID: 3105903073570637870, guid: fff86f02ab488444faa70f5aa56fcd1c, type: 3}
-  - {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
   maxWeaponsActive: 10
-  weaponMaxSpawnTime: 20
-  weaponMinSpawnTime: 7
+  weaponMaxSpawnTime: 5
+  weaponMinSpawnTime: 1
   activeWeapons: 0
 --- !u!1001 &1000659543
 PrefabInstance:
@@ -10595,6 +10594,11 @@ PrefabInstance:
     - target: {fileID: 1027788651, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 667126432292876085, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}

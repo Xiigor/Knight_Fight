@@ -95,7 +95,6 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void FixedUpdate()
     {
-        currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
 
@@ -114,6 +113,8 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void Update()
     {
+        currentState.UpdateState();
+        Debug.Log(currentState.ToString());
         if (internalGCDTimer < globalCD)
         {
             internalGCDTimer += Time.deltaTime;
@@ -132,7 +133,6 @@ public class PlayerStatePattern : MonoBehaviour
         return playerIndex;
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == weaponProjectileTag)
@@ -145,7 +145,11 @@ public class PlayerStatePattern : MonoBehaviour
         }
         if(collision.gameObject.tag == weaponTag)
         {
-            if (collision.gameObject.layer == EquippedLayer)
+            if (collision.gameObject.layer == UnequippedLayer)
+            {
+                PickupItem(collision.gameObject);
+            }
+            else if (collision.gameObject.layer == EquippedLayer)
             {
 
                 OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
@@ -154,17 +158,8 @@ public class PlayerStatePattern : MonoBehaviour
                 //    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage); // UPPDATERA INNAN BUILD, DETTA BORDE INTE FUNGERA I MULTIPLAYER
                 //}
 
-            }
-            else if(collision.gameObject.layer == UnequippedLayer)
-            {
-                PickupItem(collision.gameObject);
-            }
-
-
-            
+            } 
         }
-
-
         if (currentState == dashState)
         {
             currentState.ChangeState(idleState);
@@ -192,7 +187,6 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (internalDashTimer >= dashCD)
                 {
-                    audioPlayer.PlayerDashing(); // --- trigger dash sound, try if it works better being placed here
                     return true;
                 }
                 else
@@ -205,7 +199,6 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if(weapon != null)
                 {
-                    audioPlayer.PlayerThrowing();
                     Debug.Log("throw wep");
                     return true;
                 }
@@ -251,8 +244,58 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void StateChanger(PlayerIState newState)
     {
-        currentState = newState;
-        currentState.OnStateEnter();
+        if(newState == deadState)
+        {
+            currentState = newState;
+            currentState.OnStateEnter();
+        }
+        else if(newState == idleState || newState == basicState)
+        {
+            currentState = newState;
+            currentState.OnStateEnter();
+        }
+        else if(currentState == idleState || currentState == basicState)
+        {
+            if (ValidStateChange(newState))
+            {
+                currentState = newState;
+                currentState.OnStateEnter();
+            }
+        }
+    }
+
+    public void RunOrIdleDecider()
+    {
+        if(moveDir == Vector2.zero)
+        {
+            currentState.ChangeState(idleState);
+        }
+        else
+        {
+            currentState.ChangeState(basicState);
+        }
+    }
+
+    public void WeaponTypeIdentifier()
+    {
+        switch (weapon.GetComponent<WeaponBaseClass>().thisWepType)
+        {
+            case WeaponBaseClass.Weapontype.oneHSword:
+                animator.SetBool("1hSword", true);
+                animator.SetBool("2hSword", false);
+                animator.SetBool("Spellbook", false);
+                break;
+            case WeaponBaseClass.Weapontype.twoHSword:
+                animator.SetBool("1hSword", false);
+                animator.SetBool("2hSword", true);
+                animator.SetBool("Spellbook", false);
+                break;
+            case WeaponBaseClass.Weapontype.spellbook:
+                animator.SetBool("1hSword", false);
+                animator.SetBool("2hSword", false);
+                animator.SetBool("Spellbook", true);
+                break;
+        }
     }
 
     public void ChangeDirection()
@@ -262,6 +305,10 @@ public class PlayerStatePattern : MonoBehaviour
         {
             move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
             moveLastDir = moveDir;
+        }
+        else
+        {
+            moveDir = Vector2.zero;
         }
 
         lastMove = Vector3.Normalize(new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier);
@@ -282,15 +329,19 @@ public class PlayerStatePattern : MonoBehaviour
     {
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
         weapon = null;
+        animator.SetBool("1hSword", false);
+        animator.SetBool("2hSword", false);
+        animator.SetBool("Spellbook", false);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
     public void PickupItem(GameObject weaponObject)
     {
         weapon = weaponObject;
-        weapon.gameObject.layer = EquippedLayer;
         Physics.IgnoreCollision(col, weapon.GetComponent<Collider>(), true);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, true);
+        weapon.gameObject.layer = EquippedLayer; //läggs här för att inte ske före on collision
+        WeaponTypeIdentifier();
     }
 
     public void OnHit(float damage)
@@ -300,7 +351,7 @@ public class PlayerStatePattern : MonoBehaviour
     }
     public void Die()
     {
-        currentState.ChangeState(deadState);
+        StateChanger(deadState);
     }
 
     private float Hypotenuse(float sideA, float sideB)
