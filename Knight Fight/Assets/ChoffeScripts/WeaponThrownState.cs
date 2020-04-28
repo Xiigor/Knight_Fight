@@ -15,6 +15,7 @@ public class WeaponThrownState : WeaponIState
 
     public void OnStateEnter()
     {
+        weapon.RemoveWeaponType();
         weapon.audioPlayer.WeaponBeingThrown();
         movementApplied = false;
         ChangePhysics();
@@ -46,13 +47,17 @@ public class WeaponThrownState : WeaponIState
         {
             weapon.audioPlayer.ThrownWepHittingEnvironment();
         }
+        if(col.gameObject.tag == weapon.playerTag)
+        {
+            weapon.audioPlayer.AttackHittingPlayer();
+        }
     }
 
     public void AddThrownForce()
     {
         //Throw the weapon the way the player is facing
         throwVector = new Vector3(weapon.parentPlayer.transform.forward.x, weapon.throwAngle, weapon.parentPlayer.transform.forward.z);
-        weapon.rb.velocity += throwVector * weapon.thrownForce;
+        weapon.rb.velocity = throwVector * weapon.thrownForce;
         movementApplied = true;
     }
 }

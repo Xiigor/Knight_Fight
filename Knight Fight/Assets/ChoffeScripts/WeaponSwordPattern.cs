@@ -13,6 +13,7 @@ public class WeaponSwordPattern : WeaponBaseClass
         unequippedState = new WeaponUnequippedState(this);
         equippedState = new WeaponEquippedState(this);
         thrownState = new WeaponThrownState(this);
+        thisWepType = Weapontype.oneHSword;
     }
 
     private void Start()
@@ -31,8 +32,7 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     public override void Attack()
     {
-        gameObject.GetComponent<Collider>().enabled = true;
-        anim = parentPlayer.GetComponent<Animator>();    //Hämta parent animator Så kan kolla om färdig
+        //gameObject.GetComponent<Collider>().enabled = true;
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 
@@ -49,5 +49,15 @@ public class WeaponSwordPattern : WeaponBaseClass
     {
         currentState.HandleCollision(collision);
         
+    }
+
+    public override void SetWeaponType()
+    {
+        parentPlayer.GetComponent<Animator>().SetBool("1hSword", true);
+    }
+
+    public override void RemoveWeaponType()
+    {
+        parentPlayer.GetComponent<Animator>().SetBool("1hSword", false);
     }
 }

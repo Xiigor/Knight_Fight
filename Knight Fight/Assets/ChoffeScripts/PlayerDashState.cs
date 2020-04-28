@@ -11,6 +11,16 @@ public class PlayerDashState : PlayerIState
     {
         player = statePatternPlayer;
     }
+
+    public void OnStateEnter()
+    {
+        player.animator.SetBool("Dash", true);
+        if (player.weapon != null)
+        {
+            player.weapon.GetComponent<Collider>().enabled = true;
+        }
+    }
+
     public void UpdateState()
     {
         internalStateTimer += Time.deltaTime;
@@ -34,10 +44,17 @@ public class PlayerDashState : PlayerIState
     {
         if (newState == player.basicState || newState == player.idleState)
         {
+            player.animator.SetBool("Dash", false);
             internalStateTimer = 0f;
             player.internalDashTimer = 0f;
             player.internalGCDTimer = 0f;
-            player.currentState = newState;
+
+            if(player.weapon != null)
+            {
+                player.weapon.GetComponent<Collider>().enabled = false;
+            }
+
+            player.StateChanger(newState);
         }
         else
             Debug.Log("GCD Trigger");

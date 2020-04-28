@@ -15,7 +15,7 @@ public class AudioMenu : MonoBehaviour
 
     [EventRef]
     public string playerJoin;
-   
+    public FMOD.Studio.EventInstance playerJoined;
 
     [EventRef]
     public string playerLeft;
@@ -34,43 +34,39 @@ public class AudioMenu : MonoBehaviour
     public void ButtonPressed()
     {
         buttonPressed = RuntimeManager.CreateInstance(buttonPress);
-        RuntimeManager.PlayOneShot(buttonPress, transform.position);
         buttonPressed.start();
     }
 
     public void StartPressed()
     {
         startPressed = RuntimeManager.CreateInstance(startPress);
-        RuntimeManager.PlayOneShot(startPress, transform.position);
         startPressed.start();
     }
 
     public void PlayerJoined()
     {
-       
-        RuntimeManager.PlayOneShot(playerJoin, transform.position);
-       
+        Debug.Log("joined");
+        playerJoined = RuntimeManager.CreateInstance(playerJoin);
+        playerJoined.start();
     }
 
     public void PlayerLeft()
     {
         playernotRight = RuntimeManager.CreateInstance(playerLeft);
-        RuntimeManager.PlayOneShot(playerLeft, transform.position);
         playernotRight.start();
     }
 
     public void StartMenuMusic()
     {
         menuModeMusic = RuntimeManager.CreateInstance(menuMusic);
-        RuntimeManager.PlayOneShot(menuMusic, transform.position);
         menuModeMusic.start();
+        gameplayModeMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void StartGameplayMusic()
     {
         gameplayModeMusic = RuntimeManager.CreateInstance(gameplayMusic);
-        RuntimeManager.PlayOneShot(gameplayMusic, transform.position);
         gameplayModeMusic.start();
+        menuModeMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
-
 }
