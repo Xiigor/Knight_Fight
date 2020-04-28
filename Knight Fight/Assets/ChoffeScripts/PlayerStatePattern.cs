@@ -95,6 +95,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void FixedUpdate()
     {
+        currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
 
@@ -132,6 +133,7 @@ public class PlayerStatePattern : MonoBehaviour
     {
         return playerIndex;
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -199,6 +201,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if(weapon != null)
                 {
+                    audioPlayer.PlayerThrowing();
                     Debug.Log("throw wep");
                     return true;
                 }

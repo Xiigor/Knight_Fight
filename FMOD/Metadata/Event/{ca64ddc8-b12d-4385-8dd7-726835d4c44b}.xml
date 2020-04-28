@@ -53,7 +53,7 @@
 			<destination>{95997fb1-2f61-4a35-b01a-ff5a3cfdd16b}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{4778e8ea-745c-4994-8b8a-4a0182cd9786}</destination>
+			<destination>{04c8c892-4b21-427f-ba4d-60cfffb4a6ee}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{e1864d9e-3fb4-4ec8-ac7c-29080f43d451}">
@@ -79,9 +79,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{493e2929-5c3e-4f43-a586-090add0479de}">
-		<property name="volume">
-			<value>10</value>
-		</property>
 		<relationship name="effectChain">
 			<destination>{468e3b47-961e-44c8-b706-a3c3e8b617bd}</destination>
 		</relationship>
@@ -110,9 +107,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{035eda3e-271e-4c2b-8e69-3481c284ec79}">
-		<property name="volume">
-			<value>-8</value>
-		</property>
 		<property name="name">
 			<value>Thud</value>
 		</property>
@@ -129,7 +123,7 @@
 	<object class="MixerBusEffectChain" id="{468e3b47-961e-44c8-b706-a3c3e8b617bd}">
 		<relationship name="effects">
 			<destination>{48e79d40-ada7-4609-8321-1941b16700e0}</destination>
-			<destination>{5a6e3ae8-40c5-4264-bc0e-4e2122247a70}</destination>
+			<destination>{9d635838-448f-47c5-b0cd-d2d8b05e1a8c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9cb44d5d-5ffb-4fa2-a2d1-30bf1b061ef7}" />
@@ -141,18 +135,15 @@
 	</object>
 	<object class="MixerBusPanner" id="{aa652064-a840-41aa-a68a-f8a44531b2a2}" />
 	<object class="MixerBusFader" id="{48e79d40-ada7-4609-8321-1941b16700e0}" />
-	<object class="SpatialiserEffect" id="{5a6e3ae8-40c5-4264-bc0e-4e2122247a70}">
-		<property name="distanceRolloffType">
-			<value>4</value>
-		</property>
+	<object class="SpatialiserEffect" id="{9d635838-448f-47c5-b0cd-d2d8b05e1a8c}">
 		<property name="maximumDistance">
-			<value>100</value>
+			<value>50</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>50</value>
+			<value>25</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{1ff8176d-ca40-411d-bd81-b4240ba0d16d}" />
