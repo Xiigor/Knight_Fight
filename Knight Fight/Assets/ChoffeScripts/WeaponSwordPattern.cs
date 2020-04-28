@@ -18,7 +18,7 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     private void Start()
     {
-        currentState = stateChangeObserver = unequippedState;
+        currentState = unequippedState;
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
