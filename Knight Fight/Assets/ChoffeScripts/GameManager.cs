@@ -44,13 +44,16 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 1;
         gameplayState = new GameGameplayState(this);
         menuState = new GameMenuState(this);
         gameState = menuState;
-
+        
         cameraScript = cameraObject.GetComponent<CameraStatePattern>();
         inputManagerScript = inputManagerObject.GetComponent<PlayerInputManager>();
         audioManager = GetComponent<AudioMenu>();
+        audioManager.StartMenuMusic();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
 
         inputDevices = new List<Gamepad>();
@@ -69,6 +72,7 @@ public class GameManager : MonoBehaviour
     {
         if(readyPlayers.Count >= 1)
         {
+            audioManager.StartPressed();
             gameState = gameplayState;
             gameState.OnStateEnter();
         }
@@ -76,7 +80,8 @@ public class GameManager : MonoBehaviour
 
     public void OnExit()
     {
-        //exit game
+        audioManager.ButtonPressed();
+        Application.Quit();
     }
 
     public void SpawnPlayers()
@@ -210,7 +215,6 @@ public class GameManager : MonoBehaviour
         }
         readyPlayers.Clear();
         cameraScript.objectsFollowedByCamera.Clear();
-
     }
 
     public void ToMenu()

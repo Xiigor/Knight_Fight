@@ -9,10 +9,7 @@ public class ProjectileGroundedState : ProjectileIState
     {
         projectile = projectileBase;
     }
-    //public void ChangePhysics()
-    //{
-    //    throw new System.NotImplementedException();
-    //}
+
 
     public void ChangeState(ProjectileIState newState)
     {
@@ -22,7 +19,13 @@ public class ProjectileGroundedState : ProjectileIState
     public void OnStateEnter()
     {
         projectile.damage = 0;
+        //Physics.IgnoreLayerCollision(projectile.Player.layer, projectile.gameObject.layer, false);
         Debug.Log("Grounded");
 
+    }
+
+    public void UpdateState()
+    {
+        
     }
 }

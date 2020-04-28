@@ -33,32 +33,40 @@ public class AudioMenu : MonoBehaviour
 
     public void ButtonPressed()
     {
-
+        buttonPressed = RuntimeManager.CreateInstance(buttonPress);
+        buttonPressed.start();
     }
 
     public void StartPressed()
     {
-
+        startPressed = RuntimeManager.CreateInstance(startPress);
+        startPressed.start();
     }
 
     public void PlayerJoined()
     {
-
+        Debug.Log("joined");
+        playerJoined = RuntimeManager.CreateInstance(playerJoin);
+        playerJoined.start();
     }
 
     public void PlayerLeft()
     {
-
+        playernotRight = RuntimeManager.CreateInstance(playerLeft);
+        playernotRight.start();
     }
 
     public void StartMenuMusic()
     {
-
+        menuModeMusic = RuntimeManager.CreateInstance(menuMusic);
+        menuModeMusic.start();
+        gameplayModeMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void StartGameplayMusic()
     {
-
+        gameplayModeMusic = RuntimeManager.CreateInstance(gameplayMusic);
+        gameplayModeMusic.start();
+        menuModeMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
-
 }

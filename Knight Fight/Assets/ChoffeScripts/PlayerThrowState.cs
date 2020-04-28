@@ -5,26 +5,43 @@ using UnityEngine;
 public class PlayerThrowState : PlayerIState
 {
     private readonly PlayerStatePattern player;
+    public float internalStateTimer = 0f;
 
     public PlayerThrowState(PlayerStatePattern statePatternPlayer)
     {
         player = statePatternPlayer;
     }
+
+    public void OnStateEnter()
+    {
+        player.animator.SetBool("Throw", true);
+        //player.ThrowItem();
+    }
+
     public void UpdateState()
     {
-        player.ThrowItem();
-        ChangeState(player.basicState);
+        player.ChangeDirection();
+        if (internalStateTimer >= player.throwAnimDuration)
+        {
+            player.ThrowItem();
+            ChangeState(player.idleState);
+        }
+        else
+            internalStateTimer += Time.deltaTime;
     }
     public void ChangeState(PlayerIState newState)
     {
-        if(newState == player.deadState)
+        if (newState == player.deadState)
         {
-            player.currentState = newState;
+            player.animator.SetBool("Throw", false);
+            player.StateChanger(newState);
         }
         else if (newState == player.basicState || newState == player.idleState)
         {
             player.internalGCDTimer = 0f;
-            player.currentState = newState;
+            internalStateTimer = 0f;
+            player.animator.SetBool("Throw", false);
+            player.StateChanger(newState);
         }
         else
             Debug.Log("GCD Trigger");
