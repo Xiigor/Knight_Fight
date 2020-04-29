@@ -11,7 +11,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
-    public enum Weapontype{ oneHSword, twoHSword, spellbook };
+    public enum Weapontype{ oneHSword, twoHSword, spellbook, throwable };
     public Weapontype thisWepType;
     
     public float durability;
@@ -33,11 +33,14 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public Rigidbody rb;
     public Collider col;
     [HideInInspector] public Animator anim;
+    [HideInInspector] public bool attackActive = false;
 
     public abstract void Attack();
     public void ThrowWep()
     {
+       
         ChangeState(thrownState);
+
     }
     public abstract void ChangeDurability(float durabilityDecrement);
 
@@ -83,6 +86,11 @@ abstract public class WeaponBaseClass : MonoBehaviour
             stateChangeObserver = currentState;
             currentState.OnStateEnter();
         }
+    }
+
+    public void ThrowSettings()
+    {
+
     }
 
 }

@@ -48,6 +48,7 @@ public class WeaponSwordPattern : WeaponBaseClass
     }
     public override void ChangeState(WeaponIState newState)
     {
+        
         currentState = newState;
         currentState.OnStateEnter();
     }
