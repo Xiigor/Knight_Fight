@@ -10,32 +10,27 @@ public class PlayerBasicState : PlayerIState
     {
         player = statePatternPlayer;
     }
+
+    public void OnStateEnter()
+    {
+        player.animator.SetBool("Idle", false);
+        player.animator.SetBool("Running", true);
+        
+    }
+
     public void UpdateState()
     {
         player.ChangeDirection();
         player.Movement();
-        if (player.moveDir == Vector2.zero)
+        if(player.moveDir == Vector2.zero)
         {
             ChangeState(player.idleState);
         }
-
     }
     public void ChangeState(PlayerIState newState)
     {
-        if(newState == player.deadState)
-        {
-            player.currentState = newState;
-        }
-
-        else if (newState == player.idleState)
-        {
-            player.currentState = newState;
-        }
-
-        else if (player.ValidStateChange(newState))
-        {
-            player.currentState = newState;
-        }
+        player.animator.SetBool("Running", false);
+        player.StateChanger(newState);
     }
     public void TakeDamage(float damage)
     {

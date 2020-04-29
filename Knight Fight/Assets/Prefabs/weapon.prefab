@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2765844868840328222}
   - component: {fileID: 2765844868840328221}
   - component: {fileID: 2765844868840328220}
-  - component: {fileID: 7848935171624112938}
+  - component: {fileID: 3491534810702217472}
   m_Layer: 13
   m_Name: weapon
   m_TagString: Weapon
@@ -144,7 +144,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   attackAnimName: 
   durabilityDecrement: 0
---- !u!114 &7848935171624112938
+--- !u!114 &3491534810702217472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,11 +157,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: event:/Weapons/Weapon_Excaliboulder_Attack
-  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  attackHitPlayer: event:/Weapons/Weapon_Excaliboulder_Attack
   throwWep: event:/Weapons/Weapon_Throw
-  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground(Actual)
-  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
-  weaponBreak: event:/Weapons/Weapon_Pickup_Generic
+  ThrownWepHitEnvironment: 
+  weaponPickup: 
+  weaponBreak: 
 --- !u!1001 &6778464083644602648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -169,11 +169,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2765844868840328209}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_Name
-      value: sword_IN_stone
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -228,6 +223,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 624ffe2a15286424ca8981237d210a2d,
+        type: 3}
+      propertyPath: m_Name
+      value: sword_IN_stone
       objectReference: {fileID: 0}
     - target: {fileID: -3002650726264751205, guid: 624ffe2a15286424ca8981237d210a2d,
         type: 3}

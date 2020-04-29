@@ -11,6 +11,18 @@ public class PlayerDashState : PlayerIState
     {
         player = statePatternPlayer;
     }
+
+    public void OnStateEnter()
+    {
+        player.internalDashTimer = 0f;
+        player.animator.SetBool("Dash", true);
+        player.audioPlayer.PlayerDashing();
+        if (player.weapon != null)
+        {
+            player.weapon.GetComponent<Collider>().enabled = true; //tillfällig implementation
+        }
+    }
+
     public void UpdateState()
     {
         internalStateTimer += Time.deltaTime;
@@ -22,25 +34,25 @@ public class PlayerDashState : PlayerIState
             }
             else
             {
-                ChangeState(player.basicState);
+                player.RunOrIdleDecider();
             }
         }
         else
         {
-            ChangeState(player.basicState);
+            player.RunOrIdleDecider();
         }
     }
     public void ChangeState(PlayerIState newState)
     {
-        if (newState == player.basicState || newState == player.idleState)
+        player.animator.SetBool("Dash", false);
+        player.internalGCDTimer = 0f;
+        player.internalDashTimer = 0f;
+        internalStateTimer = 0f;
+        if (player.weapon != null)
         {
-            internalStateTimer = 0f;
-            player.internalDashTimer = 0f;
-            player.internalGCDTimer = 0f;
-            player.currentState = newState;
+            player.weapon.GetComponent<Collider>().enabled = false; //tillfällig implementation
         }
-        else
-            Debug.Log("GCD Trigger");
+        player.StateChanger(newState);
     }
 
     public void TakeDamage(float damage)

@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 1;
         gameplayState = new GameGameplayState(this);
         menuState = new GameMenuState(this);
         gameState = menuState;
@@ -79,7 +81,7 @@ public class GameManager : MonoBehaviour
     public void OnExit()
     {
         audioManager.ButtonPressed();
-        //exit game
+        Application.Quit();
     }
 
     public void SpawnPlayers()

@@ -7,12 +7,13 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     public float durabilityDecrement;
     public GameObject weaponAmmo;
     private float currentDurability;
-    private Collision apa; // Funkar inte utan att skicka med denna
+  
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
         equippedState = new WeaponEquippedState(this);
         thrownState = new WeaponThrownState(this);
+        thisWepType = Weapontype.spellbook;
     }
 
     private void Start()
@@ -21,12 +22,13 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-        
+        audioPlayer = GetComponent<AudioWeapon>();
+
     }
 
     private void Update()
     {
-        StateChangeObserver(); 
+        currentState.UpdateState();
     }
 
     public override void Attack()
@@ -34,7 +36,11 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         //launch projectile and instanciate projectile 
         // Projectile i eget script med en OnCollisonEnter kollar om träffat en spelare och isfall gå in i enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);
         ChangeDurability(durabilityDecrement);
-        Instantiate(weaponAmmo);
+        //Instantiate(weaponAmmo);
+        audioPlayer.Attacking();
+        GameObject temp =Instantiate(weaponAmmo, parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos.transform.position,Quaternion.identity);
+        temp.GetComponent<ProjectileFish>().parentObject = parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos;
+        //transform.DetachChildren();
     }
 
     public override void ChangeDurability(float durabilityDecrement)
