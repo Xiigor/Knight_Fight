@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3343980690059528241}
   m_Layer: 0
   m_Name: InputHandler
-  m_TagString: Untagged
+  m_TagString: InputHandler
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -3343980690059528241}
         m_MethodName: OnDash
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -102,7 +102,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -3343980690059528241}
         m_MethodName: OnThrowWep
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -119,7 +119,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -3343980690059528241}
         m_MethodName: OnAttack
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -132,7 +132,25 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
     m_ActionId: 53f458f9-940b-459d-857c-a95f67605689
     m_ActionName: Gameplay/Attack[/DualShock4GamepadHID/buttonEast,/DualShock4GamepadHID/buttonEast]
-  m_NeverAutoSwitchControlSchemes: 0
+  - m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: 27949091-c09b-4a61-ad7e-1cdc3cbe9d7d
+    m_ActionName: MenuInput/Join[/DualShock4GamepadHID/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: 2d07fe4d-0c9f-4155-a989-05aef151110d
+    m_ActionName: MenuInput/Leave[/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: b79cf0bb-555c-4463-8311-e6b56c900a37
+    m_ActionName: MenuInput/ToMenu[/DualShock4GamepadHID/start]
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1

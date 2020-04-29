@@ -13,11 +13,12 @@ public class WeaponSwordPattern : WeaponBaseClass
         unequippedState = new WeaponUnequippedState(this);
         equippedState = new WeaponEquippedState(this);
         thrownState = new WeaponThrownState(this);
+        thisWepType = Weapontype.oneHSword;
     }
 
     private void Start()
     {
-        currentState = stateChangeObserver = unequippedState;
+        currentState = unequippedState;
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
@@ -27,18 +28,11 @@ public class WeaponSwordPattern : WeaponBaseClass
     private void Update()
     {
         currentState.UpdateState();
-        StateChangeObserver();
-
-        //if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackAnimName)) // tror den checkar om animatinen är klar
-        //{
-        //    gameObject.GetComponent<Collider>().enabled = false;
-        //}
     }
 
     public override void Attack()
     {
-        gameObject.GetComponent<Collider>().enabled = true;
-        anim = parentPlayer.GetComponent<Animator>();    //Hämta parent animator Så kan kolla om färdig
+        //gameObject.GetComponent<Collider>().enabled = true;
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 

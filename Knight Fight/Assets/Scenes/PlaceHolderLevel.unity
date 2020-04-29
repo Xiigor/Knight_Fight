@@ -126,6 +126,148 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5945956326042383396}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &23066744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2105627474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &23066745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.2261324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.28300002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23066744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
+--- !u!1 &35177516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 549177678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &35177517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35177516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
 --- !u!1 &103324980
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +360,64 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: -209.131, z: 0}
+--- !u!1 &146683734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 869286787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &146683735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146683734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
+--- !u!1 &153059225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 777379139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &153059226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153059225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &173400925
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +612,81 @@ PrefabInstance:
     - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_Name
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: Trap (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0041323854
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.28600004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+=======
       value: weapon (3)
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -422,7 +696,7 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.105337
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -457,7 +731,11 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 53
+=======
+      value: 2
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -486,6 +764,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
+--- !u!223 &204915942 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7519264533027523639, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7519264533097629905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &255558346
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +1053,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+=======
     - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_Name
@@ -779,6 +1065,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Environment
       objectReference: {fileID: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -848,6 +1135,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -949,6 +1241,183 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: -59.227, z: 0}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+--- !u!1001 &328792805
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3818676
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.08300003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+--- !u!1001 &343562852
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.2081324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.22899993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+=======
+--- !u!1 &298155081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7519264533353804952, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7519264533097629905}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
 --- !u!1 &346269710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,6 +1517,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+=======
     - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_Name
@@ -1058,6 +1529,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Environment
       objectReference: {fileID: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1128,6 +1600,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: -0.52531594
       objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (9)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
 --- !u!4 &346812724 stripped
@@ -1143,6 +1620,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+=======
     - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_Name
@@ -1153,6 +1632,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Environment
       objectReference: {fileID: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1223,6 +1703,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: -0.52531594
       objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (7)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
 --- !u!4 &356111391 stripped
@@ -1231,6 +1716,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 356111390}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!4 &375407839 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6955143107841644772, guid: 85cbae8dd56505844be748e046e20472,
@@ -1240,94 +1726,15 @@ Transform:
 --- !u!4 &389540101 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+=======
+--- !u!1 &469262089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7519264533182027736, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+>>>>>>> Progg-Choffe
     type: 3}
-  m_PrefabInstance: {fileID: 1565039051}
+  m_PrefabInstance: {fileID: 7519264533097629905}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &396128990
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_Name
-      value: sword_IN_stone
-      objectReference: {fileID: 0}
-    - target: {fileID: -5203152043204767050, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: de09cd08120e8be409008b9ff06f8ba1, type: 2}
-    - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.94
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 12.986
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.133
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.99543667
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.09542495
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -169.048
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3002650726264751205, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cb192f6fdb620374ca53eb461a453884, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 624ffe2a15286424ca8981237d210a2d, type: 3}
---- !u!4 &417219874 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 73048078}
-  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
 --- !u!1001 &430420353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1339,11 +1746,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Trap (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
       objectReference: {fileID: 0}
     - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
         type: 3}
@@ -1417,6 +1819,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
+>>>>>>> Progg-Choffe
 --- !u!1 &470905397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,6 +1916,99 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: -174.516, z: 0}
+--- !u!1 &526022176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7519264533242724081, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7519264533097629905}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+--- !u!1001 &507918236
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3558676
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.123000026
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+=======
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
 --- !u!1 &542441401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,6 +2108,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+=======
     - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_Name
@@ -1618,6 +2120,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Environment
       objectReference: {fileID: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1656,7 +2159,11 @@ PrefabInstance:
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 72
+=======
       value: 46
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
@@ -1687,6 +2194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -1788,6 +2300,12 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: -120.77501, z: 0}
+--- !u!1 &575472595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7519264533596556034, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7519264533097629905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &634244956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,6 +2490,35 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 7.7690005, z: 0}
+--- !u!1 &670378471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1294420602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &670378472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670378471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &671058920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,12 +2629,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
-  weaponBreak: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
+  weaponBreak: event:/Ui/Ui_Menu_Select
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,7 +2724,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+  m_RootOrder: 3
+=======
+  m_RootOrder: 8
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
   m_LocalEulerAnglesHint: {x: 37.305, y: -30.000002, z: 0}
 --- !u!1 &713896428
 GameObject:
@@ -2271,6 +2822,12 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: -193.747, z: 0}
+--- !u!1 &725105058 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7519264533446291827, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7519264533097629905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &746884335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2326,7 +2883,11 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 48
+=======
+      value: 3
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -2355,6 +2916,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e71f3e1e6385e40ba2a6cfd4370854, type: 3}
+--- !u!1 &750935617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1859414475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &750935618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750935617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1001 &768076161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2410,7 +3000,7 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -2446,6 +3036,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+=======
     - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_Name
@@ -2456,6 +3048,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Environment
       objectReference: {fileID: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2525,6 +3118,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -2626,6 +3224,99 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 15.708001, z: 0}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+--- !u!4 &810915493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1555275324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &812305807
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.15613239
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.30800003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+=======
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
 --- !u!1001 &869286787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2633,6 +3324,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+=======
     - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_Name
@@ -2643,6 +3336,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Environment
       objectReference: {fileID: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2712,6 +3406,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -2813,9 +3512,99 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 102.420006, z: 0}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+--- !u!1001 &890467172
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3418676
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.05600006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+--- !u!4 &919030018 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+=======
 --- !u!1 &888531735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7360429787406286966, guid: 2c576bfc1e3461b419c41780dde5c959,
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
     type: 3}
   m_PrefabInstance: {fileID: 5945956326042383396}
   m_PrefabAsset: {fileID: 0}
@@ -2832,13 +3621,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   givenGender: 0
-  playerHurt: 
-  playerHurtMale: 
-  playerHurtFemale: 
-  playerAttack: 
-  playerDash: 
-  playerThrow: 
-  playerThrowMale: 
+  playerHurtMale: event:/Player/Player_Hurt_Generic_Male
+  playerHurtFemale: event:/Player/Player_Hurt_Generic_Female
+  playerDash: event:/Player/Player_Dash
+  playerThrow: event:/Weapons/Weapon_Throw_Light
 --- !u!1 &906124479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
@@ -2848,6 +3634,89 @@ GameObject:
 --- !u!114 &906124486
 MonoBehaviour:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.04013239
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.23199996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+=======
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2857,12 +3726,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
-  weaponBreak: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
+  weaponBreak: event:/Ui/Ui_Menu_Select
+--- !u!1 &944540185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 944540186}
+  m_Layer: 0
+  m_Name: Player1 spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &944540186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944540185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.5, y: 10, z: 8.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
 --- !u!1 &959053498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,6 +3865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
+  - component: {fileID: 963194229}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   m_Layer: 0
@@ -2974,14 +3875,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
+--- !u!114 &963194226
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -3035,15 +3941,37 @@ Transform:
   m_LocalRotation: {x: 0.5254717, y: 0, z: 0, w: 0.8508111}
   m_LocalPosition: {x: 1.6, y: 69.1, z: -37.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 969376069}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+  m_LocalEulerAnglesHint: {x: 66.270004, y: 0.40500003, z: 0.37100002}
+=======
   m_LocalEulerAnglesHint: {x: 63.4, y: 0, z: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c36b83b5a918234aae9343af7f34f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FishPrefab: {fileID: 3574644052116184080, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+    type: 3}
+--- !u!4 &977333478 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 180838196}
+=======
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
@@ -3060,9 +3988,7 @@ MonoBehaviour:
   cameraPositionX: -5
   cameraPositionY: 75
   cameraPositionZ: -30
-  objectsFollowedByCamera:
-  - {fileID: 15523634}
-  - {fileID: 375407839}
+  objectsFollowedByCamera: []
   offsetFromObjects: {x: 0, y: 50, z: -32}
   minZoom: 68
   maxZoom: 45
@@ -3070,6 +3996,201 @@ MonoBehaviour:
   focusedObject: {fileID: 15523634}
   offsetFromFocusY: 30
   offsetFromFocusZ: 10
+--- !u!1 &969376067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 969376069}
+  - component: {fileID: 969376068}
+  - component: {fileID: 969376070}
+  - component: {fileID: 969376071}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &969376068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969376067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 11600abbabc0d6948ba4d0f18d70dc91,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+DeviceLostEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+DeviceRegainedEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ControlsChangedEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: 0f16c0ee-573c-4e97-af4f-adf35d02cf15
+    m_ActionName: Gameplay/Move[/DualShock4GamepadHID/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: 230f9f2f-03f7-4774-bc77-ce3669454596
+    m_ActionName: Gameplay/Dash[/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: f333faed-cc0e-4877-a7da-ef77e264d505
+    m_ActionName: Gameplay/ThrowWep[/DualShock4GamepadHID/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: 53f458f9-940b-459d-857c-a95f67605689
+    m_ActionName: Gameplay/Attack[/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 969376070}
+        m_MethodName: OnJoin
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: 27949091-c09b-4a61-ad7e-1cdc3cbe9d7d
+    m_ActionName: MenuInput/Join[/DualShock4GamepadHID/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 969376070}
+        m_MethodName: OnLeave
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: 2d07fe4d-0c9f-4155-a989-05aef151110d
+    m_ActionName: MenuInput/Leave[/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 969376070}
+        m_MethodName: ToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: b79cf0bb-555c-4463-8311-e6b56c900a37
+    m_ActionName: MenuInput/ToMenu[/DualShock4GamepadHID/start]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: MenuInput
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!4 &969376069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969376067}
+  m_LocalRotation: {x: -0.5254717, y: -0, z: -0, w: 0.8508111}
+  m_LocalPosition: {x: 419.4951, y: -100.08261, z: -239.59528}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &969376070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969376067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11141c4293bfae04ba18f8ddb6675f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readyPlayers: []
+  cameraObject: {fileID: 963194225}
+  menuCanvas: {fileID: 204915942}
+  cameraScript: {fileID: 0}
+  inputManagerObject: {fileID: 1210366974}
+  inputManagerScript: {fileID: 0}
+  audioManager: {fileID: 0}
+  weaponSpawnManager: {fileID: 0}
+  player1: {fileID: 888531735}
+  player1Ready: {fileID: 725105058}
+  player1NotReady: {fileID: 1539635728}
+  player2: {fileID: 987941614}
+  player2Ready: {fileID: 469262089}
+  player2NotReady: {fileID: 526022176}
+  player3: {fileID: 0}
+  player3Ready: {fileID: 1894056069}
+  player3NotReady: {fileID: 575472595}
+  player4: {fileID: 0}
+  player4Ready: {fileID: 1449523568}
+  player4NotReady: {fileID: 298155081}
+--- !u!114 &969376071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969376067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e053f60cc8f1b429d21bf29699630c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPress: event:/Ui/Ui_Menu_Select
+  startPress: event:/Ui/Ui_Menu_Start
+  playerJoin: event:/Ui/Ui_Player_Joined
+  playerLeft: event:/Ui/Ui_Player_Left
+  menuMusic: event:/BGM/Menu
+  gameplayMusic: event:/BGM/Gameplay
 --- !u!1 &987941614 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6955143107841644768, guid: 85cbae8dd56505844be748e046e20472,
@@ -3089,13 +4210,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   givenGender: 0
-  playerHurt: 
-  playerHurtMale: 
-  playerHurtFemale: 
-  playerAttack: 
-  playerDash: 
-  playerThrow: 
-  playerThrowMale: 
+  playerHurtMale: event:/Player/Player_Hurt_Generic_Male
+  playerHurtFemale: event:/Player/Player_Hurt_Generic_Female
+  playerDash: event:/Player/Player_Dash
+  playerThrow: event:/Weapons/Weapon_Throw_Light
 --- !u!1 &1008007845
 GameObject:
   m_ObjectHideFlags: 0
@@ -3232,11 +4350,74 @@ Transform:
   - {fileID: 346812724}
   - {fileID: 777379140}
   - {fileID: 1294420603}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+  - {fileID: 1335590206}
+  - {fileID: 1859278441}
+  - {fileID: 1315296725}
+  - {fileID: 1047892445}
+  - {fileID: 2119093886}
+  - {fileID: 358749301}
+  - {fileID: 810915493}
+  - {fileID: 1575839913}
+  - {fileID: 389540101}
+  - {fileID: 1513998713}
+  - {fileID: 919030018}
+  - {fileID: 1203317743}
+  - {fileID: 229239653}
+  - {fileID: 1344221157}
+  - {fileID: 922979964}
+  - {fileID: 1829253394}
+  - {fileID: 1707593629}
+  - {fileID: 750698623}
+  - {fileID: 999065209}
+  - {fileID: 417219874}
+  - {fileID: 1867314055}
+  - {fileID: 923002251}
+  - {fileID: 488319609}
+  - {fileID: 1983168521}
+  - {fileID: 999229946}
+  - {fileID: 2004551333}
+=======
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
   - {fileID: 549177679}
+  - {fileID: 977333478}
   - {fileID: 271541533}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+  m_RootOrder: 4
+=======
+  m_RootOrder: 9
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1071041715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 271541532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1071041716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071041715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &1103579998
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,7 +4841,11 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 56
+=======
+      value: 5
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -3781,7 +4966,7 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 115.742004, z: 0}
---- !u!1 &1210366974
+--- !u!1 &1191410656
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3789,53 +4974,34 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1210366976}
-  - component: {fileID: 1210366977}
+  - component: {fileID: 1191410657}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Player3 spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1210366976
+--- !u!4 &1191410657
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210366974}
+  m_GameObject: {fileID: 1191410656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000076293945, y: 15, z: -0.0000076293945}
+  m_LocalPosition: {x: 10.1, y: 10, z: -16.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1210366977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210366974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa546ae9f0fb0b4baa509a012a06cc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputHandlerPrefab: {fileID: 5637299219437966504, guid: a6db1f7ffa7842045a4548ff88464daa,
+--- !u!1 &1210366974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 390165657641536867, guid: d713cde69575a10409fd2dd351c58b1b,
     type: 3}
-  player1: 1
-  player1Object: {fileID: 888531735}
-  player2: 1
-  player2Object: {fileID: 987941614}
-  player3: 0
-  player3Object: {fileID: 0}
-  player4: 0
-  player4Object: {fileID: 0}
-  trigger: 1
-  triggered: 0
+  m_PrefabInstance: {fileID: 390165658851309213}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1217460267
 GameObject:
   m_ObjectHideFlags: 0
@@ -3928,130 +5094,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217460267}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1227533183
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Name
-      value: The_real_fucking_knight_model
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.672949
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.42
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.202751
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1821025642446452017, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
-    - target: {fileID: 6459745616422149711, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
-    - target: {fileID: 6459745616422149711, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
-    - target: {fileID: 5491993797243050492, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
-    - target: {fileID: 515005754796223313, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
-    - target: {fileID: 3432319075625013302, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
-    - target: {fileID: -1207147626989134260, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
-    - target: {fileID: 7771313983093170804, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
-    - target: {fileID: 1198666072716555186, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
-    - target: {fileID: -4095899457240072905, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
-    - target: {fileID: -3854330163544941761, guid: 36ee95230164b3a4a91e295d60425ab7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 36ee95230164b3a4a91e295d60425ab7, type: 3}
 --- !u!1 &1238178222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4245,6 +5287,89 @@ GameObject:
 --- !u!114 &1272903664
 MonoBehaviour:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.14413238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.22999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+=======
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4254,12 +5379,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
-  weaponBreak: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
+  weaponBreak: event:/Ui/Ui_Menu_Select
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
 --- !u!1001 &1294420602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4267,6 +5393,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+=======
     - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_Name
@@ -4277,6 +5405,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Environment
       objectReference: {fileID: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4347,6 +5476,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: -0.52531594
       objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (11)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
 --- !u!4 &1294420603 stripped
@@ -4355,6 +5489,328 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1294420602}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1409761462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 356111390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1409761463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1432436407}
+  m_LocalRotation: {x: 0, y: 0.34040615, z: 0, w: 0.94027853}
+  m_LocalPosition: {x: -0.3554475, y: -0.7855924, z: 0.33177924}
+  m_LocalScale: {x: 0.033409543, y: -2.1397858, z: 0.18490747}
+  m_Children: []
+  m_Father: {fileID: 1008007849}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 39.803, z: 0}
+--- !u!1001 &1511127880
+=======
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+--- !u!1001 &1362184478
+>>>>>>> Progg-Choffe
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8721846196060662544, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662545, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662545, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 226.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 191.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721846196060662572, guid: 9d034632e4738134d9444e9c073150ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+<<<<<<< HEAD
+  m_SourcePrefab: {fileID: 100100000, guid: 977a92f567d0dd44590522423459f26b, type: 3}
+--- !u!4 &1513998713 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1143554125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1524894903
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: 9d034632e4738134d9444e9c073150ac, type: 3}
+--- !u!1001 &1392491079
+>>>>>>> Progg-Choffe
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3708676
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0110000605
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+--- !u!1001 &1431529093
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3574644052116184080, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_Name
+      value: fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 558716883370503683, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.984604
+      objectReference: {fileID: 0}
+    - target: {fileID: 558716883370503683, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 307.68823
+      objectReference: {fileID: 0}
+    - target: {fileID: 558716883370503683, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 157.60333
+      objectReference: {fileID: 0}
+    - target: {fileID: 558716883370503683, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558716883370503683, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558716883370503683, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558716883370503683, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 558716883370503683, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 558716883370503683, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558716883370503683, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558716883370503683, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2807300457481510241, guid: 0d265d1b2e8595d43aec18e6e60e878f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 0d265d1b2e8595d43aec18e6e60e878f, type: 3}
+--- !u!1 &1431529094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7032341667204168077, guid: 0d265d1b2e8595d43aec18e6e60e878f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1431529093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1431529095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431529094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24346207, y: 2.0866382, z: 5.061076}
+  m_Center: {x: 2.5900097, y: 0.168851, z: 0.66709}
+=======
+  m_GameObject: {fileID: 1409761462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
 --- !u!1 &1432436407
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,90 +5903,138 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 39.803, z: 0}
---- !u!1001 &1511127880
-PrefabInstance:
+--- !u!1 &1449523568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7519264534467424673, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7519264533097629905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1466584237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 346812723}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1466584238
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_Name
-      value: flagpole
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.3004327
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 11.897541
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.123765
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: 977a92f567d0dd44590522423459f26b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 862c5692d78162343a56127ba0eb7583, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 977a92f567d0dd44590522423459f26b, type: 3}
---- !u!4 &1513998713 stripped
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466584237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
+--- !u!1 &1471906336 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7519264534461270769, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7519264533097629905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1533725321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1533725322}
+  m_Layer: 0
+  m_Name: Player2 spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1533725322
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533725321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.7, y: 10, z: 5.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1539635728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7519264534259741377, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7519264533097629905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1551744714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
     type: 3}
   m_PrefabInstance: {fileID: 1143554125}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1524894903
-PrefabInstance:
+--- !u!114 &1551744721
+MonoBehaviour:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551744714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
+  weaponBreak: event:/Ui/Ui_Menu_Select
+--- !u!1 &1569278036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1569278040}
+  - component: {fileID: 1569278039}
+  - component: {fileID: 1569278038}
+  - component: {fileID: 1569278037}
+  m_Layer: 0
+  m_Name: Cube (28)
+  m_TagString: Environment
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1569278037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569278036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
@@ -4538,11 +6042,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Trap (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
       objectReference: {fileID: 0}
     - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
         type: 3}
@@ -4616,184 +6115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
---- !u!1001 &1545607587
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1008007849}
-    m_Modifications:
-    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_Name
-      value: Trap (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.3588676
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.95700073
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.04800003
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.28529757
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.958439
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 57
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 33.153
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.028963003
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.029206
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
---- !u!1001 &1555275324
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1008007849}
-    m_Modifications:
-    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_Name
-      value: Trap (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.09013237
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.95700073
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.33899993
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.28529757
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.958439
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 33.153
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.028963003
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.029206
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+<<<<<<< HEAD
 --- !u!1001 &1557356760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4911,6 +6233,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+=======
+--- !u!1001 &1545607587
+=======
+>>>>>>> Progg-Choffe
   m_Size: {x: 1, y: 1.354771, z: 1}
   m_Center: {x: 0, y: 0.17738552, z: 0}
 --- !u!23 &1569278038
@@ -5158,6 +6484,7 @@ Transform:
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 160.47801, z: 0}
 --- !u!1001 &1668593522
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -5167,7 +6494,66 @@ PrefabInstance:
     - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_Name
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: Trap (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3588676
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04800003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+=======
       value: weapon (1)
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328219, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -5197,6 +6583,88 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_LocalRotation.y
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+--- !u!1001 &1565039051
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.03313238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.33600006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+=======
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
@@ -5212,7 +6680,11 @@ PrefabInstance:
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 54
+=======
+      value: 4
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 2765844868840328209, guid: 23e71f3e1e6385e40ba2a6cfd4370854,
         type: 3}
@@ -5333,6 +6805,36 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -185.97899, z: 0}
+--- !u!1 &1787219053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1787219054}
+  m_Layer: 0
+  m_Name: Player4 spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1787219054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787219053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.7, y: 10, z: -11.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1807706228
 GameObject:
   m_ObjectHideFlags: 0
@@ -5443,12 +6945,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
-  weaponBreak: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
+  weaponBreak: event:/Ui/Ui_Menu_Select
 --- !u!1 &1848587531
 GameObject:
   m_ObjectHideFlags: 0
@@ -5596,7 +7098,11 @@ PrefabInstance:
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 63
+=======
       value: 40
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
@@ -5783,7 +7289,11 @@ PrefabInstance:
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 64
+=======
       value: 39
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
@@ -5823,6 +7333,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1874386910}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1894056069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7519264534979102804, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7519264533097629905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2022784847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1874386910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2022784848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022784847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &2031182620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5922,6 +7467,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+=======
     - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_Name
@@ -5932,6 +7479,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Environment
       objectReference: {fileID: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5970,7 +7518,11 @@ PrefabInstance:
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 40
+=======
       value: 42
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
@@ -6001,6 +7553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
@@ -6109,6 +7666,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008007849}
     m_Modifications:
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+=======
     - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_Name
@@ -6119,6 +7678,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Environment
       objectReference: {fileID: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6157,7 +7717,11 @@ PrefabInstance:
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 39
+=======
       value: 37
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
         type: 3}
@@ -6189,6 +7753,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: -0.52531594
       objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (5)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
 --- !u!4 &2105627475 stripped
@@ -6197,6 +7766,214 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2105627474}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+--- !u!1001 &1935152500
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.26613238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.006000061
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+--- !u!4 &1983168521 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+=======
+--- !u!1 &2141106017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
+    type: 3}
+  m_PrefabInstance: {fileID: 2101775779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2141106018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 4331136357216990305, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Trap (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.09713238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.26899993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28529757
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.958439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028963003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.029206
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+--- !u!4 &2004551333 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4331136357216990315, guid: f66d4a01fa6e11e4f889e3e8fefde3cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 226148278}
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141106017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Player/Player_Bush_Small_Enter
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &2141246414
 GameObject:
   m_ObjectHideFlags: 0
@@ -6289,6 +8066,79 @@ Transform:
   m_Father: {fileID: 1008007849}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -290.52, z: 0}
+--- !u!1001 &390165658851309213
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 390165657641536867, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerInputManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 390165657641536157, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 390165657641536157, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 390165657641536157, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 390165657641536157, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 390165657641536157, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 390165657641536157, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 390165657641536157, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 390165657641536157, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_RootOrder
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 50
+=======
+      value: 10
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 390165657641536157, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 390165657641536157, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 390165657641536157, guid: d713cde69575a10409fd2dd351c58b1b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d713cde69575a10409fd2dd351c58b1b, type: 3}
 --- !u!1001 &5945956326042383396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6309,7 +8159,7 @@ PrefabInstance:
     - target: {fileID: 7360429787406286962, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.120795
+      value: -5.6
       objectReference: {fileID: 0}
     - target: {fileID: 7360429787406286962, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
@@ -6319,7 +8169,7 @@ PrefabInstance:
     - target: {fileID: 7360429787406286962, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.2
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7360429787406286962, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
@@ -6344,7 +8194,11 @@ PrefabInstance:
     - target: {fileID: 7360429787406286962, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 49
+=======
+      value: 6
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 7360429787406286962, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
@@ -6376,12 +8230,25 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66d4a01fa6e11e4f889e3e8fefde3cd, type: 3}
+--- !u!1001 &2101775779
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008007849}
+    m_Modifications:
+    - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+=======
     - target: {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959,
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
         type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -6424,9 +8291,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      propertyPath: m_RootOrder
+      value: 42
+=======
       propertyPath: m_ActionEvents.Array.data[4].m_TypeName
       value: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
@@ -6517,6 +8389,114 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97b3b01a380651e42a0a8f7b4f189fa1, type: 3}
+--- !u!4 &2101775780 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2101775779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2103369499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2103369503}
+  - component: {fileID: 2103369502}
+  - component: {fileID: 2103369501}
+  - component: {fileID: 2103369500}
+  m_Layer: 0
+  m_Name: Cube (22)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2103369500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103369499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.354771, z: 1}
+  m_Center: {x: 0, y: 0.17738552, z: 0}
+--- !u!23 &2103369501
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103369499}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &2103369502
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103369499}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2103369503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103369499}
+  m_LocalRotation: {x: 0, y: 0.49270913, z: 0, w: 0.87019414}
+  m_LocalPosition: {x: -0.24130465, y: -0.7855924, z: 0.4194043}
+  m_LocalScale: {x: 0.031976726, y: -2.1397858, z: 0.19303067}
+  m_Children: []
+  m_Father: {fileID: 1008007849}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 59.038002, z: 0}
+--- !u!1001 &2105627474
+=======
     - target: {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6679,9 +8659,113 @@ PrefabInstance:
       propertyPath: movementInputForDashDirThreshhold
       value: 0.26
       objectReference: {fileID: 0}
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: spawnPosition
+      value: 
+      objectReference: {fileID: 944540185}
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: attackAnimDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8054881271533271027, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
+--- !u!1001 &6778862794306756889
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+    - target: {fileID: 3263199717995559693, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+=======
+    - target: {fileID: 6778862793872897378, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+      propertyPath: m_Name
+      value: EventSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+      propertyPath: m_RootOrder
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 37
+=======
+      value: 12
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778862793872897380, guid: b621c7bcfe4630147b86e5d3073cccc5,
+        type: 3}
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      propertyPath: m_LocalScale.y
+      value: -0.52531594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263199717995559731, guid: 97b3b01a380651e42a0a8f7b4f189fa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush (3)
+      objectReference: {fileID: 0}
+=======
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 1471906336}
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b621c7bcfe4630147b86e5d3073cccc5, type: 3}
 --- !u!1001 &6779911664505143833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6707,7 +8791,7 @@ PrefabInstance:
     - target: {fileID: 6955143107841644772, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.8
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 6955143107841644772, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
@@ -6742,7 +8826,11 @@ PrefabInstance:
     - target: {fileID: 6955143107841644772, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 55
+=======
+      value: 7
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
       objectReference: {fileID: 0}
     - target: {fileID: 6955143107841644772, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
@@ -6789,6 +8877,16 @@ PrefabInstance:
       propertyPath: movementInputForDashDirThreshhold
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: spawnPosition
+      value: 
+      objectReference: {fileID: 1533725321}
+    - target: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,
+        type: 3}
+      propertyPath: attackAnimDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2521545258423596769, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
       propertyPath: m_Layer
@@ -6797,6 +8895,149 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7595446105044283237, guid: 85cbae8dd56505844be748e046e20472, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 85cbae8dd56505844be748e046e20472, type: 3}
+--- !u!1001 &7519264533097629905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7519264533027523634, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_RootOrder
+<<<<<<< HEAD:Knight Fight/Assets/Scenes/Fish.unity
+      value: 46
+=======
+      value: 11
+>>>>>>> Progg-Choffe:Knight Fight/Assets/Scenes/PlaceHolderLevel.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264533027523638, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264534461270771, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 969376070}
+    - target: {fileID: 7519264534461270771, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 969376071}
+    - target: {fileID: 7519264533016386977, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 969376071}
+    - target: {fileID: 7519264533016386977, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 969376070}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8add0326abcc6ed4fa4f0ad956abffe1, type: 3}
 --- !u!114 &7831844147575167742 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3649984417002936551, guid: 85cbae8dd56505844be748e046e20472,

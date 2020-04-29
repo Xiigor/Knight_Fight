@@ -11,22 +11,11 @@ public class PlayerIdleState : PlayerIState
         player = statePatternPlayer;
     }
 
-    public void ChangeState(PlayerIState newState)
+    public void OnStateEnter()
     {
-        if (newState == player.deadState)
-        {
-            player.currentState = newState;
-        }
-
-        else if (newState == player.basicState)
-        {
-            player.currentState = newState;
-        }
-
-        else if (player.ValidStateChange(newState))
-        {
-            player.currentState = newState;
-        }
+        player.animator.SetBool("Running", false);
+        player.animator.SetBool("Idle", true);
+        
     }
 
     public void UpdateState()
@@ -38,8 +27,20 @@ public class PlayerIdleState : PlayerIState
         }
     }
 
+    public void ChangeState(PlayerIState newState)
+    {
+        player.animator.SetBool("Idle", false);
+        player.StateChanger(newState);
+    }
+
+
+
     public void TakeDamage(float damage)
     {
         player.health -= damage;
+        if (player.health <= 0)
+        {
+            player.Die();
+        }
     }
 }

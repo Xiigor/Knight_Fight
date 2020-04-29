@@ -12,6 +12,12 @@ public class PlayerDeadState : PlayerIState
     {
         player = statePatternPlayer;
     }
+
+    public void OnStateEnter()
+    {
+
+    }
+
     public void UpdateState()
     {
         //Ded :(

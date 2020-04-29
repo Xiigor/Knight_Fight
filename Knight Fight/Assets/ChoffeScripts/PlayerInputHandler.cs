@@ -10,10 +10,12 @@ public class PlayerInputHandler : MonoBehaviour
     private PlayerInput playerInput;
     private PlayerStatePattern playerStatePattern;
 
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         var playerStatePatterns = FindObjectsOfType<PlayerStatePattern>();
+       
         var index = playerInput.playerIndex;
         playerStatePattern = playerStatePatterns.FirstOrDefault(m => m.GetPlayerIndex() == index);
     }
@@ -25,28 +27,37 @@ public class PlayerInputHandler : MonoBehaviour
         }
         
     }
-    public void OnDash()
+    public void OnDash(CallbackContext context)
     {
         if (playerStatePattern != null)
         {
-            playerStatePattern.currentState.ChangeState(playerStatePattern.dashState);
+            if (context.performed)
+            {
+                playerStatePattern.StateChanger(playerStatePattern.dashState);
+            }
+            
         }
         
     }
-    public void OnThrowWep()
+    public void OnThrowWep(CallbackContext context)
     {
         if (playerStatePattern != null)
         {
-            playerStatePattern.currentState.ChangeState(playerStatePattern.throwState);
+            if (context.performed)
+            {
+                playerStatePattern.StateChanger(playerStatePattern.throwState);
+            }    
         }
         
     }
-    public void OnAttack()
+    public void OnAttack(CallbackContext context)
     {
         if (playerStatePattern != null)
         {
-            playerStatePattern.currentState.ChangeState(playerStatePattern.attackState);
+            if (context.performed)
+            {
+                playerStatePattern.StateChanger(playerStatePattern.attackState);
+            }  
         }
-        
     }
 }

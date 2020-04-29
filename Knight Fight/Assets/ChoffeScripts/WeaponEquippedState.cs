@@ -14,7 +14,6 @@ public class WeaponEquippedState : WeaponIState
     public void OnStateEnter()
     {
         weapon.audioPlayer.WeaponBeingPickedUp();
-        weapon.gameObject.layer = weapon.EquippedLayer;
         ChangePhysics();
         weapon.HeldPos();
         
@@ -29,14 +28,6 @@ public class WeaponEquippedState : WeaponIState
         weapon.rb.isKinematic = true;
         weapon.col.enabled = false;
         weapon.rb.useGravity = false;
-    }
-
-    public void ChangeState(WeaponIState newState)
-    {
-        if(newState == weapon.thrownState)
-        {
-            weapon.ChangeState(newState);
-        }
     }
 
     public void HandleCollision(Collision col)

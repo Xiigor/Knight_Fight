@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
-    private PlayerIState stateChangeObserver;
 
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerIdleState idleState;
@@ -14,7 +13,11 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
-    
+
+    public GameObject rightHandGameobject = null;
+    public GameObject leftHandGameobject = null;
+    public GameObject projectileSpawnPos = null;
+
 
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
@@ -23,41 +26,50 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public float internalDashTimer;
     [HideInInspector] public float internalAttackTimer;
 
-
     public float movementSpeedMultiplier = 35.0f;
 
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
-    public float attackAnimDuration;
-    private float movementInputForDashDirThreshhold = 0.25f; //Fixa så att movement är 0 eller 1
+    public float attackAnimDuration = 0.5f;
+    public float throwAnimDuration = 0.5f;
+    private float movementInputForDashDirThreshhold = 0.15f; 
     public float internalDashRayDist = 1.3f;
     public bool canDash = true;
 
     public GameObject weapon;
+
+    //tags
     public string weaponTag = "Weapon";
+    public string weaponProjectileTag = "WeaponProjectile";
     public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
 
+    //values
     [HideInInspector] public Vector2 moveDir;
     Vector2 moveLastDir;
     Vector3 move;
     public Vector3 lastMove;
     public float maxHealth = 100f;
     public float health;
+
+
     [HideInInspector] public Collider col;
-    private Rigidbody rb;
-    public AudioPlayer audioPlayer;
+    [HideInInspector] private Rigidbody rb;
+    [HideInInspector] public AudioPlayer audioPlayer;
+    public Animator animator;
+
+
+
     public int UnequippedLayer = 13;
     public int EquippedLayer = 14;
     [SerializeField] private int playerIndex;
+    public GameObject spawnPosition;
 
 
     private void Awake()
     {
-        health = maxHealth;
         basicState = new PlayerBasicState(this);
         idleState = new PlayerIdleState(this);
-        currentState = stateChangeObserver = idleState;
 
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
@@ -66,14 +78,23 @@ public class PlayerStatePattern : MonoBehaviour
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         audioPlayer = GetComponent<AudioPlayer>();
-        internalGCDTimer = globalCD;
-        internalDashTimer = dashCD;  
+        animator = GetComponent<Animator>();
 
+    }
+
+    public void OnEnable()
+    {
+        transform.position = spawnPosition.transform.position;
+        health = maxHealth;
+        currentState = idleState;
+        internalGCDTimer = globalCD;
+        internalDashTimer = dashCD;
+        weapon = null;
+        Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
     private void FixedUpdate()
     {
-        StateUpdateObserver();
         currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
@@ -93,10 +114,8 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void Update()
     {
-        if(health <= 0)
-        {
-            currentState.ChangeState(deadState);
-        }
+        currentState.UpdateState();
+        Debug.Log(currentState.ToString());
         if (internalGCDTimer < globalCD)
         {
             internalGCDTimer += Time.deltaTime;
@@ -118,25 +137,42 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == projectileTag)
+        if (collision.gameObject.tag == weaponProjectileTag)
         {
             OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+        }
+        if (collision.gameObject.tag == projectileTag)
+        {
+            OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
+        }
+        if(collision.gameObject.tag == weaponTag)
+        {
+            if (collision.gameObject.layer == UnequippedLayer)
+            {
+                PickupItem(collision.gameObject);
+            }
+            else if (collision.gameObject.layer == EquippedLayer)
+            {
+
+                OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
+                //if(weapon != null && collision.gameObject != weapon.gameObject)
+                //{
+                //    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage); // UPPDATERA INNAN BUILD, DETTA BORDE INTE FUNGERA I MULTIPLAYER
+                //}
+
+            } 
         }
         if (currentState == dashState)
         {
             currentState.ChangeState(idleState);
         }
     }
+
     public void Attack()
     {
         if(weapon != null)
         {
-           if(weapon.GetComponent<WeaponSwordPattern>())
-            {
-                weapon.GetComponent<AudioWeapon>().Attacking();
-                Debug.Log("Attacks with sword");
-                
-            }
+            weapon.GetComponent<WeaponBaseClass>().Attack();
         }
         else
         {
@@ -153,7 +189,6 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (internalDashTimer >= dashCD)
                 {
-
                     return true;
                 }
                 else
@@ -166,6 +201,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if(weapon != null)
                 {
+                    audioPlayer.PlayerThrowing();
                     Debug.Log("throw wep");
                     return true;
                 }
@@ -209,12 +245,73 @@ public class PlayerStatePattern : MonoBehaviour
         }
     }
 
+    public void StateChanger(PlayerIState newState)
+    {
+        if(newState == deadState)
+        {
+            currentState = newState;
+            currentState.OnStateEnter();
+        }
+        else if(newState == idleState || newState == basicState)
+        {
+            currentState = newState;
+            currentState.OnStateEnter();
+        }
+        else if(currentState == idleState || currentState == basicState)
+        {
+            if (ValidStateChange(newState))
+            {
+                currentState = newState;
+                currentState.OnStateEnter();
+            }
+        }
+    }
+
+    public void RunOrIdleDecider()
+    {
+        if(moveDir == Vector2.zero)
+        {
+            currentState.ChangeState(idleState);
+        }
+        else
+        {
+            currentState.ChangeState(basicState);
+        }
+    }
+
+    public void WeaponTypeIdentifier()
+    {
+        switch (weapon.GetComponent<WeaponBaseClass>().thisWepType)
+        {
+            case WeaponBaseClass.Weapontype.oneHSword:
+                animator.SetBool("1hSword", true);
+                animator.SetBool("2hSword", false);
+                animator.SetBool("Spellbook", false);
+                break;
+            case WeaponBaseClass.Weapontype.twoHSword:
+                animator.SetBool("1hSword", false);
+                animator.SetBool("2hSword", true);
+                animator.SetBool("Spellbook", false);
+                break;
+            case WeaponBaseClass.Weapontype.spellbook:
+                animator.SetBool("1hSword", false);
+                animator.SetBool("2hSword", false);
+                animator.SetBool("Spellbook", true);
+                break;
+        }
+    }
+
     public void ChangeDirection()
     {
-        move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
+        //move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
         if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
+            move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
             moveLastDir = moveDir;
+        }
+        else
+        {
+            moveDir = Vector2.zero;
         }
 
         lastMove = Vector3.Normalize(new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier);
@@ -233,9 +330,11 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void ThrowItem()
     {
-        audioPlayer.PlayerThrowing();
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
         weapon = null;
+        animator.SetBool("1hSword", false);
+        animator.SetBool("2hSword", false);
+        animator.SetBool("Spellbook", false);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
@@ -244,6 +343,8 @@ public class PlayerStatePattern : MonoBehaviour
         weapon = weaponObject;
         Physics.IgnoreCollision(col, weapon.GetComponent<Collider>(), true);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, true);
+        weapon.gameObject.layer = EquippedLayer; //läggs här för att inte ske före on collision
+        WeaponTypeIdentifier();
     }
 
     public void OnHit(float damage)
@@ -251,40 +352,13 @@ public class PlayerStatePattern : MonoBehaviour
         audioPlayer.PlayerHurting();
         currentState.TakeDamage(damage);
     }
+    public void Die()
+    {
+        StateChanger(deadState);
+    }
 
     private float Hypotenuse(float sideA, float sideB)
     {
         return Mathf.Sqrt(sideA * sideA + sideB * sideB);
-    }
-
-    private void StateUpdateObserver()
-    {
-        if(stateChangeObserver != currentState)
-        {
-            stateChangeObserver = currentState;
-            if (stateChangeObserver == idleState)
-            {
-                //spelaren gick precis in i idleState
-            }
-            if (stateChangeObserver == basicState)
-            {
-                //spelaren gick precis in i "MoveState"
-            }
-            if(stateChangeObserver == dashState)
-            {
-                //Spelaren gick precis in i dashState
-                audioPlayer.PlayerDashing();
-            }
-            if (stateChangeObserver == throwState)
-            {
-                //Spelaren gick precis in i throwState
-                audioPlayer.PlayerThrowing();
-            }
-            if (stateChangeObserver == attackState)
-            {
-                //Spelaren gick precis in i attackState
-                
-            }
-        }
     }
 }

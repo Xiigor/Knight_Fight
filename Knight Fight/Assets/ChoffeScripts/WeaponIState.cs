@@ -7,6 +7,5 @@ public interface WeaponIState
     void OnStateEnter();
     void UpdateState();
     void ChangePhysics();
-    void ChangeState(WeaponIState newState);
     void HandleCollision(Collision col);
 }

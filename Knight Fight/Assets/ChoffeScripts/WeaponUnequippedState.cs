@@ -34,18 +34,6 @@ public class WeaponUnequippedState : WeaponIState
         weapon.rb.useGravity = true;
     }
 
-    public void ChangeState(WeaponIState newState)
-    {
-        if(newState == weapon.equippedState)
-        {
-            weapon.ChangeState(newState);
-        }
-        else
-        {
-            Debug.Log("Invalid state change from Unequipped");
-        }
-    }
-
     public void HandleCollision(Collision col)
     {
        if(col.gameObject.tag == weapon.playerTag)
@@ -54,12 +42,7 @@ public class WeaponUnequippedState : WeaponIState
             if(col.gameObject.GetComponent<PlayerStatePattern>().weapon == null)
             {
                 weapon.SetParentPlayer(col);
-
-                col.gameObject.GetComponent<PlayerStatePattern>().PickupItem(weapon.gameObject);
-                //col.gameObject.GetComponent<PlayerStatePattern>().weapon = weapon.gameObject;
-                //Physics.IgnoreCollision(weapon.parentPlayer.GetComponent<Collider>(), weapon.col, true);
-
-                ChangeState(weapon.equippedState);
+                weapon.ChangeState(weapon.equippedState);
             }
         }
     }
