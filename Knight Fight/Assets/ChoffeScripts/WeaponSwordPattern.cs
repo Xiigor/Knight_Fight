@@ -18,7 +18,7 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     private void Start()
     {
-        currentState = stateChangeObserver = unequippedState;
+        currentState = unequippedState;
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
@@ -49,15 +49,5 @@ public class WeaponSwordPattern : WeaponBaseClass
     {
         currentState.HandleCollision(collision);
         
-    }
-
-    public override void SetWeaponType()
-    {
-        parentPlayer.GetComponent<Animator>().SetBool("1hSword", true);
-    }
-
-    public override void RemoveWeaponType()
-    {
-        parentPlayer.GetComponent<Animator>().SetBool("1hSword", false);
     }
 }

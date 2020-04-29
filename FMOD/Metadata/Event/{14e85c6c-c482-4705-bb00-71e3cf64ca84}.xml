@@ -53,7 +53,7 @@
 			<destination>{16f6e629-97e6-430e-8031-c515be8c9b03}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{4778e8ea-745c-4994-8b8a-4a0182cd9786}</destination>
+			<destination>{04c8c892-4b21-427f-ba4d-60cfffb4a6ee}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{f1051b87-5848-4be1-8a65-f994afcc7e68}" />
@@ -72,9 +72,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{8b50d5d4-e220-4660-b2d1-3860550afdcd}">
-		<property name="volume">
-			<value>10</value>
-		</property>
 		<relationship name="effectChain">
 			<destination>{7dc18fa0-1ba8-4be9-9ff5-31553b4cae31}</destination>
 		</relationship>
@@ -96,7 +93,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>49.5</value>
+			<value>70</value>
 		</property>
 		<property name="length">
 			<value>0.51000000000000001</value>
@@ -137,7 +134,7 @@
 	<object class="MixerBusEffectChain" id="{7dc18fa0-1ba8-4be9-9ff5-31553b4cae31}">
 		<relationship name="effects">
 			<destination>{e9bcfcfc-9308-4636-87d8-e66b8fa8050d}</destination>
-			<destination>{5dfbe9cd-db13-45cb-a95a-a4c07726b9bc}</destination>
+			<destination>{d0afac5e-4e6c-4316-8162-b9a47bedf92d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d81d882d-6d49-4bfa-8c91-418ae73bbaa0}" />
@@ -223,15 +220,15 @@
 	</object>
 	<object class="MixerBusPanner" id="{fc62bb37-c193-49ac-9f03-8b833be0584d}" />
 	<object class="MixerBusFader" id="{e9bcfcfc-9308-4636-87d8-e66b8fa8050d}" />
-	<object class="SpatialiserEffect" id="{5dfbe9cd-db13-45cb-a95a-a4c07726b9bc}">
+	<object class="SpatialiserEffect" id="{d0afac5e-4e6c-4316-8162-b9a47bedf92d}">
 		<property name="maximumDistance">
-			<value>100</value>
+			<value>50</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>50</value>
+			<value>25</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{02478a5a-798c-45eb-ae0b-e3b6b1756f6d}">

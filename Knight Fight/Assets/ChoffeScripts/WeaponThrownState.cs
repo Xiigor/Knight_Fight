@@ -15,7 +15,6 @@ public class WeaponThrownState : WeaponIState
 
     public void OnStateEnter()
     {
-        weapon.RemoveWeaponType();
         weapon.audioPlayer.WeaponBeingThrown();
         movementApplied = false;
         ChangePhysics();
