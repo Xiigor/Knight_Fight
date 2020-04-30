@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
+    public GameManager gameManager;
 
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerIdleState idleState;

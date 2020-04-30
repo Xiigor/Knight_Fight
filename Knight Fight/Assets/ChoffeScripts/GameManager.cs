@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
     public GameObject player4Ready;
     public GameObject player4NotReady;
 
+    [HideInInspector] public int playersAlive;
+
     public void Awake()
     {
         Application.targetFrameRate = 60;
