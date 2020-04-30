@@ -13,8 +13,10 @@ public class WeaponEquippedState : WeaponIState
 
     public void OnStateEnter()
     {
+        weapon.audioPlayer.WeaponBeingPickedUp();
         ChangePhysics();
         weapon.HeldPos();
+        
     }
     public void UpdateState()
     {
@@ -28,16 +30,11 @@ public class WeaponEquippedState : WeaponIState
         weapon.rb.useGravity = false;
     }
 
-    public void ChangeState(WeaponIState newState)
-    {
-        if(newState == weapon.thrownState)
-        {
-            weapon.ChangeState(newState);
-        }
-    }
-
     public void HandleCollision(Collision col)
     {
-        // this state ignores all collisions
+        if(col.gameObject.tag == weapon.playerTag)
+        {
+            weapon.audioPlayer.AttackHittingPlayer();
+        }
     }
 }

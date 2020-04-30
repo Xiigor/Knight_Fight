@@ -213,6 +213,24 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
     m_ActionId: 53f458f9-940b-459d-857c-a95f67605689
     m_ActionName: Gameplay/Attack[/DualShock4GamepadHID/buttonEast,/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: 27949091-c09b-4a61-ad7e-1cdc3cbe9d7d
+    m_ActionName: MenuInput/Join[/DualShock4GamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: 2d07fe4d-0c9f-4155-a989-05aef151110d
+    m_ActionName: MenuInput/Leave[/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: b79cf0bb-555c-4463-8311-e6b56c900a37
+    m_ActionName: MenuInput/ToMenu[/DualShock4GamepadHID/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -230,16 +248,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e8abb625c2f5844ac7af2952c3f52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightHandGameobject: {fileID: 0}
   globalCD: 0.5
   dashCD: 0.2
   attackCD: 0.5
   internalGCDTimer: 0
   internalDashTimer: 0
   internalAttackTimer: 0
+  currentWeaponIs1HSword: 0
+  currentWeaponIs2HSword: 0
+  currentWeaponIsSpellbook: 0
   movementSpeedMultiplier: 35
   dashDuration: 0.1
   dashSpeed: 210
-  movementInputForDashDirThreshhold: 0.25
+  attackAnimDuration: 0
   internalDashRayDist: 1.1
   canDash: 1
   weapon: {fileID: 0}
@@ -251,6 +273,12 @@ MonoBehaviour:
   maxHealth: 100
   health: 0
   col: {fileID: 0}
+  audioPlayer: {fileID: 0}
+  animator: {fileID: 0}
+  UnequippedLayer: 13
+  EquippedLayer: 14
+  playerIndex: 0
+  spawnPosition: {fileID: 0}
 --- !u!1 &7560115908967856198
 GameObject:
   m_ObjectHideFlags: 0

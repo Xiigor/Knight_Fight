@@ -4,12 +4,14 @@ using UnityEngine;
 abstract public class WeaponBaseClass : MonoBehaviour
 {
     public GameObject parentPlayer = null;
-    public GameObject damageZoneObject = null;
+    public AudioWeapon audioPlayer;
 
     public WeaponIState currentState;
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
+    public enum Weapontype{ oneHSword, twoHSword, spellbook };
+    public Weapontype thisWepType;
     
     public float durability;
     public float damage;
@@ -19,17 +21,22 @@ abstract public class WeaponBaseClass : MonoBehaviour
 
     public string environmentTag = "Environment";
     public string playerTag = "Player";
-    public string projectileTag = "Projectile";
+    public string projectileTag = "WeaponProjectile";
     public string weaponTag = "Weapon";
-    public Vector3 damageZonePosition;
+
+    public int UnequippedLayer = 13;
+    public int EquippedLayer = 14;
+
     public Vector3 heldPosition;
     public Vector3 heldRotation;
     public Rigidbody rb;
     public Collider col;
+    [HideInInspector] public Animator anim;
+
     public abstract void Attack();
     public void ThrowWep()
     {
-        currentState.ChangeState(thrownState);
+        ChangeState(thrownState);
     }
     public abstract void ChangeDurability(float durabilityDecrement);
 
@@ -38,20 +45,26 @@ abstract public class WeaponBaseClass : MonoBehaviour
         transform.localPosition = heldPosition;
         transform.localEulerAngles = heldRotation;
     }
+
     public void BreakWeapon()
     {
         //destroy the weapon and all traces of it
     }
+
+
     public void SetParentPlayer(Collision collision)
     {
-        //sätter spelaren till förälder
-        transform.SetParent(collision.transform.GetChild(0));
+
 
         parentPlayer = collision.gameObject;
-
-        //parentPlayer = collision.gameObject.GetComponent<PlayerStatePattern>(); //osäker på ifall detta behövs... 
-        // ...bra referens för att Unequipped vapen ska kunna kolla ifall spelaren redan har ett vapen
-        // spelaren kommer kunna behöva anropa vapnets funktioner baserat på input men kanske inte tvärt om
+        if(thisWepType == Weapontype.spellbook)
+        {
+            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().leftHandGameobject.transform);
+        }
+        else
+        {
+            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
+        }
     }
     public void RemoveParentPlayer()
     {
