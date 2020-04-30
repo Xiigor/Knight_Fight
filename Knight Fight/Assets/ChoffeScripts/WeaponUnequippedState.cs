@@ -17,7 +17,7 @@ public class WeaponUnequippedState : WeaponIState
         ChangePhysics();
         if (weapon.parentPlayer != null)
         {
-            Physics.IgnoreCollision(weapon.parentPlayer.GetComponent<Collider>(), weapon.col, false);
+            Physics.IgnoreCollision(weapon.parentPlayer.GetComponents<Collider>(), weapon.col, false);
             weapon.parentPlayer = null;
         }
         weapon.gameObject.tag = weapon.weaponTag;
