@@ -15,7 +15,7 @@ public class PlayerDeadState : PlayerIState
 
     public void OnStateEnter()
     {
-
+        player.EnableRagdoll();
     }
 
     public void UpdateState()

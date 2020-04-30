@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
-    public GameManager gameManager;
+    //public GameManager gameManager;
+    public PlayerRagdollHandler ragdollHandler;
 
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerIdleState idleState;
@@ -87,6 +88,7 @@ public class PlayerStatePattern : MonoBehaviour
     {
         transform.position = spawnPosition.transform.position;
         health = maxHealth;
+        DisableRagdoll();
         currentState = idleState;
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;
@@ -96,7 +98,6 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void FixedUpdate()
     {
-        currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
 
@@ -115,8 +116,8 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void Update()
     {
-        currentState.UpdateState();
         Debug.Log(currentState.ToString());
+        currentState.UpdateState();
         if (internalGCDTimer < globalCD)
         {
             internalGCDTimer += Time.deltaTime;
@@ -353,6 +354,24 @@ public class PlayerStatePattern : MonoBehaviour
         audioPlayer.PlayerHurting();
         currentState.TakeDamage(damage);
     }
+
+    public void EnableRagdoll()
+    {
+        ragdollHandler.SetRagdollActive();
+        animator.enabled = false;
+        //col.enabled = false;
+        //rb.isKinematic = true;
+    }
+
+    public void DisableRagdoll()
+    {
+        ragdollHandler.SetRagdollInactive();
+        animator.enabled = true;
+
+    }
+
+
+
     public void Die()
     {
         StateChanger(deadState);
