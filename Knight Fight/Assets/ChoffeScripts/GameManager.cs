@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public GameMenuState menuState;
 
     //lists used by the gamemanager
-    private List<Gamepad> inputDevices;
+    //private List<Gamepad> inputDevices;
+    private List<InputDevice> inputDevices;
     public List<GameObject> readyPlayers;
 
     //components and scripts
@@ -56,11 +57,16 @@ public class GameManager : MonoBehaviour
         audioManager.StartMenuMusic();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
 
-        inputDevices = new List<Gamepad>();
+        //inputDevices = new List<Gamepad>();
+        inputDevices = new List<InputDevice>();
         readyPlayers = new List<GameObject>();
 
-        foreach (Gamepad index in Gamepad.all)
+        //foreach (Gamepad index in Gamepad.all)
+        //    inputDevices.Add(index);
+        foreach (InputDevice index in InputDevice.all)
+        {
             inputDevices.Add(index);
+        }
     }
 
     public void Update()
