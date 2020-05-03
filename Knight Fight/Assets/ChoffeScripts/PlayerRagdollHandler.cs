@@ -20,6 +20,11 @@ public class PlayerRagdollHandler : MonoBehaviour
         {
             index.isKinematic = false;
             index.useGravity = true;
+            if (index.GetComponent<Collider>())
+            {
+                index.GetComponent<Collider>().enabled = true;
+            }
+            
         }
         
     }
@@ -29,6 +34,10 @@ public class PlayerRagdollHandler : MonoBehaviour
         {
             index.isKinematic = true;
             index.useGravity = false;
+            if (index.GetComponent<Collider>())
+            {
+                index.GetComponent<Collider>().enabled = false;
+            }
         }
     }
 }

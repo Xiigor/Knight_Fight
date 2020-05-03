@@ -17,7 +17,7 @@ public class WeaponUnequippedState : WeaponIState
         ChangePhysics();
         if (weapon.parentPlayer != null)
         {
-            Physics.IgnoreCollision(weapon.parentPlayer.GetComponents<Collider>(), weapon.col, false);
+            Physics.IgnoreCollision(weapon.parentPlayer.GetComponent<Collider>(), weapon.col, false);
             weapon.parentPlayer = null;
         }
         weapon.gameObject.tag = weapon.weaponTag;
@@ -39,11 +39,8 @@ public class WeaponUnequippedState : WeaponIState
        if(col.gameObject.tag == weapon.playerTag)
         {
             //if the player is not holding a weapon already, pick up this one
-            if(col.gameObject.GetComponent<PlayerStatePattern>().weapon == null)
-            {
-                weapon.SetParentPlayer(col);
-                weapon.ChangeState(weapon.equippedState);
-            }
+            weapon.SetParentPlayer(col);
+            weapon.ChangeState(weapon.equippedState);
         }
     }
    

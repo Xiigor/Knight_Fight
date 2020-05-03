@@ -21,5 +21,6 @@ public class GameGameplayState : GameIState
     public void UpdateState()
     {
         manager.weaponSpawnManager.TimerUpdater();
+        manager.CheckForWinner();
     }
 }

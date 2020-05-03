@@ -15,13 +15,15 @@ public class PlayerDeadState : PlayerIState
 
     public void OnStateEnter()
     {
+        player.gameManager.alivePlayers.Remove(player.gameObject);
         player.EnableRagdoll();
+        player.tag = player.deadPlayerTag;
+        
     }
 
     public void UpdateState()
     {
-        //Ded :(
-        //Ragdoll function
+
     }
     public void ChangeState(PlayerIState newState)
     {
