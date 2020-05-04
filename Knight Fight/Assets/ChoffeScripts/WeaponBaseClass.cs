@@ -7,13 +7,11 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public AudioWeapon audioPlayer;
 
     public WeaponIState currentState;
-    public WeaponIState stateChangeObserver;
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
-    public enum Weapontype{ oneHSword, twoHSword, spellbook, throwable };
+    public enum Weapontype{ oneHSword, twoHSword, spellbook };
     public Weapontype thisWepType;
-    public float animationDuration = 1f;
     
     public float durability;
     public float damage;
@@ -34,14 +32,11 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public Rigidbody rb;
     public Collider col;
     [HideInInspector] public Animator anim;
-    [HideInInspector] public bool attackActive = false;
 
     public abstract void Attack();
     public void ThrowWep()
     {
-       
         ChangeState(thrownState);
-
     }
     public abstract void ChangeDurability(float durabilityDecrement);
 
@@ -55,9 +50,6 @@ abstract public class WeaponBaseClass : MonoBehaviour
     {
         //destroy the weapon and all traces of it
     }
-
-    public abstract void SetWeaponType();
-    public abstract void RemoveWeaponType();
 
 
     public void SetParentPlayer(Collision collision)
@@ -80,18 +72,4 @@ abstract public class WeaponBaseClass : MonoBehaviour
     }
     public abstract void OnCollisionEnter(Collision collision);
     public abstract void ChangeState(WeaponIState newState);
-    public void StateChangeObserver()
-    {
-        if (stateChangeObserver != currentState)
-        {
-            stateChangeObserver = currentState;
-            currentState.OnStateEnter();
-        }
-    }
-
-    public void ThrowSettings()
-    {
-
-    }
-
 }

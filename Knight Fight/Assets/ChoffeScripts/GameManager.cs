@@ -11,12 +11,10 @@ public class GameManager : MonoBehaviour
     public GameIState gameState;
     public GameGameplayState gameplayState;
     public GameMenuState menuState;
-    public GameWinState winState;
 
     //lists used by the gamemanager
     private List<Gamepad> inputDevices;
     public List<GameObject> readyPlayers;
-    public List<GameObject> alivePlayers;
 
     //components and scripts
     public GameObject cameraObject;
@@ -26,8 +24,6 @@ public class GameManager : MonoBehaviour
     [HideInInspector]public PlayerInputManager inputManagerScript;
     public AudioMenu audioManager;
     public WeaponSpawnManager weaponSpawnManager;
-
-    public float winStateDuration = 5f;
 
     //player related components
     public GameObject player1;
@@ -52,22 +48,16 @@ public class GameManager : MonoBehaviour
         QualitySettings.vSyncCount = 1;
         gameplayState = new GameGameplayState(this);
         menuState = new GameMenuState(this);
-        winState = new GameWinState(this);
+        gameState = menuState;
         
         cameraScript = cameraObject.GetComponent<CameraStatePattern>();
         inputManagerScript = inputManagerObject.GetComponent<PlayerInputManager>();
         audioManager = GetComponent<AudioMenu>();
         audioManager.StartMenuMusic();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
-<<<<<<< HEAD
 
         inputDevices = new List<Gamepad>();
-=======
-        //inputDevices = new List<Gamepad>();
-        inputDevices = new List<InputDevice>();
->>>>>>> 95d4f09f6d6f8243508b3a2cd1ee195d16ab80e1
         readyPlayers = new List<GameObject>();
-        ToMenu();
 
         foreach (Gamepad index in Gamepad.all)
             inputDevices.Add(index);
@@ -82,11 +72,6 @@ public class GameManager : MonoBehaviour
     {
         if(readyPlayers.Count >= 1)
         {
-            foreach(GameObject player in readyPlayers)
-            {
-                alivePlayers.Add(player);
-            }
-            
             audioManager.StartPressed();
             gameState = gameplayState;
             gameState.OnStateEnter();
@@ -229,24 +214,14 @@ public class GameManager : MonoBehaviour
             player.SetActive(false);
         }
         readyPlayers.Clear();
-        alivePlayers.Clear();
         cameraScript.objectsFollowedByCamera.Clear();
     }
 
     public void ToMenu()
     {
-        if (gameState != menuState)
+        if (gameState == gameplayState)
         {
             gameState = menuState;
-            gameState.OnStateEnter();
-        }
-    }
-
-    public void CheckForWinner()
-    {
-        if(alivePlayers.Count == 1 && gameState != winState)
-        {
-            gameState = winState;
             gameState.OnStateEnter();
         }
     }
