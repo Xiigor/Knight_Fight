@@ -19,7 +19,6 @@ public class PlayerDashState : PlayerIState
         {
             player.weapon.GetComponent<Collider>().enabled = true;
         }
-
     }
 
     public void UpdateState()
@@ -27,7 +26,7 @@ public class PlayerDashState : PlayerIState
         internalStateTimer += Time.deltaTime;
         if (player.canDash)
         {
-            if (internalStateTimer < player.dashDuration)
+            if(internalStateTimer < player.dashDuration)
             {
                 player.Dash();
             }

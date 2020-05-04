@@ -13,11 +13,6 @@ public class PlayerIdleState : PlayerIState
 
     public void OnStateEnter()
     {
-<<<<<<< HEAD
-=======
-        player.DisableRagdoll();
-        player.animator.SetBool("Running", false);
->>>>>>> 95d4f09f6d6f8243508b3a2cd1ee195d16ab80e1
         player.animator.SetBool("Idle", true);
     }
 

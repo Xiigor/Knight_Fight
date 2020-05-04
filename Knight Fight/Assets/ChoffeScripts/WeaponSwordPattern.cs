@@ -13,6 +13,7 @@ public class WeaponSwordPattern : WeaponBaseClass
         unequippedState = new WeaponUnequippedState(this);
         equippedState = new WeaponEquippedState(this);
         thrownState = new WeaponThrownState(this);
+        thisWepType = Weapontype.oneHSword;
     }
 
     private void Start()

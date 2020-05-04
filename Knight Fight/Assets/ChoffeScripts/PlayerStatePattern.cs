@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
-    [HideInInspector]public GameManager gameManager;
-    public PlayerRagdollHandler ragdollHandler;
 
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerIdleState idleState;
@@ -32,7 +30,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
-    [HideInInspector] public float attackAnimDuration;
+    public float attackAnimDuration = 0.5f;
     public float throwAnimDuration = 0.5f;
     private float movementInputForDashDirThreshhold = 0.15f; 
     public float internalDashRayDist = 1.3f;
@@ -45,14 +43,12 @@ public class PlayerStatePattern : MonoBehaviour
     public string weaponProjectileTag = "WeaponProjectile";
     public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
-    public string playerTag = "Player";
-    public string deadPlayerTag = "DeadPlayer";
 
     //values
     [HideInInspector] public Vector2 moveDir;
     Vector2 moveLastDir;
     Vector3 move;
-    Vector3 lastMove;
+    public Vector3 lastMove;
     public float maxHealth = 100f;
     public float health;
 
@@ -81,7 +77,6 @@ public class PlayerStatePattern : MonoBehaviour
         attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
-        gameManager = GameObject.FindObjectOfType<GameManager>();
         audioPlayer = GetComponent<AudioPlayer>();
         animator = GetComponent<Animator>();
 
@@ -91,9 +86,7 @@ public class PlayerStatePattern : MonoBehaviour
     {
         transform.position = spawnPosition.transform.position;
         health = maxHealth;
-        tag = playerTag;
         currentState = idleState;
-        currentState.OnStateEnter();
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;
         weapon = null;
@@ -102,6 +95,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void FixedUpdate()
     {
+        currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
 
@@ -120,10 +114,6 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void Update()
     {
-<<<<<<< HEAD
-=======
-        currentState.UpdateState();
->>>>>>> 95d4f09f6d6f8243508b3a2cd1ee195d16ab80e1
         if (internalGCDTimer < globalCD)
         {
             internalGCDTimer += Time.deltaTime;
@@ -145,9 +135,16 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(currentState != deadState)
+        if (collision.gameObject.tag == weaponProjectileTag)
         {
-<<<<<<< HEAD
+            OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+        }
+        if (collision.gameObject.tag == projectileTag)
+        {
+            OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
+        }
+        if(collision.gameObject.tag == weaponTag)
+        {
             if(collision.gameObject.layer == EquippedLayer)
             {
                 if(collision.gameObject != weapon.gameObject)
@@ -160,29 +157,6 @@ public class PlayerStatePattern : MonoBehaviour
         }
 
 
-=======
-            if (collision.gameObject.tag == weaponProjectileTag)
-            {
-                OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
-            }
-            if (collision.gameObject.tag == projectileTag)
-            {
-                OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
-            }
-            if(collision.gameObject.tag == weaponTag)
-            {
-                if (collision.gameObject.layer == UnequippedLayer)
-                {
-                    PickupItem(collision.gameObject);
-                }
-                else if (collision.gameObject.layer == EquippedLayer)
-                {
-
-                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
-                } 
-            }
-        }
->>>>>>> 95d4f09f6d6f8243508b3a2cd1ee195d16ab80e1
         if (currentState == dashState)
         {
             currentState.ChangeState(idleState);
@@ -309,12 +283,6 @@ public class PlayerStatePattern : MonoBehaviour
 
         Physics.IgnoreCollision(col, weapon.GetComponent<Collider>(), true);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, true);
-<<<<<<< HEAD
-=======
-        attackAnimDuration = weapon.GetComponent<WeaponBaseClass>().animationDuration;
-        weapon.gameObject.layer = EquippedLayer; //läggs här för att inte ske före on collision
-        WeaponTypeIdentifier();
->>>>>>> 95d4f09f6d6f8243508b3a2cd1ee195d16ab80e1
     }
 
     public void OnHit(float damage)
@@ -322,20 +290,6 @@ public class PlayerStatePattern : MonoBehaviour
         audioPlayer.PlayerHurting();
         currentState.TakeDamage(damage);
     }
-
-    public void EnableRagdoll()
-    {
-        ragdollHandler.SetRagdollActive();
-        animator.enabled = false;
-    }
-
-    public void DisableRagdoll()
-    {
-        ragdollHandler.SetRagdollInactive();
-        animator.enabled = true;
-
-    }
-
     public void Die()
     {
         currentState.ChangeState(deadState);
