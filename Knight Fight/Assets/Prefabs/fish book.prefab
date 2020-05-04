@@ -126,6 +126,7 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
   thisWepType: 2
+  animationDuration: 0.85
   durability: 5
   damage: 5
   thrownDamage: 5
@@ -133,16 +134,16 @@ MonoBehaviour:
   throwAngle: 0.25
   environmentTag: Environment
   playerTag: Player
-  projectileTag: WeaponProjectile
+  projectileTag: Projectile
   weaponTag: Weapon
   UnequippedLayer: 13
   EquippedLayer: 14
-  heldPosition: {x: -0.132, y: -0.028, z: 0.318}
-  heldRotation: {x: -39.85, y: 38.16, z: 208.309}
+  heldPosition: {x: -0.107, y: -0.239, z: 0.007}
+  heldRotation: {x: 51.524, y: -54.521, z: -143.663}
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}
-  durabilityDecrement: 0
+  durabilityDecrement: 1
   weaponAmmo: {fileID: 1227325187089670069, guid: 98101021b9486b040ae02c335bb568f3,
     type: 3}
 --- !u!114 &-8796067586960004273
@@ -161,5 +162,5 @@ MonoBehaviour:
   attackHitPlayer: event:/Player/Player_Dash
   throwWep: event:/Weapons/Weapon_Throw
   ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
-  weaponPickup: event:/Weapons/Weapon_Pickup_FishBook
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
   weaponBreak: 

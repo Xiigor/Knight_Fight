@@ -33,7 +33,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (context.performed)
             {
-                playerStatePattern.StateChanger(playerStatePattern.dashState);
+                playerStatePattern.currentState.ChangeState(playerStatePattern.dashState);
             }
             
         }
@@ -45,7 +45,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (context.performed)
             {
-                playerStatePattern.StateChanger(playerStatePattern.throwState);
+                playerStatePattern.currentState.ChangeState(playerStatePattern.throwState);
             }    
         }
         
@@ -56,7 +56,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (context.performed)
             {
-                playerStatePattern.StateChanger(playerStatePattern.attackState);
+                playerStatePattern.currentState.ChangeState(playerStatePattern.attackState);
             }  
         }
     }

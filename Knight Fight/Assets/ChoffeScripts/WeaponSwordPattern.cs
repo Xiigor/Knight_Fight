@@ -13,12 +13,11 @@ public class WeaponSwordPattern : WeaponBaseClass
         unequippedState = new WeaponUnequippedState(this);
         equippedState = new WeaponEquippedState(this);
         thrownState = new WeaponThrownState(this);
-        thisWepType = Weapontype.oneHSword;
     }
 
     private void Start()
     {
-        currentState = unequippedState;
+        currentState = stateChangeObserver = unequippedState;
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
@@ -39,9 +38,16 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void ChangeDurability(float durabilityDecrement)
     {
         currentDurability -= durabilityDecrement;
+        if (currentDurability <= 0)
+        {
+
+            //Ta bort som child på spelaren innan destroy
+            Destroy(this.gameObject);
+        }
     }
     public override void ChangeState(WeaponIState newState)
     {
+        
         currentState = newState;
         currentState.OnStateEnter();
     }
@@ -49,5 +55,15 @@ public class WeaponSwordPattern : WeaponBaseClass
     {
         currentState.HandleCollision(collision);
         
+    }
+
+    public override void SetWeaponType()
+    {
+        parentPlayer.GetComponent<Animator>().SetBool("1hSword", true);
+    }
+
+    public override void RemoveWeaponType()
+    {
+        parentPlayer.GetComponent<Animator>().SetBool("1hSword", false);
     }
 }

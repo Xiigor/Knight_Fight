@@ -71,4 +71,21 @@ public class WeaponSpearPattern : WeaponBaseClass
     {
         currentState.HandleCollision(collision);
     }
+
+    public override void SetWeaponType()
+    {
+        if (thisWeaponType == Weapontype.twoHSword)
+        {
+            parentPlayer.GetComponent<Animator>().SetBool("2hSword", true);
+        }
+
+    }
+
+    public override void RemoveWeaponType()
+    {
+        if (thisWeaponType == Weapontype.twoHSword)
+        {
+            parentPlayer.GetComponent<Animator>().SetBool("2hSword", false);
+        }
+    }
 }

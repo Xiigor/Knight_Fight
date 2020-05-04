@@ -15,19 +15,30 @@ public class WeaponThrownState : WeaponIState
 
     public void OnStateEnter()
     {
-        weapon.audioPlayer.WeaponBeingThrown();
-        movementApplied = false;
-        ChangePhysics();
-        weapon.gameObject.tag = weapon.projectileTag;
-        AddThrownForce();
-        weapon.RemoveParentPlayer();
+        if ((int)weapon.thisWepType == 3 && weapon.attackActive == true)
+        {
+            
+            movementApplied = true;
+        }
+        else
+        {
+            weapon.RemoveWeaponType();
+            weapon.audioPlayer.WeaponBeingThrown();
+            movementApplied = false;
+            ChangePhysics();
+            weapon.gameObject.tag = weapon.projectileTag;
+            AddThrownForce();
+            weapon.RemoveParentPlayer();
+        }
+       
     }
     public void UpdateState()
     {
-        if(movementApplied == true)
+        if (movementApplied == true)
         {
             if (weapon.rb.velocity == Vector3.zero)
             {
+                Debug.Log(weapon.rb.velocity);
                 weapon.ChangeState(weapon.unequippedState);
             }
         }

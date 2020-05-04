@@ -14,13 +14,12 @@ public class PlayerDashState : PlayerIState
 
     public void OnStateEnter()
     {
-        player.internalDashTimer = 0f;
         player.animator.SetBool("Dash", true);
-        player.audioPlayer.PlayerDashing();
         if (player.weapon != null)
         {
-            player.weapon.GetComponent<Collider>().enabled = true; //tillfällig implementation
+            player.weapon.GetComponent<Collider>().enabled = true;
         }
+
     }
 
     public void UpdateState()
@@ -28,31 +27,38 @@ public class PlayerDashState : PlayerIState
         internalStateTimer += Time.deltaTime;
         if (player.canDash)
         {
-            if(internalStateTimer < player.dashDuration)
+            if (internalStateTimer < player.dashDuration)
             {
                 player.Dash();
             }
             else
             {
-                player.RunOrIdleDecider();
+                ChangeState(player.basicState);
             }
         }
         else
         {
-            player.RunOrIdleDecider();
+            ChangeState(player.basicState);
         }
     }
     public void ChangeState(PlayerIState newState)
     {
-        player.animator.SetBool("Dash", false);
-        player.internalGCDTimer = 0f;
-        player.internalDashTimer = 0f;
-        internalStateTimer = 0f;
-        if (player.weapon != null)
+        if (newState == player.basicState || newState == player.idleState)
         {
-            player.weapon.GetComponent<Collider>().enabled = false; //tillfällig implementation
+            player.animator.SetBool("Dash", false);
+            internalStateTimer = 0f;
+            player.internalDashTimer = 0f;
+            player.internalGCDTimer = 0f;
+
+            if(player.weapon != null)
+            {
+                player.weapon.GetComponent<Collider>().enabled = false;
+            }
+
+            player.StateChanger(newState);
         }
-        player.StateChanger(newState);
+        else
+            Debug.Log("GCD Trigger");
     }
 
     public void TakeDamage(float damage)

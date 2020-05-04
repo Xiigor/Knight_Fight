@@ -53,12 +53,12 @@ public class PlayerInputManager : MonoBehaviour
         }
         if (player3 == true && player3InputHandler == null)
         {
-            player3InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 2, null, 1, inputDevices[2].device);
+            player3InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 0, null, 1, inputDevices[0].device);
             inputHandlers.Add(player3InputHandler);
         }
         if (player4 == true && player4InputHandler == null)
         {
-            player4InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 3, null, 1, inputDevices[3].device);
+            player4InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 0, null, 1, inputDevices[0].device);
             inputHandlers.Add(player4InputHandler);
         }
 
