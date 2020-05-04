@@ -39,6 +39,7 @@ public class WeaponUnequippedState : WeaponIState
        if(col.gameObject.tag == weapon.playerTag)
         {
             //if the player is not holding a weapon already, pick up this one
+<<<<<<< HEAD
             if(col.gameObject.GetComponent<PlayerStatePattern>().weapon == null)
             {
                 weapon.SetParentPlayer(col);
@@ -46,6 +47,10 @@ public class WeaponUnequippedState : WeaponIState
                 col.gameObject.GetComponent<PlayerStatePattern>().PickupItem(weapon.gameObject);
                 weapon.ChangeState(weapon.equippedState);
             }
+=======
+            weapon.SetParentPlayer(col);
+            weapon.ChangeState(weapon.equippedState);
+>>>>>>> 95d4f09f6d6f8243508b3a2cd1ee195d16ab80e1
         }
     }
    
