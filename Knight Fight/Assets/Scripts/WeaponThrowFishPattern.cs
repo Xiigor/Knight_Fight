@@ -18,7 +18,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
 
     private void Start()
     {
-        currentState = stateChangeObserver = unequippedState;
+        currentState = unequippedState;
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
@@ -46,11 +46,6 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     public override void ChangeDurability(float durabilityDecrement)
     {
         currentDurability -= durabilityDecrement;
-        if (currentDurability <= 0)
-        {
-            //Ta bort som child på spelaren innan destroy
-            Destroy(this.gameObject);
-        }
     }
 
     public override void OnCollisionEnter(Collision collision)
@@ -62,15 +57,5 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     {
         currentState = newState;
         currentState.OnStateEnter();
-    }
-
-    public override void SetWeaponType()
-    {
-        parentPlayer.GetComponent<Animator>().SetBool("Spellbook", true);
-    }
-
-    public override void RemoveWeaponType()
-    {
-        parentPlayer.GetComponent<Animator>().SetBool("Spellbook", false);
     }
 }

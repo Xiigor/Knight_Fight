@@ -27,7 +27,7 @@ public class WeaponThrowable : WeaponBaseClass
 
      private void Start()
      {
-         currentState = stateChangeObserver = unequippedState;
+         currentState = unequippedState;
          rb = GetComponent<Rigidbody>();
          col = GetComponent<Collider>();
          audioPlayer = GetComponent<AudioWeapon>();
@@ -82,16 +82,4 @@ public class WeaponThrowable : WeaponBaseClass
      {
          currentState.HandleCollision(collision);
      }
-
-     public override void RemoveWeaponType()
-     {
-        parentPlayer.GetComponent<Animator>().SetBool("Spellbook", true);
-     }
-
-     public override void SetWeaponType()
-     {
-        parentPlayer.GetComponent<Animator>().SetBool("Spellbook", false);
-     }
-
- 
 }

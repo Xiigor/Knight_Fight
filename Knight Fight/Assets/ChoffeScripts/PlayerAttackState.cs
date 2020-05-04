@@ -15,8 +15,6 @@ public class PlayerAttackState : PlayerIState
     public void OnStateEnter()
     {
         player.animator.SetBool("Attack", true);
-        Debug.Log("hur ofta händer detta?");
-        
     }
 
 
@@ -26,27 +24,19 @@ public class PlayerAttackState : PlayerIState
         if (internalStateTimer >= player.attackAnimDuration)
         {
             player.Attack();
-            ChangeState(player.idleState);
+            player.RunOrIdleDecider();
         }
         else
             internalStateTimer += Time.deltaTime;
         
     }
+
     public void ChangeState(PlayerIState newState)
     {
-        if (newState == player.basicState || newState == player.idleState)
-        {
-
-            player.internalGCDTimer = 0f;
-            internalStateTimer = 0f;
-            player.animator.SetBool("Attack", false);
-            player.StateChanger(newState);
-        }
-        else
-        {
-            ChangeState(player.idleState);
-        }
-            Debug.Log("GCD Trigger");
+        player.animator.SetBool("Attack", false);
+        internalStateTimer = 0f;
+        player.internalGCDTimer = 0f;
+        player.StateChanger(newState);
     }
 
     public void TakeDamage(float damage)
@@ -57,4 +47,6 @@ public class PlayerAttackState : PlayerIState
             player.Die();
         }
     }
+
+
 }

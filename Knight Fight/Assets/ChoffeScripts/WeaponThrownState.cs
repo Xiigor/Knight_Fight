@@ -15,14 +15,15 @@ public class WeaponThrownState : WeaponIState
 
     public void OnStateEnter()
     {
-        if ((int)weapon.thisWepType == 3 && weapon.attackActive == true)
+        if(weapon.thisWepType == WeaponBaseClass.Weapontype.throwable)
         {
-            
-            movementApplied = true;
+            if(weapon.attackActive == true)
+            {
+                movementApplied = true;
+            }
         }
         else
         {
-            weapon.RemoveWeaponType();
             weapon.audioPlayer.WeaponBeingThrown();
             movementApplied = false;
             ChangePhysics();
@@ -30,15 +31,13 @@ public class WeaponThrownState : WeaponIState
             AddThrownForce();
             weapon.RemoveParentPlayer();
         }
-       
     }
     public void UpdateState()
     {
-        if (movementApplied == true)
+        if(movementApplied == true)
         {
             if (weapon.rb.velocity == Vector3.zero)
             {
-                Debug.Log(weapon.rb.velocity);
                 weapon.ChangeState(weapon.unequippedState);
             }
         }

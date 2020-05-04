@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5901604308676461943}
   - component: {fileID: 5873447627034852988}
   - component: {fileID: 6905207877262836702}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: 1hSword
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
-  thisWepType: 1
+  thisWepType: 0
   animationDuration: 1
   durability: 10
   damage: 25
@@ -107,8 +107,8 @@ MonoBehaviour:
   playerTag: Player
   projectileTag: WeaponProjectile
   weaponTag: Weapon
-  UnequippedLayer: 13
-  EquippedLayer: 14
+  UnequippedLayer: 12
+  EquippedLayer: 13
   heldPosition: {x: 0.107, y: 0.052, z: -0.443}
   heldRotation: {x: -89.14301, y: 0.002, z: -9.665001}
   rb: {fileID: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: event:/Weapons/Weapon_Excaliboulder_Attack
-  attackHitPlayer: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
   throwWep: event:/Weapons/Weapon_Throw
   ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
   weaponPickup: event:/Weapons/Weapon_Pickup_Generic
