@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class CountdownTimer : MonoBehaviour
 {
     float currentTime = 0f;
-    float startingTime = 5f;
+    float startingTime = 3f;
 
-    public bool countdownIsDone = false;
-    //public countdownTimer countdownBool;
+    public bool counting = false;
+
+    private CounterManager cm;
 
     [SerializeField]
     Text countdownText;
@@ -18,23 +19,30 @@ public class CountdownTimer : MonoBehaviour
     void Start()
     {
         currentTime = startingTime;
+        cm = GameObject.Find("GameManager").GetComponent<CounterManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetTimer()
     {
-        currentTime -= 1 * Time.deltaTime;
-        countdownText.text = currentTime.ToString("0");
-
-        if (currentTime <= 0)
+        gameObject.SetActive(true);
+        currentTime = startingTime;
+    }
+    // Update is called once per frame
+    public void Update()
+    {
+        if(counting == true)
         {
-            currentTime = 0;
-            countdownIsDone = true;
+            currentTime -= Time.deltaTime;
+            countdownText.text = currentTime.ToString("0");
+
+            if (currentTime <= 1)
+            {
+                currentTime = 0;
+                cm.countdownIsDone = true;
+                counting = false;
+                gameObject.SetActive(false);
+            }
+
         }
-        //Sätt detta i movement
-        //if (countdownBool.countdownIsDone == true)
-        //{
-        //    Apply movement
-        //}
     }
 }
