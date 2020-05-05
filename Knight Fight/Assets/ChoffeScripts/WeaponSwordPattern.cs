@@ -30,7 +30,8 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     public override void Attack()
     {
-        //gameObject.GetComponent<Collider>().enabled = true;
+        gameObject.GetComponent<Collider>().enabled = true;
+        Debug.Log("attack");
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 

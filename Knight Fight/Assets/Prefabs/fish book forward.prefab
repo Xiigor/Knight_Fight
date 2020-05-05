@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 289046099311355821}
   - component: {fileID: -8796067586960004273}
   m_Layer: 12
-  m_Name: fish book
+  m_Name: fish book forward
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   thrownDamage: 5
   thrownForce: 20
   throwAngle: 0.25
+  attackActive: 0
   environmentTag: Environment
   playerTag: Player
   projectileTag: WeaponProjectile
@@ -146,6 +147,9 @@ MonoBehaviour:
   durabilityDecrement: 0
   weaponAmmo: {fileID: 1227325187089670069, guid: 98101021b9486b040ae02c335bb568f3,
     type: 3}
+  numberofAmmoToSpawn: 1
+  spawnOfsettDist: 0.4
+  launchDir: 0
 --- !u!114 &-8796067586960004273
 MonoBehaviour:
   m_ObjectHideFlags: 0
