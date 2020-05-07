@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4493258, g: 0.49939716, b: 0.57570803, a: 1}
+  m_IndirectSpecularColor: {r: 0.18235308, g: 0.2280606, b: 0.30730933, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -385,7 +385,7 @@ PrefabInstance:
     - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 6778862793872897383, guid: b621c7bcfe4630147b86e5d3073cccc5,
         type: 3}
@@ -1022,7 +1022,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5267645a0fd6f4d44b66fe01374f1d33,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5267645a0fd6f4d44b66fe01374f1d33,
         type: 3}
@@ -1434,7 +1434,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5267645a0fd6f4d44b66fe01374f1d33,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5267645a0fd6f4d44b66fe01374f1d33,
         type: 3}
@@ -3467,7 +3467,7 @@ PrefabInstance:
     - target: {fileID: 2027200284440624269, guid: 2048936ecae1c3e4fa5c2d609c1bcf9e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 2027200284440624269, guid: 2048936ecae1c3e4fa5c2d609c1bcf9e,
         type: 3}
@@ -4330,7 +4330,7 @@ Transform:
   m_LocalScale: {x: 0.35970998, y: 0.35970998, z: 0.35970998}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 138.59, y: -30, z: 0}
 --- !u!1 &713896428
 GameObject:
@@ -6292,11 +6292,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeWeaponsList: []
   weaponsList:
-  - {fileID: 3105903073570637870, guid: fff86f02ab488444faa70f5aa56fcd1c, type: 3}
+  - {fileID: 5890549213124493845, guid: 345a133a275ed0f4da5fb84d4a2a54a5, type: 3}
+  - {fileID: 5890549213124493845, guid: 345a133a275ed0f4da5fb84d4a2a54a5, type: 3}
+  - {fileID: 5890549213124493845, guid: 345a133a275ed0f4da5fb84d4a2a54a5, type: 3}
+  - {fileID: 5890549213124493845, guid: 345a133a275ed0f4da5fb84d4a2a54a5, type: 3}
+  - {fileID: 5890549213124493845, guid: 345a133a275ed0f4da5fb84d4a2a54a5, type: 3}
+  - {fileID: 5890549213124493845, guid: 345a133a275ed0f4da5fb84d4a2a54a5, type: 3}
+  - {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
+  - {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
+  - {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
   - {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
   maxWeaponsActive: 10
   weaponMaxSpawnTime: 10
-  weaponMinSpawnTime: 5
+  weaponMinSpawnTime: 1
   activeWeapons: 0
 --- !u!1001 &1000659543
 PrefabInstance:
@@ -6509,7 +6517,7 @@ Transform:
   - {fileID: 549177679}
   - {fileID: 271541533}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1013699391
 PrefabInstance:
@@ -9433,7 +9441,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1620806160
 PrefabInstance:
@@ -9647,7 +9655,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695738625
 GameObject:
@@ -9679,7 +9687,7 @@ Transform:
   - {fileID: 1938529100}
   - {fileID: 1119497955}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1702260815
 PrefabInstance:
@@ -11995,7 +12003,7 @@ PrefabInstance:
     - target: {fileID: 2859649012354671581, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2859649012354671581, guid: 85cbae8dd56505844be748e046e20472,
         type: 3}
