@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
-    private PlayerIState stateChangeObserver;
+    [HideInInspector]public GameManager gameManager;
+    public PlayerRagdollHandler ragdollHandler;
 
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerIdleState idleState;
@@ -14,7 +15,11 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
-    
+
+    public GameObject rightHandGameobject = null;
+    public GameObject leftHandGameobject = null;
+    public GameObject projectileSpawnPos = null;
+
 
     public  float globalCD = 0.5f;
     public float dashCD = 0.2f;
@@ -23,30 +28,42 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public float internalDashTimer;
     [HideInInspector] public float internalAttackTimer;
 
-
     public float movementSpeedMultiplier = 35.0f;
 
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
-    public float attackAnimDuration;
-    private float movementInputForDashDirThreshhold = 0.25f; //Fixa så att movement är 0 eller 1
+    [HideInInspector] public float attackAnimDuration;
+    public float throwAnimDuration = 0.5f;
+    private float movementInputForDashDirThreshhold = 0.15f; 
     public float internalDashRayDist = 1.3f;
     public bool canDash = true;
 
     public GameObject weapon;
+
+    //tags
     public string weaponTag = "Weapon";
+    public string weaponProjectileTag = "WeaponProjectile";
     public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
+    public string playerTag = "Player";
+    public string deadPlayerTag = "DeadPlayer";
 
+    //values
     [HideInInspector] public Vector2 moveDir;
     Vector2 moveLastDir;
     Vector3 move;
-    public Vector3 lastMove;
+    Vector3 lastMove;
     public float maxHealth = 100f;
     public float health;
+
+
     [HideInInspector] public Collider col;
-    private Rigidbody rb;
-    public AudioPlayer audioPlayer;
+    [HideInInspector] private Rigidbody rb;
+    [HideInInspector] public AudioPlayer audioPlayer;
+    public Animator animator;
+
+
+
     public int UnequippedLayer = 13;
     public int EquippedLayer = 14;
     [SerializeField] private int playerIndex;
@@ -57,7 +74,6 @@ public class PlayerStatePattern : MonoBehaviour
     {
         basicState = new PlayerBasicState(this);
         idleState = new PlayerIdleState(this);
-        //currentState = stateChangeObserver = idleState;
 
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
@@ -65,7 +81,9 @@ public class PlayerStatePattern : MonoBehaviour
         attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
-        audioPlayer = GetComponent<AudioPlayer>(); 
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+        audioPlayer = GetComponent<AudioPlayer>();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -73,15 +91,17 @@ public class PlayerStatePattern : MonoBehaviour
     {
         transform.position = spawnPosition.transform.position;
         health = maxHealth;
-        currentState = stateChangeObserver = idleState;
+        tag = playerTag;
+        currentState = idleState;
+        currentState.OnStateEnter();
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;
+        weapon = null;
+        Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
     private void FixedUpdate()
     {
-        //StateUpdateObserver();
-        currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
 
@@ -100,6 +120,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void Update()
     {
+        currentState.UpdateState();
         if (internalGCDTimer < globalCD)
         {
             internalGCDTimer += Time.deltaTime;
@@ -121,15 +142,35 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == projectileTag)
+        if(currentState != deadState)
         {
-            OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+            if (collision.gameObject.tag == weaponProjectileTag)
+            {
+                OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+            }
+            if (collision.gameObject.tag == projectileTag)
+            {
+                OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
+            }
+            if(collision.gameObject.tag == weaponTag)
+            {
+                if (collision.gameObject.layer == UnequippedLayer)
+                {
+                    PickupItem(collision.gameObject);
+                }
+                else if (collision.gameObject.layer == EquippedLayer)
+                {
+
+                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
+                } 
+            }
         }
         if (currentState == dashState)
         {
             currentState.ChangeState(idleState);
         }
     }
+
     public void Attack()
     {
         if(weapon != null)
@@ -151,7 +192,6 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (internalDashTimer >= dashCD)
                 {
-                    audioPlayer.PlayerDashing(); // --- trigger dash sound, try if it works better being placed here
                     return true;
                 }
                 else
@@ -180,9 +220,7 @@ public class PlayerStatePattern : MonoBehaviour
                 {
                     if (weapon != null)
                     {
-                        Attack(); // ---- anropet till attackfunktionen, spelaren går in i attackstate och går in i idle när animationen är färdig.
                         Debug.Log("attack with wep");
-                        weapon.GetComponent<AudioWeapon>().Attacking();
                         return true;
                     }
                     else
@@ -210,12 +248,73 @@ public class PlayerStatePattern : MonoBehaviour
         }
     }
 
+    public void StateChanger(PlayerIState newState)
+    {
+        if(newState == deadState)
+        {
+            currentState = newState;
+            currentState.OnStateEnter();
+        }
+        else if(newState == idleState || newState == basicState)
+        {
+            currentState = newState;
+            currentState.OnStateEnter();
+        }
+        else if(currentState == idleState || currentState == basicState)
+        {
+            if (ValidStateChange(newState))
+            {
+                currentState = newState;
+                currentState.OnStateEnter();
+            }
+        }
+    }
+
+    public void RunOrIdleDecider()
+    {
+        if(moveDir == Vector2.zero)
+        {
+            currentState.ChangeState(idleState);
+        }
+        else
+        {
+            currentState.ChangeState(basicState);
+        }
+    }
+
+    public void WeaponTypeIdentifier()
+    {
+        switch (weapon.GetComponent<WeaponBaseClass>().thisWepType)
+        {
+            case WeaponBaseClass.Weapontype.oneHSword:
+                animator.SetBool("1hSword", true);
+                animator.SetBool("2hSword", false);
+                animator.SetBool("Spellbook", false);
+                break;
+            case WeaponBaseClass.Weapontype.twoHSword:
+                animator.SetBool("1hSword", false);
+                animator.SetBool("2hSword", true);
+                animator.SetBool("Spellbook", false);
+                break;
+            case WeaponBaseClass.Weapontype.spellbook:
+                animator.SetBool("1hSword", false);
+                animator.SetBool("2hSword", false);
+                animator.SetBool("Spellbook", true);
+                break;
+        }
+    }
+
     public void ChangeDirection()
     {
-        move = new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier;
+        //move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
         if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
+            move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
             moveLastDir = moveDir;
+        }
+        else
+        {
+            moveDir = Vector2.zero;
         }
 
         lastMove = Vector3.Normalize(new Vector3(moveLastDir.x, 0.0f, moveLastDir.y) * Time.deltaTime * movementSpeedMultiplier);
@@ -236,6 +335,9 @@ public class PlayerStatePattern : MonoBehaviour
     {
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
         weapon = null;
+        animator.SetBool("1hSword", false);
+        animator.SetBool("2hSword", false);
+        animator.SetBool("Spellbook", false);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
@@ -244,6 +346,9 @@ public class PlayerStatePattern : MonoBehaviour
         weapon = weaponObject;
         Physics.IgnoreCollision(col, weapon.GetComponent<Collider>(), true);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, true);
+        attackAnimDuration = weapon.GetComponent<WeaponBaseClass>().animationDuration;
+        weapon.gameObject.layer = EquippedLayer; //läggs här för att inte ske före on collision
+        WeaponTypeIdentifier();
     }
 
     public void OnHit(float damage)
@@ -251,43 +356,27 @@ public class PlayerStatePattern : MonoBehaviour
         audioPlayer.PlayerHurting();
         currentState.TakeDamage(damage);
     }
+
+    public void EnableRagdoll()
+    {
+        ragdollHandler.SetRagdollActive();
+        animator.enabled = false;
+    }
+
+    public void DisableRagdoll()
+    {
+        ragdollHandler.SetRagdollInactive();
+        animator.enabled = true;
+
+    }
+
     public void Die()
     {
-        currentState.ChangeState(deadState);
+        StateChanger(deadState);
     }
 
     private float Hypotenuse(float sideA, float sideB)
     {
         return Mathf.Sqrt(sideA * sideA + sideB * sideB);
-    }
-
-    private void StateUpdateObserver()
-    {
-        if(stateChangeObserver != currentState)
-        {
-            stateChangeObserver = currentState;
-            if (stateChangeObserver == idleState)
-            {
-                //spelaren gick precis in i idleState
-            }
-            if (stateChangeObserver == basicState)
-            {
-                //spelaren gick precis in i "MoveState"
-            }
-            if(stateChangeObserver == dashState)
-            {
-                //Spelaren gick precis in i dashState
-            }
-            if (stateChangeObserver == throwState)
-            {
-                //Spelaren gick precis in i throwState
-                Debug.Log("player entered throwstate");
-            }
-            if (stateChangeObserver == attackState)
-            {
-                //Spelaren gick precis in i attackState
-                
-            }
-        }
     }
 }

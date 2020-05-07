@@ -12,20 +12,12 @@ public class AudioPlayer : MonoBehaviour
     }
 
     [EventRef]
-    public string playerHurt;
-    public FMOD.Studio.EventInstance playerHurting;
-
-    [EventRef]
     public string playerHurtMale;
     public FMOD.Studio.EventInstance playerHurtingMale;
 
     [EventRef]
     public string playerHurtFemale;
     public FMOD.Studio.EventInstance playerHurtingFemale;
-
-    [EventRef]
-    public string playerAttack;
-    public FMOD.Studio.EventInstance playerAttacking;
 
     [EventRef]
     public string playerDash;
@@ -35,38 +27,19 @@ public class AudioPlayer : MonoBehaviour
     public string playerThrow;
     public FMOD.Studio.EventInstance playerThrowing;
 
-    [EventRef]
-    public string playerThrowMale;
-    public FMOD.Studio.EventInstance playerThrowingMale;
-
 
 
     public void PlayerThrowing()
     {
-        Debug.Log("Player throwing sound");
-        //playerThrowing = RuntimeManager.CreateInstance(playerThrow);
-        //RuntimeManager.PlayOneShot(playerThrow, transform.position);
-        //playerThrowing.start();
+        RuntimeManager.PlayOneShot(playerThrow, transform.position);
     }
 
     public void PlayerDashing()
     {
-        Debug.Log("Player dashing sound");
-        //playerDashing = RuntimeManager.CreateInstance(playerDash);
-        //RuntimeManager.PlayOneShot(playerDash, transform.position);
-        //playerDashing.start();
+        RuntimeManager.PlayOneShot(playerDash, transform.position);
     }
 
-    public void PlayerAttacking() // ------- Tror inte denna funktion behövs eftersom vapnena själva håller kolla på sina ljud
-    {
-        
-        Debug.Log("Player Attacking sound");
-        //playerAttacking = RuntimeManager.CreateInstance(playerAttack);
-        //RuntimeManager.PlayOneShot(playerAttack, transform.position);
-        //playerAttacking.start();
-    }
-
-    public void PlayerHurting() //Spelar alla vapenljud för female ???
+    public void PlayerHurting()
     {
         if(givenGender == 0)
         {
@@ -76,22 +49,15 @@ public class AudioPlayer : MonoBehaviour
         {
             PlayerHurtingMale();
         }
-        //playerHurting = RuntimeManager.CreateInstance(playerHurt);
-        //RuntimeManager.PlayOneShot(playerHurt, transform.position);
-        //playerHurting.start();
+
     }
     private void PlayerHurtingMale() //Spelar alla vapenljud för male
     {
-        Debug.Log("MalePlayer got hurt");
-        //playerHurtingMale = RuntimeManager.CreateInstance(playerHurtMale);
-        //RuntimeManager.PlayOneShot(playerHurtMale, transform.position);
-        //playerHurtingMale.start();
+        RuntimeManager.PlayOneShot(playerHurtMale, transform.position);
     }
     private void PlayerHurtingFemale() //Spelar alla vapenljud för female
     {
         Debug.Log("femalePlayer got hurt");
-        //playerHurtingMale = RuntimeManager.CreateInstance(playerHurtFemale);
-        //RuntimeManager.PlayOneShot(playerHurtFemale, transform.position);
-        //playerHurtingFemale.start();
+        RuntimeManager.PlayOneShot(playerHurtFemale, transform.position);
     }
 }

@@ -6,23 +6,23 @@ public class PlayerInputManager : MonoBehaviour
 {
     public GameObject inputHandlerPrefab;
     public bool player1;
-    private PlayerInput player1InputHandler = null;
+    public  PlayerInput player1InputHandler = null;
     public bool player2;
-    private PlayerInput player2InputHandler = null;
+    public PlayerInput player2InputHandler = null;
     public bool player3;
-    private PlayerInput player3InputHandler = null;
+    public PlayerInput player3InputHandler = null;
     public bool player4;
-    private PlayerInput player4InputHandler = null;
+    public PlayerInput player4InputHandler = null;
     public bool trigger;
     public bool triggered;
-    private List<Gamepad> inputDevices;
+    private List<InputDevice> inputDevices;
     public List<PlayerInput> inputHandlers;
 
     private void Start()
     {
-        inputDevices = new List<Gamepad>();
+        inputDevices = new List<InputDevice>();
         inputHandlers = new List<PlayerInput>();
-        foreach (Gamepad index in Gamepad.all)
+        foreach (InputDevice index in InputSystem.devices)
             inputDevices.Add(index);
     }
 
@@ -53,12 +53,12 @@ public class PlayerInputManager : MonoBehaviour
         }
         if (player3 == true && player3InputHandler == null)
         {
-            player3InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 0, null, 1, inputDevices[0].device);
+            player3InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 2, null, 1, inputDevices[2].device);
             inputHandlers.Add(player3InputHandler);
         }
         if (player4 == true && player4InputHandler == null)
         {
-            player4InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 0, null, 1, inputDevices[0].device);
+            player4InputHandler = PlayerInput.Instantiate(inputHandlerPrefab, 3, null, 1, inputDevices[3].device);
             inputHandlers.Add(player4InputHandler);
         }
 

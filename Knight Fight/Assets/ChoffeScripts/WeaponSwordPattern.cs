@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WeaponSwordPattern : WeaponBaseClass
 {
-    public string attackAnimName;
     public float durabilityDecrement;
     private float currentDurability;
     
@@ -17,7 +16,7 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     private void Start()
     {
-        currentState = stateChangeObserver = unequippedState;
+        currentState = unequippedState;
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
@@ -31,8 +30,7 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     public override void Attack()
     {
-        gameObject.GetComponent<Collider>().enabled = true;
-        anim = parentPlayer.GetComponent<Animator>();    //Hämta parent animator Så kan kolla om färdig
+        //gameObject.GetComponent<Collider>().enabled = true;
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 

@@ -17,4 +17,10 @@ public class GameGameplayState : GameIState
         manager.menuCanvas.gameObject.SetActive(false);
         manager.inputManagerScript.trigger = true;
     }
+
+    public void UpdateState()
+    {
+        manager.weaponSpawnManager.TimerUpdater();
+        manager.CheckForWinner();
+    }
 }

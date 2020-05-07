@@ -31,27 +31,27 @@ public class AudioWeapon : MonoBehaviour
 
     public void Attacking()
     {
-
+        RuntimeManager.PlayOneShot(attack, transform.position);
     }
 
     public void AttackHittingPlayer()
     {
-
+        RuntimeManager.PlayOneShot(attackHitPlayer, transform.position);
     }
 
     public void WeaponBeingThrown()
     {
-
+        RuntimeManager.PlayOneShot(throwWep, transform.position);
     }
 
     public void ThrownWepHittingEnvironment()
     {
-
+        RuntimeManager.PlayOneShot(ThrownWepHitEnvironment, transform.position);
     }
 
     public void WeaponBeingPickedUp()
     {
-
+        RuntimeManager.PlayOneShot(weaponPickup, transform.position);
     }
 
     public void WeaponBreaking()
