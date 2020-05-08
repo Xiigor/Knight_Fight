@@ -18,7 +18,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
 
     private void Start()
     {
-        currentState = stateChangeObserver = unequippedState;
+        currentState = unequippedState;
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
@@ -57,15 +57,5 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     {
         currentState = newState;
         currentState.OnStateEnter();
-    }
-
-    public override void SetWeaponType()
-    {
-        parentPlayer.GetComponent<Animator>().SetBool("Spellbook", true);
-    }
-
-    public override void RemoveWeaponType()
-    {
-        parentPlayer.GetComponent<Animator>().SetBool("Spellbook", false);
     }
 }

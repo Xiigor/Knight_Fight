@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5901604308676461943}
   - component: {fileID: 5873447627034852988}
   - component: {fileID: 6905207877262836702}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: 1hSword
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -97,6 +97,7 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
   thisWepType: 0
+  animationDuration: 1
   durability: 10
   damage: 25
   thrownDamage: 20
@@ -106,8 +107,8 @@ MonoBehaviour:
   playerTag: Player
   projectileTag: WeaponProjectile
   weaponTag: Weapon
-  UnequippedLayer: 13
-  EquippedLayer: 14
+  UnequippedLayer: 12
+  EquippedLayer: 13
   heldPosition: {x: 0.107, y: 0.052, z: -0.443}
   heldRotation: {x: -89.14301, y: 0.002, z: -9.665001}
   rb: {fileID: 0}
