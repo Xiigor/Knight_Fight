@@ -6,6 +6,7 @@ public class WeaponSwordPattern : WeaponBaseClass
 {
     public float durabilityDecrement;
     private float currentDurability;
+    public float internalAttackTimer = 0f;
     
     private void Awake()
     {
@@ -26,11 +27,18 @@ public class WeaponSwordPattern : WeaponBaseClass
     private void Update()
     {
         currentState.UpdateState();
+        if(internalAttackTimer >= animationDuration)
+        {
+            col.enabled = false;
+            attackActive = false;
+        }
     }
 
     public override void Attack()
     {
-        //gameObject.GetComponent<Collider>().enabled = true;
+        attackActive = true;
+        internalAttackTimer = 0f;
+        col.enabled = true;
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 
