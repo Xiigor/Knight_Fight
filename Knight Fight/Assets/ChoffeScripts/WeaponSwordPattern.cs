@@ -6,7 +6,6 @@ public class WeaponSwordPattern : WeaponBaseClass
 {
     public float durabilityDecrement;
     private float currentDurability;
-    public float internalAttackTimer = 0f;
     
     private void Awake()
     {
