@@ -8,6 +8,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     public GameObject weaponAmmo;
     public int numberofAmmoToSpawn;
     public float spawnOfsettDist;
+    public float vShape;
     public enum LaunchDir { forward, up, left, right };
     public LaunchDir launchDir;
     private float currentDurability;
@@ -49,15 +50,12 @@ public class WeaponThrowFishPattern : WeaponBaseClass
             audioPlayer.Attacking();
             Vector3 spawnOffsetVec = new Vector3(0,0,0);
             GameObject temp = Instantiate(weaponAmmo, parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos.transform.position, Quaternion.identity);
-            //spawnOffsetVec = temp.transform.localPosition - parentPlayer.transform.position;
-            //Debug.Log(spawnOffsetVec);
-            //spawnOffsetVec.x = spawnOffsetVec.x - spawnOffset * spawnOffsetVec.z / Mathf.Sqrt(spawnOffsetVec.x * spawnOffsetVec.x + spawnOffsetVec.z * spawnOffsetVec.z);
-            //spawnOffsetVec.z = spawnOffsetVec.z - spawnOffset * spawnOffsetVec.x / Mathf.Sqrt(spawnOffsetVec.x * spawnOffsetVec.x + spawnOffsetVec.z * spawnOffsetVec.z);
-            //temp.transform.localPosition = spawnOffsetVec + parentPlayer.transform.position;
-            //spawnOffsetVec.z = spawnOffset * temp.transform.localPosition.x / (Mathf.Sqrt(temp.transform.localPosition.x* temp.transform.localPosition.x + temp.transform.localPosition.z * temp.transform.localPosition.z));
-            //spawnOffsetVec.x = spawnOffset * temp.transform.localPosition.z / (Mathf.Sqrt(temp.transform.localPosition.x * temp.transform.localPosition.x + temp.transform.localPosition.z * temp.transform.localPosition.z));
-            //temp.transform.localPosition = temp.transform.localPosition + spawnOffsetVec;
-            
+            spawnOffsetVec = temp.transform.localPosition - parentPlayer.transform.position;
+            Vector3 spawnOffsetVecStore = spawnOffsetVec;
+            float spawnOffsetVecNorm = Mathf.Sqrt(spawnOffsetVec.x * spawnOffsetVec.x + spawnOffsetVec.z * spawnOffsetVec.z);
+            spawnOffsetVec.x = spawnOffsetVec.x - spawnOffset * spawnOffsetVecStore.z / spawnOffsetVecNorm;
+            spawnOffsetVec.z = spawnOffsetVec.z + spawnOffset * spawnOffsetVecStore.x / spawnOffsetVecNorm;
+            temp.transform.localPosition = spawnOffsetVec + parentPlayer.transform.position - (spawnOffsetVecStore*i/vShape);
             temp.GetComponent<ProjectileFish>().parentObject = parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos;
             temp.GetComponent<ProjectileFish>().spellBook = this.gameObject;
             spawnOffset = spawnOffset * (-1);
