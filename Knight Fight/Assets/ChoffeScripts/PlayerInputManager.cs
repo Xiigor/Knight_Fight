@@ -22,7 +22,7 @@ public class PlayerInputManager : MonoBehaviour
     {
         inputDevices = new List<InputDevice>();
         inputHandlers = new List<PlayerInput>();
-        foreach (InputDevice index in InputSystem.devices)
+        foreach (InputDevice index in InputDevice.all)
             inputDevices.Add(index);
     }
 

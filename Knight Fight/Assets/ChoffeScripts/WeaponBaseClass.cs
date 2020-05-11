@@ -10,20 +10,14 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
-    public enum Weapontype{ oneHSword, twoHSword, spellbook, throwable };
+    public enum Weapontype{ oneHSword, twoHSword, spellbook };
     public Weapontype thisWepType;
-
-    public float animationDuration = 1f;
-    [HideInInspector] public float internalAttackTimer = 0f;
-    public bool attackActive = false;
-
-
+    
     public float durability;
     public float damage;
     public float thrownDamage;
     public float thrownForce;
     public float throwAngle;
-    
 
     public string environmentTag = "Environment";
     public string playerTag = "Player";

@@ -36,6 +36,5 @@ public class GameGameplayState : GameIState
 
         }
         manager.weaponSpawnManager.TimerUpdater();
-        manager.CheckForWinner();
     }
 }

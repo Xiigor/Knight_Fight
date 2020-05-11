@@ -15,7 +15,6 @@ public class PlayerAttackState : PlayerIState
     public void OnStateEnter()
     {
         player.animator.SetBool("Attack", true);
-        player.Attack();
     }
 
 
@@ -24,6 +23,7 @@ public class PlayerAttackState : PlayerIState
         player.ChangeDirection();
         if (internalStateTimer >= player.attackAnimDuration)
         {
+            player.Attack();
             player.RunOrIdleDecider();
         }
         else

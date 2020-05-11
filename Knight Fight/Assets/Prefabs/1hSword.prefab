@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5901604308676461943}
   - component: {fileID: 5873447627034852988}
   - component: {fileID: 6905207877262836702}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: 1hSword
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8437895737867728456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,26 +96,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
-  thisWepType: 1
-  animationDuration: 1
-  internalAttackTimer: 0
-  attackActive: 0
+  thisWepType: 0
   durability: 10
-  damage: 15
-  thrownDamage: 10
+  damage: 25
+  thrownDamage: 20
   thrownForce: 23
   throwAngle: 0.25
   environmentTag: Environment
   playerTag: Player
   projectileTag: WeaponProjectile
   weaponTag: Weapon
-  UnequippedLayer: 12
-  EquippedLayer: 13
+  UnequippedLayer: 13
+  EquippedLayer: 14
   heldPosition: {x: 0.107, y: 0.052, z: -0.443}
   heldRotation: {x: -89.14301, y: 0.002, z: -9.665001}
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}
+  attackAnimName: 
   durabilityDecrement: 0
 --- !u!54 &5901604308676461943
 Rigidbody:
@@ -132,7 +130,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!114 &5873447627034852988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,5 +160,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.28472364, y: 1.9778624, z: 0.11717345}
-  m_Center: {x: -0.0016860068, y: 0.075060844, z: 0.00489866}
+  m_Size: {x: 0.427104, y: 1.94, z: 0.2972412}
+  m_Center: {x: 0.0054545403, y: 0, z: 0.0024547577}

@@ -45,6 +45,7 @@ public class AudioMenu : MonoBehaviour
 
     public void PlayerJoined()
     {
+        Debug.Log("joined");
         playerJoined = RuntimeManager.CreateInstance(playerJoin);
         playerJoined.start();
     }
