@@ -9,7 +9,7 @@
 [LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001956CD1C7A8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001E868579C18 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -17,16 +17,117 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] Manager::finishLoadBank                  : Bank with guid {fc34b2e6-7e7d-444c-8dd0-13ad6733b8a1} has already been loaded
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 17144480
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 198624
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000004F121FEE1C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB4E1DC320
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB4E1DC2F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB4E1DC3F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB4E1DC4B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001E85DA728D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='crowdCheer', format=2, channels=2, frequency=48000, lengthbytes=131392, lengthpcm=149768, pcmblocksize=0, loopstart=0, loopend=149536, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.215262.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 17144480
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 198624
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000004F121FEE1C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB4E1DC320
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB4E1DC2F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB4E1DC3F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB4E1DC4B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001E85DA728D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='crowdBoo', format=2, channels=2, frequency=48000, lengthbytes=133760, lengthpcm=144230, pcmblocksize=0, loopstart=0, loopend=143998, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.282491.
+[LOG] SystemI::createSound                     : filename = Assets/Plugins/FMOD/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : setdata soundi = 000001E863CC68E8 : node = 000001E8097173D0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001E85DE20008.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001E863CC68E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Plugins/FMOD/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 17144480
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 198624
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001E8097174E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='crowdLoop', format=2, channels=2, frequency=48000, lengthbytes=1213824, lengthpcm=970773, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154572.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 49152, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001E863CC68E8
+[LOG] SoundI::getSubSound                      : sound 000001E863CC68E8.  Subsound index 0 / 1
+[LOG] SoundI::release                          :  (000001E868C751A8)
+[LOG] SoundI::release                          :     crowdBoo (000001E85DE1F9D8)
+[LOG] SoundI::release                          :  (000001E868C74BE8)
+[LOG] SoundI::release                          :     crowdCheer (000001E85DE1CAB8)
+[LOG] SoundI::release                          : crowdLoop (000001E863CC68E8)
+[LOG] SoundI::release                          :     crowdLoop (000001E85DE1F358)
+[LOG] SoundI::release                          :     crowdLoop (000001E85BA96A18)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] Manager::finishLoadBank                  : Bank with guid {fc34b2e6-7e7d-444c-8dd0-13ad6733b8a1} has already been loaded
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 17144480
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 198624
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000004F121FEE1C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB4E1DC320
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB4E1DC2F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB4E1DC3F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB4E1DC4B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001E85DA78BD8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='crowdCheer', format=2, channels=2, frequency=48000, lengthbytes=131392, lengthpcm=149768, pcmblocksize=0, loopstart=0, loopend=149536, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.215262.
+[LOG] SoundI::release                          :  (000001E868C74A78)
+[LOG] SoundI::release                          :     crowdCheer (000001E85DE20D58)
+[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
+[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] Manager::finishLoadBank                  : Bank with guid {fc34b2e6-7e7d-444c-8dd0-13ad6733b8a1} has already been loaded
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 17144480
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 198624
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000004F121FEE1C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB4E1DC320
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB4E1DC2F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB4E1DC3F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB4E1DC4B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001E85DA78BD8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='crowdBoo', format=2, channels=2, frequency=48000, lengthbytes=133760, lengthpcm=144230, pcmblocksize=0, loopstart=0, loopend=143998, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.282491.
+[LOG] SoundI::release                          :  (000001E868C74EC8)
+[LOG] SoundI::release                          :     crowdBoo (000001E85DE20D58)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.
