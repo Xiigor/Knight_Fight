@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerStatePattern : MonoBehaviour
 {
-    public Transform crowdParent;
-
     public PlayerIState currentState;
 
     [HideInInspector] public PlayerBasicState basicState;

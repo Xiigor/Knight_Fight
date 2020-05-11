@@ -6733,7 +6733,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1119497955}
   - component: {fileID: 1119497956}
-  - component: {fileID: 1119497957}
   m_Layer: 10
   m_Name: Crowd2
   m_TagString: Untagged
@@ -6778,19 +6777,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 50
---- !u!114 &1119497957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119497954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e28f9a648ea7ea845996e6a922d7102d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crowdCheer: event:/Implementation/Weapon_Throw_Male_Manager
 --- !u!1001 &1119621756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7506,6 +7492,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 1d1977d8572ea3e43a9322176217b817,
     type: 3}
   m_PrefabInstance: {fileID: 1223890941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1229234116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1027788650, guid: 2c576bfc1e3461b419c41780dde5c959,
+    type: 3}
+  m_PrefabInstance: {fileID: 5945956326042383396}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1238178222
 GameObject:
@@ -9898,7 +9890,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1938529100}
   - component: {fileID: 1938529101}
-  - component: {fileID: 1938529102}
   m_Layer: 10
   m_Name: Crowd1
   m_TagString: Untagged
@@ -9943,19 +9934,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 50
---- !u!114 &1938529102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938529099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e28f9a648ea7ea845996e6a922d7102d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crowdCheer: event:/Player/Player_Hurt_Generic_Female
 --- !u!1001 &1940540130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10892,6 +10870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7360429787406286966, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7360429787406286962, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10947,16 +10930,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
-        type: 3}
-      propertyPath: crowdParent
-      value: 
-      objectReference: {fileID: 1695738626}
+    - target: {fileID: 1027788651, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027788651, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.008
+      objectReference: {fileID: 0}
     - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
         type: 3}
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 943147545}
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: projectileSpawnPos
+      value: 
+      objectReference: {fileID: 1229234116}
+    - target: {fileID: 3749114024072953969, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: attackAnimDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 888531737, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a11c1615b6a1bec40a27365cd83b5ea6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
 --- !u!1001 &6598622954461666104
