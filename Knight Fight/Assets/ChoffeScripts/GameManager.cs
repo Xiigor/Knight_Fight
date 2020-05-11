@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
     public GameIState gameState;
     public GameGameplayState gameplayState;
     public GameMenuState menuState;
+    public GameWinState winState;
 
     //lists used by the gamemanager
     //private List<Gamepad> inputDevices;
     private List<InputDevice> inputDevices;
     public List<GameObject> readyPlayers;
+    public List<GameObject> alivePlayers;
 
     //components and scripts
     public GameObject cameraObject;
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector]public PlayerInputManager inputManagerScript;
     public AudioMenu audioManager;
     public WeaponSpawnManager weaponSpawnManager;
+
+    public float winStateDuration = 5f;
 
     //player related components
     public GameObject player1;
@@ -49,21 +53,21 @@ public class GameManager : MonoBehaviour
         QualitySettings.vSyncCount = 1;
         gameplayState = new GameGameplayState(this);
         menuState = new GameMenuState(this);
-        gameState = menuState;
+        winState = new GameWinState(this);
         
         cameraScript = cameraObject.GetComponent<CameraStatePattern>();
         inputManagerScript = inputManagerObject.GetComponent<PlayerInputManager>();
         audioManager = GetComponent<AudioMenu>();
         audioManager.StartMenuMusic();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
-
         //inputDevices = new List<Gamepad>();
         inputDevices = new List<InputDevice>();
         readyPlayers = new List<GameObject>();
+        ToMenu();
 
         //foreach (Gamepad index in Gamepad.all)
         //    inputDevices.Add(index);
-        foreach (InputDevice index in InputDevice.all)
+        foreach (InputDevice index in InputSystem.devices)
         {
             inputDevices.Add(index);
         }
@@ -71,6 +75,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
+        Debug.Log(gameState);
         gameState.UpdateState();
     }
 
@@ -78,6 +83,11 @@ public class GameManager : MonoBehaviour
     {
         if(readyPlayers.Count >= 1)
         {
+            foreach(GameObject player in readyPlayers)
+            {
+                alivePlayers.Add(player);
+            }
+            
             audioManager.StartPressed();
             gameState = gameplayState;
             gameState.OnStateEnter();
@@ -220,14 +230,24 @@ public class GameManager : MonoBehaviour
             player.SetActive(false);
         }
         readyPlayers.Clear();
+        alivePlayers.Clear();
         cameraScript.objectsFollowedByCamera.Clear();
     }
 
     public void ToMenu()
     {
-        if (gameState == gameplayState)
+        if (gameState != menuState)
         {
             gameState = menuState;
+            gameState.OnStateEnter();
+        }
+    }
+
+    public void CheckForWinner()
+    {
+        if(alivePlayers.Count == 1 && gameState != winState)
+        {
+            gameState = winState;
             gameState.OnStateEnter();
         }
     }

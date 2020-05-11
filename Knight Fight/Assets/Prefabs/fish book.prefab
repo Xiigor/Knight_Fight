@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5955977810525413700}
   - component: {fileID: 289046099311355821}
   - component: {fileID: -8796067586960004273}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: fish book
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3105903073570637870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 10, z: 15}
+  m_LocalScale: {x: 16, y: 11, z: 16}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -110,7 +110,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &289046099311355821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +126,9 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
   thisWepType: 2
+  animationDuration: 0.85
+  internalAttackTimer: 0
+  attackActive: 0
   durability: 5
   damage: 5
   thrownDamage: 5
@@ -135,10 +138,10 @@ MonoBehaviour:
   playerTag: Player
   projectileTag: WeaponProjectile
   weaponTag: Weapon
-  UnequippedLayer: 13
-  EquippedLayer: 14
-  heldPosition: {x: -0.132, y: -0.028, z: 0.318}
-  heldRotation: {x: -39.85, y: 38.16, z: 208.309}
+  UnequippedLayer: 12
+  EquippedLayer: 13
+  heldPosition: {x: -0.107, y: -0.239, z: 0.007}
+  heldRotation: {x: 51.524, y: -54.521, z: -143.663}
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}

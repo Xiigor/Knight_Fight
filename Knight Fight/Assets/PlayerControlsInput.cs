@@ -39,7 +39,7 @@ public class @PlayerControlsInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9305ad9f-40e6-45c0-b402-6bd7c385315f"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

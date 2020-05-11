@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WeaponSwordPattern : WeaponBaseClass
 {
-    public string attackAnimName;
     public float durabilityDecrement;
     private float currentDurability;
     
@@ -13,7 +12,6 @@ public class WeaponSwordPattern : WeaponBaseClass
         unequippedState = new WeaponUnequippedState(this);
         equippedState = new WeaponEquippedState(this);
         thrownState = new WeaponThrownState(this);
-        thisWepType = Weapontype.oneHSword;
     }
 
     private void Start()
@@ -28,11 +26,18 @@ public class WeaponSwordPattern : WeaponBaseClass
     private void Update()
     {
         currentState.UpdateState();
+        if(internalAttackTimer >= animationDuration)
+        {
+            col.enabled = false;
+            attackActive = false;
+        }
     }
 
     public override void Attack()
     {
-        //gameObject.GetComponent<Collider>().enabled = true;
+        attackActive = true;
+        internalAttackTimer = 0f;
+        col.enabled = true;
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 
