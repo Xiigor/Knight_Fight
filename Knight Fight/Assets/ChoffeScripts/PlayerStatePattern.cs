@@ -37,6 +37,7 @@ public class PlayerStatePattern : MonoBehaviour
     private float movementInputForDashDirThreshhold = 0.15f; 
     public float internalDashRayDist = 1.3f;
     public bool canDash = true;
+    [HideInInspector] public bool weaponDestroyed = false;
 
     public GameObject weapon;
 
@@ -132,6 +133,14 @@ public class PlayerStatePattern : MonoBehaviour
         if (internalAttackTimer < attackCD)
         {
             internalAttackTimer += Time.deltaTime;
+        }
+        if (weaponDestroyed == true)
+        {
+            weapon = null;
+            animator.SetBool("1hSword", false);
+            animator.SetBool("2hSword", false);
+            animator.SetBool("Spellbook", false);
+            Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
         }
     }
     public int GetPlayerIndex()

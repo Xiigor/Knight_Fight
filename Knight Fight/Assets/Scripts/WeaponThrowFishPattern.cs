@@ -14,7 +14,9 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     private float currentDurability;
     private float spawnOffset = 0;
     private int increaseSpawnOffsett = 1;
-  
+    
+
+
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
@@ -43,8 +45,6 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     {
         //launch projectile and instanciate projectile 
         // Projectile i eget script med en OnCollisonEnter kollar om träffat en spelare och isfall gå in i enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);
-        ChangeDurability(durabilityDecrement);
-        //Instantiate(weaponAmmo);
         for (int i = 0; i < numberofAmmoToSpawn; i++)
         {
             audioPlayer.Attacking();
@@ -71,11 +71,17 @@ public class WeaponThrowFishPattern : WeaponBaseClass
             //transform.DetachChildren();
         }
         spawnOffset = 0;
+        ChangeDurability(durabilityDecrement);
     }
 
     public override void ChangeDurability(float durabilityDecrement)
     {
         currentDurability -= durabilityDecrement;
+        if (currentDurability <= 0)
+        {
+            parentPlayer.GetComponent<PlayerStatePattern>().weaponDestroyed = true;
+            Destroy(this.gameObject);
+        }
     }
 
     public override void OnCollisionEnter(Collision collision)
