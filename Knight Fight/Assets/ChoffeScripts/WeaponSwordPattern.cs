@@ -26,23 +26,12 @@ public class WeaponSwordPattern : WeaponBaseClass
     private void Update()
     {
         currentState.UpdateState();
-        if(internalAttackTimer >= animationDuration)
-        {
-            col.enabled = false;
-            attackActive = false;
-        }
     }
 
     public override void Attack()
     {
-<<<<<<< HEAD
         gameObject.GetComponent<Collider>().enabled = true;
         Debug.Log("attack");
-=======
-        attackActive = true;
-        internalAttackTimer = 0f;
-        col.enabled = true;
->>>>>>> eb45a01c9538b18ddcd13b99180cbaa8bea8c88a
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 

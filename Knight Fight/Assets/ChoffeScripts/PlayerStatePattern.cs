@@ -100,11 +100,6 @@ public class PlayerStatePattern : MonoBehaviour
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
-    public void OnDisable()
-    {
-        transform.position = spawnPosition.transform.position;
-    }
-
     private void FixedUpdate()
     {
         Ray environmentRay = new Ray(transform.position, lastMove);
