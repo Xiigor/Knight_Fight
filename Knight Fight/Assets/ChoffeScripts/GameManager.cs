@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     //components and scripts
     public GameObject cameraObject;
     public Canvas menuCanvas;
+    public GameObject gameMenu;
     [HideInInspector]public CameraStatePattern cameraScript;
     public GameObject inputManagerObject;
     [HideInInspector]public PlayerInputManager inputManagerScript;
@@ -118,7 +119,7 @@ public class GameManager : MonoBehaviour
 
     public void OnJoin(CallbackContext context)
     {
-        if (gameState == menuState)
+        if (gameState == menuState && gameMenu.active)
         {
             if(context.control.device == inputDevices[0])
             {
@@ -173,7 +174,7 @@ public class GameManager : MonoBehaviour
 
     public void OnLeave(CallbackContext context)
     {
-        if (gameState == menuState)
+        if (gameState == menuState && gameMenu.active)
         {
             if (context.control.device == inputDevices[0])
             {
