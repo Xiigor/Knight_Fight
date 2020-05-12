@@ -126,23 +126,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
+  thisWepType: 1
+  animationDuration: 1
+  internalAttackTimer: 0
+  attackActive: 0
   durability: 10
-  damage: 5
-  thrownDamage: 20
-  thrownForce: 40
-  throwAngle: 0.1
+  damage: 15
+  thrownDamage: 10
+  thrownForce: 23
+  throwAngle: 0.25
   environmentTag: Environment
   playerTag: Player
-  projectileTag: Projectile
+  projectileTag: WeaponProjectile
   weaponTag: Weapon
-  UnequippedLayer: 13
-  EquippedLayer: 14
-  heldPosition: {x: 0, y: 0, z: 0}
-  heldRotation: {x: 0, y: 0, z: 0}
+  UnequippedLayer: 12
+  EquippedLayer: 13
+  heldPosition: {x: 0.107, y: 0.052, z: -0.443}
+  heldRotation: {x: -89.14301, y: 0.002, z: -9.665001}
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}
-  attackAnimName: 
   durabilityDecrement: 0
 --- !u!114 &3491534810702217472
 MonoBehaviour:
