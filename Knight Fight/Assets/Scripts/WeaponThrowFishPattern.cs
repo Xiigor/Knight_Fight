@@ -37,10 +37,15 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     private void Update()
     {
         currentState.UpdateState();
+        if(internalAttackTimer >= animationDuration)
+        {
+            Attack();
+        }
     }
 
     public override void Attack()
     {
+<<<<<<< HEAD
         //launch projectile and instanciate projectile 
         // Projectile i eget script med en OnCollisonEnter kollar om träffat en spelare och isfall gå in i enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);
         ChangeDurability(durabilityDecrement);
@@ -71,7 +76,25 @@ public class WeaponThrowFishPattern : WeaponBaseClass
             //transform.DetachChildren();
         }
         spawnOffset = 0;
+=======
+        internalAttackTimer = 0f;
+        if (attackActive)
+        {
+            //launch projectile and instanciate projectile 
+            // Projectile i eget script med en OnCollisonEnter kollar om träffat en spelare och isfall gå in i enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);
+            ChangeDurability(durabilityDecrement);
+            //Instantiate(weaponAmmo);
+            audioPlayer.Attacking();
+            GameObject temp = Instantiate(weaponAmmo, parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos.transform.position, Quaternion.identity);
+            temp.GetComponent<ProjectileFish>().parentObject = parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos;
+            //transform.DetachChildren();
+            attackActive = false;
+        }
+        else
+            attackActive = true;
+>>>>>>> eb45a01c9538b18ddcd13b99180cbaa8bea8c88a
     }
+
 
     public override void ChangeDurability(float durabilityDecrement)
     {

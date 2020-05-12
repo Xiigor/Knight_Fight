@@ -18,7 +18,6 @@ public class PlayerDeadState : PlayerIState
         player.gameManager.alivePlayers.Remove(player.gameObject);
         player.EnableRagdoll();
         player.tag = player.deadPlayerTag;
-        
     }
 
     public void UpdateState()
