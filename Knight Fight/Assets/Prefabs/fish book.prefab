@@ -126,7 +126,7 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
   thisWepType: 2
-  animationDuration: 0.82
+  animationDuration: 0.3
   internalAttackTimer: 0
   attackActive: 0
   durability: 6
@@ -148,9 +148,6 @@ MonoBehaviour:
   durabilityDecrement: 2
   weaponAmmo: {fileID: 1227325187089670069, guid: 98101021b9486b040ae02c335bb568f3,
     type: 3}
-  numberofAmmoToSpawn: 1
-  spawnOfsettDist: 0
-  launchDir: 0
 --- !u!114 &-8796067586960004273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,4 +165,4 @@ MonoBehaviour:
   throwWep: event:/Weapons/Weapon_Throw
   ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
   weaponPickup: event:/Weapons/Weapon_Pickup_FishBook
-  weaponBreak: event:/Weapons/Weapon_Hit_Ground
+  weaponBreak: 

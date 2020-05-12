@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 using static UnityEngine.InputSystem.InputAction;
 
 public class GameManager : MonoBehaviour
@@ -28,7 +29,16 @@ public class GameManager : MonoBehaviour
     public AudioMenu audioManager;
     public WeaponSpawnManager weaponSpawnManager;
 
+    //rounds
+    public int amountOfRounds = 1;
+    public TextMeshProUGUI roundsText;
+    [HideInInspector] public GameObject roundWinner;
+    [HideInInspector] public bool newRoundProcessStarted = false;
+
+    //durations
     public float winStateDuration = 5f;
+    public float newRoundDelayDuration = 2f;
+    public float internalRoundDelayTimer = 0f;
 
     //player related components
     public GameObject player1;
@@ -51,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 1;
+        amountOfRounds = 1;
         gameplayState = new GameGameplayState(this);
         menuState = new GameMenuState(this);
         winState = new GameWinState(this);
@@ -58,7 +69,6 @@ public class GameManager : MonoBehaviour
         cameraScript = cameraObject.GetComponent<CameraStatePattern>();
         inputManagerScript = inputManagerObject.GetComponent<PlayerInputManager>();
         audioManager = GetComponent<AudioMenu>();
-        audioManager.StartMenuMusic();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
         //inputDevices = new List<Gamepad>();
         inputDevices = new List<InputDevice>();
@@ -77,17 +87,18 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log(gameState);
         gameState.UpdateState();
+        SetRoundsText();
     }
 
     public void OnStart()
     {
         if(readyPlayers.Count >= 1)
         {
+            alivePlayers.Clear();
             foreach(GameObject player in readyPlayers)
             {
                 alivePlayers.Add(player);
             }
-            
             audioManager.StartPressed();
             gameState = gameplayState;
             gameState.OnStateEnter();
@@ -216,24 +227,32 @@ public class GameManager : MonoBehaviour
 
     public void AddPlayersForCamera()
     {
-        foreach(GameObject player in readyPlayers)
+        cameraScript.objectsFollowedByCamera.Clear();
+        foreach (GameObject player in readyPlayers)
         {
-            player.gameObject.SetActive(true);
             cameraScript.objectsFollowedByCamera.Add(player.transform);
         }
     }
-
     public void RemovePlayersForCamera()
     {
-        foreach(GameObject player in readyPlayers)
-        {
-            player.SetActive(false);
-        }
         readyPlayers.Clear();
         alivePlayers.Clear();
         cameraScript.objectsFollowedByCamera.Clear();
     }
-
+    public void EnablePlayers()
+    {
+        foreach(GameObject player in readyPlayers)
+        {
+            player.SetActive(true);
+        }
+    }
+    public void DisablePlayers()
+    {
+        foreach (GameObject player in readyPlayers)
+        {
+            player.SetActive(false);
+        }
+    }
     public void ToMenu()
     {
         if (gameState != menuState)
@@ -242,13 +261,47 @@ public class GameManager : MonoBehaviour
             gameState.OnStateEnter();
         }
     }
+    public void CheckForRoundWinner()
+    {
+        if(alivePlayers.Count == 1)
+        {
+            newRoundProcessStarted = true;
+            foreach(GameObject player in alivePlayers)
+            {
+                roundWinner = player;
+                player.GetComponent<PlayerScoreTracker>().IncrementScore();
+            }
+            
+            //CheckForWinner();
 
+        }
+    }
     public void CheckForWinner()
     {
-        if(alivePlayers.Count == 1 && gameState != winState)
+        //if roundwinner score == amount of rounds in game
+        if (roundWinner.GetComponent<PlayerScoreTracker>().score == amountOfRounds)
         {
             gameState = winState;
             gameState.OnStateEnter();
         }
+        else
+        {
+            OnStart();
+        }
+    }
+    public void IncrementRounds()
+    {
+        amountOfRounds += 1;
+    }
+    public void DecrementRounds()
+    {
+        if(amountOfRounds > 1)
+        {
+            amountOfRounds -= 1;
+        }
+    }
+    public void SetRoundsText()
+    {
+        roundsText.text = amountOfRounds.ToString();
     }
 }
