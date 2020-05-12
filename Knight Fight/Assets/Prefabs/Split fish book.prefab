@@ -129,7 +129,7 @@ MonoBehaviour:
   animationDuration: 0.52
   internalAttackTimer: 0
   attackActive: 0
-  durability: 5
+  durability: 6
   damage: 5
   thrownDamage: 5
   thrownForce: 20
@@ -145,11 +145,12 @@ MonoBehaviour:
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}
-  durabilityDecrement: 0
+  durabilityDecrement: 2
   weaponAmmo: {fileID: 1227325187089670069, guid: 98101021b9486b040ae02c335bb568f3,
     type: 3}
   numberofAmmoToSpawn: 3
-  spawnOfsettDist: 0
+  spawnOfsettDist: 10
+  vShape: 10
   launchDir: 0
 --- !u!114 &8942265126579684073
 MonoBehaviour:
