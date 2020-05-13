@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44938028, g: 0.4994573, b: 0.575698, a: 1}
+  m_IndirectSpecularColor: {r: 0.44938076, g: 0.49945807, b: 0.57569873, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -915,7 +915,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1916560470}
+      - m_Target: {fileID: 954350288}
         m_MethodName: ChangeCrowd
         m_Mode: 0
         m_Arguments:
@@ -7243,6 +7243,30 @@ MonoBehaviour:
   OptionsMenuDefaultSelected: {fileID: 1043619113}
   GameMenu: {fileID: 1589187142}
   GameMenuDefaultSelected: {fileID: 1096146924}
+--- !u!114 &954350288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954350283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7176b5ebe58ff44bb55cdb6b73624df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolumeSlider: {fileID: 1139562003}
+  masterVolumeText: {fileID: 1970618}
+  sfxVolumeSlider: {fileID: 1732303767}
+  sfxVolumeText: {fileID: 1723616098}
+  musicVolumeSlider: {fileID: 1771019928}
+  musicVolume: 50
+  musicVolumeText: {fileID: 1204128341}
+  commentatorVolumeSlider: {fileID: 1533502796}
+  commentatorVolumeText: {fileID: 1351111208}
+  crowdVolumeSlider: {fileID: 58017853}
+  crowdVolumeText: {fileID: 186700924}
+  test: 0.5
 --- !u!1 &960310626
 GameObject:
   m_ObjectHideFlags: 0
@@ -9187,7 +9211,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1916560470}
+      - m_Target: {fileID: 954350288}
         m_MethodName: ChangeMaster
         m_Mode: 0
         m_Arguments:
@@ -11513,7 +11537,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1916560470}
+      - m_Target: {fileID: 954350288}
         m_MethodName: ChangeCommentator
         m_Mode: 0
         m_Arguments:
@@ -12696,7 +12720,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1916560470}
+      - m_Target: {fileID: 954350288}
         m_MethodName: ChangeSFX
         m_Mode: 0
         m_Arguments:
@@ -12981,11 +13005,11 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 64
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1916560470}
+      - m_Target: {fileID: 954350288}
         m_MethodName: ChangeMusic
         m_Mode: 0
         m_Arguments:
@@ -13217,7 +13241,6 @@ GameObject:
   - component: {fileID: 1916560467}
   - component: {fileID: 1916560469}
   - component: {fileID: 1916560468}
-  - component: {fileID: 1916560470}
   m_Layer: 5
   m_Name: optionsbackground
   m_TagString: Untagged
@@ -13285,29 +13308,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916560466}
   m_CullTransparentMesh: 0
---- !u!114 &1916560470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1916560466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7176b5ebe58ff44bb55cdb6b73624df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterVolume: {fileID: 1139562003}
-  masterVolumeText: {fileID: 1970618}
-  sfxVolume: {fileID: 1732303767}
-  sfxVolumeText: {fileID: 1723616098}
-  musicVolume: {fileID: 1771019928}
-  musicVolumeText: {fileID: 1204128341}
-  commentatorVolume: {fileID: 1533502796}
-  commentatorVolumeText: {fileID: 1351111208}
-  crowdVolume: {fileID: 58017853}
-  crowdVolumeText: {fileID: 186700924}
-  test: 0.5
 --- !u!1 &1979327858
 GameObject:
   m_ObjectHideFlags: 0
