@@ -22,9 +22,10 @@ public class GameManager : MonoBehaviour
     //components and scripts
     public GameObject cameraObject;
     public Canvas menuCanvas;
-    [HideInInspector]public CameraStatePattern cameraScript;
+    [HideInInspector] public CameraStatePattern cameraScript;
+    [HideInInspector] public CommentatorStatePattern commentatorScript;
     public GameObject inputManagerObject;
-    [HideInInspector]public PlayerInputManager inputManagerScript;
+    [HideInInspector] public PlayerInputManager inputManagerScript;
     public AudioMenu audioManager;
     public WeaponSpawnManager weaponSpawnManager;
 
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
         winState = new GameWinState(this);
         
         cameraScript = cameraObject.GetComponent<CameraStatePattern>();
+        commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         inputManagerScript = inputManagerObject.GetComponent<PlayerInputManager>();
         audioManager = GetComponent<AudioMenu>();
         audioManager.StartMenuMusic();
@@ -248,6 +250,7 @@ public class GameManager : MonoBehaviour
         {
             gameState = winState;
             gameState.OnStateEnter();
+            commentatorScript.victoryComment = true;
         }
     }
 }

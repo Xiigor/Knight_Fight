@@ -14,6 +14,7 @@ public class GameGameplayState : GameIState
         manager.audioManager.StartGameplayMusic();
         manager.AddPlayersForCamera();
         manager.cameraScript.ChangeState(manager.cameraScript.battleViewState);
+        manager.commentatorScript.ChangeState(manager.commentatorScript.introducingState);
         manager.menuCanvas.gameObject.SetActive(false);
         manager.inputManagerScript.trigger = true;
     }
