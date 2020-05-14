@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2765844868840328221}
   - component: {fileID: 2765844868840328220}
   - component: {fileID: 3491534810702217472}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: weapon
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -128,20 +128,21 @@ MonoBehaviour:
   audioPlayer: {fileID: 0}
   thisWepType: 1
   animationDuration: 1
+  internalAttackTimer: 0
+  attackActive: 0
   durability: 10
   damage: 5
   thrownDamage: 20
   thrownForce: 40
   throwAngle: 0.1
-  attackActive: 0
   environmentTag: Environment
   playerTag: Player
   projectileTag: Projectile
   weaponTag: Weapon
   UnequippedLayer: 13
   EquippedLayer: 14
-  heldPosition: {x: 0.107, y: 0.052, z: -0.443}
-  heldRotation: {x: -89.14301, y: 0.002, z: -9.665001}
+  heldPosition: {x: 0, y: 0, z: 0}
+  heldRotation: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}

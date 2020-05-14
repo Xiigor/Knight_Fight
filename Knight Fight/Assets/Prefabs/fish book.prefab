@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 289046099311355821}
   - component: {fileID: -8796067586960004273}
   m_Layer: 12
-  m_Name: fish book right
+  m_Name: fish book
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3105903073570637870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 10, z: 15}
+  m_LocalScale: {x: 16, y: 11, z: 16}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -110,7 +110,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &289046099311355821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,12 +127,13 @@ MonoBehaviour:
   audioPlayer: {fileID: 0}
   thisWepType: 2
   animationDuration: 0.85
+  internalAttackTimer: 0
+  attackActive: 0
   durability: 5
   damage: 5
   thrownDamage: 5
   thrownForce: 20
   throwAngle: 0.25
-  attackActive: 0
   environmentTag: Environment
   playerTag: Player
   projectileTag: WeaponProjectile
@@ -147,8 +148,6 @@ MonoBehaviour:
   durabilityDecrement: 0
   weaponAmmo: {fileID: 1227325187089670069, guid: 98101021b9486b040ae02c335bb568f3,
     type: 3}
-  numberofAmmoToSpawn: 1
-  launchDir: 3
 --- !u!114 &-8796067586960004273
 MonoBehaviour:
   m_ObjectHideFlags: 0
