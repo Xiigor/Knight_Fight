@@ -43,7 +43,7 @@ public class WeaponBananaTreePattern : WeaponBaseClass
             //temp.GetComponent<ProjectileFish>().parentObject = parentPlayer;
             temp.GetComponent<ProjectileFish>().parentObject = parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos;
             temp.GetComponent<ProjectileFish>().spellBook = this.gameObject;
-            timeDelayTimer = 0;
+            timeDelayTimer = 0.1f;
         }
     }
 
