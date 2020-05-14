@@ -89,7 +89,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151154424721076325}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 877065054d55021469a18b7ff759dad7, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -111,14 +111,14 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 8502566969138783400}
   thisWepType: 3
+  launchDir: 0
   animationDuration: 1
-  internalAttackTimer: 0
-  attackActive: 0
   durability: 100
   damage: 25
   thrownDamage: 13
   thrownForce: 25
   throwAngle: 0.25
+  attackActive: 0
   environmentTag: Environment
   playerTag: Player
   projectileTag: WeaponProjectile
@@ -130,7 +130,7 @@ MonoBehaviour:
   rb: {fileID: 5909608343243788674}
   col: {fileID: 5958757563900278472}
   anim: {fileID: 0}
-  attackThrowForce: 0
+  attackThrowForce: 30
   durabilityDecrement: 0
 --- !u!54 &5909608343243788674
 Rigidbody:
