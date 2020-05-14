@@ -9,8 +9,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
     public int numberofAmmoToSpawn;
     public float spawnOfsettDist;
     public float vShape;
-    public enum LaunchDir { forward, up, left, right };
-    public LaunchDir launchDir;
+    
     private float currentDurability;
     private float spawnOffset = 0;
     private int increaseSpawnOffsett = 1;
