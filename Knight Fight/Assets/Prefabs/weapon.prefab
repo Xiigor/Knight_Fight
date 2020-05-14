@@ -126,6 +126,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
+  thisWepType: 1
+  animationDuration: 1
+  internalAttackTimer: 0
+  attackActive: 0
   durability: 10
   damage: 5
   thrownDamage: 20
@@ -142,7 +146,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}
-  attackAnimName: 
   durabilityDecrement: 0
 --- !u!114 &3491534810702217472
 MonoBehaviour:
@@ -169,6 +172,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2765844868840328209}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 624ffe2a15286424ca8981237d210a2d,
+        type: 3}
+      propertyPath: m_Name
+      value: sword_IN_stone
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -223,11 +231,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_Name
-      value: sword_IN_stone
       objectReference: {fileID: 0}
     - target: {fileID: -3002650726264751205, guid: 624ffe2a15286424ca8981237d210a2d,
         type: 3}

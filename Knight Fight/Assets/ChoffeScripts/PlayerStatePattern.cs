@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
@@ -39,7 +40,7 @@ public class PlayerStatePattern : MonoBehaviour
     public bool canDash = true;
 
     public GameObject weapon;
-
+    
     //tags
     public string weaponTag = "Weapon";
     public string weaponProjectileTag = "WeaponProjectile";
@@ -98,6 +99,11 @@ public class PlayerStatePattern : MonoBehaviour
         internalDashTimer = dashCD;
         weapon = null;
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
+    }
+
+    public void OnDisable()
+    {
+        transform.position = spawnPosition.transform.position;
     }
 
     private void FixedUpdate()
