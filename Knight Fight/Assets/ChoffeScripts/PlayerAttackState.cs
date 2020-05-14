@@ -22,8 +22,13 @@ public class PlayerAttackState : PlayerIState
     public void UpdateState()
     {
         player.ChangeDirection();
+        
         if (internalStateTimer >= player.attackAnimDuration)
         {
+<<<<<<< HEAD
+            
+=======
+>>>>>>> eb45a01c9538b18ddcd13b99180cbaa8bea8c88a
             player.RunOrIdleDecider();
         }
         else
