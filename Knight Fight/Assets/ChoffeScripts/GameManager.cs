@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]public CameraStatePattern cameraScript;
     public GameObject inputManagerObject;
     [HideInInspector]public PlayerInputManager inputManagerScript;
+    [HideInInspector] public CommentatorStatePattern commentatorScript;
     public AudioMenu audioManager;
     public WeaponSpawnManager weaponSpawnManager;
 
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
         cameraScript = cameraObject.GetComponent<CameraStatePattern>();
         inputManagerScript = inputManagerObject.GetComponent<PlayerInputManager>();
         audioManager = GetComponent<AudioMenu>();
+        commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
         //inputDevices = new List<Gamepad>();
         inputDevices = new List<InputDevice>();
@@ -284,6 +286,7 @@ public class GameManager : MonoBehaviour
         {
             gameState = winState;
             gameState.OnStateEnter();
+            commentatorScript.victoryComment = true;
         }
         else
         {

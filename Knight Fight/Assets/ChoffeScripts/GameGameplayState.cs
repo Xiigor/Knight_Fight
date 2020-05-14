@@ -23,6 +23,7 @@ public class GameGameplayState : GameIState
         manager.AddPlayersForCamera();
         manager.cameraScript.ChangeState(manager.cameraScript.battleViewState);
         manager.audioManager.StartGameplayMusic();
+        manager.commentatorScript.ChangeState((manager.commentatorScript.introducingState));
 
         manager.weaponSpawnManager.DestroyWeapons();
         countdown.ResetTimer();
