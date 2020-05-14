@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerStatePattern : MonoBehaviour
 {
     public PlayerIState currentState;
@@ -40,7 +41,7 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public bool weaponDestroyed = false;
 
     public GameObject weapon;
-
+    
     //tags
     public string weaponTag = "Weapon";
     public string weaponProjectileTag = "WeaponProjectile";
