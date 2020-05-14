@@ -17,6 +17,7 @@ public class PlayerDeadState : PlayerIState
 
     public void OnStateEnter()
     {
+        //Publik reaktions jubel
         float closestDistance = Mathf.Infinity;
         GameObject closestCrowd = null;
         for (int i = 0; i < player.crowdParent.childCount; i++)
@@ -32,8 +33,6 @@ public class PlayerDeadState : PlayerIState
         }
 
         closestCrowd.GetComponent<AudioCrowd>().Cheer();
-
-        //Förmodligen loppa crowd här så att dem jublar
         /*
         player.gameManager.alivePlayers.Remove(player.gameObject);
         player.EnableRagdoll();
