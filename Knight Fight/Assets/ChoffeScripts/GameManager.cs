@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     //components and scripts
     public GameObject cameraObject;
     public Canvas menuCanvas;
-    public GameObject winBanner;
     public GameObject gameMenu;
     [HideInInspector]public CameraStatePattern cameraScript;
     public GameObject inputManagerObject;

@@ -28,15 +28,15 @@ public class AudioCom : MonoBehaviour
     public void OnWin()
     {
         InterruptSpeech();
-        onWin = RuntimeManager.CreateInstance(onVictory);
-        onWin.start();
+        introduction = RuntimeManager.CreateInstance(intro);
+        introduction.start();
     }
 
     public void Bored()
     {
         InterruptSpeech();
-        boredDialogue = RuntimeManager.CreateInstance(bored);
-        boredDialogue.start();
+        introduction = RuntimeManager.CreateInstance(intro);
+        introduction.start();
     }
 
     public void Intro()
