@@ -36,10 +36,11 @@ public class PlayerAttackState : PlayerIState
     public void ChangeState(PlayerIState newState)
     {
         player.animator.SetBool("Attack", false);
-        player.RightFist.SetActive(false);
-        player.LeftFist.SetActive(false);
+        player.rightFist.SetActive(false);
+        player.leftFist.SetActive(false);
         internalStateTimer = 0f;
         player.internalGCDTimer = 0f;
+        player.internalAttackTimer = 0f;
         player.StateChanger(newState);
     }
 

@@ -30,7 +30,7 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public float internalAttackTimer;
 
     public float movementSpeedMultiplier = 35.0f;
-    
+
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
     [HideInInspector] public float attackAnimDuration;
@@ -39,8 +39,13 @@ public class PlayerStatePattern : MonoBehaviour
     public float internalDashRayDist = 1.3f;
     public bool canDash = true;
     [HideInInspector] public bool weaponDestroyed = false;
-
     public GameObject weapon;
+    
+    //Fists
+    public GameObject leftFist;
+    public GameObject rightFist;
+    public float fistDamage = 8f;
+
     
     //tags
     public string weaponTag = "Weapon";
@@ -49,7 +54,7 @@ public class PlayerStatePattern : MonoBehaviour
     public string environmentTag = "Environment";
     public string playerTag = "Player";
     public string deadPlayerTag = "DeadPlayer";
-    public string fistTag = "Fist"; 
+    public string fistTag = "Fist";
 
     //values
     [HideInInspector] public Vector2 moveDir;
@@ -71,11 +76,6 @@ public class PlayerStatePattern : MonoBehaviour
     public int EquippedLayer = 14;
     [SerializeField] private int playerIndex;
     public GameObject spawnPosition;
-
-    //Fist
-    public GameObject RightFist;
-    public GameObject LeftFist;
-    public float fistDamage;
 
 
     private void Awake()
@@ -106,6 +106,11 @@ public class PlayerStatePattern : MonoBehaviour
         internalDashTimer = dashCD;
         weapon = null;
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
+    }
+
+    public void OnDisable()
+    {
+        transform.position = spawnPosition.transform.position;
     }
 
     private void FixedUpdate()
@@ -141,14 +146,15 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalAttackTimer += Time.deltaTime;
         }
-        if (weaponDestroyed == true)
+        if(weapon != null)
         {
-            weapon = null;
-            animator.SetBool("1hSword", false);
-            animator.SetBool("2hSword", false);
-            animator.SetBool("Spellbook", false);
-            Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
+            if(weaponDestroyed == true)
+            {
+                RemoveWep();
+                weaponDestroyed = false;
+            }
         }
+
     }
     public int GetPlayerIndex()
     {
@@ -160,32 +166,29 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if(currentState != deadState)
         {
-            if (collision.gameObject.tag == fistTag)
+            if(collision.gameObject.tag == fistTag)
             {
                 OnHit(fistDamage);
             }
-            else
+            if (collision.gameObject.tag == weaponProjectileTag)
             {
-                if (collision.gameObject.tag == weaponProjectileTag)
+                OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+            }
+            if (collision.gameObject.tag == projectileTag)
+            {
+                OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
+            }
+            if(collision.gameObject.tag == weaponTag)
+            {
+                if (collision.gameObject.layer == UnequippedLayer)
                 {
-                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+                    PickupItem(collision.gameObject);
                 }
-                if (collision.gameObject.tag == projectileTag)
+                else if (collision.gameObject.layer == EquippedLayer)
                 {
-                    OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
-                }
-                if (collision.gameObject.tag == weaponTag)
-                {
-                    if (collision.gameObject.layer == UnequippedLayer)
-                    {
-                        PickupItem(collision.gameObject);
-                    }
-                    else if (collision.gameObject.layer == EquippedLayer)
-                    {
 
-                        OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
-                    }
-                }
+                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
+                } 
             }
         }
         if (currentState == dashState)
@@ -199,12 +202,12 @@ public class PlayerStatePattern : MonoBehaviour
         if(weapon != null)
         {
             weapon.GetComponent<WeaponBaseClass>().Attack();
+            internalAttackTimer = 0f;
         }
         else
         {
-            //do basic punch attack.
-            RightFist.SetActive(true);
-            LeftFist.SetActive(true);
+            rightFist.SetActive(true);
+            leftFist.SetActive(true);
         }
     }
 
@@ -243,16 +246,6 @@ public class PlayerStatePattern : MonoBehaviour
                 if (internalAttackTimer >= attackCD)
                 {
                     return true;
-                    /*if (weapon != null)
-                    {
-                        Debug.Log("attack with wep");
-                        return true;
-                    }
-                    else
-                    {
-                        Debug.Log("nothing to attack with");
-                        return false;
-                    }*/
                 }
                 else
                 {
@@ -315,25 +308,16 @@ public class PlayerStatePattern : MonoBehaviour
                 animator.SetBool("1hSword", true);
                 animator.SetBool("2hSword", false);
                 animator.SetBool("Spellbook", false);
-                animator.SetBool("Throwable", false);
                 break;
             case WeaponBaseClass.Weapontype.twoHSword:
                 animator.SetBool("1hSword", false);
                 animator.SetBool("2hSword", true);
                 animator.SetBool("Spellbook", false);
-                animator.SetBool("Throwable", false);
                 break;
             case WeaponBaseClass.Weapontype.spellbook:
                 animator.SetBool("1hSword", false);
                 animator.SetBool("2hSword", false);
                 animator.SetBool("Spellbook", true);
-                animator.SetBool("Throwable", false);
-                break;
-            case WeaponBaseClass.Weapontype.throwable:
-                animator.SetBool("1hSword", false);
-                animator.SetBool("2hSword", false);
-                animator.SetBool("Spellbook", false);
-                animator.SetBool("Throwable", true);
                 break;
         }
     }
@@ -368,11 +352,14 @@ public class PlayerStatePattern : MonoBehaviour
     public void ThrowItem()
     {
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
+        RemoveWep();
+    }
+    public void RemoveWep()
+    {
         weapon = null;
         animator.SetBool("1hSword", false);
         animator.SetBool("2hSword", false);
         animator.SetBool("Spellbook", false);
-        animator.SetBool("Throwable", false);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
@@ -384,6 +371,7 @@ public class PlayerStatePattern : MonoBehaviour
         attackAnimDuration = weapon.GetComponent<WeaponBaseClass>().animationDuration;
         weapon.gameObject.layer = EquippedLayer; //läggs här för att inte ske före on collision
         WeaponTypeIdentifier();
+        weapon.GetComponent<WeaponBaseClass>().OnPickup(this.gameObject);
     }
 
     public void OnHit(float damage)

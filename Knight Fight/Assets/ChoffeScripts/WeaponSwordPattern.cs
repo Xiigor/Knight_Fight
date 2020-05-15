@@ -60,6 +60,10 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void OnCollisionEnter(Collision collision)
     {
         currentState.HandleCollision(collision);
+        if(collision.gameObject.tag == playerTag)
+        {
+            ChangeDurability(durabilityDecrement);
+        }
         
     }
 }
