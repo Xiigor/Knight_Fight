@@ -17,10 +17,6 @@ public class PlayerDashState : PlayerIState
         player.internalDashTimer = 0f;
         player.animator.SetBool("Dash", true);
         player.audioPlayer.PlayerDashing();
-        if (player.weapon != null)
-        {
-            player.weapon.GetComponent<Collider>().enabled = true; //tillfällig implementation
-        }
 
     }
 
@@ -49,10 +45,6 @@ public class PlayerDashState : PlayerIState
         player.internalGCDTimer = 0f;
         player.internalDashTimer = 0f;
         internalStateTimer = 0f;
-        if (player.weapon != null)
-        {
-            player.weapon.GetComponent<Collider>().enabled = false; //tillfällig implementation
-        }
         player.StateChanger(newState);
     }
 

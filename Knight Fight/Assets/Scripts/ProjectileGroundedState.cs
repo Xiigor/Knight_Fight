@@ -19,7 +19,6 @@ public class ProjectileGroundedState : ProjectileIState
     public void OnStateEnter()
     {
         projectile.damage = 0;
-        projectile.gameObject.tag = "GroundedProjectile";
         //Physics.IgnoreLayerCollision(projectile.Player.layer, projectile.gameObject.layer, false);
         Debug.Log("Grounded");
 

@@ -22,10 +22,8 @@ public class PlayerAttackState : PlayerIState
     public void UpdateState()
     {
         player.ChangeDirection();
-        
         if (internalStateTimer >= player.attackAnimDuration)
         {
-            
             player.RunOrIdleDecider();
         }
         else
@@ -36,8 +34,6 @@ public class PlayerAttackState : PlayerIState
     public void ChangeState(PlayerIState newState)
     {
         player.animator.SetBool("Attack", false);
-        player.RightFist.SetActive(false);
-        player.LeftFist.SetActive(false);
         internalStateTimer = 0f;
         player.internalGCDTimer = 0f;
         player.StateChanger(newState);

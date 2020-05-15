@@ -12,16 +12,18 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponThrownState thrownState;
     public enum Weapontype{ oneHSword, twoHSword, spellbook, throwable };
     public Weapontype thisWepType;
-    public enum LaunchDir { forward, up, left, right };
-    public LaunchDir launchDir;
+
     public float animationDuration = 1f;
-    
+    [HideInInspector] public float internalAttackTimer = 0f;
+    public bool attackActive = false;
+
+
     public float durability;
     public float damage;
     public float thrownDamage;
     public float thrownForce;
     public float throwAngle;
-    public bool attackActive = false;
+    
 
     public string environmentTag = "Environment";
     public string playerTag = "Player";
@@ -33,6 +35,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
 
     public Vector3 heldPosition;
     public Vector3 heldRotation;
+    public Vector3 scale;
     public Rigidbody rb;
     public Collider col;
     [HideInInspector] public Animator anim;
@@ -44,6 +47,10 @@ abstract public class WeaponBaseClass : MonoBehaviour
     }
     public abstract void ChangeDurability(float durabilityDecrement);
 
+    public void SetScale()
+    {
+        scale = transform.localScale;
+    }
     public void HeldPos()
     {
         transform.localPosition = heldPosition;
@@ -55,20 +62,24 @@ abstract public class WeaponBaseClass : MonoBehaviour
         //destroy the weapon and all traces of it
     }
 
-
-    public void SetParentPlayer(Collision collision)
+    public void SetParentPlayer(GameObject parentObj)
     {
-
-
-        parentPlayer = collision.gameObject;
-        if(thisWepType == Weapontype.spellbook)
+        parentPlayer = parentObj;
+        if (thisWepType == Weapontype.spellbook)
         {
-            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().leftHandGameobject.transform);
+            transform.SetParent(parentObj.gameObject.GetComponent<PlayerStatePattern>().leftHandGameobject.transform);
         }
         else
         {
-            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
+            transform.SetParent(parentObj.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
         }
+    }
+    public void OnPickup(GameObject parentObj)
+    {
+        SetParentPlayer(parentObj);
+        ChangeState(equippedState);
+        
+       
     }
     public void RemoveParentPlayer()
     {
