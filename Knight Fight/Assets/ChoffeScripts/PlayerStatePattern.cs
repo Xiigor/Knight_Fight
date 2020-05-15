@@ -371,7 +371,7 @@ public class PlayerStatePattern : MonoBehaviour
         attackAnimDuration = weapon.GetComponent<WeaponBaseClass>().animationDuration;
         weapon.gameObject.layer = EquippedLayer; //läggs här för att inte ske före on collision
         WeaponTypeIdentifier();
-        weapon.GetComponent<WeaponBaseClass>().OnPickup(this.gameObject);
+       // weapon.GetComponent<WeaponBaseClass>().OnPickup(this.gameObject);
     }
 
     public void OnHit(float damage)
