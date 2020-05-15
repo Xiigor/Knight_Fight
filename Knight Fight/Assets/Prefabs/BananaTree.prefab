@@ -167,7 +167,7 @@ MonoBehaviour:
   durabilityDecrement: 0
   weaponAmmo: {fileID: 1227325187089670069, guid: 98101021b9486b040ae02c335bb568f3,
     type: 3}
-  timeDelayProjectile: 0.2
+  timeDelayProjectile: 0.5
 --- !u!1001 &6778464083644602648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,6 +175,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2765844868840328209}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 624ffe2a15286424ca8981237d210a2d,
+        type: 3}
+      propertyPath: m_Name
+      value: sword_IN_stone
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 624ffe2a15286424ca8981237d210a2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -229,11 +234,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 624ffe2a15286424ca8981237d210a2d,
-        type: 3}
-      propertyPath: m_Name
-      value: sword_IN_stone
       objectReference: {fileID: 0}
     - target: {fileID: -3002650726264751205, guid: 624ffe2a15286424ca8981237d210a2d,
         type: 3}
