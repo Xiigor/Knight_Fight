@@ -41,6 +41,12 @@ public class PlayerStatePattern : MonoBehaviour
 
     public GameObject weapon;
     
+    //Fists
+    public GameObject leftFist;
+    public GameObject rightFist;
+    public float fistDamage = 8f;
+
+    
     //tags
     public string weaponTag = "Weapon";
     public string weaponProjectileTag = "WeaponProjectile";
@@ -48,6 +54,7 @@ public class PlayerStatePattern : MonoBehaviour
     public string environmentTag = "Environment";
     public string playerTag = "Player";
     public string deadPlayerTag = "DeadPlayer";
+    public string fistTag = "Fist";
 
     //values
     [HideInInspector] public Vector2 moveDir;
@@ -150,6 +157,10 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if(currentState != deadState)
         {
+            if(collision.gameObject.tag == fistTag)
+            {
+                OnHit(fistDamage);
+            }
             if (collision.gameObject.tag == weaponProjectileTag)
             {
                 OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
@@ -186,8 +197,8 @@ public class PlayerStatePattern : MonoBehaviour
         }
         else
         {
-            //audioPlayer.PlayerUnarmedAttack(); --- detta får nog vänta lite
-            //do basic punch attack.
+            rightFist.SetActive(true);
+            leftFist.SetActive(true);
         }
     }
 

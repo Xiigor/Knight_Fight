@@ -3418,6 +3418,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
+--- !u!4 &386907338 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4997226742796930272, guid: 2c576bfc1e3461b419c41780dde5c959,
+    type: 3}
+  m_PrefabInstance: {fileID: 386907337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &386907339 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8432656847144140833, guid: 2c576bfc1e3461b419c41780dde5c959,
+    type: 3}
+  m_PrefabInstance: {fileID: 386907337}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &393599817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5041,6 +5053,50 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 59742565a1f8bd74c92f8bf72e6a3aea, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1977d8572ea3e43a9322176217b817, type: 3}
+--- !u!1 &693393679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693393680}
+  - component: {fileID: 693393681}
+  m_Layer: 8
+  m_Name: Left Hand Fist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693393680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693393679}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 386907339}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &693393681
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693393679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.16
+  m_Center: {x: -0.02, y: 0, z: 0}
 --- !u!1 &693485270
 GameObject:
   m_ObjectHideFlags: 0
@@ -6453,6 +6509,50 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dcec018d5c8dc1d44ab5b30950bd0c6a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1977d8572ea3e43a9322176217b817, type: 3}
+--- !u!1 &854906451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854906452}
+  - component: {fileID: 854906453}
+  m_Layer: 8
+  m_Name: Right Hand Fist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854906452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854906451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 386907338}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &854906453
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854906451}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.16
+  m_Center: {x: 0.03, y: 0, z: 0}
 --- !u!1001 &868503907
 PrefabInstance:
   m_ObjectHideFlags: 0
