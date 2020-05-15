@@ -7265,6 +7265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 941606634}
   - component: {fileID: 941606635}
+  - component: {fileID: 941606636}
   m_Layer: 0
   m_Name: crowd (3)
   m_TagString: Untagged
@@ -7299,6 +7300,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crowdCheer: event:/Ambience/Crowd_Cheer
+--- !u!114 &941606636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941606633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Ambience/Crowd_Manager
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 50
 --- !u!1 &943147545
 GameObject:
   m_ObjectHideFlags: 0
@@ -11180,6 +11204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1395593620}
   - component: {fileID: 1395593621}
+  - component: {fileID: 1395593622}
   m_Layer: 0
   m_Name: crowd (1)
   m_TagString: Untagged
@@ -11214,6 +11239,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crowdCheer: event:/Ambience/Crowd_Cheer
+--- !u!114 &1395593622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395593619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Ambience/Crowd_Manager
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 50
 --- !u!1 &1408384100 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 1d1977d8572ea3e43a9322176217b817,
@@ -11373,6 +11421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1465404429}
   - component: {fileID: 1465404430}
+  - component: {fileID: 1465404431}
   m_Layer: 0
   m_Name: crowd
   m_TagString: Untagged
@@ -11407,6 +11456,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crowdCheer: event:/Ambience/Crowd_Cheer
+--- !u!114 &1465404431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465404428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Ambience/Crowd_Manager
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 50
 --- !u!1 &1467527732
 GameObject:
   m_ObjectHideFlags: 0
@@ -12946,6 +13018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1713770858}
   - component: {fileID: 1713770859}
+  - component: {fileID: 1713770860}
   m_Layer: 0
   m_Name: crowd (2)
   m_TagString: Untagged
@@ -12980,6 +13053,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crowdCheer: event:/Ambience/Crowd_Cheer
+--- !u!114 &1713770860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713770857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Ambience/Crowd_Manager
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 50
 --- !u!1 &1723616096
 GameObject:
   m_ObjectHideFlags: 0
@@ -15379,6 +15475,11 @@ PrefabInstance:
       propertyPath: EquippedLayer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 8870290375667850370, guid: ca3bdb139643ba8429af0b64a49cabf6,
+        type: 3}
+      propertyPath: crowdParent
+      value: 
+      objectReference: {fileID: 1684825964}
     - target: {fileID: 8892840621317186564, guid: ca3bdb139643ba8429af0b64a49cabf6,
         type: 3}
       propertyPath: m_Layer
