@@ -6,7 +6,6 @@ public class WeaponSwordPattern : WeaponBaseClass
 {
     public float durabilityDecrement;
     private float currentDurability;
-    private bool newAttack = false;
     
     private void Awake()
     {
@@ -29,8 +28,8 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentState.UpdateState();
         if(internalAttackTimer >= animationDuration && attackActive == true)
         {
-            ChangeDurability(durabilityDecrement);
-            newAttack = false;
+            col.enabled = false;
+            attackActive = false;
         }
     }
 
@@ -45,11 +44,6 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void ChangeDurability(float durabilityDecrement)
     {
         currentDurability -= durabilityDecrement;
-        if (currentDurability <= 0)
-        {
-            parentPlayer.GetComponent<PlayerStatePattern>().weaponDestroyed = true;
-            Destroy(this.gameObject);
-        }
     }
     public override void ChangeState(WeaponIState newState)
     {

@@ -30,7 +30,7 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public float internalAttackTimer;
 
     public float movementSpeedMultiplier = 35.0f;
-    
+
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
     [HideInInspector] public float attackAnimDuration;
@@ -38,7 +38,6 @@ public class PlayerStatePattern : MonoBehaviour
     private float movementInputForDashDirThreshhold = 0.15f; 
     public float internalDashRayDist = 1.3f;
     public bool canDash = true;
-    [HideInInspector] public bool weaponDestroyed = false;
 
     public GameObject weapon;
     
@@ -49,7 +48,6 @@ public class PlayerStatePattern : MonoBehaviour
     public string environmentTag = "Environment";
     public string playerTag = "Player";
     public string deadPlayerTag = "DeadPlayer";
-    public string fistTag = "Fist"; 
 
     //values
     [HideInInspector] public Vector2 moveDir;
@@ -71,11 +69,6 @@ public class PlayerStatePattern : MonoBehaviour
     public int EquippedLayer = 14;
     [SerializeField] private int playerIndex;
     public GameObject spawnPosition;
-
-    //Fist
-    public GameObject RightFist;
-    public GameObject LeftFist;
-    public float fistDamage;
 
 
     private void Awake()
@@ -106,6 +99,11 @@ public class PlayerStatePattern : MonoBehaviour
         internalDashTimer = dashCD;
         weapon = null;
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
+    }
+
+    public void OnDisable()
+    {
+        transform.position = spawnPosition.transform.position;
     }
 
     private void FixedUpdate()
@@ -141,14 +139,6 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalAttackTimer += Time.deltaTime;
         }
-        if (weaponDestroyed == true)
-        {
-            weapon = null;
-            animator.SetBool("1hSword", false);
-            animator.SetBool("2hSword", false);
-            animator.SetBool("Spellbook", false);
-            Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
-        }
     }
     public int GetPlayerIndex()
     {
@@ -160,32 +150,25 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if(currentState != deadState)
         {
-            if (collision.gameObject.tag == fistTag)
+            if (collision.gameObject.tag == weaponProjectileTag)
             {
-                OnHit(fistDamage);
+                OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
             }
-            else
+            if (collision.gameObject.tag == projectileTag)
             {
-                if (collision.gameObject.tag == weaponProjectileTag)
+                OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
+            }
+            if(collision.gameObject.tag == weaponTag)
+            {
+                if (collision.gameObject.layer == UnequippedLayer)
                 {
-                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+                    PickupItem(collision.gameObject);
                 }
-                if (collision.gameObject.tag == projectileTag)
+                else if (collision.gameObject.layer == EquippedLayer)
                 {
-                    OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
-                }
-                if (collision.gameObject.tag == weaponTag)
-                {
-                    if (collision.gameObject.layer == UnequippedLayer)
-                    {
-                        PickupItem(collision.gameObject);
-                    }
-                    else if (collision.gameObject.layer == EquippedLayer)
-                    {
 
-                        OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
-                    }
-                }
+                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
+                } 
             }
         }
         if (currentState == dashState)
@@ -203,9 +186,8 @@ public class PlayerStatePattern : MonoBehaviour
         }
         else
         {
+            //audioPlayer.PlayerUnarmedAttack(); --- detta får nog vänta lite
             //do basic punch attack.
-            RightFist.SetActive(true);
-            LeftFist.SetActive(true);
         }
     }
 
@@ -243,8 +225,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (internalAttackTimer >= attackCD)
                 {
-                    return true;
-                    /*if (weapon != null)
+                    if (weapon != null)
                     {
                         Debug.Log("attack with wep");
                         return true;
@@ -253,7 +234,7 @@ public class PlayerStatePattern : MonoBehaviour
                     {
                         Debug.Log("nothing to attack with");
                         return false;
-                    }*/
+                    }
                 }
                 else
                 {

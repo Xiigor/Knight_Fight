@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3681020773798993435}
   - component: {fileID: 5909608343243788674}
   - component: {fileID: 8502566969138783400}
-  - component: {fileID: 647850889085657600}
   m_Layer: 12
   m_Name: Throwable Shield
   m_TagString: Weapon
@@ -32,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1151154424721076325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -90,9 +89,9 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151154424721076325}
-  m_Material: {fileID: 13400000, guid: 877065054d55021469a18b7ff759dad7, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
@@ -112,26 +111,26 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 8502566969138783400}
   thisWepType: 3
-  launchDir: 0
   animationDuration: 1
+  internalAttackTimer: 0
+  attackActive: 0
   durability: 100
   damage: 25
   thrownDamage: 13
   thrownForce: 25
   throwAngle: 0.25
-  attackActive: 0
   environmentTag: Environment
   playerTag: Player
   projectileTag: WeaponProjectile
   weaponTag: Weapon
-  UnequippedLayer: 13
-  EquippedLayer: 14
+  UnequippedLayer: 12
+  EquippedLayer: 13
   heldPosition: {x: 0.107, y: 0.052, z: -0.443}
   heldRotation: {x: -89.14301, y: 0.002, z: -9.665001}
   rb: {fileID: 5909608343243788674}
   col: {fileID: 5958757563900278472}
   anim: {fileID: 0}
-  attackThrowForce: 30
+  attackThrowForce: 0
   durabilityDecrement: 0
 --- !u!54 &5909608343243788674
 Rigidbody:
@@ -148,7 +147,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &8502566969138783400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,16 +166,3 @@ MonoBehaviour:
   ThrownWepHitEnvironment: 
   weaponPickup: 
   weaponBreak: 
---- !u!65 &647850889085657600
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1151154424721076325}
-  m_Material: {fileID: 13400000, guid: 877065054d55021469a18b7ff759dad7, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.09638673, y: 0.09546261, z: 0.013059542}
-  m_Center: {x: 0.18926814, y: 0.17248671, z: -0.05250575}
