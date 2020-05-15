@@ -41,7 +41,7 @@ public class WeaponBananaTreePattern : WeaponBaseClass
         { 
             GameObject temp = Instantiate(weaponAmmo, this.gameObject.transform.position, Quaternion.identity);
             //temp.GetComponent<ProjectileFish>().parentObject = parentPlayer;
-            temp.GetComponent<ProjectileFish>().parentObject = this.gameObject;
+            temp.GetComponent<ProjectileFish>().parentObject = parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos;
             temp.GetComponent<ProjectileFish>().spellBook = this.gameObject;
             timeDelayTimer = 0.1f;
         }
