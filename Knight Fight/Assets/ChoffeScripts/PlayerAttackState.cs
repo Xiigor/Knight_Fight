@@ -40,6 +40,7 @@ public class PlayerAttackState : PlayerIState
         player.leftFist.SetActive(false);
         internalStateTimer = 0f;
         player.internalGCDTimer = 0f;
+        player.internalAttackTimer = 0f;
         player.StateChanger(newState);
     }
 
