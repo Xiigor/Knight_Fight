@@ -22,6 +22,7 @@ public class GameMenuState : GameIState
         manager.audioManager.StartMenuMusic();
         manager.cameraScript.ChangeState(manager.cameraScript.arenaViewState);
         manager.menuCanvas.gameObject.SetActive(true);
+        manager.winBanner.gameObject.SetActive(false);
 
         manager.player1NotReady.SetActive(true);
         manager.player2NotReady.SetActive(true);

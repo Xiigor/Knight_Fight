@@ -26,7 +26,7 @@ public class WeaponSwordPattern : WeaponBaseClass
     private void Update()
     {
         currentState.UpdateState();
-        if(internalAttackTimer >= animationDuration)
+        if(internalAttackTimer >= animationDuration && attackActive == true)
         {
             col.enabled = false;
             attackActive = false;

@@ -18,6 +18,7 @@ public class GameWinState : GameIState
         internalTimer = 0f;
         manager.cameraScript.focusedObject = manager.alivePlayers[0].transform;
         manager.cameraScript.ChangeState(manager.cameraScript.followPlayerState);
+        manager.winBanner.SetActive(true);
         foreach(GameObject player in manager.readyPlayers)
         {
             player.GetComponent<PlayerScoreTracker>().ClearScore();
