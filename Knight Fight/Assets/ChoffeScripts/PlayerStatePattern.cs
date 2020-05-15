@@ -315,16 +315,25 @@ public class PlayerStatePattern : MonoBehaviour
                 animator.SetBool("1hSword", true);
                 animator.SetBool("2hSword", false);
                 animator.SetBool("Spellbook", false);
+                animator.SetBool("Throwable", false);
                 break;
             case WeaponBaseClass.Weapontype.twoHSword:
                 animator.SetBool("1hSword", false);
                 animator.SetBool("2hSword", true);
                 animator.SetBool("Spellbook", false);
+                animator.SetBool("Throwable", false);
                 break;
             case WeaponBaseClass.Weapontype.spellbook:
                 animator.SetBool("1hSword", false);
                 animator.SetBool("2hSword", false);
                 animator.SetBool("Spellbook", true);
+                animator.SetBool("Throwable", false);
+                break;
+            case WeaponBaseClass.Weapontype.throwable:
+                animator.SetBool("1hSword", false);
+                animator.SetBool("2hSword", false);
+                animator.SetBool("Spellbook", false);
+                animator.SetBool("Throwable", true);
                 break;
         }
     }
@@ -363,6 +372,7 @@ public class PlayerStatePattern : MonoBehaviour
         animator.SetBool("1hSword", false);
         animator.SetBool("2hSword", false);
         animator.SetBool("Spellbook", false);
+        animator.SetBool("Throwable", false);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
