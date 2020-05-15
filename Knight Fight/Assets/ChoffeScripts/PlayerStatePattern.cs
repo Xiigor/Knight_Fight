@@ -38,7 +38,7 @@ public class PlayerStatePattern : MonoBehaviour
     private float movementInputForDashDirThreshhold = 0.15f; 
     public float internalDashRayDist = 1.3f;
     public bool canDash = true;
-
+    [HideInInspector] public bool weaponDestroyed = false;
     public GameObject weapon;
     
     //Fists
@@ -146,6 +146,10 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalAttackTimer += Time.deltaTime;
         }
+        if(weaponDestroyed == true)
+        {
+            RemoveWep();
+        }
     }
     public int GetPlayerIndex()
     {
@@ -236,16 +240,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (internalAttackTimer >= attackCD)
                 {
-                    if (weapon != null)
-                    {
-                        Debug.Log("attack with wep");
-                        return true;
-                    }
-                    else
-                    {
-                        Debug.Log("nothing to attack with");
-                        return false;
-                    }
+                    return true;
                 }
                 else
                 {
@@ -352,6 +347,10 @@ public class PlayerStatePattern : MonoBehaviour
     public void ThrowItem()
     {
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
+        RemoveWep();
+    }
+    public void RemoveWep()
+    {
         weapon = null;
         animator.SetBool("1hSword", false);
         animator.SetBool("2hSword", false);
