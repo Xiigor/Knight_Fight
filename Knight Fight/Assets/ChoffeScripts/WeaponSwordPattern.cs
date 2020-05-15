@@ -6,6 +6,7 @@ public class WeaponSwordPattern : WeaponBaseClass
 {
     public float durabilityDecrement;
     private float currentDurability;
+    private bool newAttack = false;
     
     private void Awake()
     {
@@ -26,18 +27,19 @@ public class WeaponSwordPattern : WeaponBaseClass
     private void Update()
     {
         currentState.UpdateState();
-        if(internalAttackTimer >= animationDuration && attackActive == true)
+        /*if (newAttack == true)
         {
-            col.enabled = false;
-            attackActive = false;
-        }
+            ChangeDurability(durabilityDecrement);
+            newAttack = false;
+        }*/
     }
 
     public override void Attack()
     {
-        attackActive = true;
-        internalAttackTimer = 0f;
-        col.enabled = true;
+        gameObject.GetComponent<Collider>().enabled = true;
+        newAttack = true;
+        parentPlayer.GetComponent<PlayerStatePattern>().animator.GetCurrentAnimatorStateInfo(0).IsName("2HSword Attack");
+        Debug.Log("attack");
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 
@@ -58,9 +60,10 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void OnCollisionEnter(Collision collision)
     {
         currentState.HandleCollision(collision);
-        if(collision.gameObject.tag == playerTag)
+        if(collision.gameObject.tag == playerTag && newAttack == true)
         {
             ChangeDurability(durabilityDecrement);
+            newAttack = false;
         }
         
     }

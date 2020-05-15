@@ -34,23 +34,6 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
---- !u!114 &-9212760241985148393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw/Weight
-  m_EditorClassIdentifier: 
-  Name: Weight
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 1
 --- !u!114 &-9208182001449433974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,23 +213,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 140
---- !u!114 &-8996619922600263358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw/Weight
-  m_EditorClassIdentifier: 
-  Name: Weight
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 0
 --- !u!114 &-8934303499527212354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,7 +445,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &-8607791177930148660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,7 +702,7 @@ MonoBehaviour:
   Min: 0
   Max: 20
   Default: 10
-  Exists: 0
+  Exists: 1
 --- !u!114 &-8220180256270464067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,6 +840,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-8104522120870024074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Crowd_Manager/CrowdMood
+  m_EditorClassIdentifier: 
+  Name: CrowdMood
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-8104034317903801502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,7 +975,24 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
-  Exists: 0
+  Exists: 1
+--- !u!114 &-7925004258357208952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player_Hurt_Male_Manager/Weapon
+  m_EditorClassIdentifier: 
+  Name: Weapon
+  Min: 0
+  Max: 20
+  Default: 10
+  Exists: 1
 --- !u!114 &-7850650140378219812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,7 +1421,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &-7503481177138503473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,8 +1535,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 50
-  Length: 560
---- !u!114 &-7427953066775882449
+  Length: 250
+--- !u!114 &-7423900446741172583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1570,23 +1570,6 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
---- !u!114 &-7408152970392924824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Gameplay/lowHealth
-  m_EditorClassIdentifier: 
-  Name: lowHealth
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &-7397032973911786777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1677,7 +1660,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 50
-  Length: 550
+  Length: 0
 --- !u!114 &-7234834113420870471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1713,6 +1696,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-7147435223132936041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/lowHealth
+  m_EditorClassIdentifier: 
+  Name: lowHealth
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-7115895046059670797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2004,23 +2004,6 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 1
---- !u!114 &-6755644922236911282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Crowd_Manager/CrowdMood
-  m_EditorClassIdentifier: 
-  Name: CrowdMood
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &-6697009481065991553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2262,23 +2245,6 @@ MonoBehaviour:
   - Name: 
     Value: 2906
   Exists: 0
---- !u!114 &-6287060305503383861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Player_Hurt_Female_Manager/Weapon
-  m_EditorClassIdentifier: 
-  Name: Weapon
-  Min: 0
-  Max: 20
-  Default: 10
-  Exists: 1
 --- !u!114 &-6274606611255381098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2398,7 +2364,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &-6228367440860475413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2415,7 +2381,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &-6220147018894101730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2518,12 +2484,12 @@ MonoBehaviour:
   Banks:
   - {fileID: 7770331808655434075}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 8572
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6027989108950996014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2668,23 +2634,6 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
---- !u!114 &-5810151141657321949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Crowd_Manager/CrowdMood
-  m_EditorClassIdentifier: 
-  Name: CrowdMood
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &-5793606717466649595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2758,6 +2707,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-5680111395456029874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Male_Manager/Weight
+  m_EditorClassIdentifier: 
+  Name: Weight
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-5674378033789413199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2809,23 +2775,6 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
---- !u!114 &-5639968363270675935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Attack_Manager/Weapon
-  m_EditorClassIdentifier: 
-  Name: Weapon
-  Min: 0
-  Max: 20
-  Default: 10
-  Exists: 1
 --- !u!114 &-5632517803207943445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2935,6 +2884,23 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
+--- !u!114 &-5568879662130933638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Attack_Manager/Weapon
+  m_EditorClassIdentifier: 
+  Name: Weapon
+  Min: 0
+  Max: 20
+  Default: 10
+  Exists: 1
 --- !u!114 &-5558971564315915267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3403,6 +3369,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-4973452832772115658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/lowHealth
+  m_EditorClassIdentifier: 
+  Name: lowHealth
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-4972792167584335067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3666,40 +3649,6 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
---- !u!114 &-4713199036383389687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Male_Manager/WeaponWeight
-  m_EditorClassIdentifier: 
-  Name: WeaponWeight
-  Min: 0
-  Max: 2
-  Default: 1
-  Exists: 1
---- !u!114 &-4702735174761838986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Attack_Manager/Weapon
-  m_EditorClassIdentifier: 
-  Name: Weapon
-  Min: 0
-  Max: 20
-  Default: 10
-  Exists: 1
 --- !u!114 &-4666743343407940277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3711,6 +3660,40 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Announcer_Player_Defeated/WhatPlayer
+  m_EditorClassIdentifier: 
+  Name: WhatPlayer
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &-4663775299256269984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Announcer_Player_Defeated/WhatPlayer
+  m_EditorClassIdentifier: 
+  Name: WhatPlayer
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &-4612442588461822291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Female_Manager/Weight
   m_EditorClassIdentifier: 
   Name: WhatPlayer
   Min: 0
@@ -4183,23 +4166,6 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
---- !u!114 &-4136708151341980173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Female_Manager/Weight
-  m_EditorClassIdentifier: 
-  Name: Weight
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 1
 --- !u!114 &-4130576315534552609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4349,6 +4315,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 100
   Length: 15
+--- !u!114 &-3951617080722401394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Announcer_Player_Defeated/WhatPlayer
+  m_EditorClassIdentifier: 
+  Name: WhatPlayer
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &-3906149888162907857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4420,9 +4403,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 14841
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3821152313310331695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4478,9 +4461,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 13536
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3742750385274988480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4498,6 +4481,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &-3724790233074768114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Attack_Manager/Weapon
+  m_EditorClassIdentifier: 
+  Name: Weapon
+  Min: 0
+  Max: 20
+  Default: 10
+  Exists: 1
 --- !u!114 &-3716795052956665260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4692,6 +4692,40 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 1008
+--- !u!114 &-3560488434009997030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Female_Manager/WeaponWeight
+  m_EditorClassIdentifier: 
+  Name: WeaponWeight
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
+--- !u!114 &-3521831554815340171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Female_Manager/WeaponWeight
+  m_EditorClassIdentifier: 
+  Name: WeaponWeight
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
 --- !u!114 &-3471280032909849506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4913,7 +4947,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
---- !u!114 &-3129690036126598661
+--- !u!114 &-3118392633476509904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4923,11 +4957,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw/Weight
+  m_Name: parameter:/Announcer_Player_Defeated/WhatPlayer
   m_EditorClassIdentifier: 
-  Name: Weight
+  Name: WhatPlayer
   Min: 0
-  Max: 2
+  Max: 4
   Default: 0
   Exists: 1
 --- !u!114 &-3115946262711478242
@@ -5169,7 +5203,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &-2730499336868779367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5205,23 +5239,6 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &-2719357864838749655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Player_Hurt_Female_Manager/Weapon
-  m_EditorClassIdentifier: 
-  Name: Weapon
-  Min: 0
-  Max: 20
-  Default: 10
-  Exists: 0
---- !u!114 &-2704531547674841652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5367,23 +5384,6 @@ MonoBehaviour:
   Name: Weight
   Min: 0
   Max: 2
-  Default: 0
-  Exists: 0
---- !u!114 &-2541404124105355141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Crowd_Manager/CrowdMood
-  m_EditorClassIdentifier: 
-  Name: CrowdMood
-  Min: 0
-  Max: 1
   Default: 0
   Exists: 0
 --- !u!114 &-2535030348888144732
@@ -5624,24 +5624,6 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
---- !u!114 &-2231158787539928695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Plugins/FMOD/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637250574030757467
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
 --- !u!114 &-2217314940675333473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5939,23 +5921,6 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
---- !u!114 &-1829043284144968542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Player_Hurt_Male_Manager/Weapon
-  m_EditorClassIdentifier: 
-  Name: Weapon
-  Min: 0
-  Max: 20
-  Default: 10
-  Exists: 1
 --- !u!114 &-1824411296989829853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6132,23 +6097,6 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
---- !u!114 &-1518069111336115675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Crowd_Manager/CrowdMood
-  m_EditorClassIdentifier: 
-  Name: CrowdMood
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &-1494937935606856078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6184,6 +6132,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &-1457184157258246027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Female_Manager/Weight
+  m_EditorClassIdentifier: 
+  Name: Weight
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-1424224487897698189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6269,23 +6234,6 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
---- !u!114 &-1254874205412943590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Male_Manager/Weight
-  m_EditorClassIdentifier: 
-  Name: Weight
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 1
 --- !u!114 &-1248056606872487918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6449,23 +6397,6 @@ MonoBehaviour:
   Name: CrowdMood
   Min: 0
   Max: 1
-  Default: 0
-  Exists: 0
---- !u!114 &-1081034804813918445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Female_Manager/Weight
-  m_EditorClassIdentifier: 
-  Name: Weight
-  Min: 0
-  Max: 2
   Default: 0
   Exists: 1
 --- !u!114 &-1077885351134141557
@@ -6740,23 +6671,6 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
---- !u!114 &-747190379712658425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Male_Manager/WeaponWeight
-  m_EditorClassIdentifier: 
-  Name: WeaponWeight
-  Min: 0
-  Max: 2
-  Default: 1
-  Exists: 1
 --- !u!114 &-716576779108151988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6773,6 +6687,23 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+  Exists: 1
+--- !u!114 &-692842741179261811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Male_Manager/WeaponWeight
+  m_EditorClassIdentifier: 
+  Name: WeaponWeight
+  Min: 0
+  Max: 2
+  Default: 1
   Exists: 1
 --- !u!114 &-699551851851312534
 MonoBehaviour:
@@ -7207,23 +7138,6 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
---- !u!114 &-158155660514874142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Gameplay/lowHealth
-  m_EditorClassIdentifier: 
-  Name: lowHealth
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 0
 --- !u!114 &-150635973540349134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7543,23 +7457,6 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
---- !u!114 &275483055809670796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Attack_Manager/Weapon
-  m_EditorClassIdentifier: 
-  Name: Weapon
-  Min: 0
-  Max: 20
-  Default: 10
-  Exists: 1
 --- !u!114 &301931038880012043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7635,24 +7532,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 100
   Length: 6400
---- !u!114 &400836042972904358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Plugins/FMOD/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637250583457040856
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &403374084563044272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7688,23 +7567,6 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &433688853163855193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Announcer_Player_Defeated/WhatPlayer
-  m_EditorClassIdentifier: 
-  Name: WhatPlayer
-  Min: 0
-  Max: 4
-  Default: 0
-  Exists: 0
---- !u!114 &507270407506021006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7901,40 +7763,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 1065
---- !u!114 &723927133571904464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Player_Hurt_Male_Manager/Weapon
-  m_EditorClassIdentifier: 
-  Name: Weapon
-  Min: 0
-  Max: 20
-  Default: 10
-  Exists: 1
---- !u!114 &729375152279908288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Female_Manager/WeaponWeight
-  m_EditorClassIdentifier: 
-  Name: WeaponWeight
-  Min: 0
-  Max: 2
-  Default: 1
-  Exists: 1
 --- !u!114 &762056155251303516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8020,23 +7848,6 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
---- !u!114 &830784424695101827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Female_Manager/Weight
-  m_EditorClassIdentifier: 
-  Name: Weight
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 1
 --- !u!114 &943229868257995019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8140,23 +7951,6 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
---- !u!114 &1166331350992702607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Player_Hurt_Female_Manager/Weapon
-  m_EditorClassIdentifier: 
-  Name: Weapon
-  Min: 0
-  Max: 20
-  Default: 10
-  Exists: 1
 --- !u!114 &1169112254753661051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8232,23 +8026,6 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
---- !u!114 &1367955608666271668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Female_Manager/Weight
-  m_EditorClassIdentifier: 
-  Name: Weight
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 0
 --- !u!114 &1375319588622133358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8316,23 +8093,6 @@ MonoBehaviour:
   Min: 0
   Max: 20
   Default: 10
-  Exists: 1
---- !u!114 &1401712702755446203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Male_Manager/Weight
-  m_EditorClassIdentifier: 
-  Name: Weight
-  Min: 0
-  Max: 2
-  Default: 0
   Exists: 1
 --- !u!114 &1509334996033409940
 MonoBehaviour:
@@ -8814,6 +8574,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &2335008165807141734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Female_Manager/Weight
+  m_EditorClassIdentifier: 
+  Name: Weight
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &2352288633202568394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8848,6 +8625,40 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
+--- !u!114 &2389184974292348521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Male_Manager/WeaponWeight
+  m_EditorClassIdentifier: 
+  Name: WeaponWeight
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
+--- !u!114 &2397863067359885834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player_Hurt_Female_Manager/Weapon
+  m_EditorClassIdentifier: 
+  Name: Weapon
+  Min: 0
+  Max: 20
+  Default: 10
+  Exists: 1
 --- !u!114 &2417796182510946239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8995,23 +8806,6 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
---- !u!114 &2522927760146292017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Male_Manager/WeaponWeight
-  m_EditorClassIdentifier: 
-  Name: WeaponWeight
-  Min: 0
-  Max: 2
-  Default: 1
-  Exists: 1
 --- !u!114 &2580302487871458426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9149,7 +8943,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
-  Exists: 0
+  Exists: 1
 --- !u!114 &2775667656945778094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9286,23 +9080,6 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
---- !u!114 &2903322304234049314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Female_Manager/WeaponWeight
-  m_EditorClassIdentifier: 
-  Name: WeaponWeight
-  Min: 0
-  Max: 2
-  Default: 1
-  Exists: 1
 --- !u!114 &2926794874126869493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9354,12 +9131,12 @@ MonoBehaviour:
   Banks:
   - {fileID: 7770331808655434075}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 8709
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2991679237594482790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9486,24 +9263,6 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
---- !u!114 &3127167923925547767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Plugins/FMOD/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637250586703409354
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &3187968505869016667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9620,23 +9379,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 695
---- !u!114 &3399583787633487797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Female_Manager/WeaponWeight
-  m_EditorClassIdentifier: 
-  Name: WeaponWeight
-  Min: 0
-  Max: 2
-  Default: 1
-  Exists: 1
 --- !u!114 &3422798623488668716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9678,6 +9420,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 29069
+--- !u!114 &3442803308961515702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw/Weight
+  m_EditorClassIdentifier: 
+  Name: Weight
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &3492740973389333435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9899,7 +9658,7 @@ MonoBehaviour:
   Min: 0
   Max: 20
   Default: 10
-  Exists: 0
+  Exists: 1
 --- !u!114 &3779116815287948804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9917,6 +9676,24 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &3787153222004905197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Plugins/FMOD/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637250567159167870
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3802365615503987273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10109,23 +9886,6 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
---- !u!114 &4052762220104202055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Announcer_Player_Defeated/WhatPlayer
-  m_EditorClassIdentifier: 
-  Name: WhatPlayer
-  Min: 0
-  Max: 4
-  Default: 0
-  Exists: 1
 --- !u!114 &4087371786437535654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10201,23 +9961,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 380
---- !u!114 &4156544181454376329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Gameplay/lowHealth
-  m_EditorClassIdentifier: 
-  Name: lowHealth
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &4176369543728496470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10253,23 +9996,6 @@ MonoBehaviour:
   lastModified: 637234260280511327
   LoadResult: 0
   FileSizes: []
-  Exists: 1
---- !u!114 &4203670225277600830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Announcer_Player_Defeated/WhatPlayer
-  m_EditorClassIdentifier: 
-  Name: WhatPlayer
-  Min: 0
-  Max: 4
-  Default: 0
   Exists: 1
 --- !u!114 &4262588762609959046
 MonoBehaviour:
@@ -10669,23 +10395,6 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
---- !u!114 &4854057766755676722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Attack_Manager/Weapon
-  m_EditorClassIdentifier: 
-  Name: Weapon
-  Min: 0
-  Max: 20
-  Default: 10
-  Exists: 0
 --- !u!114 &4910045115470778127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10783,23 +10492,6 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 1
---- !u!114 &5015357588532882598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Male_Manager/WeaponWeight
-  m_EditorClassIdentifier: 
-  Name: WeaponWeight
-  Min: 0
-  Max: 2
-  Default: 1
-  Exists: 0
 --- !u!114 &5019770309769150256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11102,6 +10794,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &5501993021794691897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Male_Manager/Weight
+  m_EditorClassIdentifier: 
+  Name: Weight
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &5550763084025459677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11135,23 +10844,6 @@ MonoBehaviour:
   Min: 0
   Max: 20
   Default: 10
-  Exists: 1
---- !u!114 &5588873824741638433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Announcer_Player_Defeated/WhatPlayer
-  m_EditorClassIdentifier: 
-  Name: WhatPlayer
-  Min: 0
-  Max: 4
-  Default: 0
   Exists: 1
 --- !u!114 &5618640015835427530
 MonoBehaviour:
@@ -11307,6 +10999,23 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
+--- !u!114 &5773307399106332365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Crowd_Manager/CrowdMood
+  m_EditorClassIdentifier: 
+  Name: CrowdMood
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &5778190448236312568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11460,40 +11169,6 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 1
---- !u!114 &6058303645778111332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Male_Manager/Weight
-  m_EditorClassIdentifier: 
-  Name: Weight
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 1
---- !u!114 &6062131569973508764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Player_Hurt_Male_Manager/Weapon
-  m_EditorClassIdentifier: 
-  Name: Weapon
-  Min: 0
-  Max: 20
-  Default: 10
-  Exists: 0
 --- !u!114 &6068475389155944686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11578,23 +11253,6 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
-  Exists: 1
---- !u!114 &6126308736481083859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Gameplay/lowHealth
-  m_EditorClassIdentifier: 
-  Name: lowHealth
-  Min: 0
-  Max: 1
-  Default: 0
   Exists: 1
 --- !u!114 &6140256908029304268
 MonoBehaviour:
@@ -11681,23 +11339,6 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
---- !u!114 &6248892651377196636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Female_Manager/WeaponWeight
-  m_EditorClassIdentifier: 
-  Name: WeaponWeight
-  Min: 0
-  Max: 2
-  Default: 1
-  Exists: 0
 --- !u!114 &6269976246955455457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11715,23 +11356,6 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
---- !u!114 &6279980012661997434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw_Male_Manager/Weight
-  m_EditorClassIdentifier: 
-  Name: Weight
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 0
 --- !u!114 &6281755098890878191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12388,24 +12012,6 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 1
---- !u!114 &7028957566036579295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Plugins/FMOD/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637250598865794419
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &7038178660146458042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12526,23 +12132,6 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
---- !u!114 &7296851131950838829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Weapon_Throw/Weight
-  m_EditorClassIdentifier: 
-  Name: Weight
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 1
 --- !u!114 &7308166122191115336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12695,7 +12284,7 @@ MonoBehaviour:
   Min: 0
   Max: 20
   Default: 10
-  Exists: 0
+  Exists: 1
 --- !u!114 &7531532180021996725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13361,6 +12950,23 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 1
+--- !u!114 &8240098897492084694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw/Weight
+  m_EditorClassIdentifier: 
+  Name: Weight
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &8245333619342540874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13627,9 +13233,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 14388
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8533462902191254384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14087,3 +13693,21 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
+--- !u!114 &9184150682042682887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Plugins/FMOD/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637251426232649862
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1

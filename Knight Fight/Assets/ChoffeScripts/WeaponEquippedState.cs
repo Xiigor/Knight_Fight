@@ -20,10 +20,7 @@ public class WeaponEquippedState : WeaponIState
     }
     public void UpdateState()
     {
-        if (weapon.attackActive)
-        {
-            weapon.internalAttackTimer += Time.deltaTime;
-        }
+
     }
 
     public void ChangePhysics()
