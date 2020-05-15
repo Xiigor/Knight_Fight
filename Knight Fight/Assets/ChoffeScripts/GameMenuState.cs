@@ -13,12 +13,6 @@ public class GameMenuState : GameIState
 
     public void OnStateEnter()
     {
-        foreach (GameObject player in manager.readyPlayers)
-        {
-            player.GetComponent<PlayerScoreTracker>().ClearScore();
-        }
-        manager.DisablePlayers();
-        manager.weaponSpawnManager.DestroyWeapons();
         manager.audioManager.StartMenuMusic();
         manager.cameraScript.ChangeState(manager.cameraScript.arenaViewState);
         manager.menuCanvas.gameObject.SetActive(true);
@@ -37,7 +31,7 @@ public class GameMenuState : GameIState
         manager.inputManagerScript.trigger = false;
         manager.inputManagerScript.triggered = false;
         manager.RemovePlayersForCamera();
-
+        manager.weaponSpawnManager.DestroyWeapons();
     }
 
     public void UpdateState()

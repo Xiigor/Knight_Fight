@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8662415756438811022}
   - component: {fileID: 8662415756438811021}
   - component: {fileID: -7554770116098958437}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Throwable
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -112,12 +112,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
-  thisWepType: 2
+  thisWepType: 3
+  launchDir: 0
+  animationDuration: 1
   durability: 1
   damage: 15
   thrownDamage: 1
   thrownForce: 20
   throwAngle: 0.25
+  attackActive: 0
   environmentTag: Environment
   playerTag: Player
   projectileTag: WeaponProjectile
@@ -129,7 +132,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}
-  attackActive: 0
   attackThrowForce: 30
   durabilityDecrement: 1
 --- !u!114 &8662415756438811021

@@ -34,6 +34,8 @@ public class PlayerAttackState : PlayerIState
     public void ChangeState(PlayerIState newState)
     {
         player.animator.SetBool("Attack", false);
+        player.RightFist.SetActive(false);
+        player.LeftFist.SetActive(false);
         internalStateTimer = 0f;
         player.internalGCDTimer = 0f;
         player.StateChanger(newState);

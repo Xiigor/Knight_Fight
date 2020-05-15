@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponSwordPattern : WeaponBaseClass
+public class WeaponBananaTreePattern : WeaponBaseClass
 {
     public float durabilityDecrement;
+    public GameObject weaponAmmo;
+    public float timeDelayProjectile;
+
     private float currentDurability;
     private bool newAttack = false;
-    
+    private float timeDelayTimer = 0;
+
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
@@ -21,24 +25,35 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-        audioPlayer = GetComponent<AudioWeapon>();  
+        audioPlayer = GetComponent<AudioWeapon>();
     }
 
     private void Update()
     {
         currentState.UpdateState();
-        if(internalAttackTimer >= animationDuration && attackActive == true)
+        if (newAttack == true)
         {
             ChangeDurability(durabilityDecrement);
             newAttack = false;
+        }
+        timeDelayTimer += Time.deltaTime;
+        if (gameObject.GetComponent<Collider>().enabled == true && timeDelayTimer >= timeDelayProjectile && parentPlayer != null)
+        { 
+            GameObject temp = Instantiate(weaponAmmo, this.gameObject.transform.position, Quaternion.identity);
+            //temp.GetComponent<ProjectileFish>().parentObject = parentPlayer;
+            temp.GetComponent<ProjectileFish>().parentObject = parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos;
+            temp.GetComponent<ProjectileFish>().spellBook = this.gameObject;
+            timeDelayTimer = 0.1f;
         }
     }
 
     public override void Attack()
     {
-        attackActive = true;
-        internalAttackTimer = 0f;
-        col.enabled = true;
+        gameObject.GetComponent<Collider>().enabled = true;
+        newAttack = true;
+        parentPlayer.GetComponent<PlayerStatePattern>().animator.GetCurrentAnimatorStateInfo(0).IsName("2HSword Attack");
+        Debug.Log("attack");
+        timeDelayTimer = 0;
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 
@@ -59,6 +74,6 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void OnCollisionEnter(Collision collision)
     {
         currentState.HandleCollision(collision);
-        
+
     }
 }
