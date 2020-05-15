@@ -146,10 +146,15 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalAttackTimer += Time.deltaTime;
         }
-        if(weaponDestroyed == true)
+        if(weapon != null)
         {
-            RemoveWep();
+            if(weaponDestroyed == true)
+            {
+                RemoveWep();
+                weaponDestroyed = false;
+            }
         }
+
     }
     public int GetPlayerIndex()
     {

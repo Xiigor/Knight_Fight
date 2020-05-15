@@ -97,6 +97,7 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
   thisWepType: 1
+  launchDir: 0
   animationDuration: 1
   internalAttackTimer: 0
   attackActive: 0
@@ -117,7 +118,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}
-  durabilityDecrement: 0
+  durabilityDecrement: 5
 --- !u!54 &5901604308676461943
 Rigidbody:
   m_ObjectHideFlags: 0

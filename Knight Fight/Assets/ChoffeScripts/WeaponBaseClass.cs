@@ -12,7 +12,8 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponThrownState thrownState;
     public enum Weapontype{ oneHSword, twoHSword, spellbook, throwable };
     public Weapontype thisWepType;
-
+    public enum LaunchDir { forward, up, left, right };
+    public LaunchDir launchDir;
     public float animationDuration = 1f;
     [HideInInspector] public float internalAttackTimer = 0f;
     public bool attackActive = false;

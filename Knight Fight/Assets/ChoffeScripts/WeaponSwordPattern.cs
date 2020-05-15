@@ -44,6 +44,11 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void ChangeDurability(float durabilityDecrement)
     {
         currentDurability -= durabilityDecrement;
+        if (currentDurability <= 0)
+        {
+            parentPlayer.GetComponent<PlayerStatePattern>().weaponDestroyed = true;
+            Destroy(this.gameObject);
+        }
     }
     public override void ChangeState(WeaponIState newState)
     {
@@ -53,6 +58,10 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void OnCollisionEnter(Collision collision)
     {
         currentState.HandleCollision(collision);
+        if(collision.gameObject.tag == playerTag)
+        {
+            ChangeDurability(durabilityDecrement);
+        }
         
     }
 }

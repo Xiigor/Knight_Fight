@@ -124,8 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
-  audioPlayer: {fileID: 0}
+  audioPlayer: {fileID: -8796067586960004273}
   thisWepType: 2
+  launchDir: 0
   animationDuration: 0.85
   internalAttackTimer: 0
   attackActive: 0
@@ -149,6 +150,9 @@ MonoBehaviour:
   durabilityDecrement: 0
   weaponAmmo: {fileID: 1227325187089670069, guid: 98101021b9486b040ae02c335bb568f3,
     type: 3}
+  numberofAmmoToSpawn: 3
+  spawnOfsettDist: 1
+  vShape: 1.27
 --- !u!114 &-8796067586960004273
 MonoBehaviour:
   m_ObjectHideFlags: 0
