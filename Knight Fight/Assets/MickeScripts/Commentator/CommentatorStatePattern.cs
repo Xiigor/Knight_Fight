@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
+=======
+using FMODUnity;
+>>>>>>> Progg-Choffe
 
 public class CommentatorStatePattern : MonoBehaviour
 {
@@ -12,6 +16,11 @@ public class CommentatorStatePattern : MonoBehaviour
     [HideInInspector] public CommentatorSilentState silentState;
     [HideInInspector] public CommentatorSpeakingState speakingState;
 
+<<<<<<< HEAD
+=======
+    [HideInInspector] public AudioCom audioCom;
+
+>>>>>>> Progg-Choffe
     // **** COMMENTATOR GENERAL VARIABLES **** //
     [HideInInspector] public float hiddenCooldownTimer = 0.0f;
     [HideInInspector] public bool allowedToSpeak = false;
@@ -37,6 +46,10 @@ public class CommentatorStatePattern : MonoBehaviour
         introducingState = new CommentatorIntroducingState(this);
         silentState = new CommentatorSilentState(this);
         speakingState = new CommentatorSpeakingState(this);
+<<<<<<< HEAD
+=======
+        audioCom = GetComponent<AudioCom>();
+>>>>>>> Progg-Choffe
     }
 
     void Start()

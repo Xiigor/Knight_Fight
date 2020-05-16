@@ -20,6 +20,10 @@ public class CommentatorSpeakingState : CommentatorAbstractClass
         if (p_commentator.boredComment)
         {
             Debug.Log("ANYTHING GOING ON YO?!"); //REPLACE WITH AN ACTUAL AUDIO FUNCTION!!!
+<<<<<<< HEAD
+=======
+            p_commentator.audioCom.Bored();
+>>>>>>> Progg-Choffe
             p_commentator.boredComment = false;
             p_commentator.allowedToSpeak = false;
 
@@ -38,6 +42,10 @@ public class CommentatorSpeakingState : CommentatorAbstractClass
         if (p_commentator.victoryComment)
         {
             Debug.Log("VICTORY!!!"); //REPLACE WITH ACTUAL AUDIO FUNCTION!!!
+<<<<<<< HEAD
+=======
+            p_commentator.audioCom.OnWin();
+>>>>>>> Progg-Choffe
             p_commentator.victoryComment = false;
             p_commentator.allowedToSpeak = false;
 

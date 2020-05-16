@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerStatePattern : MonoBehaviour
 {
+    public Transform crowdParent;
     public PlayerIState currentState;
     [HideInInspector]public GameManager gameManager;
     public PlayerRagdollHandler ragdollHandler;
@@ -37,9 +39,15 @@ public class PlayerStatePattern : MonoBehaviour
     private float movementInputForDashDirThreshhold = 0.15f; 
     public float internalDashRayDist = 1.3f;
     public bool canDash = true;
-
+    [HideInInspector] public bool weaponDestroyed = false;
     public GameObject weapon;
+    
+    //Fists
+    public GameObject leftFist;
+    public GameObject rightFist;
+    public float fistDamage = 8f;
 
+    
     //tags
     public string weaponTag = "Weapon";
     public string weaponProjectileTag = "WeaponProjectile";
@@ -47,6 +55,7 @@ public class PlayerStatePattern : MonoBehaviour
     public string environmentTag = "Environment";
     public string playerTag = "Player";
     public string deadPlayerTag = "DeadPlayer";
+    public string fistTag = "Fist";
 
     //values
     [HideInInspector] public Vector2 moveDir;
@@ -100,6 +109,11 @@ public class PlayerStatePattern : MonoBehaviour
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
+    public void OnDisable()
+    {
+        transform.position = spawnPosition.transform.position;
+    }
+
     private void FixedUpdate()
     {
         Ray environmentRay = new Ray(transform.position, lastMove);
@@ -133,6 +147,11 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalAttackTimer += Time.deltaTime;
         }
+        if (weaponDestroyed == true)
+        {
+            RemoveWep();
+            weaponDestroyed = false;
+        }
     }
     public int GetPlayerIndex()
     {
@@ -144,6 +163,10 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if(currentState != deadState)
         {
+            if(collision.gameObject.tag == fistTag)
+            {
+                OnHit(fistDamage);
+            }
             if (collision.gameObject.tag == weaponProjectileTag)
             {
                 OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
@@ -176,11 +199,12 @@ public class PlayerStatePattern : MonoBehaviour
         if(weapon != null)
         {
             weapon.GetComponent<WeaponBaseClass>().Attack();
+            internalAttackTimer = 0f;
         }
         else
         {
-            //audioPlayer.PlayerUnarmedAttack(); --- detta får nog vänta lite
-            //do basic punch attack.
+            rightFist.SetActive(true);
+            leftFist.SetActive(true);
         }
     }
 
@@ -218,16 +242,7 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (internalAttackTimer >= attackCD)
                 {
-                    if (weapon != null)
-                    {
-                        Debug.Log("attack with wep");
-                        return true;
-                    }
-                    else
-                    {
-                        Debug.Log("nothing to attack with");
-                        return false;
-                    }
+                    return true;
                 }
                 else
                 {
@@ -334,6 +349,10 @@ public class PlayerStatePattern : MonoBehaviour
     public void ThrowItem()
     {
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
+        RemoveWep();
+    }
+    public void RemoveWep()
+    {
         weapon = null;
         animator.SetBool("1hSword", false);
         animator.SetBool("2hSword", false);
@@ -349,6 +368,7 @@ public class PlayerStatePattern : MonoBehaviour
         attackAnimDuration = weapon.GetComponent<WeaponBaseClass>().animationDuration;
         weapon.gameObject.layer = EquippedLayer; //läggs här för att inte ske före on collision
         WeaponTypeIdentifier();
+       // weapon.GetComponent<WeaponBaseClass>().OnPickup(this.gameObject);
     }
 
     public void OnHit(float damage)

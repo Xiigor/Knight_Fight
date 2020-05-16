@@ -20,6 +20,10 @@ public class CommentatorIntroducingState : CommentatorAbstractClass
         if (p_commentator.allowedToSpeak)
         {
             Debug.Log("HELLOOOO EVERYONE!!!"); //REPLACE THIS LINE WITH ACTUAL AUDIO FUNCTION! 
+<<<<<<< HEAD
+=======
+            p_commentator.audioCom.Intro();
+>>>>>>> Progg-Choffe
             p_commentator.allowedToSpeak = false;
         }
 
