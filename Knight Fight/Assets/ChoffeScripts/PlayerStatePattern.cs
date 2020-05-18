@@ -377,6 +377,7 @@ public class PlayerStatePattern : MonoBehaviour
     {
         commentatorScript.hiddenCooldownTimer = 0.0f;
         audioPlayer.PlayerHurting();
+        gameManager.DecrementCombinedHealth(damage);
         currentState.TakeDamage(damage);
     }
 
