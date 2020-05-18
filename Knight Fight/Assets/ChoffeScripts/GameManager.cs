@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
     public float combinedStartingHealth = 0;
     public float combinedCurrentHealth = 0;
 
+    [Header("Music Triggers in % of total player Health")]
+    public float firstHitTriggerValue = 1f;
+    public float halfHealthTriggerValue = 0.5f;
+    public float lowHealthTriggerValue = 0.25f;
+
     //player related components
     public GameObject player1;
     public GameObject player1Ready;
@@ -324,17 +329,17 @@ public class GameManager : MonoBehaviour
 
     public void TriggerMusicCheckpoints(float percentage)
     {
-        if(percentage < 1)
+        if(percentage < firstHitTriggerValue)
         {
             audioManager.gameplayModeMusic.setParameterByName("firstDamage", 1);
             Debug.Log("first hit");
         }
-        if(percentage <= 0.5)
+        if(percentage <= halfHealthTriggerValue)
         {
             audioManager.gameplayModeMusic.setParameterByName("halfHealth", 1);
             Debug.Log("halfhp");
         }
-        if(percentage <= 0.25)
+        if(percentage <= lowHealthTriggerValue)
         {
             audioManager.gameplayModeMusic.setParameterByName("lowHealth", 1);
             Debug.Log("lowhp");
