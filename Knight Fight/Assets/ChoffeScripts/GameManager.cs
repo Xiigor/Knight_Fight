@@ -24,9 +24,9 @@ public class GameManager : MonoBehaviour
     public GameObject cameraObject;
     public Canvas menuCanvas;
     public GameObject gameMenu;
-    [HideInInspector]public CameraStatePattern cameraScript;
+    [HideInInspector] public CameraStatePattern cameraScript;
     public GameObject inputManagerObject;
-    [HideInInspector]public PlayerInputManager inputManagerScript;
+    [HideInInspector] public PlayerInputManager inputManagerScript;
     [HideInInspector] public CommentatorStatePattern commentatorScript;
     public AudioMenu audioManager;
     public WeaponSpawnManager weaponSpawnManager;
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         gameplayState = new GameGameplayState(this);
         menuState = new GameMenuState(this);
         winState = new GameWinState(this);
-        
+
         cameraScript = cameraObject.GetComponent<CameraStatePattern>();
         inputManagerScript = inputManagerObject.GetComponent<PlayerInputManager>();
         audioManager = GetComponent<AudioMenu>();
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(gameState);
+        //Debug.Log(gameState);
         gameState.UpdateState();
         SetRoundsText();
     }
@@ -228,14 +228,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddPlayersForCamera()
+    public int AddPlayersForCamera()
     {
         cameraScript.objectsFollowedByCamera.Clear();
         foreach (GameObject player in readyPlayers)
         {
-            cameraScript.objectsFollowedByCamera.Add(player.transform);
+            cameraScript.objectsFollowedByCamera.Add(player);
         }
+
+        return cameraScript.objectsFollowedByCamera.Count;
     }
+
     public void RemovePlayersForCamera()
     {
         readyPlayers.Clear();
@@ -262,6 +265,7 @@ public class GameManager : MonoBehaviour
         {
             gameState = menuState;
             gameState.OnStateEnter();
+            commentatorScript.ChangeState(commentatorScript.inactiveState);
         }
     }
     public void CheckForRoundWinner()
@@ -286,7 +290,7 @@ public class GameManager : MonoBehaviour
         {
             gameState = winState;
             gameState.OnStateEnter();
-            commentatorScript.victoryComment = true;
+            commentatorScript.victoryTrigger = true;
         }
         else
         {

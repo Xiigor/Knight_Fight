@@ -12,6 +12,8 @@ public class CameraStatePattern : MonoBehaviour
     [HideInInspector] public CameraBattleViewState battleViewState;
     [HideInInspector] public CameraFollowPlayerState followPlayerState;
 
+    [HideInInspector] public PlayerStatePattern playerObject;
+
     // **** CAMERA GENERAL VARIABLES **** //
     [HideInInspector] public Camera gameCamera;
 
@@ -35,10 +37,14 @@ public class CameraStatePattern : MonoBehaviour
     public float cameraPositionY =  75.0f;      // Change as desired in Inspector
     public float cameraPositionZ = -30.0f;      // Goal is to give a full arena view
 
+    public GameObject centerPoint;
+
+    public float rotationSpeed = 2.5f;
+
     // **** BATTLE VIEW VARIABLES **** //
     [Header("Battle View")]
 
-    public List<Transform> objectsFollowedByCamera;
+    public List<GameObject> objectsFollowedByCamera;
 
     public Vector3 offsetFromObjects = new Vector3(0.0f, 30.0f, -17.5f);
 

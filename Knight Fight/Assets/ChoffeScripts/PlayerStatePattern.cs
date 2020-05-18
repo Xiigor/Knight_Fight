@@ -8,8 +8,11 @@ public class PlayerStatePattern : MonoBehaviour
 {
     public Transform crowdParent;
     public PlayerIState currentState;
-    [HideInInspector]public GameManager gameManager;
+    [HideInInspector] public GameManager gameManager;
+    [HideInInspector] public CameraStatePattern cameraScript;
+    [HideInInspector] public CommentatorStatePattern commentatorScript;
     public PlayerRagdollHandler ragdollHandler;
+    public GameObject cameraObject;
 
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerIdleState idleState;
@@ -65,7 +68,6 @@ public class PlayerStatePattern : MonoBehaviour
     public float maxHealth = 100f;
     public float health;
 
-
     [HideInInspector] public Collider col;
     [HideInInspector] private Rigidbody rb;
     [HideInInspector] public AudioPlayer audioPlayer;
@@ -77,7 +79,6 @@ public class PlayerStatePattern : MonoBehaviour
     public int EquippedLayer = 14;
     [SerializeField] private int playerIndex;
     public GameObject spawnPosition;
-
 
     private void Awake()
     {
@@ -91,9 +92,10 @@ public class PlayerStatePattern : MonoBehaviour
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        cameraScript = cameraObject.GetComponent<CameraStatePattern>();
+        commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         audioPlayer = GetComponent<AudioPlayer>();
         animator = GetComponent<Animator>();
-
     }
 
     public void OnEnable()
@@ -373,6 +375,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void OnHit(float damage)
     {
+        commentatorScript.hiddenCooldownTimer = 0.0f;
         audioPlayer.PlayerHurting();
         currentState.TakeDamage(damage);
     }
@@ -387,7 +390,6 @@ public class PlayerStatePattern : MonoBehaviour
     {
         ragdollHandler.SetRagdollInactive();
         animator.enabled = true;
-
     }
 
     public void Die()

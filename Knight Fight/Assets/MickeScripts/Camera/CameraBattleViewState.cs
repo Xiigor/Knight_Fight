@@ -53,16 +53,11 @@ public class CameraBattleViewState : CameraAbstractClass
 
     private Vector3 CalculateCenter()
     {
-        if (p_camera.objectsFollowedByCamera.Count == 1)
-        {
-            p_camera.ChangeState(p_camera.followPlayerState);
-        }
-
-        var arenaBounds = new Bounds(p_camera.objectsFollowedByCamera[0].position, Vector3.zero);
+        var arenaBounds = new Bounds(p_camera.objectsFollowedByCamera[0].transform.position, Vector3.zero);
 
         for (int i = 0; i < p_camera.objectsFollowedByCamera.Count; i++)
         {
-            arenaBounds.Encapsulate(p_camera.objectsFollowedByCamera[i].position);
+            arenaBounds.Encapsulate(p_camera.objectsFollowedByCamera[i].transform.position);
         }
 
         return arenaBounds.center;
@@ -70,11 +65,11 @@ public class CameraBattleViewState : CameraAbstractClass
 
     private float GreatestPlayerDistance()
     {
-        var arenaBounds = new Bounds(p_camera.objectsFollowedByCamera[0].position, Vector3.zero);
+        var arenaBounds = new Bounds(p_camera.objectsFollowedByCamera[0].transform.position, Vector3.zero);
 
         for (int i = 0; i < p_camera.objectsFollowedByCamera.Count; i++)
         {
-            arenaBounds.Encapsulate(p_camera.objectsFollowedByCamera[i].position);
+            arenaBounds.Encapsulate(p_camera.objectsFollowedByCamera[i].transform.position);
         }
 
         return arenaBounds.size.x + arenaBounds.size.z;
