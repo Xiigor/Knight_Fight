@@ -12,26 +12,36 @@ public class PlayerAttackState : PlayerIState
         player = statePatternPlayer;
     }
 
+    public void OnStateEnter()
+    {
+        player.animator.SetBool("Attack", true);
+        player.Attack();
+    }
+
+
     public void UpdateState()
     {
-        player.Attack();
+        player.ChangeDirection();
+        
         if (internalStateTimer >= player.attackAnimDuration)
         {
-            ChangeState(player.basicState);
+            
+            player.RunOrIdleDecider();
         }
         else
             internalStateTimer += Time.deltaTime;
         
     }
+
     public void ChangeState(PlayerIState newState)
     {
+        player.animator.SetBool("Attack", false);
+        player.rightFist.SetActive(false);
+        player.leftFist.SetActive(false);
         internalStateTimer = 0f;
-        if (newState == player.basicState || newState == player.idleState)
-        {
-            player.currentState = newState;
-        }
-        else
-            Debug.Log("GCD Trigger");
+        player.internalGCDTimer = 0f;
+        player.internalAttackTimer = 0f;
+        player.StateChanger(newState);
     }
 
     public void TakeDamage(float damage)
@@ -42,4 +52,6 @@ public class PlayerAttackState : PlayerIState
             player.Die();
         }
     }
+
+
 }

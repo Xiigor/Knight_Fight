@@ -9,13 +9,14 @@ public class WeaponSpearPattern : WeaponBaseClass
     public Vector3 offestAttackZonePos;
     // Start is called before the first frame update
     private float currentDurability;
+    Weapontype thisWeaponType;
 
     private void Awake()
     {
         unequippedState = new WeaponUnequippedState(this);
         equippedState = new WeaponEquippedState(this);
         thrownState = new WeaponThrownState(this);
-        
+        thisWeaponType = Weapontype.twoHSword;
     }
     
 
@@ -70,14 +71,4 @@ public class WeaponSpearPattern : WeaponBaseClass
     {
         currentState.HandleCollision(collision);
     }
-   
-
-    ////visuellt visa träffzonen
-    //void OnDrawGizmos()
-    //{
-    //    Vector3 Pos = this.gameObject.transform.TransformPoint(offestAttackZonePos);
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(Pos, attackZone);
-
-    //}
 }

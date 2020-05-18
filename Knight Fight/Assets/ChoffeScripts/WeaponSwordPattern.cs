@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WeaponSwordPattern : WeaponBaseClass
 {
-    public string attackAnimName;
     public float durabilityDecrement;
     private float currentDurability;
+    private bool newAttack = false;
     
     private void Awake()
     {
@@ -17,7 +17,7 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     private void Start()
     {
-        currentState = stateChangeObserver = unequippedState;
+        currentState = unequippedState;
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
@@ -27,18 +27,30 @@ public class WeaponSwordPattern : WeaponBaseClass
     private void Update()
     {
         currentState.UpdateState();
+        /*if (newAttack == true)
+        {
+            ChangeDurability(durabilityDecrement);
+            newAttack = false;
+        }*/
     }
 
     public override void Attack()
     {
         gameObject.GetComponent<Collider>().enabled = true;
-        anim = parentPlayer.GetComponent<Animator>();    //Hämta parent animator Så kan kolla om färdig
+        newAttack = true;
+        parentPlayer.GetComponent<PlayerStatePattern>().animator.GetCurrentAnimatorStateInfo(0).IsName("2HSword Attack");
+        Debug.Log("attack");
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 
     public override void ChangeDurability(float durabilityDecrement)
     {
         currentDurability -= durabilityDecrement;
+        if (currentDurability <= 0)
+        {
+            parentPlayer.GetComponent<PlayerStatePattern>().weaponDestroyed = true;
+            Destroy(this.gameObject);
+        }
     }
     public override void ChangeState(WeaponIState newState)
     {
@@ -48,6 +60,11 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void OnCollisionEnter(Collision collision)
     {
         currentState.HandleCollision(collision);
+        if(collision.gameObject.tag == playerTag && newAttack == true)
+        {
+            ChangeDurability(durabilityDecrement);
+            newAttack = false;
+        }
         
     }
 }
