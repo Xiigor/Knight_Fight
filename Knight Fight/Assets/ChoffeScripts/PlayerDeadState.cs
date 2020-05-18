@@ -22,7 +22,7 @@ public class PlayerDeadState : PlayerIState
         float closestDistance = Mathf.Infinity;
         GameObject closestCrowd = null;
 
-        if (player.cameraScript.objectsFollowedByCamera.Count >= 1)
+        if (player.cameraScript.objectsFollowedByCamera.Count > 1)
         {
             player.commentatorScript.deathTrigger = true;
         }

@@ -228,7 +228,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int AddPlayersForCamera()
+    public void AddPlayersForCamera()
     {
         cameraScript.objectsFollowedByCamera.Clear();
         foreach (GameObject player in readyPlayers)
@@ -236,7 +236,7 @@ public class GameManager : MonoBehaviour
             cameraScript.objectsFollowedByCamera.Add(player);
         }
 
-        return cameraScript.objectsFollowedByCamera.Count;
+        //return cameraScript.objectsFollowedByCamera.Count;
     }
 
     public void RemovePlayersForCamera()

@@ -7627,9 +7627,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b9b389344e7c34ba2adb4b5e6f5689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onVictory: event:/On_Victory
-  bored: event:/On_Inactivity
-  intro: event:/On_Start
+  onVictory: event:/Commentators/On_Victory
+  bored: event:/Commentators/On_Inactivity
+  intro: event:/Commentators/On_Start
+  death: event:/Commentators/On_Death
 --- !u!1 &969376067
 GameObject:
   m_ObjectHideFlags: 0
@@ -11284,7 +11285,9 @@ MonoBehaviour:
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params: []
+  Params:
+  - Name: CrowdMood
+    Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 50

@@ -17,11 +17,16 @@ public class AudioCom : MonoBehaviour
     public string intro;
     public FMOD.Studio.EventInstance introduction;
 
+    [EventRef]
+    public string death;
+    public FMOD.Studio.EventInstance dead;
+
     public void InterruptSpeech()
     {
         onWin.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         boredDialogue.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         introduction.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        dead.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
 
@@ -44,5 +49,12 @@ public class AudioCom : MonoBehaviour
         InterruptSpeech();
         introduction = RuntimeManager.CreateInstance(intro);
         introduction.start();
+    }
+
+    public void Dead()
+    {
+        InterruptSpeech();
+        dead = RuntimeManager.CreateInstance(death);
+        dead.start();
     }
 }

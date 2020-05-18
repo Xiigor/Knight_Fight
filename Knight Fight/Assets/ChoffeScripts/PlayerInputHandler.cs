@@ -50,7 +50,6 @@ public class PlayerInputHandler : MonoBehaviour
             if (context.performed)
             {
                 playerStatePattern.StateChanger(playerStatePattern.throwState);
-                commentatorScript.hiddenCooldownTimer = 0.0f;
             }    
         }
         

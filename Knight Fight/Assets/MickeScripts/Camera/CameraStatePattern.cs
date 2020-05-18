@@ -79,8 +79,6 @@ public class CameraStatePattern : MonoBehaviour
     void LateUpdate()
     {
         currentState.Execute();
-
-        DevStateChange();
     }
 
     public void ChangeState(CameraAbstractClass newState)
@@ -89,28 +87,10 @@ public class CameraStatePattern : MonoBehaviour
         {
             currentState.Exit();
         }
-
+        Debug.Log("does this happen?" + newState.ToString());
         currentState = newState;
 
         currentState.Enter();
-    }
-
-    private void DevStateChange()  // FUNCTION ONLY USED FOR TESTING, NOT TO BE IMPLEMENTED IN THE GAME
-    {
-        if(Input.GetKey("m"))
-        {
-            ChangeState(arenaViewState);
-        }
-
-        if(Input.GetKey("b"))
-        {
-            ChangeState(battleViewState);
-        }
-
-        if(Input.GetKey("f"))
-        {
-            ChangeState(followPlayerState);
-        }
     }
 
     public void ViewChangeAcceleration()
