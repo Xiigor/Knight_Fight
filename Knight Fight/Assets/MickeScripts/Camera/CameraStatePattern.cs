@@ -12,6 +12,8 @@ public class CameraStatePattern : MonoBehaviour
     [HideInInspector] public CameraBattleViewState battleViewState;
     [HideInInspector] public CameraFollowPlayerState followPlayerState;
 
+    [HideInInspector] public PlayerStatePattern playerObject;
+
     // **** CAMERA GENERAL VARIABLES **** //
     [HideInInspector] public Camera gameCamera;
 
@@ -35,10 +37,14 @@ public class CameraStatePattern : MonoBehaviour
     public float cameraPositionY =  75.0f;      // Change as desired in Inspector
     public float cameraPositionZ = -30.0f;      // Goal is to give a full arena view
 
+    public GameObject centerPoint;
+
+    public float rotationSpeed = 2.5f;
+
     // **** BATTLE VIEW VARIABLES **** //
     [Header("Battle View")]
 
-    public List<Transform> objectsFollowedByCamera;
+    public List<GameObject> objectsFollowedByCamera;
 
     public Vector3 offsetFromObjects = new Vector3(0.0f, 30.0f, -17.5f);
 
@@ -73,8 +79,6 @@ public class CameraStatePattern : MonoBehaviour
     void LateUpdate()
     {
         currentState.Execute();
-
-        DevStateChange();
     }
 
     public void ChangeState(CameraAbstractClass newState)
@@ -83,28 +87,10 @@ public class CameraStatePattern : MonoBehaviour
         {
             currentState.Exit();
         }
-
+        Debug.Log("does this happen?" + newState.ToString());
         currentState = newState;
 
         currentState.Enter();
-    }
-
-    private void DevStateChange()  // FUNCTION ONLY USED FOR TESTING, NOT TO BE IMPLEMENTED IN THE GAME
-    {
-        if(Input.GetKey("m"))
-        {
-            ChangeState(arenaViewState);
-        }
-
-        if(Input.GetKey("b"))
-        {
-            ChangeState(battleViewState);
-        }
-
-        if(Input.GetKey("f"))
-        {
-            ChangeState(followPlayerState);
-        }
     }
 
     public void ViewChangeAcceleration()

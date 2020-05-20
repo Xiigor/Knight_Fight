@@ -19,8 +19,10 @@ public class GameGameplayState : GameIState
     public void OnStateEnter()
     {
         //disable players here and enable again after countdown == easy fix for many rounds
+        manager.ResetMusicParams();
         manager.DisablePlayers();
         manager.AddPlayersForCamera();
+        manager.crowdMoodSetter.SetMood(1);
         manager.cameraScript.ChangeState(manager.cameraScript.battleViewState);
         manager.audioManager.StartGameplayMusic();
         manager.commentatorScript.ChangeState((manager.commentatorScript.introducingState));
@@ -36,6 +38,7 @@ public class GameGameplayState : GameIState
 
     public void UpdateState()
     {
+        manager.TriggerMusicCheckpoints(manager.GetGlobalHealthPercentage());
         if (cm.countdownIsDone == true)
         {
             manager.EnablePlayers();
