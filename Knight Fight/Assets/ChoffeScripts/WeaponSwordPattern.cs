@@ -37,9 +37,12 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void Attack()
     {
         gameObject.GetComponent<Collider>().enabled = true;
+        if(attackVfx != null)
+        {
+            attackVfx.SetActive(true);
+        }
         newAttack = true;
         parentPlayer.GetComponent<PlayerStatePattern>().animator.GetCurrentAnimatorStateInfo(0).IsName("2HSword Attack");
-        Debug.Log("attack");
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 

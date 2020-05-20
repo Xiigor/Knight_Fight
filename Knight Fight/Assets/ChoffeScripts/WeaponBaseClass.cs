@@ -10,6 +10,8 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
+    public GameObject attackVfx = null;
+    public GameObject hitVfx = null;
     public enum Weapontype{ oneHSword, twoHSword, spellbook, throwable };
     public Weapontype thisWepType;
     public enum LaunchDir { forward, up, left, right };
