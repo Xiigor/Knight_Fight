@@ -46,25 +46,25 @@ public class ProjectileFlyingState : ProjectileIState
     public void LaunchFish()
     {
         //forward
-        if (0 == (int)projectile.spellBook.GetComponent<WeaponThrowFishPattern>().launchDir)
+        if (0 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
         {
             projectile.rb.velocity = projectile.parentObject.transform.forward * projectile.ProjectileSpeed;
             velocityApplied = true;
         }
         //up
-        else if(1 == (int)projectile.spellBook.GetComponent<WeaponThrowFishPattern>().launchDir)
+        else if(1 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
         {
             projectile.rb.velocity = projectile.parentObject.transform.up * projectile.ProjectileSpeed;
             velocityApplied = true;
         }
         //left
-        else if (2 == (int)projectile.spellBook.GetComponent<WeaponThrowFishPattern>().launchDir)
+        else if (2 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
         {
             projectile.rb.velocity = projectile.parentObject.transform.right*-1 * projectile.ProjectileSpeed;
             velocityApplied = true;
         }
         //right
-        else if (3 == (int)projectile.spellBook.GetComponent<WeaponThrowFishPattern>().launchDir)
+        else if (3 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
         {
             projectile.rb.velocity = projectile.parentObject.transform.right * projectile.ProjectileSpeed;
             velocityApplied = true;

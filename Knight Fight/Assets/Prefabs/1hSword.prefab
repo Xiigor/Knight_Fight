@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8437895737867728456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 2, y: 1.5, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
   thisWepType: 1
+  launchDir: 0
   animationDuration: 1
   internalAttackTimer: 0
   attackActive: 0
@@ -111,12 +112,13 @@ MonoBehaviour:
   weaponTag: Weapon
   UnequippedLayer: 12
   EquippedLayer: 13
-  heldPosition: {x: 0.107, y: 0.052, z: -0.443}
-  heldRotation: {x: -89.14301, y: 0.002, z: -9.665001}
+  heldPosition: {x: 0.111, y: 0.101, z: -0.622}
+  heldRotation: {x: -85.03001, y: 12.587, z: -23.163}
+  scale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}
-  durabilityDecrement: 0
+  durabilityDecrement: 5
 --- !u!54 &5901604308676461943
 Rigidbody:
   m_ObjectHideFlags: 0

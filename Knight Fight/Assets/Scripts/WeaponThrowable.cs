@@ -37,10 +37,10 @@ public class WeaponThrowable : WeaponBaseClass
      private void Update()
      {
         currentState.UpdateState();
-        if (rb.velocity == Vector3.zero)
-        {
-            ChangeDurability(durabilityDecrement);
-        }
+        //if (rb.velocity == Vector3.zero)
+        //{
+        //    ChangeDurability(durabilityDecrement);
+        //}
      }
 
      public override void Attack()
