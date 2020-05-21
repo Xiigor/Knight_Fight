@@ -37,7 +37,7 @@ public class WeaponBananaTreePattern : WeaponBaseClass
     {
         currentState.UpdateState();
         timeDelayTimer += Time.deltaTime;
-        if (gameObject.GetComponent<Collider>().enabled == true && timeDelayTimer >= timeDelayProjectile && parentPlayer != null)
+        if (gameObject.GetComponent<Collider>().enabled == true && timeDelayTimer >= timeDelayProjectile && currentState == equippedState)
         { 
             GameObject temp = Instantiate(weaponAmmo, projectileSpawnPoint.transform.position, Quaternion.identity);
             temp.GetComponent<ProjectileBanana>().parentObject = this.gameObject;

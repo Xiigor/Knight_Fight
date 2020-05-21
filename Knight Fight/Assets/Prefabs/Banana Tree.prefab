@@ -29,10 +29,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972219624891994246}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.81, y: 12.23, z: -6.7303243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 15}
-  m_Children: []
+  m_Children:
+  - {fileID: 1219237823848170909}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -113,15 +114,18 @@ MonoBehaviour:
   weaponTag: Weapon
   UnequippedLayer: 12
   EquippedLayer: 13
-  heldPosition: {x: 0, y: 0, z: 0}
-  heldRotation: {x: 0, y: 0, z: 0}
+  heldPosition: {x: 0.125, y: 0.148, z: -1.168}
+  heldRotation: {x: -68.635, y: 83.494, z: -82.39301}
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}
-  durabilityDecrement: 0
+  durabilityDecrement: 2
   weaponAmmo: {fileID: 4919378358298003015, guid: 23d0a37fe18f40849874064a95206a90,
     type: 3}
-  timeDelayProjectile: 2
+  projectileSpawnPoint: {fileID: 3704923970173398912}
+  timeDelayProjectile: 0.1
+  upSpeedProjectile: 0.5
+  swordVel: {x: 0, y: 0, z: 0}
 --- !u!64 &3074380982248475247
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -170,3 +174,33 @@ MonoBehaviour:
   ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
   weaponPickup: event:/Weapons/Weapon_Pickup_Generic
   weaponBreak: 
+--- !u!1 &3704923970173398912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1219237823848170909}
+  m_Layer: 0
+  m_Name: banana spawn location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1219237823848170909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3704923970173398912}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0039, y: 0.1059, z: -0.0096}
+  m_LocalScale: {x: 0.06666667, y: 0.06666667, z: 0.06666667}
+  m_Children: []
+  m_Father: {fileID: 4261915160002634389}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
