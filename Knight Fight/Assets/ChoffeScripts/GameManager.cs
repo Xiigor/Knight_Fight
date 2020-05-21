@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public CrowdMoodSetter crowdMoodSetter;
     public AudioMenu audioManager;
     public WeaponSpawnManager weaponSpawnManager;
+    public CounterManager counterManager;
 
     //rounds
     public int amountOfRounds = 1;
@@ -49,7 +50,9 @@ public class GameManager : MonoBehaviour
     [Header("Music Triggers in % of total player Health")]
     public float firstHitTriggerValue = 1f;
     public float halfHealthTriggerValue = 0.5f;
-    public float lowHealthTriggerValue = 0.25f;
+    public float lowHealthTriggerValue = 25f;
+
+    public bool lowHPPlayer = false;
 
     //player related components
     public GameObject player1;
@@ -82,6 +85,7 @@ public class GameManager : MonoBehaviour
         audioManager = GetComponent<AudioMenu>();
         commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
+        counterManager = GetComponent<CounterManager>();
 
         //inputDevices = new List<Gamepad>();
         inputDevices = new List<InputDevice>();
@@ -329,21 +333,47 @@ public class GameManager : MonoBehaviour
 
     public void TriggerMusicCheckpoints(float percentage)
     {
-        if(percentage < firstHitTriggerValue)
+        if (counterManager.countdownIsDone)
         {
-            audioManager.gameplayModeMusic.setParameterByName("firstDamage", 1);
-            Debug.Log("first hit");
+            if(percentage < firstHitTriggerValue)
+            {
+                audioManager.gameplayModeMusic.setParameterByName("firstDamage", 1);
+                Debug.Log("first hit");
+            }
+            if(percentage <= halfHealthTriggerValue)
+            {
+                audioManager.gameplayModeMusic.setParameterByName("halfHealth", 1);
+                Debug.Log("halfhp");
+            }
         }
-        if(percentage <= halfHealthTriggerValue)
+    }
+
+    public void SetLowHealthMusic()
+    {
+        if (counterManager.countdownIsDone)
         {
-            audioManager.gameplayModeMusic.setParameterByName("halfHealth", 1);
-            Debug.Log("halfhp");
+            foreach (GameObject player in alivePlayers)
+            {
+                if (player.GetComponent<PlayerStatePattern>().health <=lowHealthTriggerValue)
+                {
+                    lowHPPlayer = true;
+                    break;
+                }
+                else
+                {
+                    lowHPPlayer = false;
+                }
+            }
+            if (lowHPPlayer == true)
+            {
+               audioManager.gameplayModeMusic.setParameterByName("lowHealth", 1);
+            }
+            else
+            {
+               audioManager.gameplayModeMusic.setParameterByName("lowHealth", 0);
+            }
         }
-        if(percentage <= lowHealthTriggerValue)
-        {
-            audioManager.gameplayModeMusic.setParameterByName("lowHealth", 1);
-            Debug.Log("lowhp");
-        }
+
     }
 
     public void ResetMusicParams()
