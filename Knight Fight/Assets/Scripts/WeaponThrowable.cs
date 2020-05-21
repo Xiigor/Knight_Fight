@@ -6,6 +6,7 @@ public class WeaponThrowable : WeaponBaseClass
 {
      public float attackThrowForce;  
      public float durabilityDecrement;
+    public float durabilityHitPlayer;
      private float currentDurability;
      
 
@@ -60,17 +61,20 @@ public class WeaponThrowable : WeaponBaseClass
         parentPlayer.GetComponent<PlayerStatePattern>().ThrowItem();
      }
 
-     //Antal stuttsar innan den gårsönder eller lägger sig på marken och blir som fiskarna
+     
      public override void ChangeDurability(float durabilityDecrement)
      {
-         currentDurability -= durabilityDecrement;
-         if (currentDurability <= 0)
-         {
-            rb.useGravity = true;
-            //Ta bort som child på spelaren innan destroy
-            //Destroy(this.gameObject);
+        currentDurability -= durabilityDecrement;
+        if (currentDurability <= 0)
+        {
+            float timedelay = 0;
+            while (timedelay <= 30)
+            {
+                timedelay += Time.deltaTime;
+            }
+            Destroy(this.gameObject);
         }
-     }
+    }
 
      public override void ChangeState(WeaponIState newState)
      {
@@ -80,6 +84,15 @@ public class WeaponThrowable : WeaponBaseClass
 
      public override void OnCollisionEnter(Collision collision)
      {
-         currentState.HandleCollision(collision);
-     }
+        currentState.HandleCollision(collision);
+        /*if (collision.gameObject.tag == environmentTag && currentState == thrownState)
+        {
+            ChangeDurability(durabilityDecrement);
+          
+        }*/
+        if(collision.gameObject.tag == playerTag && currentState == thrownState)
+        {
+            ChangeDurability(durabilityHitPlayer);
+        }
+    }
 }
