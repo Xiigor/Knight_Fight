@@ -49,12 +49,13 @@ public class WeaponThrowable : WeaponBaseClass
         col.material.bounciness = 1;
         col.material.dynamicFriction = 0;
         col.material.staticFriction = 0;
+        transform.Rotate(90,0,0);
         rb.angularDrag = 0;
         gameObject.tag = "WeaponProjectile";
         rb.isKinematic = false;
         col.enabled = true;
         rb.useGravity = false;
-        rb.constraints = RigidbodyConstraints.FreezePositionY;
+        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         rb.velocity = parentPlayer.transform.forward * attackThrowForce;
         RemoveParentPlayer();
         parentPlayer.GetComponent<PlayerStatePattern>().ThrowItem();

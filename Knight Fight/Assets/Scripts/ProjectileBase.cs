@@ -8,6 +8,7 @@ abstract public class ProjectileBase : MonoBehaviour
     public float damage;
     //public PlayerStatePattern parentObject = null;
     public GameObject parentObject = null;
+    public GameObject player = null;
     public GameObject spellBook;
     public enum ProjectileType { SpellBookProjectile, TreeProjectile };
     public ProjectileType projectileType;

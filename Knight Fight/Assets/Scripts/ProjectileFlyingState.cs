@@ -40,6 +40,7 @@ public class ProjectileFlyingState : ProjectileIState
     {
         velocityApplied = false;
         LaunchFish();
+        Physics.IgnoreLayerCollision(projectile.gameObject.layer, projectile.player.layer, true);
         Debug.Log("FlyingState");
     }
 
