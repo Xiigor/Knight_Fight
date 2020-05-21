@@ -55,7 +55,8 @@ public class WeaponThrowable : WeaponBaseClass
         rb.isKinematic = false;
         col.enabled = true;
         rb.useGravity = false;
-        rb.constraints = RigidbodyConstraints.FreezePositionY;
+        transform.rotation = Quaternion.Euler(90,0,0);
+        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX| RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
         rb.velocity = parentPlayer.transform.forward * attackThrowForce;
         RemoveParentPlayer();
         parentPlayer.GetComponent<PlayerStatePattern>().ThrowItem();
