@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Player_Hurt_Female_Manager/Weapon
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Weapon
   Min: 0
   Max: 20
@@ -35,6 +36,21 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &-9208182001449433974
+=======
+  Path: event:/Weapons/Weapon_FishBook_Attack
+  guid: 8903c274ae9ff3418971d0d75e81173c
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 900
+--- !u!114 &-8859197668298798163
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,12 +62,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Weapon_Throw_Male_Manager/Weight
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Weight
   Min: 0
   Max: 2
   Default: 0
   Exists: 0
 --- !u!114 &-9190353098403080336
+=======
+  Path: event:/BGM/Menu
+  guid: 07bda44d08ed2145a0fcc65012f9a579
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 89666
+--- !u!114 &-8722644547527373243
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Crowd_Manager/CrowdMood
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: CrowdMood
   Min: 0
   Max: 1
@@ -188,6 +221,22 @@ MonoBehaviour:
   Default: 0
   Exists: 1
 --- !u!114 &-9037405747805408876
+=======
+  Path: event:/Ambience/Crowd_Manager
+  guid: 93d4f441d000944da1843f061d119be3
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6654429475760534411}
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 20224
+--- !u!114 &-8099685939386902466
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Crowd_Manager/CrowdMood
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: CrowdMood
   Min: 0
   Max: 1
@@ -223,6 +273,22 @@ MonoBehaviour:
   FileSizes: []
   Exists: 1
 --- !u!114 &-9004361916938944970
+=======
+  Path: event:/Implementation/Player_Hurt_Male_Manager
+  guid: b9204b05cb757543b47178dd0c00870b
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8662851992315592710}
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 15
+--- !u!114 &-8004755586286389481
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -298,6 +364,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+<<<<<<< HEAD
   Exists: 1
 --- !u!114 &-8819960911904264596
 MonoBehaviour:
@@ -340,6 +407,10 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &-8799816462228435285
+=======
+  Exists: 0
+--- !u!114 &-7658333434814700565
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -388,7 +459,12 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Hit_Ground(Actual)
   guid: ba8e00d860f0394db0657f432118685b
   Banks:
+<<<<<<< HEAD
   - {fileID: 7062303870956493957}
+=======
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+>>>>>>> parent of 90fab2c... Reverted Merge
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -425,9 +501,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: 
   guid: 63ace7c6526c3c4e9c9dabc30f5f1165
   Banks: []
+=======
+  Path: event:/Weapons/Weapon_Excaliboulder_Attack
+  guid: 8e57da15a46868479ffd2c4007560807
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+>>>>>>> parent of 90fab2c... Reverted Merge
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -9876,6 +9960,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Hit_Ground
   guid: c8dd64ca2db185438dd7726835d4c44b
   Banks:
+<<<<<<< HEAD
   - {fileID: 7062303870956493957}
   IsStream: 0
   Is3D: 1
@@ -17293,6 +17378,10 @@ MonoBehaviour:
   guid: b72849a99e441540af51ed8d66b2ad14
   Banks:
   - {fileID: -7371532478748638070}
+=======
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+>>>>>>> parent of 90fab2c... Reverted Merge
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -17386,6 +17475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: Assets/Plugins/FMOD/Desktop/Desktop/Master.bank
   SubDir: 
   lastModified: 637237555704216164
@@ -17393,6 +17483,21 @@ MonoBehaviour:
   FileSizes: []
   Exists: 0
 --- !u!114 &6619581279267374328
+=======
+  Path: event:/Weapons/Weapon_Throw_Heavy_Female
+  guid: 3685ad1888f98c4992403ec4eab4c023
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 1008
+--- !u!114 &-6527076481636765365
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17543,7 +17648,12 @@ MonoBehaviour:
   Path: event:/Player/Player_Hurt_Generic_Male
   guid: 6c5ce81482c40547bb0071e3cf64ca84
   Banks:
+<<<<<<< HEAD
   - {fileID: -7371532478748638070}
+=======
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+>>>>>>> parent of 90fab2c... Reverted Merge
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -17620,6 +17730,7 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &6858919548437140361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17655,6 +17766,9 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &6908711796540634411
+=======
+--- !u!114 &-4850765146677340191
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17807,7 +17921,12 @@ MonoBehaviour:
   Path: event:/Player/Player_Hurt_Excaliboulder
   guid: a7166ac2db88e84697d3c1d987e2de99
   Banks:
+<<<<<<< HEAD
   - {fileID: 7062303870956493957}
+=======
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+>>>>>>> parent of 90fab2c... Reverted Merge
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -17827,12 +17946,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Weapon_Throw/Weight
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Weight
   Min: 0
   Max: 2
   Default: 0
   Exists: 1
 --- !u!114 &7175130963406859285
+=======
+  Path: event:/Weapons/Weapon_Pickup_Generic
+  guid: 83a6a4b54bfe014094df3d6a102bfec1
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 2000
+--- !u!114 &-4257658309050525195
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17844,12 +17979,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Crowd_Manager/CrowdMood
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: CrowdMood
   Min: 0
   Max: 2
   Default: 0
   Exists: 1
 --- !u!114 &7185772830639888128
+=======
+  Path: event:/Player/PlayerWalk
+  guid: 652f2e31f6400047890594076d4a95a4
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 440
+--- !u!114 &-4109973504269620297
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17861,12 +18012,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Weapon_Throw/Weight
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Weight
   Min: 0
   Max: 2
   Default: 0
   Exists: 0
 --- !u!114 &7220633742463778770
+=======
+  Path: event:/Ui/Ui_Menu_Select
+  guid: 531faec631928c4fb635ef31b7ecdf7d
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1420
+--- !u!114 &-4098898594156704980
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17923,6 +18090,7 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &7296851131950838829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17941,6 +18109,9 @@ MonoBehaviour:
   Default: 0
   Exists: 1
 --- !u!114 &7299077566037340028
+=======
+--- !u!114 &-3874158932062245953
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17952,6 +18123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Player_Hurt_Female_Manager/Weapon
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Weapon
   Min: 0
   Max: 20
@@ -17975,6 +18147,21 @@ MonoBehaviour:
   Default: 1
   Exists: 1
 --- !u!114 &7308235518748983131
+=======
+  Path: event:/Player/Player_Hurt_Generic_Male
+  guid: 6c5ce81482c40547bb0071e3cf64ca84
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 510
+--- !u!114 &-3777011514517612703
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17991,6 +18178,7 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &7336785368038898931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18009,6 +18197,9 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &7383080665822702295
+=======
+--- !u!114 &-3688956764558511429
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18020,12 +18211,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Gameplay/lowHealth
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: lowHealth
   Min: 0
   Max: 1
   Default: 0
   Exists: 0
 --- !u!114 &7389667914778348957
+=======
+  Path: event:/Ui/Announcer/Announcer_Match_End
+  guid: 8a9b9534f18a694796085282c9fa3d10
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4362
+--- !u!114 &-3563357297213565804
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18092,6 +18299,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+<<<<<<< HEAD
   Exists: 0
 --- !u!114 &7483203202253176452
 MonoBehaviour:
@@ -18111,6 +18319,10 @@ MonoBehaviour:
   Default: 10
   Exists: 0
 --- !u!114 &7501016098678526342
+=======
+  Exists: 1
+--- !u!114 &-3133195607632926314
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18126,6 +18338,7 @@ MonoBehaviour:
   Min: 0
   Max: 20
   Default: 10
+<<<<<<< HEAD
   Exists: 0
 --- !u!114 &7531532180021996725
 MonoBehaviour:
@@ -18145,6 +18358,10 @@ MonoBehaviour:
   Default: 0
   Exists: 1
 --- !u!114 &7536917964218532091
+=======
+  Exists: 1
+--- !u!114 &-2983436814687026028
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18178,6 +18395,7 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &7575736166419354188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18196,6 +18414,9 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &7579904099860766319
+=======
+--- !u!114 &-2633467049175037936
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18226,6 +18447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: WhatPlayer
   Min: 0
+<<<<<<< HEAD
   Max: 4
   Default: 0
   Exists: 0
@@ -18247,6 +18469,12 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &7657478053391162618
+=======
+  Max: 20
+  Default: 10
+  Exists: 1
+--- !u!114 &-2366792597657621342
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18258,6 +18486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: 
   guid: e703cf655bc2ea4c85a80d6af4e832af
   Banks: []
@@ -18271,6 +18500,17 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 57657
 --- !u!114 &7659382553172686519
+=======
+  Path: Assets/Plugins/FMOD/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637247972222539337
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2906
+  Exists: 1
+--- !u!114 &-2054290179837535534
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18282,12 +18522,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Weapon_Throw/Weight
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Weight
   Min: 0
   Max: 2
   Default: 0
   Exists: 0
 --- !u!114 &7667834128696419838
+=======
+  Path: event:/Player/Player_Bush_Enter
+  guid: 7b36695fcb57b04fb12ceee9a5c47d10
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 1189
+--- !u!114 &-1954199261898166255
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18377,7 +18633,12 @@ MonoBehaviour:
   Path: event:/Player/Player_Hurt_Generic_Male
   guid: 6c5ce81482c40547bb0071e3cf64ca84
   Banks:
+<<<<<<< HEAD
   - {fileID: -6323315081601876565}
+=======
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+>>>>>>> parent of 90fab2c... Reverted Merge
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -18431,6 +18692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Weapon_Throw_Male_Manager/Weight
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Weight
   Min: 0
   Max: 2
@@ -18454,6 +18716,15 @@ MonoBehaviour:
   Default: 10
   Exists: 0
 --- !u!114 &7812576612706047034
+=======
+  Path: Assets/Plugins/FMOD/Desktop/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637237610099342821
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-1104886019990341949
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18504,7 +18775,11 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &7841351860318111197
+=======
+--- !u!114 &-727977289075203863
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18521,6 +18796,7 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &7856272045885572849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18539,6 +18815,9 @@ MonoBehaviour:
   Default: 1
   Exists: 0
 --- !u!114 &7875893215417342660
+=======
+--- !u!114 &-470116211112422282
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18550,12 +18829,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Weapon_Throw_Female_Manager/Weight
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Weight
   Min: 0
   Max: 2
   Default: 0
   Exists: 0
 --- !u!114 &7879737770027429108
+=======
+  Path: event:/Ui/Announcer/Announcer_Welcome
+  guid: 77f15f5600b32e4d9ed0140506c42e39
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6921
+--- !u!114 &-408026843028293973
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18584,12 +18879,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Weapon_Throw_Male_Manager/WeaponWeight
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: WeaponWeight
   Min: 0
   Max: 2
   Default: 1
   Exists: 0
 --- !u!114 &7894513847674926179
+=======
+  Path: event:/BGM/Gameplay
+  guid: df0bab56198d38428ce2e8a2fa2bb3ff
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4424517036155769282}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 57600
+--- !u!114 &-113167892643901531
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18618,6 +18930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/BGM/Menu
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: event:/BGM/Menu
   guid: 42dac934defa864db1350092b4e97330
   Banks:
@@ -18630,6 +18943,58 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 64000
 --- !u!114 &7911806617268432843
+=======
+  EditorBanks:
+  - {fileID: -2366792597657621342}
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  EditorEvents:
+  - {fileID: -8859197668298798163}
+  - {fileID: 8520988305550249884}
+  - {fileID: -4444446720641720052}
+  - {fileID: 1014798563990259892}
+  - {fileID: 6706416498934144252}
+  - {fileID: -6772396455292815793}
+  - {fileID: 7041697493155532188}
+  - {fileID: -1433380404218302313}
+  - {fileID: -4109973504269620297}
+  - {fileID: 1029426544401568379}
+  - {fileID: -4257658309050525195}
+  - {fileID: -3874158932062245953}
+  - {fileID: 6862504394972334093}
+  - {fileID: -470116211112422282}
+  - {fileID: -2054290179837535534}
+  - {fileID: -4308770927978448263}
+  - {fileID: -9088311901044973058}
+  - {fileID: -3688956764558511429}
+  - {fileID: -7259183360784635945}
+  - {fileID: -8326402802785915355}
+  - {fileID: 2528046892198211444}
+  - {fileID: 6279622778705933819}
+  - {fileID: 6994176526278466647}
+  - {fileID: -8099685939386902466}
+  - {fileID: -5762779706782743229}
+  - {fileID: 1591322699008157796}
+  - {fileID: 1904037728310580793}
+  - {fileID: -6821885875412047721}
+  - {fileID: 808130535001685772}
+  - {fileID: -243765027336628575}
+  - {fileID: -7427167400981936780}
+  - {fileID: 5198954337101396062}
+  - {fileID: 5899778330381086654}
+  - {fileID: 4106184502118335978}
+  - {fileID: 2756904840075656104}
+  - {fileID: 8664517018774224352}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  StringsBanks:
+  - {fileID: -2366792597657621342}
+  stringsBankWriteTime: 637247972222539337
+  cacheVersion: 3
+--- !u!114 &99405954727784151
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18666,6 +19031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: WeaponWeight
   Min: 0
+<<<<<<< HEAD
   Max: 2
   Default: 1
   Exists: 0
@@ -18687,6 +19053,12 @@ MonoBehaviour:
   Default: 0
   Exists: 1
 --- !u!114 &7929212635141339102
+=======
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &219887252819994678
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18715,12 +19087,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Gameplay/Victory
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Victory
   Min: 0
   Max: 1
   Default: 0
   Exists: 1
 --- !u!114 &7949608846451926235
+=======
+  Path: event:/Implementation/Weapon_Attack_Manager
+  guid: dc57ea66eb01a44b82e9b2c2bf015da1
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7249867864074384457}
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 0
+--- !u!114 &1014798563990259892
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18732,6 +19121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: Assets/Plugins/FMOD/Desktop/Master.strings.bank
   SubDir: 
   lastModified: 637252377989165642
@@ -18741,6 +19131,21 @@ MonoBehaviour:
     Value: 3730
   Exists: 1
 --- !u!114 &7960598270224399490
+=======
+  Path: event:/Ui/Ui_Player_Left
+  guid: 1fb33c229f07894b8bfc07fda1ae1d1f
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 1822
+--- !u!114 &1029426544401568379
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18755,7 +19160,12 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Buisine_Attack
   guid: 9a2379e228f716449307fd1b054b6b83
   Banks:
+<<<<<<< HEAD
   - {fileID: -7371532478748638070}
+=======
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+>>>>>>> parent of 90fab2c... Reverted Merge
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -18775,6 +19185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: Assets/Plugins/FMOD/Desktop/Master.bank
   SubDir: 
   lastModified: 637236691480000000
@@ -18782,6 +19193,21 @@ MonoBehaviour:
   FileSizes: []
   Exists: 0
 --- !u!114 &7971921315822014175
+=======
+  Path: event:/Player/Player_Hurt_Generic_Female
+  guid: c5c36154cc966b41b67a5c5c049efb21
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 510
+--- !u!114 &1677398953009451700
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18810,12 +19236,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Gameplay/lowHealth
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: lowHealth
   Min: 0
   Max: 1
   Default: 0
   Exists: 0
 --- !u!114 &7974907939606668705
+=======
+  Path: event:/Weapons/Weapon_Throw_Heavy_Male
+  guid: c8245c9a418e2e42a3ad5bc837fd5fa3
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 796
+--- !u!114 &2103379928016743777
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18932,16 +19374,53 @@ MonoBehaviour:
   Path: event:/Ui/Announcer/Announcer_Player_Defeated
   guid: a48f9a51f1ad9a4e9a30c7db20f163fc
   Banks:
+<<<<<<< HEAD
   - {fileID: -7371532478748638070}
+=======
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+>>>>>>> parent of 90fab2c... Reverted Merge
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< HEAD
   - {fileID: -5817916856011321212}
   MinDistance: 0
   MaxDistance: 0
   Length: 29069
 --- !u!114 &8109152008562424542
+=======
+  - {fileID: -7103185159557118716}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 29069
+--- !u!114 &2756904840075656104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Player_Dash
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Player_Dash
+  guid: faec8d01bcdc5a4fb6a37d8f7cc14b84
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 517
+--- !u!114 &2763687522773056148
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18992,6 +19471,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &8129264088363371065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19015,6 +19495,9 @@ MonoBehaviour:
   MaxDistance: 20
   Length: 0
 --- !u!114 &8141484474986167554
+=======
+--- !u!114 &3181678565806713091
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19031,6 +19514,7 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &8187622984062125929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19049,6 +19533,9 @@ MonoBehaviour:
   Default: 0
   Exists: 1
 --- !u!114 &8190868356943508995
+=======
+--- !u!114 &3241041001839374032
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19099,6 +19586,7 @@ MonoBehaviour:
   Min: 0
   Max: 20
   Default: 10
+<<<<<<< HEAD
   Exists: 1
 --- !u!114 &8232706442798200601
 MonoBehaviour:
@@ -19118,6 +19606,10 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &8245333619342540874
+=======
+  Exists: 0
+--- !u!114 &3327185915130522636
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19134,6 +19626,7 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &8267562352881113859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19152,6 +19645,9 @@ MonoBehaviour:
   Default: 1
   Exists: 1
 --- !u!114 &8269972141787189159
+=======
+--- !u!114 &3545546842577209169
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19277,6 +19773,7 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &8348117571761475096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19295,6 +19792,9 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &8400046502127872828
+=======
+--- !u!114 &4106184502118335978
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19306,12 +19806,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Gameplay/lowHealth
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: lowHealth
   Min: 0
   Max: 1
   Default: 0
   Exists: 0
 --- !u!114 &8401391373997503847
+=======
+  Path: event:/Ui/Announcer/Announcer_Match_Start
+  guid: f5d479f4feb6504097cb1e535c010db8
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6663
+--- !u!114 &4424517036155769282
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19344,6 +19860,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
+<<<<<<< HEAD
   Exists: 0
 --- !u!114 &8437631349405939713
 MonoBehaviour:
@@ -19381,6 +19898,10 @@ MonoBehaviour:
   Default: 0
   Exists: 1
 --- !u!114 &8467737666082444434
+=======
+  Exists: 1
+--- !u!114 &4717376855816805201
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19446,11 +19967,22 @@ MonoBehaviour:
   Path: event:/Commentators/On_RandomTimer
   guid: f56f593997282744be22e965be1614d7
   Banks:
+<<<<<<< HEAD
   - {fileID: -6323315081601876565}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
+=======
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8722644547527373243}
+  - {fileID: -4757855242631525080}
+>>>>>>> parent of 90fab2c... Reverted Merge
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -19569,6 +20101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Weapon_Throw_Female_Manager/Weight
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Weight
   Min: 0
   Max: 2
@@ -19592,6 +20125,22 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &8648537184741120955
+=======
+  Path: event:/Implementation/Player_Hurt_Female_Manager
+  guid: f10313fe616a7b4baecba732a81af8f4
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5038898124228694147}
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 15
+--- !u!114 &6279622778705933819
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19606,7 +20155,12 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Excaliboulder_Attack
   guid: 8e57da15a46868479ffd2c4007560807
   Banks:
+<<<<<<< HEAD
   - {fileID: -6323315081601876565}
+=======
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+>>>>>>> parent of 90fab2c... Reverted Merge
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -19677,12 +20231,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Player_Hurt_Female_Manager/Weapon
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Weapon
   Min: 0
   Max: 20
   Default: 10
   Exists: 0
 --- !u!114 &8735701371057669251
+=======
+  Path: event:/Weapons/Weapon_Throw
+  guid: 301dd012c0c0e441917b876b0ce59ae7
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -5482604550370247948}
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 370
+--- !u!114 &6862504394972334093
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19694,12 +20265,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Gameplay/firstDamage
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: firstDamage
   Min: 0
   Max: 1
   Default: 0
   Exists: 1
 --- !u!114 &8749675746424360823
+=======
+  Path: event:/Implementation/Weapon_Throw_Male_Manager
+  guid: 6ed9eec83f2916458e845077525861af
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2775772075968535707}
+  - {fileID: 4635224616042323853}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 140
+--- !u!114 &6994176526278466647
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19711,12 +20300,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Crowd_Manager/CrowdMood
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: CrowdMood
   Min: 0
   Max: 2
   Default: 1
   Exists: 0
 --- !u!114 &8777830985683036688
+=======
+  Path: event:/Weapons/Weapon_Throw_Light
+  guid: acaa3175bfb83149b1b7b40a1a06ac8f
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 738
+--- !u!114 &7025138954836930144
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19751,7 +20356,12 @@ MonoBehaviour:
   Path: event:/Player/Player_Hurt_Generic_Male
   guid: 6c5ce81482c40547bb0071e3cf64ca84
   Banks:
+<<<<<<< HEAD
   - {fileID: 7062303870956493957}
+=======
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+>>>>>>> parent of 90fab2c... Reverted Merge
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -19859,9 +20469,15 @@ MonoBehaviour:
   Name: Weight
   Min: 0
   Max: 2
+<<<<<<< HEAD
   Default: 0
   Exists: 0
 --- !u!114 &8953694249789517666
+=======
+  Default: 1
+  Exists: 1
+--- !u!114 &7951413820007756870
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19870,6 +20486,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Weapon_Throw/Weight
   m_EditorClassIdentifier: 
@@ -19879,6 +20496,18 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &8974263894370156788
+=======
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Plugins/FMOD/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637247951306659205
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7971421340577238006
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19924,12 +20553,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Weapon_Throw_Female_Manager/Weight
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Weight
   Min: 0
   Max: 2
   Default: 0
   Exists: 0
 --- !u!114 &8987774965946607672
+=======
+  Path: event:/Player/Player_Hurt_Fish
+  guid: 12d35be445573a4198aaa71d2ce0c586
+  Banks:
+  - {fileID: 3652516889848387413}
+  - {fileID: -1289404149612877023}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 460
+--- !u!114 &8622237787069582496
+>>>>>>> parent of 90fab2c... Reverted Merge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
