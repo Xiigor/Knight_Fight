@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class PlayerStatePattern : MonoBehaviour
 {
     public Transform crowdParent;
+
     public PlayerIState currentState;
-    [HideInInspector] public GameManager gameManager;
-    [HideInInspector] public CameraStatePattern cameraScript;
-    [HideInInspector] public CommentatorStatePattern commentatorScript;
-    public PlayerRagdollHandler ragdollHandler;
-    public GameObject cameraObject;
 
     [HideInInspector] public PlayerBasicState basicState;
     [HideInInspector] public PlayerIdleState idleState;
@@ -37,36 +32,28 @@ public class PlayerStatePattern : MonoBehaviour
 
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
-    [HideInInspector] public float attackAnimDuration;
-    public float fistAnimDuration = 1f;
+    public float attackAnimDuration = 0.5f;
     public float throwAnimDuration = 0.5f;
     private float movementInputForDashDirThreshhold = 0.15f; 
     public float internalDashRayDist = 1.3f;
     public bool canDash = true;
-    [HideInInspector] public bool weaponDestroyed = false;
-    public GameObject weapon;
-    
-    //Fists
-    public GameObject leftFist;
-    public float fistDamage = 8f;
 
-    
+    public GameObject weapon;
+
     //tags
     public string weaponTag = "Weapon";
     public string weaponProjectileTag = "WeaponProjectile";
     public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
-    public string playerTag = "Player";
-    public string deadPlayerTag = "DeadPlayer";
-    public string fistTag = "Fist";
 
     //values
     [HideInInspector] public Vector2 moveDir;
     Vector2 moveLastDir;
     Vector3 move;
-    Vector3 lastMove;
+    public Vector3 lastMove;
     public float maxHealth = 100f;
     public float health;
+
 
     [HideInInspector] public Collider col;
     [HideInInspector] private Rigidbody rb;
@@ -80,6 +67,7 @@ public class PlayerStatePattern : MonoBehaviour
     [SerializeField] private int playerIndex;
     public GameObject spawnPosition;
 
+
     private void Awake()
     {
         basicState = new PlayerBasicState(this);
@@ -91,33 +79,25 @@ public class PlayerStatePattern : MonoBehaviour
         attackState = new PlayerAttackState(this);
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
-        gameManager = GameObject.FindObjectOfType<GameManager>();
-        cameraScript = cameraObject.GetComponent<CameraStatePattern>();
-        commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         audioPlayer = GetComponent<AudioPlayer>();
         animator = GetComponent<Animator>();
+
     }
 
     public void OnEnable()
     {
         transform.position = spawnPosition.transform.position;
         health = maxHealth;
-        tag = playerTag;
         currentState = idleState;
-        currentState.OnStateEnter();
         internalGCDTimer = globalCD;
         internalDashTimer = dashCD;
         weapon = null;
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
-    public void OnDisable()
-    {
-        transform.position = spawnPosition.transform.position;
-    }
-
     private void FixedUpdate()
     {
+        currentState.UpdateState();
         Ray environmentRay = new Ray(transform.position, lastMove);
         RaycastHit environmentRayHit;
 
@@ -137,6 +117,7 @@ public class PlayerStatePattern : MonoBehaviour
     private void Update()
     {
         currentState.UpdateState();
+        Debug.Log(currentState.ToString());
         if (internalGCDTimer < globalCD)
         {
             internalGCDTimer += Time.deltaTime;
@@ -149,11 +130,6 @@ public class PlayerStatePattern : MonoBehaviour
         {
             internalAttackTimer += Time.deltaTime;
         }
-        if (weaponDestroyed == true)
-        {
-            RemoveWep();
-            weaponDestroyed = false;
-        }
     }
     public int GetPlayerIndex()
     {
@@ -163,39 +139,34 @@ public class PlayerStatePattern : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(currentState != deadState)
+        if (collision.gameObject.tag == weaponProjectileTag)
         {
-            if (collision.gameObject.tag == weaponProjectileTag)
+            OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+        }
+        if (collision.gameObject.tag == projectileTag)
+        {
+            OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
+        }
+        if(collision.gameObject.tag == weaponTag)
+        {
+            if (collision.gameObject.layer == UnequippedLayer)
             {
-                OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+                PickupItem(collision.gameObject);
             }
-            if (collision.gameObject.tag == projectileTag)
+            else if (collision.gameObject.layer == EquippedLayer)
             {
-                OnHit(collision.gameObject.GetComponent<ProjectileBase>().damage);
-            }
-            if(collision.gameObject.tag == weaponTag)
-            {
-                if (collision.gameObject.layer == UnequippedLayer)
-                {
-                    PickupItem(collision.gameObject);
-                }
-                else if (collision.gameObject.layer == EquippedLayer)
-                {
 
-                    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
-                } 
-            }
+                OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
+                //if(weapon != null && collision.gameObject != weapon.gameObject)
+                //{
+                //    OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage); // UPPDATERA INNAN BUILD, DETTA BORDE INTE FUNGERA I MULTIPLAYER
+                //}
+
+            } 
         }
         if (currentState == dashState)
         {
             currentState.ChangeState(idleState);
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == fistTag)
-        {
-            OnHit(fistDamage);
         }
     }
 
@@ -204,11 +175,11 @@ public class PlayerStatePattern : MonoBehaviour
         if(weapon != null)
         {
             weapon.GetComponent<WeaponBaseClass>().Attack();
-            internalAttackTimer = 0f;
         }
         else
         {
-            leftFist.SetActive(true);
+            //audioPlayer.PlayerUnarmedAttack(); --- detta får nog vänta lite
+            //do basic punch attack.
         }
     }
 
@@ -246,7 +217,16 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (internalAttackTimer >= attackCD)
                 {
-                    return true;
+                    if (weapon != null)
+                    {
+                        Debug.Log("attack with wep");
+                        return true;
+                    }
+                    else
+                    {
+                        Debug.Log("nothing to attack with");
+                        return false;
+                    }
                 }
                 else
                 {
@@ -353,10 +333,6 @@ public class PlayerStatePattern : MonoBehaviour
     public void ThrowItem()
     {
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
-        RemoveWep();
-    }
-    public void RemoveWep()
-    {
         weapon = null;
         animator.SetBool("1hSword", false);
         animator.SetBool("2hSword", false);
@@ -369,32 +345,15 @@ public class PlayerStatePattern : MonoBehaviour
         weapon = weaponObject;
         Physics.IgnoreCollision(col, weapon.GetComponent<Collider>(), true);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, true);
-        attackAnimDuration = weapon.GetComponent<WeaponBaseClass>().animationDuration;
         weapon.gameObject.layer = EquippedLayer; //läggs här för att inte ske före on collision
         WeaponTypeIdentifier();
-       // weapon.GetComponent<WeaponBaseClass>().OnPickup(this.gameObject);
     }
 
     public void OnHit(float damage)
     {
-        commentatorScript.hiddenCooldownTimer = 0.0f;
         audioPlayer.PlayerHurting();
-        gameManager.DecrementCombinedHealth(damage);
         currentState.TakeDamage(damage);
     }
-
-    public void EnableRagdoll()
-    {
-        ragdollHandler.SetRagdollActive();
-        animator.enabled = false;
-    }
-
-    public void DisableRagdoll()
-    {
-        ragdollHandler.SetRagdollInactive();
-        animator.enabled = true;
-    }
-
     public void Die()
     {
         StateChanger(deadState);

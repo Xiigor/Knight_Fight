@@ -6,8 +6,6 @@ public class ProjectileFlyingState : ProjectileIState
 {
     private readonly ProjectileBase projectile;
     private bool velocityApplied = false;
-   
-
 
     public ProjectileFlyingState(ProjectileBase projectileBase)
     {
@@ -45,48 +43,8 @@ public class ProjectileFlyingState : ProjectileIState
 
     public void LaunchFish()
     {
-        if (0 == (int)projectile.projectileType)
-        {
-            //forward
-            if (0 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
-            {
-                projectile.rb.velocity = projectile.parentObject.transform.forward * projectile.ProjectileSpeed;
-                velocityApplied = true;
-            }
-            //up
-            else if (1 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
-            {
-                projectile.rb.velocity = projectile.parentObject.transform.up * projectile.ProjectileSpeed;
-                velocityApplied = true;
-            }
-            //left
-            else if (2 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
-            {
-                projectile.rb.velocity = projectile.parentObject.transform.right * -1 * projectile.ProjectileSpeed;
-                velocityApplied = true;
-            }
-            //right
-            else if (3 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
-            {
-                projectile.rb.velocity = projectile.parentObject.transform.right * projectile.ProjectileSpeed;
-                velocityApplied = true;
-            }
-            else
-            {
-               
-            }
-        }
-        else if (1 == (int)projectile.projectileType)
-        {
-            projectile.rb.velocity = projectile.parentObject.GetComponent<WeaponBananaTreePattern>().swordVel * projectile.ProjectileSpeed;
-            velocityApplied = true;
-        }
-        else
-        {
-
-        }
-
-
+        projectile.rb.velocity = projectile.parentObject.transform.forward * projectile.ProjectileSpeed;
+        velocityApplied = true;
     }
 
 
