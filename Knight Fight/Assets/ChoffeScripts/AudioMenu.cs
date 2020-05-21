@@ -58,6 +58,7 @@ public class AudioMenu : MonoBehaviour
 
     public void StartMenuMusic()
     {
+        menuModeMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         menuModeMusic = RuntimeManager.CreateInstance(menuMusic);
         menuModeMusic.start();
         gameplayModeMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -65,6 +66,7 @@ public class AudioMenu : MonoBehaviour
 
     public void StartGameplayMusic()
     {
+        gameplayModeMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         gameplayModeMusic = RuntimeManager.CreateInstance(gameplayMusic);
         gameplayModeMusic.start();
         menuModeMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
