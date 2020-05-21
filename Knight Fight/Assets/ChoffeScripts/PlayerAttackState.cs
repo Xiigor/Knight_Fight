@@ -15,27 +15,35 @@ public class PlayerAttackState : PlayerIState
     public void OnStateEnter()
     {
         player.animator.SetBool("Attack", true);
+        player.Attack();
+        internalStateTimer = 0f;
     }
-
 
     public void UpdateState()
     {
         player.ChangeDirection();
-        if (internalStateTimer >= player.attackAnimDuration)
+        if(player.weapon != null)
         {
-            player.Attack();
+            if (internalStateTimer >= player.attackAnimDuration)
+            {
+            
+                player.RunOrIdleDecider();
+            }
+        }
+        else if(internalStateTimer >= player.fistAnimDuration)
+        {
             player.RunOrIdleDecider();
         }
-        else
-            internalStateTimer += Time.deltaTime;
-        
+        internalStateTimer += Time.deltaTime;
     }
 
     public void ChangeState(PlayerIState newState)
     {
         player.animator.SetBool("Attack", false);
+        player.leftFist.SetActive(false);
         internalStateTimer = 0f;
         player.internalGCDTimer = 0f;
+        player.internalAttackTimer = 0f;
         player.StateChanger(newState);
     }
 

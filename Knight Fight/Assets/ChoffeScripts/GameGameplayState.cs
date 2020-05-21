@@ -5,36 +5,62 @@ using UnityEngine;
 
 public class GameGameplayState : GameIState
 {
-    private CounterManager cm;
+    private bool lowHPPlayer = false;
     private CountdownTimer countdown;
     private readonly GameManager manager;
 
     public GameGameplayState(GameManager gameManager)
     {
         manager = gameManager;
-        cm = GameObject.Find("GameManager").GetComponent<CounterManager>();
         countdown = GameObject.Find("CountdownTimer").GetComponent<CountdownTimer>();
         countdown.gameObject.SetActive(false);
     }
     public void OnStateEnter()
     {
+        //disable players here and enable again after countdown == easy fix for many rounds
+        manager.counterManager.countdownIsDone = false;
+        manager.ResetMusicParams();
+        manager.DisablePlayers();
+        manager.AddPlayersForCamera();
+        manager.crowdMoodSetter.SetMood(1);
+        manager.cameraScript.ChangeState(manager.cameraScript.battleViewState);
+        manager.audioManager.StartGameplayMusic();
+        manager.commentatorScript.ChangeState((manager.commentatorScript.introducingState));
+
+        manager.weaponSpawnManager.DestroyWeapons();
         countdown.ResetTimer();
+        manager.internalRoundDelayTimer = 0f;
         countdown.counting = true;
         manager.menuCanvas.gameObject.SetActive(false);
+        manager.newRoundProcessStarted = false;
       
     }
 
     public void UpdateState()
     {
-        if (cm.countdownIsDone == true)
+        manager.TriggerMusicCheckpoints(manager.GetGlobalHealthPercentage());
+        manager.SetLowHealthMusic();
+
+        if (manager.counterManager.countdownIsDone == true)
         {
-            manager.audioManager.StartGameplayMusic();
-            manager.AddPlayersForCamera();
-            manager.cameraScript.ChangeState(manager.cameraScript.battleViewState);
+            manager.EnablePlayers();
             manager.inputManagerScript.trigger = true;
-            cm.countdownIsDone = false;
+            //cm.countdownIsDone = false;
 
         }
         manager.weaponSpawnManager.TimerUpdater();
+
+        if(manager.newRoundProcessStarted == false)
+        {
+            manager.CheckForRoundWinner();
+        }
+        if (manager.newRoundProcessStarted)
+        {
+            manager.internalRoundDelayTimer += Time.deltaTime;
+        }
+        if (manager.internalRoundDelayTimer >= manager.newRoundDelayDuration)
+        {
+            manager.CheckForWinner();
+        }
     }
 }
