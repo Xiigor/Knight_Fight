@@ -38,6 +38,7 @@ public class PlayerStatePattern : MonoBehaviour
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
     [HideInInspector] public float attackAnimDuration;
+    public float fistAnimDuration = 1f;
     public float throwAnimDuration = 0.5f;
     private float movementInputForDashDirThreshhold = 0.15f; 
     public float internalDashRayDist = 1.3f;
@@ -47,7 +48,6 @@ public class PlayerStatePattern : MonoBehaviour
     
     //Fists
     public GameObject leftFist;
-    public GameObject rightFist;
     public float fistDamage = 8f;
 
     
@@ -165,10 +165,6 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if(currentState != deadState)
         {
-            if(collision.gameObject.tag == fistTag)
-            {
-                OnHit(fistDamage);
-            }
             if (collision.gameObject.tag == weaponProjectileTag)
             {
                 OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
@@ -195,6 +191,13 @@ public class PlayerStatePattern : MonoBehaviour
             currentState.ChangeState(idleState);
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == fistTag)
+        {
+            OnHit(fistDamage);
+        }
+    }
 
     public void Attack()
     {
@@ -205,7 +208,6 @@ public class PlayerStatePattern : MonoBehaviour
         }
         else
         {
-            rightFist.SetActive(true);
             leftFist.SetActive(true);
         }
     }

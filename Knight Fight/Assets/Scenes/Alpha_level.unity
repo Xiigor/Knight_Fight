@@ -718,10 +718,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1980, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2115,6 +2115,14 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 943147545}
+    - target: {fileID: 693393681, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 854906453, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
 --- !u!1001 &393599817
@@ -4689,8 +4697,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969376067}
-  m_LocalRotation: {x: -0.5254717, y: -0, z: -0, w: 0.8508111}
-  m_LocalPosition: {x: 419.4951, y: -100.08261, z: -239.59528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 963194228}
@@ -4720,6 +4728,7 @@ MonoBehaviour:
   crowdMoodSetter: {fileID: 1684825965}
   audioManager: {fileID: 969376071}
   weaponSpawnManager: {fileID: 969376072}
+  counterManager: {fileID: 0}
   amountOfRounds: 1
   roundsText: {fileID: 1837221312}
   roundWinner: {fileID: 0}
@@ -4731,7 +4740,8 @@ MonoBehaviour:
   combinedCurrentHealth: 0
   firstHitTriggerValue: 1
   halfHealthTriggerValue: 0.5
-  lowHealthTriggerValue: 0.25
+  lowHealthTriggerValue: 25
+  lowHPPlayer: 0
   player1: {fileID: 132078672}
   player1Ready: {fileID: 840392198}
   player1NotReady: {fileID: 840392197}
@@ -4776,7 +4786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeWeaponsList: []
   weaponsList:
-  - {fileID: 972219624891994246, guid: bc2380448d719e1468d0b270e9750200, type: 3}
+  - {fileID: 923546299004750516, guid: 4a009ecdcd9105742890901b32f4d84e, type: 3}
   maxWeaponsActive: 10
   weaponMaxSpawnTime: 10
   weaponMinSpawnTime: 5
@@ -9113,6 +9123,11 @@ PrefabInstance:
       propertyPath: cameraObject
       value: 
       objectReference: {fileID: 963194225}
+    - target: {fileID: 8870290375667850370, guid: ca3bdb139643ba8429af0b64a49cabf6,
+        type: 3}
+      propertyPath: fistDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8892840621317186564, guid: ca3bdb139643ba8429af0b64a49cabf6,
         type: 3}
       propertyPath: m_Layer
@@ -9773,6 +9788,11 @@ PrefabInstance:
       propertyPath: cameraObject
       value: 
       objectReference: {fileID: 963194225}
+    - target: {fileID: 8977650035892956230, guid: 6d56b38eb60ece647adb7b23647054ce,
+        type: 3}
+      propertyPath: fistDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9000206704634614976, guid: 6d56b38eb60ece647adb7b23647054ce,
         type: 3}
       propertyPath: m_Layer
@@ -9912,6 +9932,11 @@ PrefabInstance:
       propertyPath: cameraObject
       value: 
       objectReference: {fileID: 963194225}
+    - target: {fileID: 672477069080345921, guid: e3432f0e36f48d6409025e8f4455c873,
+        type: 3}
+      propertyPath: fistDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 795005078808715055, guid: e3432f0e36f48d6409025e8f4455c873,
         type: 3}
       propertyPath: m_Layer

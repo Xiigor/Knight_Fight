@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &923546299004750516
+--- !u!1 &2620319313624208137
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4218256224390019239}
-  - component: {fileID: 5174995584168739473}
-  - component: {fileID: 1508088480203030120}
-  - component: {fileID: 1413263593142885157}
-  - component: {fileID: 1665800199608777037}
-  - component: {fileID: -1014411451439020821}
-  - component: {fileID: 7274361680642678636}
+  - component: {fileID: 42072020359368142}
+  - component: {fileID: 3345115303495116569}
+  - component: {fileID: 9015880641367108614}
+  - component: {fileID: 9088689039013769270}
+  - component: {fileID: 8858324579782674124}
+  - component: {fileID: 8362170235717990142}
+  - component: {fileID: 1121375564040315171}
   m_Layer: 12
-  m_Name: excaliboulder_new
+  m_Name: Knight2_shield
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4218256224390019239
+--- !u!4 &42072020359368142
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923546299004750516}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.72, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 2620319313624208137}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5174995584168739473
+--- !u!33 &3345115303495116569
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923546299004750516}
-  m_Mesh: {fileID: 5681882860113884372, guid: 2609b3341b12bbf4a900d56658ec248e, type: 3}
---- !u!23 &1508088480203030120
+  m_GameObject: {fileID: 2620319313624208137}
+  m_Mesh: {fileID: -3680046783922667223, guid: a9b35fc0d99a26b428239d2e307faa50, type: 3}
+--- !u!23 &9015880641367108614
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923546299004750516}
+  m_GameObject: {fileID: 2620319313624208137}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,8 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb192f6fdb620374ca53eb461a453884, type: 2}
-  - {fileID: 2100000, guid: de09cd08120e8be409008b9ff06f8ba1, type: 2}
+  - {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,64 +82,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1413263593142885157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923546299004750516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c66d325eaf924fc4b83aee9a897a1863, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentPlayer: {fileID: 0}
-  audioPlayer: {fileID: 0}
-  attackVfx: {fileID: 0}
-  hitVfx: {fileID: 0}
-  thisWepType: 1
-  launchDir: 0
-  animationDuration: 1.1
-  durability: 10
-  damage: 15
-  thrownDamage: 10
-  thrownForce: 23
-  throwAngle: 0.25
-  attackActive: 0
-  environmentTag: Environment
-  playerTag: Player
-  projectileTag: WeaponProjectile
-  weaponTag: Weapon
-  UnequippedLayer: 12
-  EquippedLayer: 13
-  heldPosition: {x: 0.049, y: -0.34, z: -0.874}
-  heldRotation: {x: -54.057, y: 125.464, z: -134.157}
-  rb: {fileID: 0}
-  col: {fileID: 0}
-  anim: {fileID: 0}
-  durabilityDecrement: 0
---- !u!64 &1665800199608777037
+--- !u!64 &9088689039013769270
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923546299004750516}
-  m_Material: {fileID: 13400000, guid: 3442604f4cfd0334f9134a524b2c1d19, type: 2}
+  m_GameObject: {fileID: 2620319313624208137}
+  m_Material: {fileID: 13400000, guid: 877065054d55021469a18b7ff759dad7, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
-  m_Mesh: {fileID: 5681882860113884372, guid: 2609b3341b12bbf4a900d56658ec248e, type: 3}
---- !u!54 &-1014411451439020821
+  m_Mesh: {fileID: -3680046783922667223, guid: a9b35fc0d99a26b428239d2e307faa50, type: 3}
+--- !u!54 &8858324579782674124
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923546299004750516}
+  m_GameObject: {fileID: 2620319313624208137}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -149,21 +111,59 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 3
---- !u!114 &7274361680642678636
+  m_CollisionDetection: 0
+--- !u!114 &8362170235717990142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923546299004750516}
+  m_GameObject: {fileID: 2620319313624208137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe581805340b1b748bf26fe93744212b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentPlayer: {fileID: 0}
+  audioPlayer: {fileID: 1121375564040315171}
+  attackVfx: {fileID: 0}
+  hitVfx: {fileID: 0}
+  thisWepType: 3
+  launchDir: 0
+  animationDuration: 1
+  durability: 10
+  damage: 15
+  thrownDamage: 10
+  thrownForce: 25
+  throwAngle: 0.25
+  attackActive: 0
+  environmentTag: Environment
+  playerTag: Player
+  projectileTag: WeaponProjectile
+  weaponTag: Weapon
+  UnequippedLayer: 13
+  EquippedLayer: 14
+  heldPosition: {x: 0, y: 0, z: 0}
+  heldRotation: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+  col: {fileID: 0}
+  anim: {fileID: 0}
+  attackThrowForce: 35
+  durabilityDecrement: 2
+--- !u!114 &1121375564040315171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2620319313624208137}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: event:/Weapons/Weapon_Excaliboulder_Attack
-  attackHitPlayer: event:/Player/Player_Hurt_Excaliboulder
+  attack: event:/Weapons/Weapon_Throw
+  attackHitPlayer: 
   throwWep: event:/Weapons/Weapon_Throw
   ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
   weaponPickup: event:/Weapons/Weapon_Pickup_Generic
