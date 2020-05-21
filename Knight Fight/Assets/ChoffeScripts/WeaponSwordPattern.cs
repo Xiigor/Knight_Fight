@@ -67,7 +67,6 @@ public class WeaponSwordPattern : WeaponBaseClass
         {
             ChangeDurability(durabilityDecrement);
             newAttack = false;
-        }
-        
+        }        
     }
 }

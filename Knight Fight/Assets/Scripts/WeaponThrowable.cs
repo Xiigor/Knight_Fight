@@ -6,6 +6,7 @@ public class WeaponThrowable : WeaponBaseClass
 {
      public float attackThrowForce;  
      public float durabilityDecrement;
+    public float durabilityHitPlayer;
      private float currentDurability;
      
 
@@ -51,27 +52,31 @@ public class WeaponThrowable : WeaponBaseClass
         col.material.staticFriction = 0;
         transform.Rotate(90,0,0);
         rb.angularDrag = 0;
-        gameObject.tag = "WeaponProjectile";
+        gameObject.tag = "Throwable";
         rb.isKinematic = false;
         col.enabled = true;
         rb.useGravity = false;
-        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        transform.rotation = Quaternion.Euler(90,0,0);
+        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX| RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
         rb.velocity = parentPlayer.transform.forward * attackThrowForce;
         RemoveParentPlayer();
         parentPlayer.GetComponent<PlayerStatePattern>().ThrowItem();
      }
 
-     //Antal stuttsar innan den gårsönder eller lägger sig på marken och blir som fiskarna
+     
      public override void ChangeDurability(float durabilityDecrement)
      {
-         currentDurability -= durabilityDecrement;
-         if (currentDurability <= 0)
-         {
-            rb.useGravity = true;
-            //Ta bort som child på spelaren innan destroy
-            //Destroy(this.gameObject);
+        currentDurability -= durabilityDecrement;
+        if (currentDurability <= 0)
+        {
+            float timedelay = 0;
+            while (timedelay <= 30)
+            {
+                timedelay += Time.deltaTime;
+            }
+            Destroy(this.gameObject);
         }
-     }
+    }
 
      public override void ChangeState(WeaponIState newState)
      {
@@ -81,6 +86,15 @@ public class WeaponThrowable : WeaponBaseClass
 
      public override void OnCollisionEnter(Collision collision)
      {
-         currentState.HandleCollision(collision);
-     }
+        currentState.HandleCollision(collision);
+        /*if (collision.gameObject.tag == environmentTag && currentState == thrownState)
+        {
+            ChangeDurability(durabilityDecrement);
+          
+        }
+        if(collision.gameObject.tag == playerTag && currentState == thrownState)
+        {
+            ChangeDurability(durabilityHitPlayer);
+        }*/
+    }
 }
