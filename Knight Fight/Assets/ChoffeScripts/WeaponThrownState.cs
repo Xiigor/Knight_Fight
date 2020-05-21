@@ -15,9 +15,10 @@ public class WeaponThrownState : WeaponIState
 
     public void OnStateEnter()
     {
-        if(weapon.thisWepType == WeaponBaseClass.Weapontype.throwable)
+        if(weapon.thisWepType == WeaponBaseClass.Weapontype.throwable && weapon.attackActive == true)
         {
-            if(weapon.attackActive == true)
+            Debug.Log("throw");
+            if (weapon.attackActive == true)
             {
                 movementApplied = true;
                 Debug.Log("Attack");

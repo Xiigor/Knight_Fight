@@ -50,6 +50,7 @@ public class PlayerStatePattern : MonoBehaviour
     //tags
     public string weaponTag = "Weapon";
     public string weaponProjectileTag = "WeaponProjectile";
+    public string throwableTag = "Throwable";
     public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
     public string playerTag = "Player";
@@ -173,6 +174,11 @@ public class PlayerStatePattern : MonoBehaviour
             if (collision.gameObject.tag == weaponProjectileTag)
             {
                 OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+            }
+            if (collision.gameObject.tag == throwableTag)
+            {
+                OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
+                Debug.Log("shield hit");
             }
             if (collision.gameObject.tag == projectileTag)
             {
@@ -308,17 +314,27 @@ public class PlayerStatePattern : MonoBehaviour
                 animator.SetBool("1hSword", true);
                 animator.SetBool("2hSword", false);
                 animator.SetBool("Spellbook", false);
+                animator.SetBool("Throwable", false);
                 break;
             case WeaponBaseClass.Weapontype.twoHSword:
                 animator.SetBool("1hSword", false);
                 animator.SetBool("2hSword", true);
                 animator.SetBool("Spellbook", false);
+                animator.SetBool("Throwable", false);
                 break;
             case WeaponBaseClass.Weapontype.spellbook:
                 animator.SetBool("1hSword", false);
                 animator.SetBool("2hSword", false);
                 animator.SetBool("Spellbook", true);
+                animator.SetBool("Throwable", false);
                 break;
+            case WeaponBaseClass.Weapontype.throwable:
+                animator.SetBool("1hSword", false);
+                animator.SetBool("2hSword", false);
+                animator.SetBool("Spellbook", false);
+                animator.SetBool("Throwable", true);
+                break;
+
         }
     }
 
@@ -360,6 +376,7 @@ public class PlayerStatePattern : MonoBehaviour
         animator.SetBool("1hSword", false);
         animator.SetBool("2hSword", false);
         animator.SetBool("Spellbook", false);
+        animator.SetBool("Throwable", false);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 

@@ -51,7 +51,7 @@ public class WeaponThrowable : WeaponBaseClass
         col.material.dynamicFriction = 0;
         col.material.staticFriction = 0;
         rb.angularDrag = 0;
-        gameObject.tag = "WeaponProjectile";
+        gameObject.tag = "Throwable";
         rb.isKinematic = false;
         col.enabled = true;
         rb.useGravity = false;
