@@ -335,13 +335,6 @@ public class PlayerStatePattern : MonoBehaviour
                 animator.SetBool("Spellbook", false);
                 animator.SetBool("Throwable", true);
                 break;
-            case WeaponBaseClass.Weapontype.throwable:
-                animator.SetBool("1hSword", false);
-                animator.SetBool("2hSword", false);
-                animator.SetBool("Spellbook", false);
-                animator.SetBool("Throwable", true);
-                break;
-
         }
     }
 
