@@ -89,10 +89,10 @@ public class WeaponThrowable : WeaponBaseClass
         {
             ChangeDurability(durabilityDecrement);
           
-        }*/
+        }
         if(collision.gameObject.tag == playerTag && currentState == thrownState)
         {
             ChangeDurability(durabilityHitPlayer);
-        }
+        }*/
     }
 }
