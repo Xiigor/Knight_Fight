@@ -57,6 +57,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
             temp.transform.localPosition = spawnOffsetVec + parentPlayer.transform.position - (spawnOffsetVecStore*i/vShape);
             temp.GetComponent<ProjectileFish>().parentObject = parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos;
             temp.GetComponent<ProjectileFish>().spellBook = this.gameObject;
+            temp.GetComponent<ProjectileFish>().player = parentPlayer;
             spawnOffset = spawnOffset * (-1);
             Debug.Log(parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos.transform.forward);
             increaseSpawnOffsett++;

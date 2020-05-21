@@ -9,6 +9,7 @@ abstract public class ProjectileBase : MonoBehaviour
     //public PlayerStatePattern parentObject = null;
     public GameObject parentObject = null;
     public GameObject spellBook;
+    public GameObject player;
     public enum ProjectileType { SpellBookProjectile, TreeProjectile };
     public ProjectileType projectileType;
     [HideInInspector] public GameObject Player;

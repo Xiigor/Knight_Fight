@@ -11,8 +11,9 @@ public class ProjectileFish : ProjectileBase
         flyingState = new ProjectileFlyingState(this);
         groundedState = new ProjectileGroundedState(this);
         rb = GetComponent<Rigidbody>();
+        
         //spellBook = pa 
-       
+
     }
 
     private void Start()
