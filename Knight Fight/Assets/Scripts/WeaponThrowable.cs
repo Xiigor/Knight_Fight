@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class WeaponThrowable : WeaponBaseClass
 {
-     public float attackThrowForce;  
-     public float durabilityDecrement;
-    public float durabilityHitPlayer;
-     private float currentDurability;
-     
+    public float attackThrowForce;  
+    public float durabilityDecrement;
+    private float currentDurability;
+    private float timedelay = 0;
+    private bool playerHit = false;
 
 
-     private void Awake()
+
+    private void Awake()
      {
          unequippedState = new WeaponUnequippedState(this);
          equippedState = new WeaponEquippedState(this);
@@ -21,9 +22,6 @@ public class WeaponThrowable : WeaponBaseClass
          gameObject.GetComponent<Collider>().material.dynamicFriction = 0.6f;
          gameObject.GetComponent<Collider>().material.staticFriction = 0.6f;
          gameObject.GetComponent<Rigidbody>().angularDrag = 0.05f;
-
-
-
      }
 
      private void Start()
@@ -38,10 +36,16 @@ public class WeaponThrowable : WeaponBaseClass
      private void Update()
      {
         currentState.UpdateState();
-        //if (rb.velocity == Vector3.zero)
-        //{
-        //    ChangeDurability(durabilityDecrement);
-        //}
+        // Kort delay så att spelaren hinner hämta skadan innan objektet förstörs
+        if (playerHit == true)
+        {
+            timedelay += Time.deltaTime;
+            if (timedelay <= 0.5)
+            {
+                ChangeDurability(durabilityDecrement);
+                timedelay = 0;
+            }
+        }
      }
 
      public override void Attack()
@@ -69,7 +73,7 @@ public class WeaponThrowable : WeaponBaseClass
         currentDurability -= durabilityDecrement;
         if (currentDurability <= 0)
         {
-            float timedelay = 0;
+            
             while (timedelay <= 30)
             {
                 timedelay += Time.deltaTime;
@@ -87,14 +91,11 @@ public class WeaponThrowable : WeaponBaseClass
      public override void OnCollisionEnter(Collision collision)
      {
         currentState.HandleCollision(collision);
-        /*if (collision.gameObject.tag == environmentTag && currentState == thrownState)
-        {
-            ChangeDurability(durabilityDecrement);
-          
-        }
+        
         if(collision.gameObject.tag == playerTag && currentState == thrownState)
         {
-            ChangeDurability(durabilityHitPlayer);
-        }*/
+            //ChangeDurability(durabilityHitPlayer);
+            playerHit = true;
+        }
     }
 }
