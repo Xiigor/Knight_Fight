@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public WeaponSpawnManager weaponSpawnManager;
     public CounterManager counterManager;
     public ProjectileDespawner projectileDespawner;
+    public GameObject winbanner;
 
     //rounds
     public int amountOfRounds = 1;
