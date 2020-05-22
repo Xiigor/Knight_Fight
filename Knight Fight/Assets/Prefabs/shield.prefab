@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9198469664338340374}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3794238754673009203
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9198469664338340374}
-  m_Mesh: {fileID: -1117082489390005245, guid: 9c6fdb5537d50b14894774e97a75ad48, type: 3}
+  m_Mesh: {fileID: -1117082489390005245, guid: bf607c8235638b44b9e22a76515a5450, type: 3}
 --- !u!23 &7465650280617860810
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -115,11 +115,12 @@ MonoBehaviour:
   EquippedLayer: 14
   heldPosition: {x: 0.03100038, y: -0.06699994, z: -0.008000015}
   heldRotation: {x: -84.444, y: -71.983, z: 71.494}
-  rb: {fileID: 6388895703569463830}
-  col: {fileID: -6590734781350358389}
+  rb: {fileID: 0}
+  col: {fileID: 0}
   anim: {fileID: 0}
-  attackThrowForce: 30
+  attackThrowForce: 15
   durabilityDecrement: 0.5
+  durabilityHitPlayer: 5
 --- !u!64 &-6590734781350358389
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -133,7 +134,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
-  m_Mesh: {fileID: -1117082489390005245, guid: 9c6fdb5537d50b14894774e97a75ad48, type: 3}
+  m_Mesh: {fileID: -1117082489390005245, guid: bf607c8235638b44b9e22a76515a5450, type: 3}
 --- !u!54 &6388895703569463830
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,7 +150,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 3
+  m_CollisionDetection: 0
 --- !u!114 &1151491915774711193
 MonoBehaviour:
   m_ObjectHideFlags: 0

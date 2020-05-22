@@ -6,6 +6,8 @@ abstract public class ProjectileBase : MonoBehaviour
 {
     public ProjectileIState currentState;
     public float damage;
+    public float despawnTimerMin = 15f;
+    public float despawnTimerMax = 30f;
     //public PlayerStatePattern parentObject = null;
     public GameObject parentObject = null;
     public GameObject player = null;
@@ -21,6 +23,12 @@ abstract public class ProjectileBase : MonoBehaviour
 
     public float ProjectileSpeed = 15f;
     public string playerTag = "Player";
+
+    public void OnDestroy()
+    {
+        Debug.Log("puff");
+        //instansiera rökpuffen här
+    }
 
     public abstract void LaunchPos(GameObject parent);
     public abstract void StateChanger(ProjectileIState newState);

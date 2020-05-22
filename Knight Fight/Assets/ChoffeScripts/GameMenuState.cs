@@ -17,6 +17,8 @@ public class GameMenuState : GameIState
         {
             player.GetComponent<PlayerScoreTracker>().ClearScore();
         }
+        manager.projectileDespawner.DestroyObjectsWithTag(manager.groundedProjectileTag);
+        manager.projectileDespawner.DestroyObjectsWithTag(manager.projectileTag);
         manager.DisablePlayers();
         manager.crowdMoodSetter.SetMood(0);
         manager.weaponSpawnManager.DestroyWeapons();

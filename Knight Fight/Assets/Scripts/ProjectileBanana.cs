@@ -5,11 +5,14 @@ using UnityEngine;
 public class ProjectileBanana : ProjectileBase
 {
     // Start is called before the first frame update
+    private float internalDespawnTimer = 0f;
+    private float despawnTimer = 0f;
     private void Awake()
     {
         flyingState = new ProjectileFlyingState(this);
         groundedState = new ProjectileGroundedState(this);
         rb = GetComponent<Rigidbody>();
+        despawnTimer = Random.Range(despawnTimerMin, despawnTimerMax);
         //spellBook = pa 
 
     }
@@ -24,6 +27,11 @@ public class ProjectileBanana : ProjectileBase
     void Update()
     {
         currentState.UpdateState();
+        if (internalDespawnTimer >= despawnTimer)
+        {
+            Destroy(this.gameObject);
+        }
+        internalDespawnTimer += Time.deltaTime;
     }
 
     public override void LaunchPos(GameObject parent)

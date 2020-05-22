@@ -15,12 +15,10 @@ public class WeaponThrownState : WeaponIState
 
     public void OnStateEnter()
     {
-        if(weapon.thisWepType == WeaponBaseClass.Weapontype.throwable)
-        {
-            if(weapon.attackActive == true)
-            {
+        if(weapon.thisWepType == WeaponBaseClass.Weapontype.throwable && weapon.attackActive == true)
+        {  
                 movementApplied = true;
-            }
+                Debug.Log("Attack");
         }
         else
         {
@@ -30,6 +28,7 @@ public class WeaponThrownState : WeaponIState
             weapon.gameObject.tag = weapon.projectileTag;
             AddThrownForce();
             weapon.RemoveParentPlayer();
+            Debug.Log("throw");
         }
     }
     public void UpdateState()

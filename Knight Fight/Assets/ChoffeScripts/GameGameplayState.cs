@@ -18,6 +18,8 @@ public class GameGameplayState : GameIState
     public void OnStateEnter()
     {
         //disable players here and enable again after countdown == easy fix for many rounds
+        manager.projectileDespawner.DestroyObjectsWithTag(manager.groundedProjectileTag);
+        manager.projectileDespawner.DestroyObjectsWithTag(manager.projectileTag);
         manager.counterManager.countdownIsDone = false;
         manager.ResetMusicParams();
         manager.DisablePlayers();
