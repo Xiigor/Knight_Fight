@@ -155,6 +155,10 @@ public class PlayerStatePattern : MonoBehaviour
                 weaponDestroyed = false;
             }
         }
+        if (currentState == deadState)
+        {
+            ThrowItem();
+        }
 
     }
     public int GetPlayerIndex()
