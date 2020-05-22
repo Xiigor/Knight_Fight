@@ -7,7 +7,8 @@ public class WeaponThrowable : WeaponBaseClass
     public float attackThrowForce;  
     public float durabilityDecrement;
     private float currentDurability;
-    private float timedelay = 0;
+    private float timeDelay = 0;
+    private float timeDelayCol = 0;
     private bool playerHit = false;
 
 
@@ -36,14 +37,24 @@ public class WeaponThrowable : WeaponBaseClass
      private void Update()
      {
         currentState.UpdateState();
+        if (attackActive == true)
+        {
+            timeDelayCol += Time.deltaTime;
+            if (timeDelayCol >= 0.5)
+            {
+                Physics.IgnoreCollision(parentPlayer.GetComponent<Collider>(), col, false);
+                timeDelayCol = 0;
+            }
+            
+        }
         // Kort delay så att spelaren hinner hämta skadan innan objektet förstörs
         if (playerHit == true)
         {
-            timedelay += Time.deltaTime;
-            if (timedelay <= 0.5)
+            timeDelay += Time.deltaTime;
+            if (timeDelay >= 0.2)
             {
                 ChangeDurability(durabilityDecrement);
-                timedelay = 0;
+                timeDelay = 0;
             }
         }
      }
@@ -72,11 +83,6 @@ public class WeaponThrowable : WeaponBaseClass
         currentDurability -= durabilityDecrement;
         if (currentDurability <= 0)
         {
-            
-            while (timedelay <= 30)
-            {
-                timedelay += Time.deltaTime;
-            }
             Destroy(this.gameObject);
         }
     }
