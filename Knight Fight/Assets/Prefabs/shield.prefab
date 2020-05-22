@@ -96,6 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
+  attackVfx: {fileID: 0}
+  hitVfx: {fileID: 0}
   thisWepType: 3
   launchDir: 0
   animationDuration: 1
@@ -116,7 +118,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   col: {fileID: 0}
   anim: {fileID: 0}
-  attackThrowForce: 30
+  attackThrowForce: 15
   durabilityDecrement: 0.5
   durabilityHitPlayer: 5
 --- !u!64 &-6590734781350358389

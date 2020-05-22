@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public AudioMenu audioManager;
     public WeaponSpawnManager weaponSpawnManager;
     public CounterManager counterManager;
+    public ProjectileDespawner projectileDespawner;
 
     //rounds
     public int amountOfRounds = 1;
@@ -71,6 +72,10 @@ public class GameManager : MonoBehaviour
     public GameObject player4Ready;
     public GameObject player4NotReady;
 
+    //Tags
+    public string groundedProjectileTag = "GroundedProjectile";
+    public string projectileTag = "Projectile";
+
     public void Awake()
     {
         Application.targetFrameRate = 60;
@@ -86,6 +91,7 @@ public class GameManager : MonoBehaviour
         commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
         counterManager = GetComponent<CounterManager>();
+        projectileDespawner = GetComponent<ProjectileDespawner>();
 
         //inputDevices = new List<Gamepad>();
         inputDevices = new List<InputDevice>();
@@ -252,8 +258,6 @@ public class GameManager : MonoBehaviour
         {
             cameraScript.objectsFollowedByCamera.Add(player);
         }
-
-        //return cameraScript.objectsFollowedByCamera.Count;
     }
 
     public void RemovePlayersForCamera()
