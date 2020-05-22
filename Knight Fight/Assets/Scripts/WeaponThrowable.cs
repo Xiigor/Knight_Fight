@@ -51,7 +51,7 @@ public class WeaponThrowable : WeaponBaseClass
         if (playerHit == true)
         {
             timeDelay += Time.deltaTime;
-            if (timeDelay >= 0.2)
+            if (timeDelay >= 0.05)
             {
                 ChangeDurability(durabilityDecrement);
                 timeDelay = 0;
