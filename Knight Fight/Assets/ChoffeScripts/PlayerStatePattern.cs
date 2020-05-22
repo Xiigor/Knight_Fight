@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerStatePattern : MonoBehaviour
 {
+    public ParticleSystem particleSpawnEffect;
+    public ParticleSystem particleDashEffect;
+
     public Transform crowdParent;
     public PlayerIState currentState;
     [HideInInspector] public GameManager gameManager;
@@ -96,6 +99,7 @@ public class PlayerStatePattern : MonoBehaviour
         commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         audioPlayer = GetComponent<AudioPlayer>();
         animator = GetComponent<Animator>();
+
     }
 
     public void OnEnable()
@@ -109,6 +113,9 @@ public class PlayerStatePattern : MonoBehaviour
         internalDashTimer = dashCD;
         weapon = null;
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
+
+        //Instansiera först och sen spela upp det?
+        particleSpawnEffect.Play();
     }
 
     public void OnDisable()
