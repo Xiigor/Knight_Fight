@@ -7,7 +7,9 @@ using UnityEngine.InputSystem;
 public class PlayerStatePattern : MonoBehaviour
 {
     public ParticleSystem particleSpawnEffect;
+    public GameObject spawnEffect;
     public ParticleSystem particleDashEffect;
+    public Transform spawnEffectPosition;
 
     public Transform crowdParent;
     public PlayerIState currentState;
@@ -105,6 +107,8 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void OnEnable()
     {
+        GameObject spawnParticle = Instantiate(spawnEffect, spawnEffectPosition.position, spawnEffectPosition.rotation);
+        //GameObject spawnParticle = Instantiate(spawnEffect, transform.position, Quaternion.identity);
         transform.position = spawnPosition.transform.position;
         health = maxHealth;
         tag = playerTag;
@@ -116,7 +120,7 @@ public class PlayerStatePattern : MonoBehaviour
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
 
         //Instansiera först och sen spela upp det?
-        particleSpawnEffect.Play();
+        //particleSpawnEffect.Play();
     }
 
     public void OnDisable()
