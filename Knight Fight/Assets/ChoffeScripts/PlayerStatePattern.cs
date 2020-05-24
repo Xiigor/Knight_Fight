@@ -25,7 +25,7 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
-
+    [HideInInspector] public PlayerWinState winState;
     public GameObject rightHandGameobject = null;
     public GameObject leftHandGameobject = null;
     public GameObject projectileSpawnPos = null;
@@ -90,11 +90,12 @@ public class PlayerStatePattern : MonoBehaviour
     {
         basicState = new PlayerBasicState(this);
         idleState = new PlayerIdleState(this);
-
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
         deadState = new PlayerDeadState(this);
         attackState = new PlayerAttackState(this);
+        winState = new PlayerWinState(this);
+
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -166,6 +167,11 @@ public class PlayerStatePattern : MonoBehaviour
             RemoveWep();
             weaponDestroyed = false;
         }
+        if (currentState == deadState)
+        {
+            ThrowItem();
+        }
+
     }
     public int GetPlayerIndex()
     {
@@ -286,12 +292,14 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void StateChanger(PlayerIState newState)
     {
+        
         if(newState == deadState)
         {
             currentState = newState;
             currentState.OnStateEnter();
         }
-        else if(newState == idleState || newState == basicState)
+
+        else if(newState == idleState || newState == basicState || newState == winState)
         {
             currentState = newState;
             currentState.OnStateEnter();

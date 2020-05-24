@@ -19,6 +19,7 @@ public class GameMenuState : GameIState
         }
         manager.projectileDespawner.DestroyObjectsWithTag(manager.groundedProjectileTag);
         manager.projectileDespawner.DestroyObjectsWithTag(manager.projectileTag);
+        manager.winbanner.SetActive(false);
         manager.DisablePlayers();
         manager.crowdMoodSetter.SetMood(0);
         manager.weaponSpawnManager.DestroyWeapons();
