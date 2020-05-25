@@ -96,12 +96,18 @@ public class WeaponThrowable : WeaponBaseClass
 
      public override void OnCollisionEnter(Collision collision)
      {
-        currentState.HandleCollision(collision);
-        
-        if(collision.gameObject.tag == playerTag && currentState == thrownState)
+        currentState.CollisionEnter(collision);
+
+        if (collision.gameObject.tag == playerTag && currentState == thrownState)
         {
             //ChangeDurability(durabilityHitPlayer);
             playerHit = true;
         }
     }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
+    }
+
 }

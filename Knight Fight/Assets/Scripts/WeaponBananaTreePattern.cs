@@ -77,7 +77,7 @@ public class WeaponBananaTreePattern : WeaponBaseClass
     }
     public override void OnCollisionEnter(Collision collision)
     {
-        currentState.HandleCollision(collision);
+        currentState.CollisionEnter(collision);
         if (collision.gameObject.tag == playerTag && newAttack == true)
         {
             ChangeDurability(durabilityDecrement);
@@ -85,4 +85,10 @@ public class WeaponBananaTreePattern : WeaponBaseClass
         }
 
     }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
+    }
+
 }

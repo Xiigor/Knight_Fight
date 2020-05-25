@@ -16,6 +16,8 @@ public class ProjectileGroundedState : ProjectileIState
         throw new System.NotImplementedException();
     }
 
+
+
     public void OnStateEnter()
     {
         projectile.damage = 0;
@@ -28,5 +30,10 @@ public class ProjectileGroundedState : ProjectileIState
     public void UpdateState()
     {
         
+    }
+
+    public void CollisionStay(Collision col)
+    {
+
     }
 }

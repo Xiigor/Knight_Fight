@@ -13,7 +13,6 @@ public class ProjectileBanana : ProjectileBase
         groundedState = new ProjectileGroundedState(this);
         rb = GetComponent<Rigidbody>();
         despawnTimer = Random.Range(despawnTimerMin, despawnTimerMax);
-        //spellBook = pa 
 
     }
 
@@ -45,6 +44,11 @@ public class ProjectileBanana : ProjectileBase
     {
         currentState = newState;
         currentState.OnStateEnter();
+    }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
     }
 }
 

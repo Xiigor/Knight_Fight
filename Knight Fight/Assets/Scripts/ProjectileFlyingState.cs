@@ -7,6 +7,7 @@ public class ProjectileFlyingState : ProjectileIState
     public int UnequippedLayer = 12;
     private readonly ProjectileBase projectile;
     private bool velocityApplied = false;
+    private float internalGroundedTimer = 0f;
    
 
 
@@ -43,6 +44,7 @@ public class ProjectileFlyingState : ProjectileIState
 
     public void OnStateEnter()
     {
+        internalGroundedTimer = 0f;
         velocityApplied = false;
         LaunchFish();
         Physics.IgnoreLayerCollision(projectile.gameObject.layer, projectile.player.layer, true);
@@ -92,9 +94,14 @@ public class ProjectileFlyingState : ProjectileIState
         {
 
         }
-
-
     }
 
-
+    public void CollisionStay(Collision col)
+    {
+        internalGroundedTimer += Time.deltaTime;
+        if(internalGroundedTimer > 0.75)
+        {
+            ChangeState(projectile.groundedState);
+        }
+    }
 }
