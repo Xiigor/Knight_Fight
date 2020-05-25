@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3105903073570637870
+--- !u!1 &503910229495570882
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2108031776297204285}
-  - component: {fileID: 6924914465626456075}
-  - component: {fileID: 3685831734075260146}
-  - component: {fileID: 1573132470302810031}
-  - component: {fileID: 5955977810525413700}
-  - component: {fileID: 289046099311355821}
-  - component: {fileID: -8796067586960004273}
+  - component: {fileID: 6685114983977092559}
+  - component: {fileID: 7596678618450945258}
+  - component: {fileID: 3737777670729178549}
+  - component: {fileID: 7406038836271682707}
+  - component: {fileID: 7289614036386615037}
+  - component: {fileID: 5679921321331862300}
+  - component: {fileID: 1773772853292776773}
   m_Layer: 12
-  m_Name: LineSpellBook
+  m_Name: KnightShoulderYellowThrowable
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2108031776297204285
+--- !u!4 &6685114983977092559
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105903073570637870}
+  m_GameObject: {fileID: 503910229495570882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 10, z: 15}
+  m_LocalPosition: {x: -11.41, y: 9.889, z: 0.67}
+  m_LocalScale: {x: 13, y: 13, z: 13}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6924914465626456075
+--- !u!33 &7596678618450945258
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105903073570637870}
-  m_Mesh: {fileID: 381947130776709163, guid: c415cef40676ec544a75ab853951e748, type: 3}
---- !u!23 &3685831734075260146
+  m_GameObject: {fileID: 503910229495570882}
+  m_Mesh: {fileID: -3803818641871647858, guid: f44ccad4f1f21f2438ee8125e2f18763, type: 3}
+--- !u!23 &3737777670729178549
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105903073570637870}
+  m_GameObject: {fileID: 503910229495570882}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f89750aa368fdab459ff082a8bb941ec, type: 2}
+  - {fileID: 2100000, guid: e098351575c1d9141a5cf2d455a09ef5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,26 +82,49 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1573132470302810031
-BoxCollider:
+--- !u!114 &7406038836271682707
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105903073570637870}
-  m_Material: {fileID: 13400000, guid: b3e8e30ad097b744a9d647ad5443e066, type: 2}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 503910229495570882}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.06602468, y: 0.04512521, z: 0.049351234}
-  m_Center: {x: 0, y: -0.000027220694, z: 0}
---- !u!54 &5955977810525413700
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe581805340b1b748bf26fe93744212b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentPlayer: {fileID: 0}
+  audioPlayer: {fileID: 0}
+  thisWepType: 3
+  launchDir: 0
+  animationDuration: 1
+  durability: 1
+  damage: 15
+  thrownDamage: 1
+  thrownForce: 20
+  throwAngle: 0.25
+  attackActive: 0
+  environmentTag: Environment
+  playerTag: Player
+  projectileTag: WeaponProjectile
+  weaponTag: Weapon
+  UnequippedLayer: 13
+  EquippedLayer: 14
+  heldPosition: {x: -0.9, y: -1.2, z: 0.1}
+  heldRotation: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+  col: {fileID: 0}
+  anim: {fileID: 0}
+  attackThrowForce: 30
+  durabilityDecrement: 1
+--- !u!54 &7289614036386615037
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105903073570637870}
+  m_GameObject: {fileID: 503910229495570882}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -111,61 +134,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &289046099311355821
-MonoBehaviour:
+--- !u!64 &5679921321331862300
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105903073570637870}
+  m_GameObject: {fileID: 503910229495570882}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a4b1a4119ed8aa46872e37c45ab77aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentPlayer: {fileID: 0}
-  audioPlayer: {fileID: 0}
-  thisWepType: 2
-  launchDir: 0
-  animationDuration: 0.85
-  durability: 10
-  damage: 5
-  thrownDamage: 5
-  thrownForce: 20
-  throwAngle: 0.25
-  attackActive: 0
-  environmentTag: Environment
-  playerTag: Player
-  projectileTag: WeaponProjectile
-  weaponTag: Weapon
-  UnequippedLayer: 12
-  EquippedLayer: 13
-  heldPosition: {x: -0.107, y: -0.239, z: 0.007}
-  heldRotation: {x: 51.524, y: -54.521, z: -143.663}
-  rb: {fileID: 0}
-  col: {fileID: 0}
-  anim: {fileID: 0}
-  durabilityDecrement: 1
-  weaponAmmo: {fileID: 556960967960711662, guid: 3cec71b3f0df7834b8baa20b093e39fb,
-    type: 3}
-  numberofAmmoToSpawn: 5
-  spawnOfsettDist: 1
-  vShape: 1
---- !u!114 &-8796067586960004273
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -3803818641871647858, guid: f44ccad4f1f21f2438ee8125e2f18763, type: 3}
+--- !u!114 &1773772853292776773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105903073570637870}
+  m_GameObject: {fileID: 503910229495570882}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: event:/Weapons/Weapon_FishBook_Attack
-  attackHitPlayer: event:/Player/Player_Dash
-  throwWep: event:/Weapons/Weapon_Throw
-  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
-  weaponPickup: event:/Weapons/Weapon_Pickup_FishBook
+  attack: 
+  attackHitPlayer: 
+  throwWep: 
+  ThrownWepHitEnvironment: 
+  weaponPickup: 
   weaponBreak: 
