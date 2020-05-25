@@ -10,6 +10,8 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
+    public GameObject attackVfx = null;
+    public GameObject hitVfx = null;
     public enum Weapontype{ oneHSword, twoHSword, spellbook, throwable };
     public Weapontype thisWepType;
     public enum LaunchDir { forward, up, left, right };
@@ -28,13 +30,14 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public string projectileTag = "WeaponProjectile";
     public string weaponTag = "Weapon";
 
-    public int UnequippedLayer = 13;
-    public int EquippedLayer = 14;
+    public int UnequippedLayer = 12;
+    public int EquippedLayer = 13;
 
     public Vector3 heldPosition;
     public Vector3 heldRotation;
     public Rigidbody rb;
     public Collider col;
+
     [HideInInspector] public Animator anim;
 
     public abstract void Attack();
@@ -70,10 +73,26 @@ abstract public class WeaponBaseClass : MonoBehaviour
             transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
         }
     }
+    public void SetParentPlayer(GameObject collision)
+    {
+
+
+        parentPlayer = collision.gameObject;
+        if (thisWepType == Weapontype.spellbook)
+        {
+            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().leftHandGameobject.transform);
+        }
+        else
+        {
+            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
+        }
+    }
+
     public void RemoveParentPlayer()
     {
         transform.parent = null;
     }
     public abstract void OnCollisionEnter(Collision collision);
+    public abstract void OnCollisionStay(Collision collision);
     public abstract void ChangeState(WeaponIState newState);
 }

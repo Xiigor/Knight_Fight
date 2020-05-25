@@ -32,6 +32,7 @@ public class CameraArenaViewState : CameraAbstractClass
     public override void Exit()
     {
         p_camera.cameraRestored = false;
+        Debug.Log("No?");
     }
 
     public Vector3 ViewEntireArena()

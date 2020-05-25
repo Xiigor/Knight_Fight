@@ -37,9 +37,12 @@ public class WeaponSwordPattern : WeaponBaseClass
     public override void Attack()
     {
         gameObject.GetComponent<Collider>().enabled = true;
+        if(attackVfx != null)
+        {
+            attackVfx.SetActive(true);
+        }
         newAttack = true;
         parentPlayer.GetComponent<PlayerStatePattern>().animator.GetCurrentAnimatorStateInfo(0).IsName("2HSword Attack");
-        Debug.Log("attack");
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
 
@@ -57,14 +60,19 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentState = newState;
         currentState.OnStateEnter();
     }
+     
     public override void OnCollisionEnter(Collision collision)
     {
-        currentState.HandleCollision(collision);
-        if(collision.gameObject.tag == playerTag && newAttack == true)
+        currentState.CollisionEnter(collision);
+        if (collision.gameObject.tag == playerTag && newAttack == true)
         {
             ChangeDurability(durabilityDecrement);
             newAttack = false;
-        }
-        
+        }        
+    }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
     }
 }

@@ -28,8 +28,12 @@ public class GameManager : MonoBehaviour
     public GameObject inputManagerObject;
     [HideInInspector] public PlayerInputManager inputManagerScript;
     [HideInInspector] public CommentatorStatePattern commentatorScript;
+    public CrowdMoodSetter crowdMoodSetter;
     public AudioMenu audioManager;
     public WeaponSpawnManager weaponSpawnManager;
+    public CounterManager counterManager;
+    public ProjectileDespawner projectileDespawner;
+    public GameObject winbanner;
 
     //rounds
     public int amountOfRounds = 1;
@@ -41,6 +45,16 @@ public class GameManager : MonoBehaviour
     public float winStateDuration = 5f;
     public float newRoundDelayDuration = 2f;
     public float internalRoundDelayTimer = 0f;
+
+    public float combinedStartingHealth = 0;
+    public float combinedCurrentHealth = 0;
+
+    [Header("Music Triggers in % of total player Health")]
+    public float firstHitTriggerValue = 1f;
+    public float halfHealthTriggerValue = 0.5f;
+    public float lowHealthTriggerValue = 25f;
+
+    public bool lowHPPlayer = false;
 
     //player related components
     public GameObject player1;
@@ -59,6 +73,10 @@ public class GameManager : MonoBehaviour
     public GameObject player4Ready;
     public GameObject player4NotReady;
 
+    //Tags
+    public string groundedProjectileTag = "GroundedProjectile";
+    public string projectileTag = "Projectile";
+
     public void Awake()
     {
         Application.targetFrameRate = 60;
@@ -73,6 +91,9 @@ public class GameManager : MonoBehaviour
         audioManager = GetComponent<AudioMenu>();
         commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
+        counterManager = GetComponent<CounterManager>();
+        projectileDespawner = GetComponent<ProjectileDespawner>();
+
         //inputDevices = new List<Gamepad>();
         inputDevices = new List<InputDevice>();
         readyPlayers = new List<GameObject>();
@@ -90,7 +111,7 @@ public class GameManager : MonoBehaviour
     {
         //Debug.Log(gameState);
         gameState.UpdateState();
-        SetRoundsText();
+
     }
 
     public void OnStart()
@@ -98,10 +119,13 @@ public class GameManager : MonoBehaviour
         if(readyPlayers.Count >= 1)
         {
             alivePlayers.Clear();
+            combinedStartingHealth = 0f;
             foreach(GameObject player in readyPlayers)
             {
                 alivePlayers.Add(player);
+                combinedStartingHealth += player.GetComponent<PlayerStatePattern>().maxHealth;
             }
+            combinedCurrentHealth = combinedStartingHealth;
             audioManager.StartPressed();
             gameState = gameplayState;
             gameState.OnStateEnter();
@@ -309,5 +333,66 @@ public class GameManager : MonoBehaviour
     public void SetRoundsText()
     {
         roundsText.text = amountOfRounds.ToString();
+    }
+
+
+    public void TriggerMusicCheckpoints(float percentage)
+    {
+        if (counterManager.countdownIsDone)
+        {
+            if(percentage < firstHitTriggerValue)
+            {
+                audioManager.gameplayModeMusic.setParameterByName("firstDamage", 1);
+                Debug.Log("first hit");
+            }
+            if(percentage <= halfHealthTriggerValue)
+            {
+                audioManager.gameplayModeMusic.setParameterByName("halfHealth", 1);
+                Debug.Log("halfhp");
+            }
+        }
+    }
+
+    public void SetLowHealthMusic()
+    {
+        if (counterManager.countdownIsDone)
+        {
+            foreach (GameObject player in alivePlayers)
+            {
+                if (player.GetComponent<PlayerStatePattern>().health <=lowHealthTriggerValue)
+                {
+                    lowHPPlayer = true;
+                    break;
+                }
+                else
+                {
+                    lowHPPlayer = false;
+                }
+            }
+            if (lowHPPlayer == true)
+            {
+               audioManager.gameplayModeMusic.setParameterByName("lowHealth", 1);
+            }
+            else
+            {
+               audioManager.gameplayModeMusic.setParameterByName("lowHealth", 0);
+            }
+        }
+
+    }
+
+    public void ResetMusicParams()
+    {
+        audioManager.gameplayModeMusic.setParameterByName("firstDamage", 0);
+        audioManager.gameplayModeMusic.setParameterByName("halfHealth", 0);
+        audioManager.gameplayModeMusic.setParameterByName("lowHealth", 0);
+    }
+    public void DecrementCombinedHealth(float damage)
+    {
+        combinedCurrentHealth -= damage;
+    }
+    public float GetGlobalHealthPercentage()
+    {
+        return combinedCurrentHealth / combinedStartingHealth;
     }
 }

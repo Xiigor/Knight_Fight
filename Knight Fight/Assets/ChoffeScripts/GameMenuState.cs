@@ -17,7 +17,11 @@ public class GameMenuState : GameIState
         {
             player.GetComponent<PlayerScoreTracker>().ClearScore();
         }
+        manager.projectileDespawner.DestroyObjectsWithTag(manager.groundedProjectileTag);
+        manager.projectileDespawner.DestroyObjectsWithTag(manager.projectileTag);
+        manager.winbanner.SetActive(false);
         manager.DisablePlayers();
+        manager.crowdMoodSetter.SetMood(0);
         manager.weaponSpawnManager.DestroyWeapons();
         manager.audioManager.StartMenuMusic();
         manager.cameraScript.ChangeState(manager.cameraScript.arenaViewState);
@@ -41,6 +45,6 @@ public class GameMenuState : GameIState
 
     public void UpdateState()
     {
-        //gör inget för tillfället
+        manager.SetRoundsText();
     }
 }

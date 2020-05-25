@@ -159,9 +159,10 @@ public class CameraStatePattern : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, initialCameraRotation, Time.deltaTime);
           
             if (restoreTimer > 1.75f)
-            {                
+            {
+                restoreTimer = 0.0f;
                 cameraRestored = true;
-            }           
+            }
         }
     }
 

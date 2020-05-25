@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class WeaponThrowable : WeaponBaseClass
 {
-     public float attackThrowForce;  
-     public float durabilityDecrement;
-     private float currentDurability;
-     
+    public float attackThrowForce;  
+    public float durabilityDecrement;
+    private float currentDurability;
+    private float timeDelay = 0;
+    private float timeDelayCol = 0;
+    private bool playerHit = false;
 
 
-     private void Awake()
+
+    private void Awake()
      {
          unequippedState = new WeaponUnequippedState(this);
          equippedState = new WeaponEquippedState(this);
@@ -20,9 +23,6 @@ public class WeaponThrowable : WeaponBaseClass
          gameObject.GetComponent<Collider>().material.dynamicFriction = 0.6f;
          gameObject.GetComponent<Collider>().material.staticFriction = 0.6f;
          gameObject.GetComponent<Rigidbody>().angularDrag = 0.05f;
-
-
-
      }
 
      private void Start()
@@ -37,10 +37,26 @@ public class WeaponThrowable : WeaponBaseClass
      private void Update()
      {
         currentState.UpdateState();
-        //if (rb.velocity == Vector3.zero)
-        //{
-        //    ChangeDurability(durabilityDecrement);
-        //}
+        if (attackActive == true)
+        {
+            timeDelayCol += Time.deltaTime;
+            if (timeDelayCol >= 0.5)
+            {
+                Physics.IgnoreCollision(parentPlayer.GetComponent<Collider>(), col, false);
+                timeDelayCol = 0;
+            }
+            
+        }
+        // Kort delay så att spelaren hinner hämta skadan innan objektet förstörs
+        if (playerHit == true)
+        {
+            timeDelay += Time.deltaTime;
+            if (timeDelay >= 0.05)
+            {
+                ChangeDurability(durabilityDecrement);
+                timeDelay = 0;
+            }
+        }
      }
 
      public override void Attack()
@@ -49,28 +65,28 @@ public class WeaponThrowable : WeaponBaseClass
         col.material.bounciness = 1;
         col.material.dynamicFriction = 0;
         col.material.staticFriction = 0;
+        transform.Rotate(90,0,0);
         rb.angularDrag = 0;
-        gameObject.tag = "WeaponProjectile";
+        gameObject.tag = "Throwable";
         rb.isKinematic = false;
         col.enabled = true;
         rb.useGravity = false;
-        rb.constraints = RigidbodyConstraints.FreezePositionY;
+        transform.rotation = Quaternion.Euler(90,0,0);
+        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX| RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
         rb.velocity = parentPlayer.transform.forward * attackThrowForce;
         RemoveParentPlayer();
         parentPlayer.GetComponent<PlayerStatePattern>().ThrowItem();
      }
 
-     //Antal stuttsar innan den gårsönder eller lägger sig på marken och blir som fiskarna
+     
      public override void ChangeDurability(float durabilityDecrement)
      {
-         currentDurability -= durabilityDecrement;
-         if (currentDurability <= 0)
-         {
-            rb.useGravity = true;
-            //Ta bort som child på spelaren innan destroy
-            //Destroy(this.gameObject);
+        currentDurability -= durabilityDecrement;
+        if (currentDurability <= 0)
+        {
+            Destroy(this.gameObject);
         }
-     }
+    }
 
      public override void ChangeState(WeaponIState newState)
      {
@@ -80,6 +96,18 @@ public class WeaponThrowable : WeaponBaseClass
 
      public override void OnCollisionEnter(Collision collision)
      {
-         currentState.HandleCollision(collision);
-     }
+        currentState.CollisionEnter(collision);
+
+        if (collision.gameObject.tag == playerTag && currentState == thrownState)
+        {
+            //ChangeDurability(durabilityHitPlayer);
+            playerHit = true;
+        }
+    }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
+    }
+
 }

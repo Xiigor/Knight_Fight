@@ -22,7 +22,7 @@ public class PlayerDeadState : PlayerIState
         float closestDistance = Mathf.Infinity;
         GameObject closestCrowd = null;
 
-        if (player.cameraScript.objectsFollowedByCamera.Count >= 1)
+        if (player.cameraScript.objectsFollowedByCamera.Count > 1)
         {
             player.commentatorScript.deathTrigger = true;
         }
@@ -46,12 +46,7 @@ public class PlayerDeadState : PlayerIState
     }
     public void ChangeState(PlayerIState newState)
     {
-        if (newState == player.basicState)
-        {
-            player.currentState = newState;
-        }
-        else
-            Debug.Log("GCD Trigger");
+
     }
     public void TakeDamage(float damage)
     {

@@ -16,17 +16,23 @@ public class ProjectileGroundedState : ProjectileIState
         throw new System.NotImplementedException();
     }
 
+
+
     public void OnStateEnter()
     {
         projectile.damage = 0;
         projectile.gameObject.tag = "GroundedProjectile";
-        //Physics.IgnoreLayerCollision(projectile.Player.layer, projectile.gameObject.layer, false);
-        Debug.Log("Grounded");
+        Physics.IgnoreLayerCollision(projectile.gameObject.layer, projectile.player.layer, false);
 
     }
 
     public void UpdateState()
     {
         
+    }
+
+    public void CollisionStay(Collision col)
+    {
+
     }
 }
