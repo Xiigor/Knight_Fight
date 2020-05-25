@@ -110,7 +110,7 @@ public class PlayerStatePattern : MonoBehaviour
     {
         GameObject spawnParticle = Instantiate(spawnEffect, spawnEffectPosition.position, spawnEffectPosition.rotation);
         Destroy(spawnParticle, 3);
-        //GameObject spawnParticle = Instantiate(spawnEffect, transform.position, Quaternion.identity);
+
         transform.position = spawnPosition.transform.position;
         health = maxHealth;
         tag = playerTag;
