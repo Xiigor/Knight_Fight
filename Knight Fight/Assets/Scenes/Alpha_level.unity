@@ -7550,7 +7550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.5262612, y: -0.002758367, z: -0.0051610107, w: 0.8503029}
-  m_LocalPosition: {x: -2.25, y: 34.5, z: -12.5}
+  m_LocalPosition: {x: -2.25, y: 34.5, z: -19.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 546727751}
@@ -7575,6 +7575,9 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   initialSmoothness: 3
   accelerationTimer: 0
+  initialCameraPosition: {x: 0, y: 0, z: 0}
+  initialcameraRotation: {x: 0, y: 0, z: 0, w: 0}
+  initialFieldOfView: 0
   ViewChangeSpeed: 0.25
   desiredSmoothness: 0.2
   cameraPositionX: -2.25
@@ -7587,6 +7590,7 @@ MonoBehaviour:
   minZoom: 68
   maxZoom: 45
   zoomLimiter: 50
+  cameraRestored: 0
   focusedObject: {fileID: 132078679}
   offsetFromFocusY: 8
   offsetFromFocusZ: 4

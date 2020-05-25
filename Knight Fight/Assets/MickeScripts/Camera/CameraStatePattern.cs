@@ -22,6 +22,12 @@ public class CameraStatePattern : MonoBehaviour
     [HideInInspector] public float initialSmoothness = 3.0f;
     [HideInInspector] public float accelerationTimer = 0.0f;
 
+    [HideInInspector] public Vector3 initialCameraPosition;
+    [HideInInspector] public Quaternion initialCameraRotation;
+    [HideInInspector] public float initialFieldOfView;
+
+    private float restoreTimer;
+
     [Header("Camera Movement")]
 
     [Range(0.0f, 0.99f)]
@@ -54,6 +60,8 @@ public class CameraStatePattern : MonoBehaviour
     [Range(0, 100)]
     public float zoomLimiter = 50.0f;
 
+    [HideInInspector] public bool cameraRestored;
+
     // **** FOLLOW PLAYER VARIABLES **** //     // NOT TO BE USED IN THE ACTUAL GAME CURRENTLY!!! Testing purposes only
     [Header("Follow Specific Object")]
 
@@ -69,6 +77,8 @@ public class CameraStatePattern : MonoBehaviour
         arenaViewState = new CameraArenaViewState(this);
         battleViewState = new CameraBattleViewState(this);
         followPlayerState = new CameraFollowPlayerState(this);
+
+        cameraRestored = true;
     }
 
     void Start()
@@ -78,9 +88,18 @@ public class CameraStatePattern : MonoBehaviour
 
     void LateUpdate()
     {
-        currentState.Execute();
+        if (cameraRestored)
+        {
+            currentState.Execute();
+        }
 
-        DevStateChange();
+        if (!cameraRestored)
+        {
+            ViewChangeAcceleration();
+            SmoothnessNormalizer();
+
+            RestoreCamera();
+        }
     }
 
     public void ChangeState(CameraAbstractClass newState)
@@ -93,24 +112,6 @@ public class CameraStatePattern : MonoBehaviour
         currentState = newState;
 
         currentState.Enter();
-    }
-
-    private void DevStateChange()  // FUNCTION ONLY USED FOR TESTING, NOT TO BE IMPLEMENTED IN THE GAME
-    {
-        if(Input.GetKey("m"))
-        {
-            ChangeState(arenaViewState);
-        }
-
-        if(Input.GetKey("b"))
-        {
-            ChangeState(battleViewState);
-        }
-
-        if(Input.GetKey("f"))
-        {
-            ChangeState(followPlayerState);
-        }
     }
 
     public void ViewChangeAcceleration()
@@ -136,6 +137,29 @@ public class CameraStatePattern : MonoBehaviour
         if (initialSmoothness < desiredSmoothness)
         {
             initialSmoothness = desiredSmoothness;
+        }
+    }
+
+    public void RestoreCamera()
+    {
+        restoreTimer += Time.deltaTime;
+
+        if (transform.position != initialCameraPosition)
+        {
+            transform.position = initialCameraPosition;
+            transform.rotation = initialCameraRotation;
+            gameCamera.fieldOfView = 60.0f;
+
+            cameraRestored = true;
+            //transform.position = Vector3.SmoothDamp(transform.position, initialCameraPosition, ref velocity, initialSmoothness);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, initialCameraRotation, Time.deltaTime);
+
+            /*
+            if (restoreTimer > 1.75f)
+            {                
+                cameraRestored = true;
+            }
+            */
         }
     }
 }
