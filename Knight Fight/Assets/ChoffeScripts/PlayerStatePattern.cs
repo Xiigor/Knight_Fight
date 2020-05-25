@@ -8,8 +8,9 @@ public class PlayerStatePattern : MonoBehaviour
 {
     public ParticleSystem particleSpawnEffect;
     public GameObject spawnEffect;
-    public ParticleSystem particleDashEffect;
+    public GameObject particleDashEffect;
     public Transform spawnEffectPosition;
+    public Transform DashEffectPosition;
 
     public Transform crowdParent;
     public PlayerIState currentState;
@@ -109,6 +110,7 @@ public class PlayerStatePattern : MonoBehaviour
     public void OnEnable()
     {
         GameObject spawnParticle = Instantiate(spawnEffect, spawnEffectPosition.position, spawnEffectPosition.rotation);
+        Destroy(spawnParticle, 3);
         //GameObject spawnParticle = Instantiate(spawnEffect, transform.position, Quaternion.identity);
         transform.position = spawnPosition.transform.position;
         health = maxHealth;
@@ -120,8 +122,6 @@ public class PlayerStatePattern : MonoBehaviour
         weapon = null;
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
 
-        //Instansiera först och sen spela upp det?
-        //particleSpawnEffect.Play();
     }
 
     public void OnDisable()
@@ -381,6 +381,8 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void Dash()
     {
+        GameObject DashParticle = Instantiate(particleDashEffect, DashEffectPosition.position, DashEffectPosition.rotation);
+        Destroy(DashParticle, 3);
         transform.Translate(lastMove * dashSpeed * Time.deltaTime, Space.World);
     }
 

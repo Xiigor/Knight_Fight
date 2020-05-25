@@ -4,6 +4,8 @@ using UnityEngine;
 
 abstract public class ProjectileBase : MonoBehaviour
 {
+    public GameObject spawnEffect;
+
     public ProjectileIState currentState;
     public float damage;
     public float despawnTimerMin = 15f;
@@ -27,6 +29,8 @@ abstract public class ProjectileBase : MonoBehaviour
     public void OnDestroy()
     {
         Debug.Log("puff");
+        spawnEffect = GameObject.Find("poof");
+        GameObject spawnParticle = Instantiate(spawnEffect, transform.position, Quaternion.identity);
         //instansiera rökpuffen här
     }
 
