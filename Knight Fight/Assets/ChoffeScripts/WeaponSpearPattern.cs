@@ -69,6 +69,11 @@ public class WeaponSpearPattern : WeaponBaseClass
 
     public override void OnCollisionEnter(Collision collision)
     {
-        currentState.HandleCollision(collision);
+        currentState.CollisionEnter(collision);
+    }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
     }
 }

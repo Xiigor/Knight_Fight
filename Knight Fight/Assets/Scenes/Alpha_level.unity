@@ -3708,6 +3708,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ground
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0555348f72588ed49b36bfed208595cb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0555348f72588ed49b36bfed208595cb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4960,8 +4965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeWeaponsList: []
   weaponsList:
-  - {fileID: 9198469664338340374, guid: 9a0496605e45a4b419c074fe3d6daaab, type: 3}
-  - {fileID: 923546299004750516, guid: 4a009ecdcd9105742890901b32f4d84e, type: 3}
+  - {fileID: 3105903073570637870, guid: fff86f02ab488444faa70f5aa56fcd1c, type: 3}
   maxWeaponsActive: 10
   weaponMaxSpawnTime: 10
   weaponMinSpawnTime: 5
@@ -8874,12 +8878,12 @@ PrefabInstance:
     - target: {fileID: 7922594374936800495, guid: ca3bdb139643ba8429af0b64a49cabf6,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7922594374936800491, guid: ca3bdb139643ba8429af0b64a49cabf6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.96
+      value: 5.8
       objectReference: {fileID: 0}
     - target: {fileID: 7922594374936800491, guid: ca3bdb139643ba8429af0b64a49cabf6,
         type: 3}

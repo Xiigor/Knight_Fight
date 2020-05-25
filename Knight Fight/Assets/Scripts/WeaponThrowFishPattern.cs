@@ -84,14 +84,21 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         }
     }
 
-    public override void OnCollisionEnter(Collision collision)
-    {
-        currentState.HandleCollision(collision);
-    }
+
 
     public override void ChangeState(WeaponIState newState)
     {
         currentState = newState;
         currentState.OnStateEnter();
+    }
+
+    public override void OnCollisionEnter(Collision collision)
+    {
+        currentState.CollisionEnter(collision);
+    }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
     }
 }

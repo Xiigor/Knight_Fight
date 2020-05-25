@@ -125,6 +125,8 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void OnDisable()
     {
+        GameObject spawnParticle = Instantiate(spawnEffect, spawnEffectPosition.position, spawnEffectPosition.rotation);
+        Destroy(spawnParticle, 3);
         transform.position = spawnPosition.transform.position;
     }
 
@@ -199,7 +201,11 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (collision.gameObject.layer == UnequippedLayer)
                 {
-                    PickupItem(collision.gameObject);
+                    if(weapon == null)
+                    {
+                        PickupItem(collision.gameObject);
+                    }
+                    
                 }
                 else if (collision.gameObject.layer == EquippedLayer)
                 {
@@ -408,7 +414,9 @@ public class PlayerStatePattern : MonoBehaviour
         attackAnimDuration = weapon.GetComponent<WeaponBaseClass>().animationDuration;
         weapon.gameObject.layer = EquippedLayer; //läggs här för att inte ske före on collision
         WeaponTypeIdentifier();
-       // weapon.GetComponent<WeaponBaseClass>().OnPickup(this.gameObject);
+
+        weapon.GetComponent<WeaponBaseClass>().SetParentPlayer(this.gameObject);
+        weapon.GetComponent<WeaponBaseClass>().ChangeState(weapon.GetComponent<WeaponBaseClass>().equippedState);
     }
 
     public void OnHit(float damage)

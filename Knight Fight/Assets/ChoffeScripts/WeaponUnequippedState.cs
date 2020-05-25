@@ -27,6 +27,7 @@ public class WeaponUnequippedState : WeaponIState
     {
 
     }
+
     public void ChangePhysics()
     {
         weapon.rb.isKinematic = false;
@@ -34,14 +35,14 @@ public class WeaponUnequippedState : WeaponIState
         weapon.rb.useGravity = true;
     }
 
-    public void HandleCollision(Collision col)
+    public void CollisionEnter(Collision col)
     {
-       if(col.gameObject.tag == weapon.playerTag)
-        {
-            //if the player is not holding a weapon already, pick up this one
-            weapon.SetParentPlayer(col);
-            weapon.ChangeState(weapon.equippedState);
-        }
+        //spelaren hanterar all pickup
     }
-   
+
+    public void CollisionStay(Collision col)
+    {
+        
+    }
+
 }

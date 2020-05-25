@@ -60,13 +60,19 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentState = newState;
         currentState.OnStateEnter();
     }
+     
     public override void OnCollisionEnter(Collision collision)
     {
-        currentState.HandleCollision(collision);
-        if(collision.gameObject.tag == playerTag && newAttack == true)
+        currentState.CollisionEnter(collision);
+        if (collision.gameObject.tag == playerTag && newAttack == true)
         {
             ChangeDurability(durabilityDecrement);
             newAttack = false;
         }        
+    }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
     }
 }
