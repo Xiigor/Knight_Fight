@@ -19,9 +19,22 @@ public class WeaponThrownState : WeaponIState
         internalGroundedTimer = 0f;
         if(weapon.thisWepType == WeaponBaseClass.Weapontype.throwable && weapon.attackActive == true)
         {
-          
-            movementApplied = true;
-            Debug.Log("Attack");
+            if ((int)weapon.GetComponent<WeaponThrowable>().throwableType == 0)
+            {
+                movementApplied = true;
+                Debug.Log("Attack");
+            }
+            else
+            {
+                weapon.audioPlayer.WeaponBeingThrown();
+                movementApplied = false;
+                ChangePhysics();
+                weapon.gameObject.tag = weapon.projectileTag;
+                AddThrownForce();
+                weapon.RemoveParentPlayer();
+                Debug.Log("throw");
+            }
+            
         }
         else
         {
