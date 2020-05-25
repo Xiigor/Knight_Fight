@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerStatePattern : MonoBehaviour
 {
-    public ParticleSystem particleSpawnEffect;
     public GameObject spawnEffect;
     public GameObject particleDashEffect;
     public Transform spawnEffectPosition;
