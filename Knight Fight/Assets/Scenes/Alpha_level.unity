@@ -2596,6 +2596,36 @@ MonoBehaviour:
   minUpSpeed: 10
   randomForwardSpeed: 0
   randomUpSpeed: 0
+--- !u!1 &533152502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 533152503}
+  m_Layer: 8
+  m_Name: Dash Effect Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &533152503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533152502}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.79, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9193890254230614397}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &546727750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4632,6 +4662,11 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   initialSmoothness: 3
   accelerationTimer: 0
+  initialCameraPosition: {x: 0, y: 0, z: 0}
+  initialCameraRotation: {x: 0, y: 0, z: 0, w: 0}
+  initialFieldOfView: 0
+  cameraRestored: 0
+  gameFinished: 0
   ViewChangeSpeed: 0.25
   desiredSmoothness: 0.2
   cameraPositionX: -2.25
@@ -4687,7 +4722,6 @@ MonoBehaviour:
   onVictory: event:/Commentators/On_Victory
   bored: event:/Commentators/On_Inactivity
   intro: event:/Commentators/On_Start
-  death: event:/Commentators/On_Death
 --- !u!1 &969376067
 GameObject:
   m_ObjectHideFlags: 0
@@ -4923,7 +4957,7 @@ MonoBehaviour:
   activeWeaponsList: []
   weaponsList:
   - {fileID: 9198469664338340374, guid: 9a0496605e45a4b419c074fe3d6daaab, type: 3}
-  - {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
+  - {fileID: 923546299004750516, guid: 4a009ecdcd9105742890901b32f4d84e, type: 3}
   maxWeaponsActive: 10
   weaponMaxSpawnTime: 10
   weaponMinSpawnTime: 5
@@ -6558,6 +6592,36 @@ MonoBehaviour:
   minUpSpeed: 10
   randomForwardSpeed: 0
   randomUpSpeed: 0
+--- !u!1 &1415795753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1415795754}
+  m_Layer: 8
+  m_Name: Effect Spawn Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1415795754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415795753}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.2340002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9193890254230614397}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1420227988 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 1d1977d8572ea3e43a9322176217b817,
@@ -8806,7 +8870,7 @@ PrefabInstance:
     - target: {fileID: 7922594374936800495, guid: ca3bdb139643ba8429af0b64a49cabf6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7922594374936800491, guid: ca3bdb139643ba8429af0b64a49cabf6,
         type: 3}
@@ -8878,6 +8942,28 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 484245594}
+    - target: {fileID: 4598260054181686504, guid: ca3bdb139643ba8429af0b64a49cabf6,
+        type: 3}
+      propertyPath: spawnEffect
+      value: 
+      objectReference: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
+        type: 3}
+    - target: {fileID: 4598260054181686504, guid: ca3bdb139643ba8429af0b64a49cabf6,
+        type: 3}
+      propertyPath: particleDashEffect
+      value: 
+      objectReference: {fileID: 1150619077952312041, guid: 5fd581fc8ca08c149b831570b2b920c0,
+        type: 3}
+    - target: {fileID: 4598260054181686504, guid: ca3bdb139643ba8429af0b64a49cabf6,
+        type: 3}
+      propertyPath: spawnEffectPosition
+      value: 
+      objectReference: {fileID: 1415795754}
+    - target: {fileID: 4598260054181686504, guid: ca3bdb139643ba8429af0b64a49cabf6,
+        type: 3}
+      propertyPath: DashEffectPosition
+      value: 
+      objectReference: {fileID: 533152503}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca3bdb139643ba8429af0b64a49cabf6, type: 3}
 --- !u!1 &2070345777700598320 stripped
@@ -9073,6 +9159,12 @@ PrefabInstance:
 --- !u!1 &9193890254230614389 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7922594374936800495, guid: ca3bdb139643ba8429af0b64a49cabf6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1325738216083086746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9193890254230614397 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7922594374936800491, guid: ca3bdb139643ba8429af0b64a49cabf6,
     type: 3}
   m_PrefabInstance: {fileID: 1325738216083086746}
   m_PrefabAsset: {fileID: 0}
