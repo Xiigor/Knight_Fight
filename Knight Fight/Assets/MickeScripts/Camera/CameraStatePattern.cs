@@ -26,6 +26,9 @@ public class CameraStatePattern : MonoBehaviour
     [HideInInspector] public Quaternion initialCameraRotation;
     [HideInInspector] public float initialFieldOfView;
 
+    [HideInInspector] public bool cameraRestored;
+    [HideInInspector] public bool gameFinished;
+
     private float restoreTimer;
 
     [Header("Camera Movement")]
@@ -60,8 +63,6 @@ public class CameraStatePattern : MonoBehaviour
     [Range(0, 100)]
     public float zoomLimiter = 50.0f;
 
-    [HideInInspector] public bool cameraRestored;
-
     // **** FOLLOW PLAYER VARIABLES **** //     // NOT TO BE USED IN THE ACTUAL GAME CURRENTLY!!! Testing purposes only
     [Header("Follow Specific Object")]
 
@@ -79,6 +80,7 @@ public class CameraStatePattern : MonoBehaviour
         followPlayerState = new CameraFollowPlayerState(this);
 
         cameraRestored = true;
+        gameFinished = false;
     }
 
     void Start()
@@ -88,7 +90,7 @@ public class CameraStatePattern : MonoBehaviour
 
     void LateUpdate()
     {
-        if (cameraRestored)
+        if (cameraRestored && !gameFinished)
         {
             currentState.Execute();
         }
@@ -98,7 +100,12 @@ public class CameraStatePattern : MonoBehaviour
             ViewChangeAcceleration();
             SmoothnessNormalizer();
 
-            RestoreCamera();
+            SmoothRestoreCamera();
+        }
+
+        if (gameFinished)
+        {
+            InstantRestoreCamera();
         }
     }
 
@@ -140,26 +147,33 @@ public class CameraStatePattern : MonoBehaviour
         }
     }
 
-    public void RestoreCamera()
+    public void SmoothRestoreCamera()
     {
         restoreTimer += Time.deltaTime;
 
+        if (transform.position != initialCameraPosition)
+        {
+            gameCamera.fieldOfView = 60.0f;
+
+            transform.position = Vector3.SmoothDamp(transform.position, initialCameraPosition, ref velocity, initialSmoothness);
+            transform.rotation = Quaternion.Lerp(transform.rotation, initialCameraRotation, Time.deltaTime);
+          
+            if (restoreTimer > 1.75f)
+            {                
+                cameraRestored = true;
+            }           
+        }
+    }
+
+    public void InstantRestoreCamera()
+    {
         if (transform.position != initialCameraPosition)
         {
             transform.position = initialCameraPosition;
             transform.rotation = initialCameraRotation;
             gameCamera.fieldOfView = 60.0f;
 
-            cameraRestored = true;
-            //transform.position = Vector3.SmoothDamp(transform.position, initialCameraPosition, ref velocity, initialSmoothness);
-            //transform.rotation = Quaternion.Lerp(transform.rotation, initialCameraRotation, Time.deltaTime);
-
-            /*
-            if (restoreTimer > 1.75f)
-            {                
-                cameraRestored = true;
-            }
-            */
+            gameFinished = false;
         }
     }
 }

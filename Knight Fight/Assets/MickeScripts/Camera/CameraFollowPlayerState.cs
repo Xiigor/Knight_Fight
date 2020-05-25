@@ -26,7 +26,7 @@ public class CameraFollowPlayerState : CameraAbstractClass
 
     public override void Exit()
     {
-        p_camera.cameraRestored = false;
+        p_camera.gameFinished = true;
     }
 
     private void FollowPlayer()
