@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ProjectileFlyingState : ProjectileIState
 {
+    public int UnequippedLayer = 12;
     private readonly ProjectileBase projectile;
     private bool velocityApplied = false;
     private float internalGroundedTimer = 0f;
@@ -22,6 +23,10 @@ public class ProjectileFlyingState : ProjectileIState
            if(projectile.rb.velocity == Vector3.zero)
             {
                     ChangeState(projectile.groundedState);
+            }
+            if (1 == (int)projectile.projectileType)
+            {
+                projectile.rb.velocity = projectile.transform.forward * projectile.ProjectileSpeed;
             }
         }
 

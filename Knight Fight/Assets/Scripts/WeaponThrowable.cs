@@ -10,6 +10,8 @@ public class WeaponThrowable : WeaponBaseClass
     private float timeDelay = 0;
     private float timeDelayCol = 0;
     private bool playerHit = false;
+    public enum ThrowableType { throwableWeapon, trashWeapon};
+    public ThrowableType throwableType;
 
 
 
@@ -62,18 +64,22 @@ public class WeaponThrowable : WeaponBaseClass
      public override void Attack()
      {
         attackActive = true;
-        col.material.bounciness = 1;
-        col.material.dynamicFriction = 0;
-        col.material.staticFriction = 0;
-        transform.Rotate(90,0,0);
-        rb.angularDrag = 0;
-        gameObject.tag = "Throwable";
-        rb.isKinematic = false;
-        col.enabled = true;
-        rb.useGravity = false;
-        transform.rotation = Quaternion.Euler(90,0,0);
-        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX| RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
-        rb.velocity = parentPlayer.transform.forward * attackThrowForce;
+        if (0 == (int)throwableType)
+        {
+            col.material.bounciness = 1;
+            col.material.dynamicFriction = 0;
+            col.material.staticFriction = 0;
+            transform.Rotate(90, 0, 0);
+            rb.angularDrag = 0;
+            gameObject.tag = "Throwable";
+            rb.isKinematic = false;
+            col.enabled = true;
+            rb.useGravity = false;
+            transform.rotation = Quaternion.Euler(90, 0, 0);
+            rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
+            rb.velocity = parentPlayer.transform.forward * attackThrowForce;
+        }
+        
         RemoveParentPlayer();
         parentPlayer.GetComponent<PlayerStatePattern>().ThrowItem();
      }
