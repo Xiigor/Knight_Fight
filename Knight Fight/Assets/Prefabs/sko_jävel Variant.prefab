@@ -1,5 +1,91 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!54 &-826901418336809469
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7982741905242481868}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
+--- !u!64 &3327500513940490332
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7982741905242481868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5330749552882104735, guid: de7ecfffbd99f9f49a9ce277fff3b53a, type: 3}
+--- !u!114 &3122101404804297536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7982741905242481868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 
+  attackHitPlayer: 
+  throwWep: 
+  ThrownWepHitEnvironment: 
+  weaponPickup: 
+  weaponBreak: 
+--- !u!114 &8145700705968862913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7982741905242481868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe581805340b1b748bf26fe93744212b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentPlayer: {fileID: 0}
+  audioPlayer: {fileID: 0}
+  attackVfx: {fileID: 0}
+  hitVfx: {fileID: 0}
+  thisWepType: 3
+  launchDir: 0
+  animationDuration: 1
+  durability: 10
+  damage: 8
+  thrownDamage: 8
+  thrownForce: 25
+  throwAngle: 0.25
+  attackActive: 0
+  environmentTag: Environment
+  playerTag: Player
+  projectileTag: WeaponProjectile
+  weaponTag: Weapon
+  UnequippedLayer: 12
+  EquippedLayer: 13
+  heldPosition: {x: 0, y: 0, z: 0}
+  heldRotation: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+  col: {fileID: 0}
+  anim: {fileID: 0}
+  attackThrowForce: 0
+  durabilityDecrement: 0
 --- !u!1001 &2155403849107848645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +96,17 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: de7ecfffbd99f9f49a9ce277fff3b53a,
         type: 3}
       propertyPath: m_Name
-      value: "sko_j\xE4vel"
+      value: "sko_j\xE4vel Variant"
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: de7ecfffbd99f9f49a9ce277fff3b53a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: de7ecfffbd99f9f49a9ce277fff3b53a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: de7ecfffbd99f9f49a9ce277fff3b53a,
         type: 3}
@@ -89,3 +185,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e5b14f462744e2349bf5f46e763a2874, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de7ecfffbd99f9f49a9ce277fff3b53a, type: 3}
+--- !u!1 &7982741905242481868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: de7ecfffbd99f9f49a9ce277fff3b53a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2155403849107848645}
+  m_PrefabAsset: {fileID: 0}

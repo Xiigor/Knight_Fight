@@ -390,6 +390,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-8796685771748065732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw/Weight
+  m_EditorClassIdentifier: 
+  Name: Weight
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-8789364372972098506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,13 +826,13 @@ MonoBehaviour:
   Path: event:/Implementation/Weapon_Throw_Male_Manager
   guid: 6ed9eec83f2916458e845077525861af
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 4121039722621259183}
-  - {fileID: -6154977800673481149}
+  - {fileID: 8800269896049594535}
+  - {fileID: 3575825964801111782}
   MinDistance: 1
   MaxDistance: 20
   Length: 140
@@ -945,6 +962,23 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+  Exists: 1
+--- !u!114 &-8333916637401382808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Female_Manager/WeaponWeight
+  m_EditorClassIdentifier: 
+  Name: WeaponWeight
+  Min: 0
+  Max: 2
+  Default: 1
   Exists: 1
 --- !u!114 &-8316268213056979690
 MonoBehaviour:
@@ -1392,7 +1426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Plugins/FMOD/Desktop/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637260001436156549
+  lastModified: 637260197897091406
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -1487,13 +1521,13 @@ MonoBehaviour:
   Path: event:/Implementation/Weapon_Throw_Female_Manager
   guid: eed31ae4765d524789cd232126ac847d
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 7205308845742118613}
-  - {fileID: 967438237184431391}
+  - {fileID: 6950450092772496365}
+  - {fileID: -8333916637401382808}
   MinDistance: 1
   MaxDistance: 20
   Length: 140
@@ -1529,7 +1563,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Hit_Ground
   guid: c8dd64ca2db185438dd7726835d4c44b
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1741,12 +1775,12 @@ MonoBehaviour:
   Path: event:/Implementation/Player_Hurt_Female_Manager
   guid: f10313fe616a7b4baecba732a81af8f4
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -1165812104127291938}
+  - {fileID: -6460371752780784906}
   MinDistance: 1
   MaxDistance: 100
   Length: 15
@@ -2178,7 +2212,7 @@ MonoBehaviour:
   Path: event:/Player/Player_Hurt_Generic_Female
   guid: c5c36154cc966b41b67a5c5c049efb21
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2950,7 +2984,7 @@ MonoBehaviour:
   Path: event:/Ui/Announcer/Announcer_Match_End
   guid: 8a9b9534f18a694796085282c9fa3d10
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3442,6 +3476,23 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 1
+--- !u!114 &-6460371752780784906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player_Hurt_Female_Manager/Weapon
+  m_EditorClassIdentifier: 
+  Name: Weapon
+  Min: 0
+  Max: 20
+  Default: 10
+  Exists: 1
 --- !u!114 &-6452069719942511501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3841,7 +3892,7 @@ MonoBehaviour:
   Path: event:/Player/Player_Dash
   guid: faec8d01bcdc5a4fb6a37d8f7cc14b84
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4374,7 +4425,7 @@ MonoBehaviour:
   Path: event:/Player/Player_Hurt_Unarmed
   guid: 362a95083bb36e479e555ad67f761a15
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4414,7 +4465,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Pickup_FishBook
   guid: 63ace7c6526c3c4e9c9dabc30f5f1165
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4688,7 +4739,7 @@ MonoBehaviour:
   Path: event:/Ui/Ui_Camera_StageSwitch
   guid: 3cf30f6352251843959d311da03f1b0b
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5273,6 +5324,23 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 1
+--- !u!114 &-5031971852135263824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player_Hurt_Male_Manager/Weapon
+  m_EditorClassIdentifier: 
+  Name: Weapon
+  Min: 0
+  Max: 20
+  Default: 10
+  Exists: 1
 --- !u!114 &-5027989734107409411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5693,7 +5761,7 @@ MonoBehaviour:
   Path: event:/Ui/Ui_Player_Joined
   guid: 5844f44684de424b889b94bea2e941e8
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5767,7 +5835,7 @@ MonoBehaviour:
   Path: event:/Commentators/On_Start
   guid: 11a7d3496f31ad46b47396fcbd217b93
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -5885,6 +5953,23 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
+--- !u!114 &-4597114122423893508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/Victory
+  m_EditorClassIdentifier: 
+  Name: Victory
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-4557548530451487487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6121,7 +6206,7 @@ MonoBehaviour:
   Path: event:/Player/Player_Hurt_BananaTree
   guid: b436749448857443a1794f27445cd722
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6178,7 +6263,7 @@ MonoBehaviour:
   Path: event:/Commentators/On_Victory
   guid: 7989a4940b7e1346a3e189e304247a0b
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6762,12 +6847,12 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Throw
   guid: 301dd012c0c0e441917b876b0ce59ae7
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -2992251301288272580}
+  - {fileID: -8796685771748065732}
   MinDistance: 1
   MaxDistance: 50
   Length: 370
@@ -6862,6 +6947,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3888475653777019255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Crowd_Manager/CrowdMood
+  m_EditorClassIdentifier: 
+  Name: CrowdMood
+  Min: 0
+  Max: 1
+  Default: 1
+  Exists: 1
 --- !u!114 &-3837701598775280886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6877,7 +6979,7 @@ MonoBehaviour:
   Path: event:/Ui/Announcer/Announcer_Welcome
   guid: 77f15f5600b32e4d9ed0140506c42e39
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6936,6 +7038,23 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
+--- !u!114 &-3793392336969616356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/halfHealth
+  m_EditorClassIdentifier: 
+  Name: halfHealth
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-3785449895470807683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7027,6 +7146,23 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
+--- !u!114 &-3704985257250182934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Attack_Manager/Weapon
+  m_EditorClassIdentifier: 
+  Name: Weapon
+  Min: 0
+  Max: 20
+  Default: 10
+  Exists: 1
 --- !u!114 &-3684331847748237801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7292,7 +7428,7 @@ MonoBehaviour:
   Path: event:/Ambience/Crowd_Cheer
   guid: f9632b1ada7ff04fb0efb9101c08334e
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -7451,7 +7587,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Spear_Attack
   guid: 3f2ba6e76df7444aa7858c17af3870ca
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -7550,6 +7686,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-3177880758098307675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Announcer_Player_Defeated/WhatPlayer
+  m_EditorClassIdentifier: 
+  Name: WhatPlayer
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &-3164899350239167771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7616,7 +7769,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Excaliboulder_Attack
   guid: 8e57da15a46868479ffd2c4007560807
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -7691,12 +7844,12 @@ MonoBehaviour:
   Path: event:/Implementation/Weapon_Attack_Manager
   guid: dc57ea66eb01a44b82e9b2c2bf015da1
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -5537584783031625512}
+  - {fileID: -3704985257250182934}
   MinDistance: 1
   MaxDistance: 100
   Length: 0
@@ -8718,12 +8871,12 @@ MonoBehaviour:
   Path: event:/Implementation/Player_Hurt_Male_Manager
   guid: b9204b05cb757543b47178dd0c00870b
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 1445786579859082608}
+  - {fileID: -5031971852135263824}
   MinDistance: 1
   MaxDistance: 100
   Length: 15
@@ -9068,7 +9221,7 @@ MonoBehaviour:
   Path: event:/Player/Player_Bush_Small_Enter
   guid: 19baf543df3bfd458d12a16b0ab49c00
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -9363,7 +9516,7 @@ MonoBehaviour:
   Path: event:/Ui/Ui_Menu_Start
   guid: ea2883abf84d9d4dba815a36cf4af98d
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -9494,7 +9647,7 @@ MonoBehaviour:
   Path: event:/Player/PlayerWalk
   guid: 652f2e31f6400047890594076d4a95a4
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -10635,7 +10788,7 @@ MonoBehaviour:
   Path: event:/Player/Player_Hurt_Fish
   guid: 12d35be445573a4198aaa71d2ce0c586
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -10658,7 +10811,7 @@ MonoBehaviour:
   Path: event:/Commentators/On_Death
   guid: 49c53686234b824bbdb6b6b3eb0ee589
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -11408,7 +11561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -8001828284403866818}
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   EditorEvents:
   - {fileID: -569196849076045983}
   - {fileID: -1922604671058416267}
@@ -11463,10 +11616,10 @@ MonoBehaviour:
   - {fileID: -4387687531874447943}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   StringsBanks:
   - {fileID: -8001828284403866818}
-  stringsBankWriteTime: 637260001436156549
+  stringsBankWriteTime: 637260197897091406
   cacheVersion: 3
 --- !u!114 &3464459131214366
 MonoBehaviour:
@@ -11483,7 +11636,7 @@ MonoBehaviour:
   Path: event:/Ui/Ui_Menu_Select
   guid: 531faec631928c4fb635ef31b7ecdf7d
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -11982,6 +12135,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 1065
+--- !u!114 &556628823521838260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/lowHealth
+  m_EditorClassIdentifier: 
+  Name: lowHealth
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &561923748255418060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12422,7 +12592,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_FishBook_Attack
   guid: 8903c274ae9ff3418971d0d75e81173c
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -12554,7 +12724,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Pickup_Generic
   guid: 83a6a4b54bfe014094df3d6a102bfec1
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -12611,7 +12781,7 @@ MonoBehaviour:
   Path: event:/Commentators/On_Inactivity
   guid: b521d3faff88854ab55d8720890f88d3
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -12634,7 +12804,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Hit_Ground(Actual)
   guid: ba8e00d860f0394db0657f432118685b
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -13367,6 +13537,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 57600
+--- !u!114 &1910951997398837245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Plugins/FMOD/Desktop/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637260197897031293
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1979783117218799484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13399,7 +13587,7 @@ MonoBehaviour:
   Path: event:/Ambience/Crowd_Boo
   guid: 53eef49febcbca4e9305ddfd3e880577
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -13581,7 +13769,7 @@ MonoBehaviour:
   Path: event:/Player/Player_Hurt_Excaliboulder
   guid: a7166ac2db88e84697d3c1d987e2de99
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -13812,7 +14000,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Throw_Heavy_Female
   guid: 3685ad1888f98c4992403ec4eab4c023
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -14018,7 +14206,7 @@ MonoBehaviour:
   Path: event:/BGM/Victory Stinger
   guid: 6db77b97a90e9d4096205867409a6e3e
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -14741,7 +14929,7 @@ MonoBehaviour:
   Path: event:/Player/Player_Bush_Enter
   guid: 7b36695fcb57b04fb12ceee9a5c47d10
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -14988,7 +15176,7 @@ MonoBehaviour:
   Path: event:/Commentators/On_RandomTimer
   guid: f56f593997282744be22e965be1614d7
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -15191,6 +15379,23 @@ MonoBehaviour:
   Max: 20
   Default: 10
   Exists: 0
+--- !u!114 &3575825964801111782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Male_Manager/WeaponWeight
+  m_EditorClassIdentifier: 
+  Name: WeaponWeight
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
 --- !u!114 &3581270926078511111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15484,12 +15689,12 @@ MonoBehaviour:
   Path: event:/Ambience/Crowd_Manager
   guid: 93d4f441d000944da1843f061d119be3
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -1265858712969985309}
+  - {fileID: -3888475653777019255}
   MinDistance: 1
   MaxDistance: 50
   Length: 77200
@@ -15679,7 +15884,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Throw_Heavy_Male
   guid: c8245c9a418e2e42a3ad5bc837fd5fa3
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -15960,7 +16165,7 @@ MonoBehaviour:
   Path: event:/Ui/Announcer/Announcer_Match_Start
   guid: f5d479f4feb6504097cb1e535c010db8
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -16094,15 +16299,15 @@ MonoBehaviour:
   Path: event:/BGM/Gameplay
   guid: 4589655319d59a489ba783ca1b2692a7
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2351921839311661405}
-  - {fileID: -8849209278212644945}
-  - {fileID: -4925732696965419666}
-  - {fileID: -5687390412194284222}
+  - {fileID: 5605395623665228053}
+  - {fileID: -3793392336969616356}
+  - {fileID: 556628823521838260}
+  - {fileID: -4597114122423893508}
   MinDistance: 0
   MaxDistance: 0
   Length: 76800
@@ -16259,7 +16464,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Throw_Light
   guid: acaa3175bfb83149b1b7b40a1a06ac8f
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -17174,7 +17379,7 @@ MonoBehaviour:
   Path: event:/Ui/Ui_Player_Left
   guid: 1fb33c229f07894b8bfc07fda1ae1d1f
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -17299,6 +17504,23 @@ MonoBehaviour:
   Name: Weight
   Min: 0
   Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &5605395623665228053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay/firstDamage
+  m_EditorClassIdentifier: 
+  Name: firstDamage
+  Min: 0
+  Max: 1
   Default: 0
   Exists: 1
 --- !u!114 &5618640015835427530
@@ -18436,7 +18658,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Unarmed_Attack
   guid: b72849a99e441540af51ed8d66b2ad14
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -18476,7 +18698,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_BananaTree_Attack
   guid: 534d31d7847cb349bd01a366910bf785
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -18704,7 +18926,7 @@ MonoBehaviour:
   Path: event:/Player/Player_Hurt_Generic_Male
   guid: 6c5ce81482c40547bb0071e3cf64ca84
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -18830,6 +19052,23 @@ MonoBehaviour:
   Name: halfHealth
   Min: 0
   Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &6950450092772496365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Female_Manager/Weight
+  m_EditorClassIdentifier: 
+  Name: Weight
+  Min: 0
+  Max: 2
   Default: 0
   Exists: 1
 --- !u!114 &6972560192253999657
@@ -19867,7 +20106,7 @@ MonoBehaviour:
   Path: event:/BGM/Menu
   guid: 42dac934defa864db1350092b4e97330
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -20001,7 +20240,7 @@ MonoBehaviour:
   Path: event:/Weapons/Weapon_Buisine_Attack
   guid: 9a2379e228f716449307fd1b054b6b83
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -20178,12 +20417,12 @@ MonoBehaviour:
   Path: event:/Ui/Announcer/Announcer_Player_Defeated
   guid: a48f9a51f1ad9a4e9a30c7db20f163fc
   Banks:
-  - {fileID: -6003428841483163006}
+  - {fileID: 1910951997398837245}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -4769681416609775639}
+  - {fileID: -3177880758098307675}
   MinDistance: 0
   MaxDistance: 0
   Length: 29069
@@ -21039,6 +21278,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 100
   Length: 510
+--- !u!114 &8800269896049594535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Weapon_Throw_Male_Manager/Weight
+  m_EditorClassIdentifier: 
+  Name: Weight
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &8821325280948282975
 MonoBehaviour:
   m_ObjectHideFlags: 0
