@@ -73,6 +73,10 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         spawnOffset = 0;
         ChangeDurability(durabilityDecrement);
     }
+    public override void EndAttack()
+    {
+        col.enabled = false;
+    }
 
     public override void ChangeDurability(float durabilityDecrement)
     {

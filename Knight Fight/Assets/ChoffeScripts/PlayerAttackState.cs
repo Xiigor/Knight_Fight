@@ -39,6 +39,7 @@ public class PlayerAttackState : PlayerIState
 
     public void ChangeState(PlayerIState newState)
     {
+        player.weapon.GetComponent<WeaponBaseClass>().EndAttack();
         player.animator.SetBool("Attack", false);
         player.leftFist.SetActive(false);
         internalStateTimer = 0f;
@@ -55,6 +56,4 @@ public class PlayerAttackState : PlayerIState
             player.Die();
         }
     }
-
-
 }

@@ -56,6 +56,10 @@ public class WeaponSpearPattern : WeaponBaseClass
         //}
        
     }
+    public override void EndAttack()
+    {
+        col.enabled = false;
+    }
 
     public override void ChangeDurability(float durabilityDecrement)
     {

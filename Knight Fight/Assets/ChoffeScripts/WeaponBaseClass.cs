@@ -10,7 +10,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponUnequippedState unequippedState;
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
-    public GameObject attackVfx = null;
+    public ParticleSystem[] attackVfx = null;
     public GameObject hitVfx = null;
     public enum Weapontype{ oneHSword, twoHSword, spellbook, throwable };
     public Weapontype thisWepType;
@@ -38,9 +38,11 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public Rigidbody rb;
     public Collider col;
 
-    [HideInInspector] public Animator anim;
+    //[HideInInspector] public Animator anim;
 
     public abstract void Attack();
+    public abstract void EndAttack();
+    
     public void ThrowWep()
     {
         ChangeState(thrownState);
@@ -73,6 +75,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
             transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
         }
     }
+
     public void SetParentPlayer(GameObject collision)
     {
 
@@ -92,6 +95,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     {
         transform.parent = null;
     }
+
     public abstract void OnCollisionEnter(Collision collision);
     public abstract void OnCollisionStay(Collision collision);
     public abstract void ChangeState(WeaponIState newState);

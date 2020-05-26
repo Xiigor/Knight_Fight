@@ -190,7 +190,6 @@ public class PlayerStatePattern : MonoBehaviour
             if (collision.gameObject.tag == throwableTag)
             {
                 OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
-                Debug.Log("shield hit");
             }
             if (collision.gameObject.tag == projectileTag)
             {
@@ -226,6 +225,7 @@ public class PlayerStatePattern : MonoBehaviour
         }
     }
 
+    //Attack                                                       
     public void Attack()
     {
         if(weapon != null)
@@ -395,6 +395,7 @@ public class PlayerStatePattern : MonoBehaviour
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
         RemoveWep();
     }
+
     public void RemoveWep()
     {
         weapon = null;

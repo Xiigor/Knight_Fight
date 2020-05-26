@@ -84,8 +84,13 @@ public class WeaponThrowable : WeaponBaseClass
         parentPlayer.GetComponent<PlayerStatePattern>().ThrowItem();
      }
 
-     
-     public override void ChangeDurability(float durabilityDecrement)
+    public override void EndAttack()
+    {
+        col.enabled = false;
+    }
+
+
+    public override void ChangeDurability(float durabilityDecrement)
      {
         currentDurability -= durabilityDecrement;
         if (currentDurability <= 0)

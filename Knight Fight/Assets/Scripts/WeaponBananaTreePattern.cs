@@ -60,6 +60,11 @@ public class WeaponBananaTreePattern : WeaponBaseClass
         timeDelayTimer = -0.5f;
         // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
     }
+    public override void EndAttack()
+    {
+        col.enabled = false;
+
+    }
 
     public override void ChangeDurability(float durabilityDecrement)
     {
