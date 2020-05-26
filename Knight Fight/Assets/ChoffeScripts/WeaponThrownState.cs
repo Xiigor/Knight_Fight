@@ -17,12 +17,13 @@ public class WeaponThrownState : WeaponIState
     public void OnStateEnter()
     {
         internalGroundedTimer = 0f;
+        Debug.Log("throwstate");
         if(weapon.thisWepType == WeaponBaseClass.Weapontype.throwable && weapon.attackActive == true)
         {
             if ((int)weapon.GetComponent<WeaponThrowable>().throwableType == 0)
             {
                 movementApplied = true;
-                Debug.Log("Attack");
+                Debug.Log("Attack with shield");
             }
             else
             {
@@ -32,7 +33,6 @@ public class WeaponThrownState : WeaponIState
                 weapon.gameObject.tag = weapon.projectileTag;
                 AddThrownForce();
                 weapon.RemoveParentPlayer();
-                Debug.Log("throw");
             }
             
         }
