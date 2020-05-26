@@ -12,6 +12,11 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponThrownState thrownState;
     public ParticleSystem[] attackVfx = null;
     public GameObject hitVfx = null;
+    public Transform swordTrailPosition;
+    public GameObject playAttackEffect;
+    public GameObject playClashEffect;
+    public Transform clashEffectPosition;
+
     public enum Weapontype{ oneHSword, twoHSword, spellbook, throwable };
     public Weapontype thisWepType;
     public enum LaunchDir { forward, up, left, right };

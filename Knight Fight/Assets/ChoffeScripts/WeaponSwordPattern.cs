@@ -45,6 +45,7 @@ public class WeaponSwordPattern : WeaponBaseClass
                 particle.Play();
             }
         }
+        
         newAttack = true;
     }
 
@@ -81,6 +82,9 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentState.CollisionEnter(collision);
         if (collision.gameObject.tag == playerTag && newAttack == true)
         {
+            //playClashEffect = GameObject.Find("Spark");
+            GameObject playClashParticle = Instantiate(playClashEffect, clashEffectPosition.position, clashEffectPosition.rotation);
+            Destroy(playClashParticle, 3);
             ChangeDurability(durabilityDecrement);
             newAttack = false;
         }        
