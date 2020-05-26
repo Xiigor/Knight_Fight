@@ -12,8 +12,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponThrownState thrownState;
     public ParticleSystem[] attackVfx = null;
     public GameObject hitVfx = null;
-    public Transform swordTrailPosition;
-    public GameObject playAttackEffect;
+
     public GameObject playClashEffect;
     public Transform clashEffectPosition;
 
@@ -42,8 +41,6 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public Vector3 heldRotation;
     public Rigidbody rb;
     public Collider col;
-
-    //[HideInInspector] public Animator anim;
 
     public abstract void Attack();
     public abstract void EndAttack();
