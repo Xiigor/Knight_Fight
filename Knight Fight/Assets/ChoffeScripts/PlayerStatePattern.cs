@@ -216,7 +216,7 @@ public class PlayerStatePattern : MonoBehaviour
         }
         if (currentState == dashState)
         {
-            currentState.ChangeState(idleState);
+           StateChanger(idleState);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -301,12 +301,14 @@ public class PlayerStatePattern : MonoBehaviour
         
         if(newState == deadState)
         {
+            currentState.ExitState();
             currentState = newState;
             currentState.OnStateEnter();
         }
 
         else if(newState == idleState || newState == basicState || newState == winState)
         {
+            currentState.ExitState();
             currentState = newState;
             currentState.OnStateEnter();
         }
@@ -314,6 +316,7 @@ public class PlayerStatePattern : MonoBehaviour
         {
             if (ValidStateChange(newState))
             {
+                currentState.ExitState();
                 currentState = newState;
                 currentState.OnStateEnter();
             }
@@ -324,11 +327,11 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if(moveDir == Vector2.zero)
         {
-            currentState.ChangeState(idleState);
+            StateChanger(idleState);
         }
         else
         {
-            currentState.ChangeState(basicState);
+            StateChanger(basicState);
         }
     }
 

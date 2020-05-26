@@ -44,7 +44,7 @@ public class PlayerDeadState : PlayerIState
     {
 
     }
-    public void ChangeState(PlayerIState newState)
+    public void ExitState()
     {
 
     }

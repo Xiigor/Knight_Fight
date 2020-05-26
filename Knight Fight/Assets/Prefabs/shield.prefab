@@ -96,11 +96,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
-  attackVfx: {fileID: 0}
+  attackVfx: []
   hitVfx: {fileID: 0}
+  swordTrailPosition: {fileID: 0}
+  playAttackEffect: {fileID: 0}
+  playClashEffect: {fileID: 0}
+  clashEffectPosition: {fileID: 0}
   thisWepType: 3
   launchDir: 0
-  animationDuration: 1
+  animationDuration: 0.3
   durability: 5
   damage: 50
   thrownDamage: 1
@@ -117,7 +121,6 @@ MonoBehaviour:
   heldRotation: {x: -84.444, y: -71.983, z: 71.494}
   rb: {fileID: 0}
   col: {fileID: 0}
-  anim: {fileID: 0}
   attackThrowForce: 15
   durabilityDecrement: 0.5
   throwableType: 0

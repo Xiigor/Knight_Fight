@@ -39,13 +39,12 @@ public class PlayerDashState : PlayerIState
             player.RunOrIdleDecider();
         }
     }
-    public void ChangeState(PlayerIState newState)
+    public void ExitState()
     {
         player.animator.SetBool("Dash", false);
         player.internalGCDTimer = 0f;
         player.internalDashTimer = 0f;
         internalStateTimer = 0f;
-        player.StateChanger(newState);
     }
 
     public void TakeDamage(float damage)

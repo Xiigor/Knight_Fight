@@ -24,10 +24,10 @@ public class ProjectileFlyingState : ProjectileIState
             {
                     ChangeState(projectile.groundedState);
             }
-            if (1 == (int)projectile.projectileType)
-            {
-                projectile.rb.velocity = projectile.transform.forward * projectile.ProjectileSpeed;
-            }
+            //if (1 == (int)projectile.projectileType)
+            //{
+            //    projectile.rb.velocity = projectile.transform.forward * projectile.ProjectileSpeed;
+            //}
         }
 
     }

@@ -37,15 +37,18 @@ public class PlayerAttackState : PlayerIState
         internalStateTimer += Time.deltaTime;
     }
 
-    public void ChangeState(PlayerIState newState)
+    public void ExitState()
     {
-        player.weapon.GetComponent<WeaponBaseClass>().EndAttack();
+        if(player.weapon != null)
+        {
+            player.weapon.GetComponent<WeaponBaseClass>().EndAttack();
+        }
+
         player.animator.SetBool("Attack", false);
         player.leftFist.SetActive(false);
         internalStateTimer = 0f;
         player.internalGCDTimer = 0f;
         player.internalAttackTimer = 0f;
-        player.StateChanger(newState);
     }
 
     public void TakeDamage(float damage)

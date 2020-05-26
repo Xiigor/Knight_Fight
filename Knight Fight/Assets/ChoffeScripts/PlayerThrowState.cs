@@ -31,12 +31,11 @@ public class PlayerThrowState : PlayerIState
             internalStateTimer += Time.deltaTime;
         }
     }
-    public void ChangeState(PlayerIState newState)
+    public void ExitState()
     {
         player.animator.SetBool("Throw", false);
         internalStateTimer = 0f;
         player.internalGCDTimer = 0f;
-        player.StateChanger(newState);
     }
     public void TakeDamage(float damage)
     {

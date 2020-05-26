@@ -18,7 +18,7 @@ public class GameWinState : GameIState
         internalTimer = 0f;
         manager.cameraScript.focusedObject = manager.alivePlayers[0].transform;
         manager.cameraScript.ChangeState(manager.cameraScript.followPlayerState);
-        manager.roundWinner.GetComponent<PlayerStatePattern>().currentState.ChangeState(manager.roundWinner.GetComponent<PlayerStatePattern>().winState);
+        manager.roundWinner.GetComponent<PlayerStatePattern>().StateChanger(manager.roundWinner.GetComponent<PlayerStatePattern>().winState);
         manager.winbanner.SetActive(true);
         foreach(GameObject player in manager.readyPlayers)
         {

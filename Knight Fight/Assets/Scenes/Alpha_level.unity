@@ -486,75 +486,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4962fcc845546124aa5d3f6f2bcbeaa0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc61bc9176360f9479e42814d9eeeaff, type: 3}
---- !u!1001 &46828757
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_Name
-      value: 1hSword
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123577848166001346, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123577848166001346, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 13.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123577848166001346, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123577848166001346, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123577848166001346, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123577848166001346, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123577848166001346, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123577848166001346, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 51
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123577848166001346, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123577848166001346, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123577848166001346, guid: 582a2b4e738650e468e13fba3b131a37,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
 --- !u!1001 &54729372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2288,7 +2219,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.18
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 667126432292876085, guid: 2c576bfc1e3461b419c41780dde5c959,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 667126432292876085, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
 --- !u!1001 &393599817
 PrefabInstance:
@@ -5241,9 +5178,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeWeaponsList: []
   weaponsList:
-  - {fileID: 3051897695289343718, guid: 702bff6e7ae60274ab38ef0a588be257, type: 3}
+  - {fileID: 7982741905242481868, guid: 096f35605af262142821f8c43dda593a, type: 3}
+  - {fileID: 9198469664338340374, guid: 9a0496605e45a4b419c074fe3d6daaab, type: 3}
   - {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
-  - {fileID: 923546299004750516, guid: 4a009ecdcd9105742890901b32f4d84e, type: 3}
   maxWeaponsActive: 10
   weaponMaxSpawnTime: 5
   weaponMinSpawnTime: 1

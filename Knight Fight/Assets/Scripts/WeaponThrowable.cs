@@ -46,6 +46,7 @@ public class WeaponThrowable : WeaponBaseClass
             {
                 Physics.IgnoreCollision(parentPlayer.GetComponent<Collider>(), col, false);
                 timeDelayCol = 0;
+                attackActive = false;
             }
             
         }
@@ -63,6 +64,11 @@ public class WeaponThrowable : WeaponBaseClass
 
      public override void Attack()
      {
+
+     }
+
+    public override void EndAttack()
+    {
         attackActive = true;
         if (0 == (int)throwableType)
         {
@@ -79,14 +85,9 @@ public class WeaponThrowable : WeaponBaseClass
             rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
             rb.velocity = parentPlayer.transform.forward * attackThrowForce;
         }
-        
+
         RemoveParentPlayer();
         parentPlayer.GetComponent<PlayerStatePattern>().ThrowItem();
-     }
-
-    public override void EndAttack()
-    {
-        col.enabled = false;
     }
 
 
