@@ -29,7 +29,8 @@ abstract public class ProjectileBase : MonoBehaviour
     public void OnDestroy()
     {
         Debug.Log("puff");
-        spawnEffect = GameObject.Find("poof");
+        //Måste testas
+        //spawnEffect = GameObject.Find("poof");
         GameObject spawnParticle = Instantiate(spawnEffect, transform.position, Quaternion.identity);
         //instansiera rökpuffen här
     }
