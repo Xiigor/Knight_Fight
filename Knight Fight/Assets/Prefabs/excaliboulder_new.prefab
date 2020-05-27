@@ -34,6 +34,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5877292726502359551}
+  - {fileID: 7335070484312538988}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -103,6 +104,9 @@ MonoBehaviour:
   - {fileID: 1325645958401007483}
   - {fileID: 2345347173571380769}
   hitVfx: {fileID: 0}
+  playClashEffect: {fileID: 409059710143449962, guid: f24dac5746d27994ea87b268cf7401af,
+    type: 3}
+  clashEffectPosition: {fileID: 7335070484312538988}
   thisWepType: 1
   launchDir: 0
   animationDuration: 1.1
@@ -171,6 +175,36 @@ MonoBehaviour:
   ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
   weaponPickup: event:/Weapons/Weapon_Pickup_Generic
   weaponBreak: 
+--- !u!1 &5502389359432327917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7335070484312538988}
+  m_Layer: 12
+  m_Name: ClashEffectPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7335070484312538988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5502389359432327917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.795, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4218256224390019239}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4198343642950602663
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -33,7 +33,6 @@ public class WeaponThrowable : WeaponBaseClass
          rb = GetComponent<Rigidbody>();
          col = GetComponent<Collider>();
          audioPlayer = GetComponent<AudioWeapon>();
-
      }
 
      private void Update()

@@ -75,7 +75,7 @@ public class PlayerStatePattern : MonoBehaviour
     public float health;
 
     [HideInInspector] public Collider col;
-    [HideInInspector] private Rigidbody rb;
+    public Rigidbody rb;
     [HideInInspector] public AudioPlayer audioPlayer;
     public Animator animator;
 
@@ -368,7 +368,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void ChangeDirection()
     {
-        //move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
+
         if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
             move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
