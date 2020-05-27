@@ -123,8 +123,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554ac5223a1348a4a971bf91a2c91da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
+    type: 3}
   damage: 15
+  despawnTimerMin: 15
+  despawnTimerMax: 30
   parentObject: {fileID: 0}
+  player: {fileID: 0}
   spellBook: {fileID: 0}
   projectileType: 1
   Player: {fileID: 0}

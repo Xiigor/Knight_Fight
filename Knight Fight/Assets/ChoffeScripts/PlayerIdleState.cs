@@ -24,14 +24,13 @@ public class PlayerIdleState : PlayerIState
         player.ChangeDirection();
         if (player.moveDir != Vector2.zero)
         {
-            ChangeState(player.basicState);
+            player.StateChanger(player.basicState);
         }
     }
 
-    public void ChangeState(PlayerIState newState)
+    public void ExitState()
     {
         player.animator.SetBool("Idle", false);
-        player.StateChanger(newState);
     }
 
 

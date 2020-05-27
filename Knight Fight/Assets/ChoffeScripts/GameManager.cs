@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     //rounds
     public int amountOfRounds = 1;
-    public Text roundsText;
+    public TextMeshProUGUI roundsText;
     [HideInInspector] public GameObject roundWinner;
     [HideInInspector] public bool newRoundProcessStarted = false;
 
