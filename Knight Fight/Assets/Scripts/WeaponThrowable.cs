@@ -10,6 +10,8 @@ public class WeaponThrowable : WeaponBaseClass
     private float timeDelay = 0;
     private float timeDelayCol = 0;
     private bool playerHit = false;
+    public enum ThrowableType { throwableWeapon, trashWeapon};
+    public ThrowableType throwableType;
 
 
 
@@ -31,7 +33,6 @@ public class WeaponThrowable : WeaponBaseClass
          rb = GetComponent<Rigidbody>();
          col = GetComponent<Collider>();
          audioPlayer = GetComponent<AudioWeapon>();
-
      }
 
      private void Update()
@@ -44,6 +45,7 @@ public class WeaponThrowable : WeaponBaseClass
             {
                 Physics.IgnoreCollision(parentPlayer.GetComponent<Collider>(), col, false);
                 timeDelayCol = 0;
+                attackActive = false;
             }
             
         }
@@ -61,25 +63,34 @@ public class WeaponThrowable : WeaponBaseClass
 
      public override void Attack()
      {
-        attackActive = true;
-        col.material.bounciness = 1;
-        col.material.dynamicFriction = 0;
-        col.material.staticFriction = 0;
-        transform.Rotate(90,0,0);
-        rb.angularDrag = 0;
-        gameObject.tag = "Throwable";
-        rb.isKinematic = false;
-        col.enabled = true;
-        rb.useGravity = false;
-        transform.rotation = Quaternion.Euler(90,0,0);
-        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX| RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
-        rb.velocity = parentPlayer.transform.forward * attackThrowForce;
-        RemoveParentPlayer();
-        parentPlayer.GetComponent<PlayerStatePattern>().ThrowItem();
+
      }
 
-     
-     public override void ChangeDurability(float durabilityDecrement)
+    public override void EndAttack()
+    {
+        attackActive = true;
+        if (0 == (int)throwableType)
+        {
+            col.material.bounciness = 1;
+            col.material.dynamicFriction = 0;
+            col.material.staticFriction = 0;
+            transform.Rotate(90, 0, 0);
+            rb.angularDrag = 0;
+            gameObject.tag = "Throwable";
+            rb.isKinematic = false;
+            col.enabled = true;
+            rb.useGravity = false;
+            transform.rotation = Quaternion.Euler(90, 0, 0);
+            rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
+            rb.velocity = parentPlayer.transform.forward * attackThrowForce;
+        }
+
+        RemoveParentPlayer();
+        parentPlayer.GetComponent<PlayerStatePattern>().ThrowItem();
+    }
+
+
+    public override void ChangeDurability(float durabilityDecrement)
      {
         currentDurability -= durabilityDecrement;
         if (currentDurability <= 0)
@@ -99,12 +110,18 @@ public class WeaponThrowable : WeaponBaseClass
 
      public override void OnCollisionEnter(Collision collision)
      {
-        currentState.HandleCollision(collision);
-        
-        if(collision.gameObject.tag == playerTag && currentState == thrownState)
+        currentState.CollisionEnter(collision);
+
+        if (collision.gameObject.tag == playerTag && currentState == thrownState)
         {
             //ChangeDurability(durabilityHitPlayer);
             playerHit = true;
         }
     }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
+    }
+
 }

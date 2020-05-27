@@ -37,10 +37,13 @@ public class WeaponBananaTreePattern : WeaponBaseClass
     {
         currentState.UpdateState();
         timeDelayTimer += Time.deltaTime;
-        if (gameObject.GetComponent<Collider>().enabled == true && timeDelayTimer >= timeDelayProjectile && currentState == equippedState)
+        if (attackActive && timeDelayTimer >= timeDelayProjectile)
         { 
             GameObject temp = Instantiate(weaponAmmo, projectileSpawnPoint.transform.position, Quaternion.identity);
             temp.GetComponent<ProjectileBanana>().parentObject = this.gameObject;
+
+            temp.GetComponent<ProjectileBanana>().player = parentPlayer;
+
             temp.GetComponent<ProjectileBanana>().spellBook = this.gameObject;
             timeDelayTimer = 0f;
             Vector3 swordDir = gameObject.transform.position - parentPlayer.transform.position;
@@ -55,10 +58,14 @@ public class WeaponBananaTreePattern : WeaponBaseClass
     {
         gameObject.GetComponent<Collider>().enabled = true;
         newAttack = true;
-        parentPlayer.GetComponent<PlayerStatePattern>().animator.GetCurrentAnimatorStateInfo(0).IsName("2HSword Attack");
-        //Debug.Log("attack");
+        attackActive = true;
         timeDelayTimer = -0.5f;
-        // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
+    }
+    public override void EndAttack()
+    {
+        col.enabled = false;
+        attackActive = false;
+
     }
 
     public override void ChangeDurability(float durabilityDecrement)
@@ -77,7 +84,7 @@ public class WeaponBananaTreePattern : WeaponBaseClass
     }
     public override void OnCollisionEnter(Collision collision)
     {
-        currentState.HandleCollision(collision);
+        currentState.CollisionEnter(collision);
         if (collision.gameObject.tag == playerTag && newAttack == true)
         {
             ChangeDurability(durabilityDecrement);
@@ -85,4 +92,10 @@ public class WeaponBananaTreePattern : WeaponBaseClass
         }
 
     }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
+    }
+
 }

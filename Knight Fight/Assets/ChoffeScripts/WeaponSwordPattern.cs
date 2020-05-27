@@ -17,39 +17,49 @@ public class WeaponSwordPattern : WeaponBaseClass
 
     private void Start()
     {
+        
         currentState = unequippedState;
         currentDurability = durability;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-        audioPlayer = GetComponent<AudioWeapon>();  
+        audioPlayer = GetComponent<AudioWeapon>();
+        foreach(ParticleSystem particle in attackVfx)
+        {
+            particle.Stop();
+        }
     }
 
     private void Update()
     {
         currentState.UpdateState();
-        /*if (newAttack == true)
-        {
-            ChangeDurability(durabilityDecrement);
-            newAttack = false;
-        }*/
     }
 
     public override void Attack()
     {
-        gameObject.GetComponent<Collider>().enabled = true;
-        
+        Debug.Log("Enters attack");
+        col.enabled = true;
         if(attackVfx != null)
         {
-            attackVfx.SetActive(true);
+            foreach (ParticleSystem particle in attackVfx)
+            {
+                particle.Play();
+            }
         }
         
         newAttack = true;
-        parentPlayer.GetComponent<PlayerStatePattern>().animator.GetCurrentAnimatorStateInfo(0).IsName("2HSword Attack");
-        //playAttackEffect = GameObject.Find("Sword_trail");
-        GameObject playAttackParticle = Instantiate(playAttackEffect, swordTrailPosition.position, swordTrailPosition.rotation);
-        Destroy(playAttackParticle, 3);
-        //GameObject playAttackParticle = Instantiate(playAttackEffect, swordTrailPosition.position, swordTrailPosition.rotation);
-        // attackanimationen körs och kollar i update när den är klar och stänger av collidern igen
+    }
+
+    public override void EndAttack()
+    {
+        Debug.Log("Exits attack");
+        col.enabled = false;
+        if (attackVfx != null)
+        {
+            foreach (ParticleSystem particle in attackVfx)
+            {
+                particle.Stop();
+            }
+        }
     }
 
     public override void ChangeDurability(float durabilityDecrement)
@@ -66,15 +76,22 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentState = newState;
         currentState.OnStateEnter();
     }
+     
     public override void OnCollisionEnter(Collision collision)
     {
-        currentState.HandleCollision(collision);
-        if(collision.gameObject.tag == playerTag && newAttack == true)
+        currentState.CollisionEnter(collision);
+        if (collision.gameObject.tag == playerTag && newAttack == true)
         {
+            //playClashEffect = GameObject.Find("Spark");
             GameObject playClashParticle = Instantiate(playClashEffect, clashEffectPosition.position, clashEffectPosition.rotation);
             Destroy(playClashParticle, 3);
             ChangeDurability(durabilityDecrement);
             newAttack = false;
         }        
+    }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
     }
 }

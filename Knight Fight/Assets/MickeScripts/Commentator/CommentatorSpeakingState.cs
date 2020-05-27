@@ -32,7 +32,6 @@ public class CommentatorSpeakingState : CommentatorAbstractClass
         if (p_commentator.deathTrigger)
         {
             Debug.Log("PLAYER HAS DIED!!"); //REPLACE WITH ACTUAL AUDIO FUNCTION!!!
-            p_commentator.audioCom.Dead();
             p_commentator.deathTrigger = false;
             p_commentator.allowedToSpeak = false;
 

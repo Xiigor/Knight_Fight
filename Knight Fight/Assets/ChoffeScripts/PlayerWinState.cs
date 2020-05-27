@@ -17,10 +17,9 @@ public class PlayerWinState : PlayerIState
         player.animator.SetBool("Win", true);
     }
 
-    public void ChangeState(PlayerIState newState)
+    public void ExitState()
     {
         player.animator.SetBool("Win", false);
-        player.StateChanger(newState);
     }
 
     public void TakeDamage(float damage)

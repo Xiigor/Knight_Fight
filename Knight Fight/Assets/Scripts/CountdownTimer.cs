@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CountdownTimer : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class CountdownTimer : MonoBehaviour
 
     private CounterManager cm;
 
-    [SerializeField]
-    Text countdownText;
+    public TextMeshProUGUI countdownText;
+
 
     // Start is called before the first frame update
     void Start()
