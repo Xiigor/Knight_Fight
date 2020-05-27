@@ -35,8 +35,6 @@ public class WeaponEquippedState : WeaponIState
         if (col.gameObject.tag == weapon.playerTag)
         {
             weapon.audioPlayer.AttackHittingPlayer();
-            Debug.Log(weapon.rb.velocity.ToString());
-            col.gameObject.GetComponent<PlayerStatePattern>().rb.AddForce(weapon.parentPlayer.transform.forward * 1000f);
         }
     }
 

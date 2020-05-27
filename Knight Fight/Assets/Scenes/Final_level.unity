@@ -1375,10 +1375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1001 &147017835
@@ -1478,7 +1478,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147017836}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d01767d89e3470e4691a416853071c76, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1593,10 +1593,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1001 &156061193
@@ -1831,10 +1831,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1 &187984918 stripped
@@ -2594,10 +2594,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1001 &316147088
@@ -2961,10 +2961,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1001 &347076638
@@ -4653,10 +4653,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1 &461046344 stripped
@@ -4703,10 +4703,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1001 &466875290
@@ -4796,20 +4796,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3272969}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &478902155
-MeshCollider:
+--- !u!114 &478902155
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478902151}
-  m_Material: {fileID: 13400000, guid: 8ebff57b27775a642980f5d6f9fade25, type: 2}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -7094658123918444634, guid: 8373163629b92f34f8ec2f6a5c8c2fc0, type: 3}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83366107ca8aebd42af181c33ff9225c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSpawnManager: {fileID: 709222906}
 --- !u!1 &482265221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8373163629b92f34f8ec2f6a5c8c2fc0,
@@ -5078,10 +5077,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1001 &508460639
@@ -6729,6 +6728,18 @@ Transform:
   m_Father: {fileID: 1040170350}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &709222906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
+    type: 3}
+  m_PrefabInstance: {fileID: 1193761732}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7deeba8f3b2a24195bd181f30129a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &714895058
 GameObject:
   m_ObjectHideFlags: 0
@@ -8794,10 +8805,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 23
-  minForwardSpeed: 17
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1 &1004811874 stripped
@@ -8831,6 +8842,7 @@ GameObject:
   - component: {fileID: 1008007848}
   - component: {fileID: 1008007847}
   - component: {fileID: 1008007846}
+  - component: {fileID: 1008007850}
   m_Layer: 0
   m_Name: mark runtom
   m_TagString: Environment
@@ -8912,6 +8924,19 @@ Transform:
   m_Father: {fileID: 331501250}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1008007850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008007845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83366107ca8aebd42af181c33ff9225c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSpawnManager: {fileID: 709222906}
 --- !u!1001 &1029065069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9284,10 +9309,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1001 &1082425509
@@ -9413,10 +9438,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 23
-  minForwardSpeed: 17
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1001 &1094692805
@@ -9875,10 +9900,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1 &1129938361 stripped
@@ -9907,8 +9932,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxForwardSpeed: 25
   minForwardSpeed: 18
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1001 &1146824042
@@ -10790,8 +10815,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxForwardSpeed: 25
   minForwardSpeed: 18
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!4 &1244274313 stripped
@@ -11839,6 +11864,76 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 59742565a1f8bd74c92f8bf72e6a3aea, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1977d8572ea3e43a9322176217b817, type: 3}
+--- !u!1 &1362730534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1362730537}
+  - component: {fileID: 1362730536}
+  - component: {fileID: 1362730535}
+  m_Layer: 0
+  m_Name: MenuCrowd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1362730535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362730534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Ambience/Crowd_Manager
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: CrowdMood
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 50
+--- !u!114 &1362730536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362730534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb1d4d36a84bfb40a3f94bf92de51c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crowdCheer: event:/Ambience/Crowd_Cheer
+--- !u!4 &1362730537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362730534}
+  m_LocalRotation: {x: -0, y: -1.7669613e-10, z: -1.5438789e-10, w: 1}
+  m_LocalPosition: {x: 1.080632, y: 0.46867466, z: 2.609621}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1175004333}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1364551674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5c5b9593894735c4ebb544116b859bc5,
@@ -12365,10 +12460,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 24
-  minForwardSpeed: 20
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1 &1408391569 stripped
@@ -12485,20 +12580,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1410339403}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1410339405
-MeshCollider:
+--- !u!114 &1410339405
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410339404}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -7094658123918444634, guid: 5bf49fbb2645ac84db72ee60660c5bcf, type: 3}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83366107ca8aebd42af181c33ff9225c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSpawnManager: {fileID: 709222906}
 --- !u!4 &1410339408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5bf49fbb2645ac84db72ee60660c5bcf,
@@ -12529,10 +12623,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 19
+  maxForwardSpeed: 25
   minForwardSpeed: 18
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1001 &1424321421
@@ -13333,7 +13427,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8faaa178c8e32f44cacedd94b6fcae5f, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6057140222963153312, guid: 1f4f5833460405a4f87f02466878d7fa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f4f5833460405a4f87f02466878d7fa, type: 3}
 --- !u!1001 &1570006338
 PrefabInstance:
@@ -13980,10 +14075,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1 &1617081871
@@ -14185,10 +14280,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 19
+  maxForwardSpeed: 25
   minForwardSpeed: 18
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1 &1667533031 stripped
@@ -14641,10 +14736,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 15
-  minForwardSpeed: 10
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1001 &1702260815
@@ -15479,10 +15574,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a0f353b5eb90d41b120edeb713dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 24
-  minForwardSpeed: 20
-  maxUpSpeed: 15
-  minUpSpeed: 10
+  maxForwardSpeed: 25
+  minForwardSpeed: 18
+  maxUpSpeed: 20
+  minUpSpeed: 15
   randomForwardSpeed: 0
   randomUpSpeed: 0
 --- !u!1 &1906215927 stripped
@@ -15705,6 +15800,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrowdParent
       objectReference: {fileID: 0}
+    - target: {fileID: 4658841922104515534, guid: 324b2de6afe9c734b8be17c7f625de2e,
+        type: 3}
+      propertyPath: menuObject
+      value: 
+      objectReference: {fileID: 1362730534}
     - target: {fileID: 4658841922104515535, guid: 324b2de6afe9c734b8be17c7f625de2e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15758,6 +15858,46 @@ PrefabInstance:
     - target: {fileID: 4658841922104515535, guid: 324b2de6afe9c734b8be17c7f625de2e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658841921367538255, guid: 324b2de6afe9c734b8be17c7f625de2e,
+        type: 3}
+      propertyPath: Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658841921367538255, guid: 324b2de6afe9c734b8be17c7f625de2e,
+        type: 3}
+      propertyPath: Params.Array.data[0].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658841921723018549, guid: 324b2de6afe9c734b8be17c7f625de2e,
+        type: 3}
+      propertyPath: Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658841921723018549, guid: 324b2de6afe9c734b8be17c7f625de2e,
+        type: 3}
+      propertyPath: Params.Array.data[0].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658841921782345900, guid: 324b2de6afe9c734b8be17c7f625de2e,
+        type: 3}
+      propertyPath: Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658841921782345900, guid: 324b2de6afe9c734b8be17c7f625de2e,
+        type: 3}
+      propertyPath: Params.Array.data[0].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658841922074750415, guid: 324b2de6afe9c734b8be17c7f625de2e,
+        type: 3}
+      propertyPath: Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658841922074750415, guid: 324b2de6afe9c734b8be17c7f625de2e,
+        type: 3}
+      propertyPath: Params.Array.data[0].Value
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

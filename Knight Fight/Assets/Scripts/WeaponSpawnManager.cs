@@ -28,19 +28,7 @@ public class WeaponSpawnManager : MonoBehaviour
 
     void Update()
     {
-        //spawnTimer = spawnTimer + Time.deltaTime;
-        //if (spawnTimer >= weaponSpawnRate)
-        //{
-        //    Debug.Log(activeWeaponsList.Count);
-        //    if (activeWeaponsList.Count < maxWeaponsActive)
-        //    {
-        //        SpawnWeapon();
-        //        activeWeapons++;
-        //        spawnTimer = 0;
-        //        weaponSpawnRate = Random.Range(weaponMinSpawnTime, weaponMaxSpawnTime); //New spawn time
-        //    }
-            
-        //}
+
 
     }
     public void TimerUpdater()
