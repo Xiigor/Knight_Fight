@@ -15,6 +15,7 @@ public class WeaponSpawnManager : MonoBehaviour
     [HideInInspector] public int activeWeapons;
     private int SpawnPointCount;
     private int WeaponsCount;
+
     void Start()
     {
         activeWeapons = 0;

@@ -5,20 +5,22 @@ using UnityEngine;
 
 public class GameGameplayState : GameIState
 {
-    private CounterManager cm;
+    private bool lowHPPlayer = false;
     private CountdownTimer countdown;
     private readonly GameManager manager;
 
     public GameGameplayState(GameManager gameManager)
     {
         manager = gameManager;
-        cm = GameObject.Find("GameManager").GetComponent<CounterManager>();
         countdown = GameObject.Find("CountdownTimer").GetComponent<CountdownTimer>();
         countdown.gameObject.SetActive(false);
     }
     public void OnStateEnter()
     {
         //disable players here and enable again after countdown == easy fix for many rounds
+        manager.projectileDespawner.DestroyObjectsWithTag(manager.groundedProjectileTag);
+        manager.projectileDespawner.DestroyObjectsWithTag(manager.projectileTag);
+        manager.counterManager.countdownIsDone = false;
         manager.ResetMusicParams();
         manager.DisablePlayers();
         manager.AddPlayersForCamera();
@@ -39,18 +41,21 @@ public class GameGameplayState : GameIState
     public void UpdateState()
     {
         manager.TriggerMusicCheckpoints(manager.GetGlobalHealthPercentage());
-        if (cm.countdownIsDone == true)
+        manager.SetLowHealthMusic();
+
+        if (manager.counterManager.countdownIsDone == true)
         {
             manager.EnablePlayers();
             manager.inputManagerScript.trigger = true;
-            cm.countdownIsDone = false;
+            //cm.countdownIsDone = false;
 
         }
         manager.weaponSpawnManager.TimerUpdater();
 
         if(manager.newRoundProcessStarted == false)
         {
-            manager.CheckForRoundWinner();
+            //Disablas bara för testning, enablas när vfx implementation är klar.
+            //manager.CheckForRoundWinner();
         }
         if (manager.newRoundProcessStarted)
         {

@@ -15,7 +15,11 @@ public class CameraArenaViewState : CameraAbstractClass
         p_camera.initialSmoothness = 3.0f;
         p_camera.accelerationTimer = 0.0f;
 
-        ViewEntireArena();
+        p_camera.initialCameraPosition = ViewEntireArena();
+        p_camera.initialCameraRotation = p_camera.transform.rotation;
+        p_camera.initialFieldOfView = p_camera.gameCamera.fieldOfView;
+
+    ViewEntireArena();
     }
 
     public override void Execute()
@@ -27,10 +31,10 @@ public class CameraArenaViewState : CameraAbstractClass
 
     public override void Exit()
     {
-
+        p_camera.cameraRestored = false;
     }
 
-    private void ViewEntireArena()
+    public Vector3 ViewEntireArena()
     {
         Vector3 position = new Vector3();
 
@@ -39,6 +43,8 @@ public class CameraArenaViewState : CameraAbstractClass
         position.z = p_camera.cameraPositionZ;
 
         p_camera.transform.position = Vector3.SmoothDamp(p_camera.transform.position, position, ref p_camera.velocity, p_camera.initialSmoothness);
+
+        return position;
     }
 
     private void RotateView()

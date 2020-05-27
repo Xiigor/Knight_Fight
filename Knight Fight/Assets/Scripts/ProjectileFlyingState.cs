@@ -40,33 +40,46 @@ public class ProjectileFlyingState : ProjectileIState
     {
         velocityApplied = false;
         LaunchFish();
+        Physics.IgnoreLayerCollision(projectile.gameObject.layer, projectile.player.layer, true);
         Debug.Log("FlyingState");
     }
 
     public void LaunchFish()
     {
-        //forward
-        if (0 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
+        if (0 == (int)projectile.projectileType)
         {
-            projectile.rb.velocity = projectile.parentObject.transform.forward * projectile.ProjectileSpeed;
-            velocityApplied = true;
+            //forward
+            if (0 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
+            {
+                projectile.rb.velocity = projectile.parentObject.transform.forward * projectile.ProjectileSpeed;
+                velocityApplied = true;
+            }
+            //up
+            else if (1 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
+            {
+                projectile.rb.velocity = projectile.parentObject.transform.up * projectile.ProjectileSpeed;
+                velocityApplied = true;
+            }
+            //left
+            else if (2 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
+            {
+                projectile.rb.velocity = projectile.parentObject.transform.right * -1 * projectile.ProjectileSpeed;
+                velocityApplied = true;
+            }
+            //right
+            else if (3 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
+            {
+                projectile.rb.velocity = projectile.parentObject.transform.right * projectile.ProjectileSpeed;
+                velocityApplied = true;
+            }
+            else
+            {
+               
+            }
         }
-        //up
-        else if(1 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
+        else if (1 == (int)projectile.projectileType)
         {
-            projectile.rb.velocity = projectile.parentObject.transform.up * projectile.ProjectileSpeed;
-            velocityApplied = true;
-        }
-        //left
-        else if (2 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
-        {
-            projectile.rb.velocity = projectile.parentObject.transform.right*-1 * projectile.ProjectileSpeed;
-            velocityApplied = true;
-        }
-        //right
-        else if (3 == (int)projectile.spellBook.GetComponent<WeaponBaseClass>().launchDir)
-        {
-            projectile.rb.velocity = projectile.parentObject.transform.right * projectile.ProjectileSpeed;
+            projectile.rb.velocity = projectile.parentObject.GetComponent<WeaponBananaTreePattern>().swordVel * projectile.ProjectileSpeed;
             velocityApplied = true;
         }
         else
