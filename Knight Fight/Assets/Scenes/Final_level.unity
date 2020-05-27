@@ -7915,6 +7915,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7519264535049619471, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264535049619471, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264535049619471, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519264535049619471, guid: 8add0326abcc6ed4fa4f0ad956abffe1,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.05882353
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8add0326abcc6ed4fa4f0ad956abffe1, type: 3}
 --- !u!1001 &844289996
@@ -10217,6 +10237,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
+        type: 3}
+      propertyPath: weaponsList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
+        type: 3}
+      propertyPath: weaponsList.Array.data[3]
+      value: 
+      objectReference: {fileID: 3105903073570637870, guid: fff86f02ab488444faa70f5aa56fcd1c,
+        type: 3}
+    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
+        type: 3}
+      propertyPath: weaponsList.Array.data[4]
+      value: 
+      objectReference: {fileID: 972219624891994246, guid: bc2380448d719e1468d0b270e9750200,
+        type: 3}
+    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
+        type: 3}
+      propertyPath: weaponsList.Array.data[5]
+      value: 
+      objectReference: {fileID: 923546299004750516, guid: 4a009ecdcd9105742890901b32f4d84e,
+        type: 3}
+    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
+        type: 3}
+      propertyPath: weaponsList.Array.data[6]
+      value: 
+      objectReference: {fileID: 3051897695289343718, guid: 702bff6e7ae60274ab38ef0a588be257,
+        type: 3}
+    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
+        type: 3}
+      propertyPath: weaponsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 9198469664338340374, guid: 9a0496605e45a4b419c074fe3d6daaab,
+        type: 3}
     - target: {fileID: 3405980546026296751, guid: 20249e8698a45be4f9d55bda1d1b0aca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10402,41 +10457,6 @@ PrefabInstance:
       propertyPath: player4NotReady
       value: 
       objectReference: {fileID: 1519758875}
-    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
-        type: 3}
-      propertyPath: weaponsList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
-        type: 3}
-      propertyPath: weaponsList.Array.data[3]
-      value: 
-      objectReference: {fileID: 3105903073570637870, guid: fff86f02ab488444faa70f5aa56fcd1c,
-        type: 3}
-    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
-        type: 3}
-      propertyPath: weaponsList.Array.data[4]
-      value: 
-      objectReference: {fileID: 972219624891994246, guid: bc2380448d719e1468d0b270e9750200,
-        type: 3}
-    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
-        type: 3}
-      propertyPath: weaponsList.Array.data[5]
-      value: 
-      objectReference: {fileID: 923546299004750516, guid: 4a009ecdcd9105742890901b32f4d84e,
-        type: 3}
-    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
-        type: 3}
-      propertyPath: weaponsList.Array.data[6]
-      value: 
-      objectReference: {fileID: 3051897695289343718, guid: 702bff6e7ae60274ab38ef0a588be257,
-        type: 3}
-    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
-        type: 3}
-      propertyPath: weaponsList.Array.data[0]
-      value: 
-      objectReference: {fileID: 3105903073570637870, guid: fff86f02ab488444faa70f5aa56fcd1c,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20249e8698a45be4f9d55bda1d1b0aca, type: 3}
 --- !u!1001 &1200614561
