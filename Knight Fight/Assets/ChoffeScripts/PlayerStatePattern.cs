@@ -75,7 +75,7 @@ public class PlayerStatePattern : MonoBehaviour
     public float health;
 
     [HideInInspector] public Collider col;
-    [HideInInspector] private Rigidbody rb;
+    public Rigidbody rb;
     [HideInInspector] public AudioPlayer audioPlayer;
     public Animator animator;
 

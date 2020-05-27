@@ -50,6 +50,8 @@ public class CameraStatePattern : MonoBehaviour
 
     public float rotationSpeed = 2.5f;
 
+    [HideInInspector] public bool rotatingCounterClockwise;
+
     // **** BATTLE VIEW VARIABLES **** //
     [Header("Battle View")]
 
@@ -81,7 +83,7 @@ public class CameraStatePattern : MonoBehaviour
 
         cameraRestored = true;
         gameFinished = false;
-    }
+}
 
     void Start()
     {
@@ -159,9 +161,10 @@ public class CameraStatePattern : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, initialCameraRotation, Time.deltaTime);
           
             if (restoreTimer > 1.75f)
-            {                
+            {
+                restoreTimer = 0.0f;
                 cameraRestored = true;
-            }           
+            }
         }
     }
 
@@ -174,6 +177,7 @@ public class CameraStatePattern : MonoBehaviour
             gameCamera.fieldOfView = 60.0f;
 
             gameFinished = false;
+            //cameraRestored = true;
         }
     }
 }

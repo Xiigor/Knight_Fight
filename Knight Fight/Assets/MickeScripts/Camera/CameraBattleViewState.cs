@@ -32,7 +32,7 @@ public class CameraBattleViewState : CameraAbstractClass
 
     public override void Exit()
     {
-
+        p_camera.gameFinished = true;
     }
 
     private void ViewBattle()
@@ -42,6 +42,7 @@ public class CameraBattleViewState : CameraAbstractClass
         Vector3 finalPosition = centerPoint + p_camera.offsetFromObjects;
 
         p_camera.transform.position = Vector3.SmoothDamp(p_camera.transform.position, finalPosition, ref p_camera.velocity, p_camera.initialSmoothness);
+        p_camera.transform.rotation = Quaternion.Lerp(p_camera.transform.rotation, p_camera.initialCameraRotation, Time.deltaTime);
     }
 
     private void ZoomBehaviour()

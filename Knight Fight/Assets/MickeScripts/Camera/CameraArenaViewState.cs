@@ -19,7 +19,9 @@ public class CameraArenaViewState : CameraAbstractClass
         p_camera.initialCameraRotation = p_camera.transform.rotation;
         p_camera.initialFieldOfView = p_camera.gameCamera.fieldOfView;
 
-    ViewEntireArena();
+        p_camera.rotatingCounterClockwise = true;
+
+        ViewEntireArena();
     }
 
     public override void Execute()
@@ -49,6 +51,24 @@ public class CameraArenaViewState : CameraAbstractClass
 
     private void RotateView()
     {
-        p_camera.transform.RotateAround(p_camera.centerPoint.transform.position, Vector3.up, p_camera.rotationSpeed * Time.deltaTime);
+        if (p_camera.rotatingCounterClockwise)
+        {
+            p_camera.transform.RotateAround(p_camera.centerPoint.transform.position, Vector3.up, p_camera.rotationSpeed * Time.deltaTime);
+        }
+
+        if (!p_camera.rotatingCounterClockwise)
+        {
+            p_camera.transform.RotateAround(p_camera.centerPoint.transform.position, -Vector3.up, p_camera.rotationSpeed * Time.deltaTime);
+        }
+
+        if (p_camera.transform.position.x < - 10.25f)
+        {
+            p_camera.rotatingCounterClockwise = false;
+        }
+
+        if (p_camera.transform.position.x > 6.25f)
+        {
+            p_camera.rotatingCounterClockwise = true;
+        }
     }
 }
