@@ -84,6 +84,9 @@ public class WeaponThrowable : WeaponBaseClass
         currentDurability -= durabilityDecrement;
         if (currentDurability <= 0)
         {
+            //Rök effekt här
+            GameObject smokeEffect = Instantiate(playSmokeEffect, transform.position, Quaternion.identity);
+            Destroy(smokeEffect, 3);
             Destroy(this.gameObject);
         }
     }

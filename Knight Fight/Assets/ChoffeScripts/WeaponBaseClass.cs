@@ -13,6 +13,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public GameObject attackVfx = null;
     public GameObject hitVfx = null;
     public Transform swordTrailPosition;
+    public GameObject playSmokeEffect;
     public GameObject playAttackEffect;
     public GameObject playClashEffect;
     public Transform clashEffectPosition;

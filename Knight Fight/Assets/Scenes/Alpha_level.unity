@@ -553,6 +553,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2070168236621798636, guid: 582a2b4e738650e468e13fba3b131a37,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
 --- !u!1001 &54729372
@@ -4992,7 +4997,7 @@ MonoBehaviour:
   activeWeaponsList: []
   weaponsList:
   - {fileID: 9198469664338340374, guid: 9a0496605e45a4b419c074fe3d6daaab, type: 3}
-  - {fileID: 972219624891994246, guid: bc2380448d719e1468d0b270e9750200, type: 3}
+  - {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37, type: 3}
   maxWeaponsActive: 10
   weaponMaxSpawnTime: 10
   weaponMinSpawnTime: 5
@@ -8875,7 +8880,7 @@ PrefabInstance:
     - target: {fileID: 7922594374936800495, guid: ca3bdb139643ba8429af0b64a49cabf6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7922594374936800491, guid: ca3bdb139643ba8429af0b64a49cabf6,
         type: 3}
