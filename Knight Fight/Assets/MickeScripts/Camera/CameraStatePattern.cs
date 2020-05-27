@@ -50,6 +50,8 @@ public class CameraStatePattern : MonoBehaviour
 
     public float rotationSpeed = 2.5f;
 
+    [HideInInspector] public bool rotatingCounterClockwise;
+
     // **** BATTLE VIEW VARIABLES **** //
     [Header("Battle View")]
 
@@ -81,7 +83,7 @@ public class CameraStatePattern : MonoBehaviour
 
         cameraRestored = true;
         gameFinished = false;
-    }
+}
 
     void Start()
     {
@@ -175,6 +177,7 @@ public class CameraStatePattern : MonoBehaviour
             gameCamera.fieldOfView = 60.0f;
 
             gameFinished = false;
+            //cameraRestored = true;
         }
     }
 }
