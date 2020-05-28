@@ -15,6 +15,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
 
     public GameObject playClashEffect;
     public Transform clashEffectPosition;
+    public GameObject playSmokeEffect;
 
     public enum Weapontype{ oneHSword, twoHSword, spellbook, throwable };
     public Weapontype thisWepType;
