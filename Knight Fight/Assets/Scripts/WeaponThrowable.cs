@@ -41,7 +41,7 @@ public class WeaponThrowable : WeaponBaseClass
         if (attackActive == true)
         {
             timeDelayCol += Time.deltaTime;
-            if (timeDelayCol >= 0.5)
+            if (timeDelayCol >= 0.15)
             {
                 Physics.IgnoreCollision(parentPlayer.GetComponent<Collider>(), col, false);
                 timeDelayCol = 0;

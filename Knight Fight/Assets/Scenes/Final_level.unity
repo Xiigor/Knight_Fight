@@ -8938,7 +8938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008007845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.2, y: -8, z: -3.9294}
+  m_LocalPosition: {x: 5.2, y: -11, z: -3.9294}
   m_LocalScale: {x: 181.23628, y: -18.123629, z: 181.23628}
   m_Children: []
   m_Father: {fileID: 331501250}
@@ -10240,7 +10240,7 @@ PrefabInstance:
     - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
         type: 3}
       propertyPath: weaponsList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
         type: 3}
@@ -10271,6 +10271,12 @@ PrefabInstance:
       propertyPath: weaponsList.Array.data[0]
       value: 
       objectReference: {fileID: 9198469664338340374, guid: 9a0496605e45a4b419c074fe3d6daaab,
+        type: 3}
+    - target: {fileID: 3405980546019850643, guid: 20249e8698a45be4f9d55bda1d1b0aca,
+        type: 3}
+      propertyPath: weaponsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 8437895737867728456, guid: 582a2b4e738650e468e13fba3b131a37,
         type: 3}
     - target: {fileID: 3405980546026296751, guid: 20249e8698a45be4f9d55bda1d1b0aca,
         type: 3}
@@ -10457,6 +10463,11 @@ PrefabInstance:
       propertyPath: player4NotReady
       value: 
       objectReference: {fileID: 1519758875}
+    - target: {fileID: 3405980546019850653, guid: 20249e8698a45be4f9d55bda1d1b0aca,
+        type: 3}
+      propertyPath: internalRoundDelayTimer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20249e8698a45be4f9d55bda1d1b0aca, type: 3}
 --- !u!1001 &1200614561

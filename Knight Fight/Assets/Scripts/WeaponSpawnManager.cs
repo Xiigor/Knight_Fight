@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponSpawnManager : MonoBehaviour
 {
     private List<GameObject> weaponSpawnPointList = new List<GameObject>();
-    [HideInInspector] public List<GameObject> activeWeaponsList = new List<GameObject>();
+    public List<GameObject> activeWeaponsList = new List<GameObject>();
     public List<GameObject> weaponsList = new List<GameObject>();
     public int maxWeaponsActive; 
     public float weaponMaxSpawnTime = 5;
@@ -72,6 +72,11 @@ public class WeaponSpawnManager : MonoBehaviour
         }
         activeWeaponsList.Clear();
         activeWeapons = 0;
+    }
+
+    public void DestroySingleWeapon(GameObject weapon)
+    {
+        activeWeaponsList.Remove(weapon);
     }
 
 }
