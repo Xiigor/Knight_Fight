@@ -30,8 +30,11 @@ public class CommentatorStatePattern : MonoBehaviour
     // **** COMMENTATOR COOLDOWN VARIABLES **** //
     [Header("Speaking Frequency")]
 
+    [HideInInspector] public bool introducingTrigger = true;
     [HideInInspector] public bool boredTrigger = false;
+    [HideInInspector] public bool rareWeaponTrigger = false;
     [HideInInspector] public bool deathTrigger = false;
+    [HideInInspector] public bool drawTrigger = false;
     [HideInInspector] public bool victoryTrigger = false;
 
     [Header("Guaranteed Silence Duration Between Comments")]
@@ -44,6 +47,8 @@ public class CommentatorStatePattern : MonoBehaviour
 
     void Awake()
     {
+        introducingTrigger = true;
+
         inactiveState = new CommentatorInactiveState(this);
         introducingState = new CommentatorIntroducingState(this);
         silentState = new CommentatorSilentState(this);

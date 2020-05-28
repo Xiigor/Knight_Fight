@@ -316,6 +316,7 @@ public class GameManager : MonoBehaviour
             gameState = winState;
             gameState.OnStateEnter();
             commentatorScript.victoryTrigger = true;
+            commentatorScript.introducingTrigger = true;
         }
         else
         {
