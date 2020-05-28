@@ -73,6 +73,8 @@ public class WeaponBananaTreePattern : WeaponBaseClass
         currentDurability -= durabilityDecrement;
         if (currentDurability <= 0)
         {
+            GameObject smokeParticle = Instantiate(playSmokeEffect, transform.position, Quaternion.identity);
+            Destroy(smokeParticle, 3);
             parentPlayer.GetComponent<PlayerStatePattern>().weaponDestroyed = true;
             Destroy(this.gameObject);
         }
