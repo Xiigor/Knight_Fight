@@ -81,6 +81,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
             transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
         }
     }
+
     public void SetParentPlayer(GameObject collision)
     {
 

@@ -226,13 +226,6 @@ public class PlayerStatePattern : MonoBehaviour
             OnHit(fistDamage);
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == fistTag)
-        {
-            OnHit(fistDamage);
-        }
-    }
 
     //Attack                                                       
     public void Attack()

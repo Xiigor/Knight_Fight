@@ -32,7 +32,7 @@ public class CameraBattleViewState : CameraAbstractClass
 
     public override void Exit()
     {
-        
+        p_camera.gameFinished = true;
     }
 
     private void ViewBattle()
