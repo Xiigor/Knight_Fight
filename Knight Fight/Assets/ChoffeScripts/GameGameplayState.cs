@@ -55,7 +55,7 @@ public class GameGameplayState : GameIState
         if(manager.newRoundProcessStarted == false)
         {
             //Disablas bara för testning, enablas när vfx implementation är klar.
-            //manager.CheckForRoundWinner();
+            manager.CheckForRoundWinner();
         }
         if (manager.newRoundProcessStarted)
         {

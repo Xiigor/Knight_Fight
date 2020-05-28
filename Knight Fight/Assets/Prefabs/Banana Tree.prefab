@@ -103,10 +103,10 @@ MonoBehaviour:
   - {fileID: 7628914842149424458}
   - {fileID: 6484709016178531423}
   - {fileID: 7716824863364924677}
-  hitVfx: {fileID: 0}
-  playClashEffect: {fileID: 409059710143449962, guid: f24dac5746d27994ea87b268cf7401af,
+  playClashEffect: {fileID: 0}
+  clashEffectPosition: {fileID: 0}
+  playSmokeEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
     type: 3}
-  clashEffectPosition: {fileID: 850526393711442893}
   thisWepType: 1
   launchDir: 0
   animationDuration: 1
@@ -126,7 +126,7 @@ MonoBehaviour:
   heldRotation: {x: -68.635, y: 83.494, z: -82.39301}
   rb: {fileID: 0}
   col: {fileID: 0}
-  durabilityDecrement: 2
+  durabilityDecrement: 5
   weaponAmmo: {fileID: 4919378358298003015, guid: 23d0a37fe18f40849874064a95206a90,
     type: 3}
   projectileSpawnPoint: {fileID: 3704923970173398912}
@@ -248,11 +248,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4261915160002634389}
     m_Modifications:
-    - target: {fileID: 3665597746666717770, guid: 87e205d2052d3b14ca17f817e148483b,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword_trail2
-      objectReference: {fileID: 0}
     - target: {fileID: 7769788892399406680, guid: 87e205d2052d3b14ca17f817e148483b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -307,6 +302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3665597746666717770, guid: 87e205d2052d3b14ca17f817e148483b,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword_trail2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87e205d2052d3b14ca17f817e148483b, type: 3}
