@@ -65,10 +65,11 @@ MonoBehaviour:
   attackVfx:
   - {fileID: 0}
   hitVfx: {fileID: 0}
-  swordTrailPosition: {fileID: 0}
-  playAttackEffect: {fileID: 0}
-  playClashEffect: {fileID: 0}
+  playClashEffect: {fileID: 3938015049398509471, guid: bf0e2daf424e745499c3bf0644c3cf92,
+    type: 3}
   clashEffectPosition: {fileID: 0}
+  playSmokeEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
+    type: 3}
   thisWepType: 3
   launchDir: 0
   animationDuration: 0.3
@@ -105,13 +106,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: de7ecfffbd99f9f49a9ce277fff3b53a,
         type: 3}
-      propertyPath: m_TagString
-      value: Weapon
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: de7ecfffbd99f9f49a9ce277fff3b53a,
         type: 3}
-      propertyPath: m_Layer
-      value: 12
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: de7ecfffbd99f9f49a9ce277fff3b53a,
         type: 3}

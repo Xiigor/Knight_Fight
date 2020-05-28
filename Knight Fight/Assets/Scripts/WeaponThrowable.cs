@@ -114,6 +114,8 @@ public class WeaponThrowable : WeaponBaseClass
 
         if (collision.gameObject.tag == playerTag && currentState == thrownState)
         {
+            GameObject hitParticle = Instantiate(playClashEffect, transform.position, Quaternion.identity);
+            Destroy(hitParticle, 3);
             //ChangeDurability(durabilityHitPlayer);
             playerHit = true;
         }
