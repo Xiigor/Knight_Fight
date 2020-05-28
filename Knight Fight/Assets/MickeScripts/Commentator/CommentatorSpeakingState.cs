@@ -29,10 +29,29 @@ public class CommentatorSpeakingState : CommentatorAbstractClass
             p_commentator.ChangeState(p_commentator.silentState);
         }
 
+        if (p_commentator.rareWeaponTrigger)
+        {
+            Debug.Log("THE PAIN'S COMING!!");
+
+            p_commentator.rareWeaponTrigger = false;
+            p_commentator.allowedToSpeak = false;
+
+            p_commentator.ChangeState(p_commentator.silentState);
+        }
+
         if (p_commentator.deathTrigger)
         {
             Debug.Log("PLAYER HAS DIED!!"); //REPLACE WITH ACTUAL AUDIO FUNCTION!!!
             p_commentator.deathTrigger = false;
+            p_commentator.allowedToSpeak = false;
+
+            p_commentator.ChangeState(p_commentator.silentState);
+        }
+
+        if (p_commentator.drawTrigger)
+        {
+            Debug.Log("THEY'RE AAAALL DEEAAD!!!");
+            p_commentator.drawTrigger = false;
             p_commentator.allowedToSpeak = false;
 
             p_commentator.ChangeState(p_commentator.silentState);

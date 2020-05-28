@@ -301,7 +301,7 @@ public class GameManager : MonoBehaviour
                 player.GetComponent<PlayerScoreTracker>().IncrementScore();
             }
             
-            //CheckForWinner();
+            CheckForWinner();
 
         }
     }
@@ -313,6 +313,7 @@ public class GameManager : MonoBehaviour
             gameState = winState;
             gameState.OnStateEnter();
             commentatorScript.victoryTrigger = true;
+            commentatorScript.introducingTrigger = true;
         }
         else
         {

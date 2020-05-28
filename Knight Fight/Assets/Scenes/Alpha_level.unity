@@ -4889,7 +4889,10 @@ MonoBehaviour:
   cameraPositionY: 34.5
   cameraPositionZ: -19.5
   centerPoint: {fileID: 546727750}
-  rotationSpeed: 2.5
+  maxRotationX: -10.25
+  maxRotationY: 6.25
+  rotationSpeed: 0.85
+  rotatingCounterClockwise: 0
   objectsFollowedByCamera: []
   offsetFromObjects: {x: 0, y: 15, z: -10}
   minZoom: 68
@@ -4917,8 +4920,11 @@ MonoBehaviour:
   hardSilenceTimer: 7
   hiddenCooldownTimer: 0
   allowedToSpeak: 0
+  introducingTrigger: 1
   boredTrigger: 0
+  rareWeaponTrigger: 0
   deathTrigger: 0
+  drawTrigger: 0
   victoryTrigger: 0
   hardSilenceDuration: 7
   silencePostIntro: 9
