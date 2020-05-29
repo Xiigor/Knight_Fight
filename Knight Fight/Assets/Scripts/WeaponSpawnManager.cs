@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponSpawnManager : MonoBehaviour
 {
     private List<GameObject> weaponSpawnPointList = new List<GameObject>();
-    [HideInInspector] public List<GameObject> activeWeaponsList = new List<GameObject>();
+    public List<GameObject> activeWeaponsList = new List<GameObject>();
     public List<GameObject> weaponsList = new List<GameObject>();
     public int maxWeaponsActive; 
     public float weaponMaxSpawnTime = 5;
@@ -15,6 +15,7 @@ public class WeaponSpawnManager : MonoBehaviour
     [HideInInspector] public int activeWeapons;
     private int SpawnPointCount;
     private int WeaponsCount;
+
     void Start()
     {
         activeWeapons = 0;
@@ -27,19 +28,7 @@ public class WeaponSpawnManager : MonoBehaviour
 
     void Update()
     {
-        //spawnTimer = spawnTimer + Time.deltaTime;
-        //if (spawnTimer >= weaponSpawnRate)
-        //{
-        //    Debug.Log(activeWeaponsList.Count);
-        //    if (activeWeaponsList.Count < maxWeaponsActive)
-        //    {
-        //        SpawnWeapon();
-        //        activeWeapons++;
-        //        spawnTimer = 0;
-        //        weaponSpawnRate = Random.Range(weaponMinSpawnTime, weaponMaxSpawnTime); //New spawn time
-        //    }
-            
-        //}
+
 
     }
     public void TimerUpdater()
@@ -83,6 +72,11 @@ public class WeaponSpawnManager : MonoBehaviour
         }
         activeWeaponsList.Clear();
         activeWeapons = 0;
+    }
+
+    public void DestroySingleWeapon(GameObject weapon)
+    {
+        activeWeaponsList.Remove(weapon);
     }
 
 }

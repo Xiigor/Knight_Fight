@@ -15,6 +15,12 @@ public class CameraArenaViewState : CameraAbstractClass
         p_camera.initialSmoothness = 3.0f;
         p_camera.accelerationTimer = 0.0f;
 
+        p_camera.initialCameraPosition = ViewEntireArena();
+        p_camera.initialCameraRotation = p_camera.transform.rotation;
+        p_camera.initialFieldOfView = p_camera.gameCamera.fieldOfView;
+
+        p_camera.rotatingCounterClockwise = true;
+
         ViewEntireArena();
     }
 
@@ -27,10 +33,10 @@ public class CameraArenaViewState : CameraAbstractClass
 
     public override void Exit()
     {
-
+        p_camera.cameraRestored = false;
     }
 
-    private void ViewEntireArena()
+    public Vector3 ViewEntireArena()
     {
         Vector3 position = new Vector3();
 
@@ -39,10 +45,30 @@ public class CameraArenaViewState : CameraAbstractClass
         position.z = p_camera.cameraPositionZ;
 
         p_camera.transform.position = Vector3.SmoothDamp(p_camera.transform.position, position, ref p_camera.velocity, p_camera.initialSmoothness);
+
+        return position;
     }
 
     private void RotateView()
     {
-        p_camera.transform.RotateAround(p_camera.centerPoint.transform.position, Vector3.up, p_camera.rotationSpeed * Time.deltaTime);
+        if (p_camera.rotatingCounterClockwise)
+        {
+            p_camera.transform.RotateAround(p_camera.centerPoint.transform.position, Vector3.up, p_camera.rotationSpeed * Time.deltaTime);
+        }
+
+        if (!p_camera.rotatingCounterClockwise)
+        {
+            p_camera.transform.RotateAround(p_camera.centerPoint.transform.position, -Vector3.up, p_camera.rotationSpeed * Time.deltaTime);
+        }
+
+        if (p_camera.transform.position.x < p_camera.maxRotationX)
+        {
+            p_camera.rotatingCounterClockwise = false;
+        }
+
+        if (p_camera.transform.position.x > p_camera.maxRotationY)
+        {
+            p_camera.rotatingCounterClockwise = true;
+        }
     }
 }

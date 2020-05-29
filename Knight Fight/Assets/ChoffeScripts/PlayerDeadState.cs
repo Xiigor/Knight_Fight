@@ -27,6 +27,11 @@ public class PlayerDeadState : PlayerIState
             player.commentatorScript.deathTrigger = true;
         }
 
+        if(player.cameraScript.objectsFollowedByCamera.Count == 0)
+        {
+            player.commentatorScript.drawTrigger = true;
+        }
+
         for(int i = 0; i < player.crowdParent.childCount; i++)
         {
             Transform crowd = player.crowdParent.GetChild(i);
@@ -44,14 +49,9 @@ public class PlayerDeadState : PlayerIState
     {
 
     }
-    public void ChangeState(PlayerIState newState)
+    public void ExitState()
     {
-        if (newState == player.basicState)
-        {
-            player.currentState = newState;
-        }
-        else
-            Debug.Log("GCD Trigger");
+
     }
     public void TakeDamage(float damage)
     {

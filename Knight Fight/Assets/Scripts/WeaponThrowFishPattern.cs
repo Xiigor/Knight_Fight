@@ -42,31 +42,36 @@ public class WeaponThrowFishPattern : WeaponBaseClass
 
     public override void Attack()
     {
+
+    }
+    public override void EndAttack()
+    {
         //launch projectile and instanciate projectile 
         // Projectile i eget script med en OnCollisonEnter kollar om träffat en spelare och isfall gå in i enemy.gameObject.GetComponent<PlayerStatePattern>().OnHit(damage);
         for (int i = 0; i < numberofAmmoToSpawn; i++)
         {
             audioPlayer.Attacking();
-            Vector3 spawnOffsetVec = new Vector3(0,0,0);
+            Vector3 spawnOffsetVec = new Vector3(0, 0, 0);
             GameObject temp = Instantiate(weaponAmmo, parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos.transform.position, Quaternion.identity);
             spawnOffsetVec = temp.transform.localPosition - parentPlayer.transform.position;
             Vector3 spawnOffsetVecStore = spawnOffsetVec;
             float spawnOffsetVecNorm = Mathf.Sqrt(spawnOffsetVec.x * spawnOffsetVec.x + spawnOffsetVec.z * spawnOffsetVec.z);
             spawnOffsetVec.x = spawnOffsetVec.x - spawnOffset * spawnOffsetVecStore.z / spawnOffsetVecNorm;
             spawnOffsetVec.z = spawnOffsetVec.z + spawnOffset * spawnOffsetVecStore.x / spawnOffsetVecNorm;
-            temp.transform.localPosition = spawnOffsetVec + parentPlayer.transform.position - (spawnOffsetVecStore*i/vShape);
+            temp.transform.localPosition = spawnOffsetVec + parentPlayer.transform.position - (spawnOffsetVecStore * i / vShape);
             temp.GetComponent<ProjectileFish>().parentObject = parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos;
             temp.GetComponent<ProjectileFish>().spellBook = this.gameObject;
+            temp.GetComponent<ProjectileFish>().player = parentPlayer;
             spawnOffset = spawnOffset * (-1);
             Debug.Log(parentPlayer.GetComponent<PlayerStatePattern>().projectileSpawnPos.transform.forward);
             increaseSpawnOffsett++;
             if (increaseSpawnOffsett == 2)
             {
-               
+
                 spawnOffset += spawnOfsettDist;
                 increaseSpawnOffsett = 0;
             }
-            
+
             //transform.DetachChildren();
         }
         spawnOffset = 0;
@@ -83,14 +88,21 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         }
     }
 
-    public override void OnCollisionEnter(Collision collision)
-    {
-        currentState.HandleCollision(collision);
-    }
+
 
     public override void ChangeState(WeaponIState newState)
     {
         currentState = newState;
         currentState.OnStateEnter();
+    }
+
+    public override void OnCollisionEnter(Collision collision)
+    {
+        currentState.CollisionEnter(collision);
+    }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        currentState.CollisionStay(collision);
     }
 }

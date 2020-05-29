@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     public CrowdMoodSetter crowdMoodSetter;
     public AudioMenu audioManager;
     public WeaponSpawnManager weaponSpawnManager;
+    public CounterManager counterManager;
+    public ProjectileDespawner projectileDespawner;
+    public GameObject winbanner;
 
     //rounds
     public int amountOfRounds = 1;
@@ -49,7 +52,9 @@ public class GameManager : MonoBehaviour
     [Header("Music Triggers in % of total player Health")]
     public float firstHitTriggerValue = 1f;
     public float halfHealthTriggerValue = 0.5f;
-    public float lowHealthTriggerValue = 0.25f;
+    public float lowHealthTriggerValue = 25f;
+
+    public bool lowHPPlayer = false;
 
     //player related components
     public GameObject player1;
@@ -68,6 +73,10 @@ public class GameManager : MonoBehaviour
     public GameObject player4Ready;
     public GameObject player4NotReady;
 
+    //Tags
+    public string groundedProjectileTag = "GroundedProjectile";
+    public string projectileTag = "Projectile";
+
     public void Awake()
     {
         Application.targetFrameRate = 60;
@@ -82,11 +91,14 @@ public class GameManager : MonoBehaviour
         audioManager = GetComponent<AudioMenu>();
         commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
+        counterManager = GetComponent<CounterManager>();
+        projectileDespawner = GetComponent<ProjectileDespawner>();
 
         //inputDevices = new List<Gamepad>();
         inputDevices = new List<InputDevice>();
         readyPlayers = new List<GameObject>();
-        ToMenu();
+        gameState = menuState;
+        gameState.OnStateEnter();
 
         //foreach (Gamepad index in Gamepad.all)
         //    inputDevices.Add(index);
@@ -105,7 +117,7 @@ public class GameManager : MonoBehaviour
 
     public void OnStart()
     {
-        if(readyPlayers.Count >= 1)
+        if(readyPlayers.Count >= 2)
         {
             alivePlayers.Clear();
             combinedStartingHealth = 0f;
@@ -248,8 +260,6 @@ public class GameManager : MonoBehaviour
         {
             cameraScript.objectsFollowedByCamera.Add(player);
         }
-
-        //return cameraScript.objectsFollowedByCamera.Count;
     }
 
     public void RemovePlayersForCamera()
@@ -276,9 +286,13 @@ public class GameManager : MonoBehaviour
     {
         if (gameState != menuState)
         {
-            gameState = menuState;
-            gameState.OnStateEnter();
-            commentatorScript.ChangeState(commentatorScript.inactiveState);
+            if (counterManager.countdownIsDone)
+            {
+                gameState = menuState;
+                gameState.OnStateEnter();
+                commentatorScript.ChangeState(commentatorScript.inactiveState);
+            }
+
         }
     }
     public void CheckForRoundWinner()
@@ -290,9 +304,7 @@ public class GameManager : MonoBehaviour
             {
                 roundWinner = player;
                 player.GetComponent<PlayerScoreTracker>().IncrementScore();
-            }
-            
-            //CheckForWinner();
+            }         
 
         }
     }
@@ -304,6 +316,7 @@ public class GameManager : MonoBehaviour
             gameState = winState;
             gameState.OnStateEnter();
             commentatorScript.victoryTrigger = true;
+            commentatorScript.introducingTrigger = true;
         }
         else
         {
@@ -329,21 +342,47 @@ public class GameManager : MonoBehaviour
 
     public void TriggerMusicCheckpoints(float percentage)
     {
-        if(percentage < firstHitTriggerValue)
+        if (counterManager.countdownIsDone)
         {
-            audioManager.gameplayModeMusic.setParameterByName("firstDamage", 1);
-            Debug.Log("first hit");
+            if(percentage < firstHitTriggerValue)
+            {
+                audioManager.gameplayModeMusic.setParameterByName("firstDamage", 1);
+                Debug.Log("first hit");
+            }
+            if(percentage <= halfHealthTriggerValue)
+            {
+                audioManager.gameplayModeMusic.setParameterByName("halfHealth", 1);
+                Debug.Log("halfhp");
+            }
         }
-        if(percentage <= halfHealthTriggerValue)
+    }
+
+    public void SetLowHealthMusic()
+    {
+        if (counterManager.countdownIsDone)
         {
-            audioManager.gameplayModeMusic.setParameterByName("halfHealth", 1);
-            Debug.Log("halfhp");
+            foreach (GameObject player in alivePlayers)
+            {
+                if (player.GetComponent<PlayerStatePattern>().health <=lowHealthTriggerValue)
+                {
+                    lowHPPlayer = true;
+                    break;
+                }
+                else
+                {
+                    lowHPPlayer = false;
+                }
+            }
+            if (lowHPPlayer == true)
+            {
+               audioManager.gameplayModeMusic.setParameterByName("lowHealth", 1);
+            }
+            else
+            {
+               audioManager.gameplayModeMusic.setParameterByName("lowHealth", 0);
+            }
         }
-        if(percentage <= lowHealthTriggerValue)
-        {
-            audioManager.gameplayModeMusic.setParameterByName("lowHealth", 1);
-            Debug.Log("lowhp");
-        }
+
     }
 
     public void ResetMusicParams()

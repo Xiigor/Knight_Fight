@@ -98,14 +98,14 @@
 		<property name="volume">
 			<value>-3</value>
 		</property>
-		<property name="pitch">
-			<value>-3</value>
-		</property>
 		<property name="playlistMode">
 			<value>1</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{d7d34f3a-c2b4-4733-aff5-adfc3e4977bf}</destination>
+		</relationship>
+		<relationship name="fadeInCurve">
+			<destination>{2940bd2b-9fe1-4f6e-b535-70f198bf3ca3}</destination>
 		</relationship>
 		<relationship name="fadeOutCurve">
 			<destination>{14981094-ab3a-4f2f-8f52-985394d3a724}</destination>
@@ -144,6 +144,14 @@
 		<property name="amount">
 			<value>6.25</value>
 		</property>
+	</object>
+	<object class="FadeCurve" id="{2940bd2b-9fe1-4f6e-b535-70f198bf3ca3}">
+		<relationship name="startPoint">
+			<destination>{1bb800b1-8f7e-42e3-8e27-71aed799001a}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{ba7dcd86-76ba-4f15-b599-e4c65df52eff}</destination>
+		</relationship>
 	</object>
 	<object class="FadeCurve" id="{14981094-ab3a-4f2f-8f52-985394d3a724}">
 		<relationship name="startPoint">
@@ -186,15 +194,34 @@
 			<value>25</value>
 		</property>
 	</object>
+	<object class="AutomationPoint" id="{1bb800b1-8f7e-42e3-8e27-71aed799001a}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.2547189</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{ba7dcd86-76ba-4f15-b599-e4c65df52eff}">
+		<property name="position">
+			<value>0.12</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{8c2557c0-4d7a-4635-b60d-b850a20a5497}">
 		<property name="position">
-			<value>1.9399999999999999</value>
+			<value>1.6799999999999999</value>
 		</property>
 		<property name="value">
 			<value>1</value>
 		</property>
 		<property name="curveShape">
-			<value>0.25471893</value>
+			<value>-0.436915666</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{628b4693-3e75-4b7c-8ffe-c49e8e158e6b}">
@@ -209,9 +236,6 @@
 	<object class="ThreeEQEffect" id="{a99b1b1a-2aa8-43a1-8e48-2f50eaaaacb9}">
 		<property name="lowGain">
 			<value>-7</value>
-		</property>
-		<property name="midGain">
-			<value>-3.5</value>
 		</property>
 		<property name="crossoverSlope">
 			<value>0</value>

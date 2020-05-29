@@ -6,6 +6,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerStatePattern : MonoBehaviour
 {
+    public GameObject spawnEffect;
+    public GameObject particleDashEffect;
+    public Transform spawnEffectPosition;
+    public Transform DashEffectPosition;
+
     public Transform crowdParent;
     public PlayerIState currentState;
     [HideInInspector] public GameManager gameManager;
@@ -20,7 +25,7 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public PlayerThrowState throwState;
     [HideInInspector] public PlayerAttackState attackState;
     [HideInInspector] public PlayerDeadState deadState;
-
+    [HideInInspector] public PlayerWinState winState;
     public GameObject rightHandGameobject = null;
     public GameObject leftHandGameobject = null;
     public GameObject projectileSpawnPos = null;
@@ -38,6 +43,7 @@ public class PlayerStatePattern : MonoBehaviour
     public float dashDuration = 0.1f;
     public float dashSpeed = 500.0f;
     [HideInInspector] public float attackAnimDuration;
+    public float fistAnimDuration = 1f;
     public float throwAnimDuration = 0.5f;
     private float movementInputForDashDirThreshhold = 0.15f; 
     public float internalDashRayDist = 1.3f;
@@ -47,13 +53,13 @@ public class PlayerStatePattern : MonoBehaviour
     
     //Fists
     public GameObject leftFist;
-    public GameObject rightFist;
     public float fistDamage = 8f;
 
     
     //tags
     public string weaponTag = "Weapon";
     public string weaponProjectileTag = "WeaponProjectile";
+    public string throwableTag = "Throwable";
     public string projectileTag = "Projectile";
     public string environmentTag = "Environment";
     public string playerTag = "Player";
@@ -69,14 +75,14 @@ public class PlayerStatePattern : MonoBehaviour
     public float health;
 
     [HideInInspector] public Collider col;
-    [HideInInspector] private Rigidbody rb;
+    public Rigidbody rb;
     [HideInInspector] public AudioPlayer audioPlayer;
     public Animator animator;
 
 
 
-    public int UnequippedLayer = 13;
-    public int EquippedLayer = 14;
+    public int UnequippedLayer = 12;
+    public int EquippedLayer = 13;
     [SerializeField] private int playerIndex;
     public GameObject spawnPosition;
 
@@ -84,11 +90,12 @@ public class PlayerStatePattern : MonoBehaviour
     {
         basicState = new PlayerBasicState(this);
         idleState = new PlayerIdleState(this);
-
         dashState = new PlayerDashState(this);
         throwState = new PlayerThrowState(this);
         deadState = new PlayerDeadState(this);
         attackState = new PlayerAttackState(this);
+        winState = new PlayerWinState(this);
+
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -96,10 +103,13 @@ public class PlayerStatePattern : MonoBehaviour
         commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         audioPlayer = GetComponent<AudioPlayer>();
         animator = GetComponent<Animator>();
+
     }
 
     public void OnEnable()
     {
+        GameObject spawnParticle = Instantiate(spawnEffect, spawnEffectPosition.position, spawnEffectPosition.rotation);
+        Destroy(spawnParticle, 3);
         transform.position = spawnPosition.transform.position;
         health = maxHealth;
         tag = playerTag;
@@ -109,11 +119,16 @@ public class PlayerStatePattern : MonoBehaviour
         internalDashTimer = dashCD;
         weapon = null;
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
+
     }
 
     public void OnDisable()
     {
+        //GameObject spawnParticle = Instantiate(spawnEffect, spawnEffectPosition.position, spawnEffectPosition.rotation);
+        //Destroy(spawnParticle, 3);
         transform.position = spawnPosition.transform.position;
+        GameObject dieParticle = Instantiate(spawnEffect, spawnEffectPosition.position, spawnEffectPosition.rotation);
+        Destroy(dieParticle, 3);
     }
 
     private void FixedUpdate()
@@ -154,6 +169,11 @@ public class PlayerStatePattern : MonoBehaviour
             RemoveWep();
             weaponDestroyed = false;
         }
+        if (currentState == deadState)
+        {
+            ThrowItem();
+        }
+
     }
     public int GetPlayerIndex()
     {
@@ -165,13 +185,13 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if(currentState != deadState)
         {
-            if(collision.gameObject.tag == fistTag)
-            {
-                OnHit(fistDamage);
-            }
             if (collision.gameObject.tag == weaponProjectileTag)
             {
                 OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().thrownDamage);
+            }
+            if (collision.gameObject.tag == throwableTag)
+            {
+                OnHit(collision.gameObject.GetComponent<WeaponBaseClass>().damage);
             }
             if (collision.gameObject.tag == projectileTag)
             {
@@ -181,7 +201,11 @@ public class PlayerStatePattern : MonoBehaviour
             {
                 if (collision.gameObject.layer == UnequippedLayer)
                 {
-                    PickupItem(collision.gameObject);
+                    if(weapon == null)
+                    {
+                        PickupItem(collision.gameObject);
+                    }
+                    
                 }
                 else if (collision.gameObject.layer == EquippedLayer)
                 {
@@ -192,10 +216,18 @@ public class PlayerStatePattern : MonoBehaviour
         }
         if (currentState == dashState)
         {
-            currentState.ChangeState(idleState);
+           StateChanger(idleState);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == fistTag)
+        {
+            OnHit(fistDamage);
         }
     }
 
+    //Attack                                                       
     public void Attack()
     {
         if(weapon != null)
@@ -205,7 +237,6 @@ public class PlayerStatePattern : MonoBehaviour
         }
         else
         {
-            rightFist.SetActive(true);
             leftFist.SetActive(true);
         }
     }
@@ -267,13 +298,17 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void StateChanger(PlayerIState newState)
     {
+        
         if(newState == deadState)
         {
+            currentState.ExitState();
             currentState = newState;
             currentState.OnStateEnter();
         }
-        else if(newState == idleState || newState == basicState)
+
+        else if(newState == idleState || newState == basicState || newState == winState)
         {
+            currentState.ExitState();
             currentState = newState;
             currentState.OnStateEnter();
         }
@@ -281,6 +316,7 @@ public class PlayerStatePattern : MonoBehaviour
         {
             if (ValidStateChange(newState))
             {
+                currentState.ExitState();
                 currentState = newState;
                 currentState.OnStateEnter();
             }
@@ -291,11 +327,11 @@ public class PlayerStatePattern : MonoBehaviour
     {
         if(moveDir == Vector2.zero)
         {
-            currentState.ChangeState(idleState);
+            StateChanger(idleState);
         }
         else
         {
-            currentState.ChangeState(basicState);
+            StateChanger(basicState);
         }
     }
 
@@ -307,23 +343,32 @@ public class PlayerStatePattern : MonoBehaviour
                 animator.SetBool("1hSword", true);
                 animator.SetBool("2hSword", false);
                 animator.SetBool("Spellbook", false);
+                animator.SetBool("Throwable", false);
                 break;
             case WeaponBaseClass.Weapontype.twoHSword:
                 animator.SetBool("1hSword", false);
                 animator.SetBool("2hSword", true);
                 animator.SetBool("Spellbook", false);
+                animator.SetBool("Throwable", false);
                 break;
             case WeaponBaseClass.Weapontype.spellbook:
                 animator.SetBool("1hSword", false);
                 animator.SetBool("2hSword", false);
                 animator.SetBool("Spellbook", true);
+                animator.SetBool("Throwable", false);
+                break;
+            case WeaponBaseClass.Weapontype.throwable:
+                animator.SetBool("1hSword", false);
+                animator.SetBool("2hSword", false);
+                animator.SetBool("Spellbook", false);
+                animator.SetBool("Throwable", true);
                 break;
         }
     }
 
     public void ChangeDirection()
     {
-        //move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
+
         if (Hypotenuse(moveDir.x, moveDir.y) >= movementInputForDashDirThreshhold)
         {
             move = Vector3.Normalize(new Vector3(moveDir.x, 0.0f, moveDir.y) * Time.deltaTime * movementSpeedMultiplier);
@@ -345,6 +390,8 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void Dash()
     {
+        GameObject DashParticle = Instantiate(particleDashEffect, DashEffectPosition.position, DashEffectPosition.rotation);
+        Destroy(DashParticle, 3);
         transform.Translate(lastMove * dashSpeed * Time.deltaTime, Space.World);
     }
 
@@ -353,12 +400,14 @@ public class PlayerStatePattern : MonoBehaviour
         weapon.GetComponent<WeaponBaseClass>().ThrowWep();
         RemoveWep();
     }
+
     public void RemoveWep()
     {
         weapon = null;
         animator.SetBool("1hSword", false);
         animator.SetBool("2hSword", false);
         animator.SetBool("Spellbook", false);
+        animator.SetBool("Throwable", false);
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
     }
 
@@ -370,7 +419,9 @@ public class PlayerStatePattern : MonoBehaviour
         attackAnimDuration = weapon.GetComponent<WeaponBaseClass>().animationDuration;
         weapon.gameObject.layer = EquippedLayer; //läggs här för att inte ske före on collision
         WeaponTypeIdentifier();
-       // weapon.GetComponent<WeaponBaseClass>().OnPickup(this.gameObject);
+
+        weapon.GetComponent<WeaponBaseClass>().SetParentPlayer(this.gameObject);
+        weapon.GetComponent<WeaponBaseClass>().ChangeState(weapon.GetComponent<WeaponBaseClass>().equippedState);
     }
 
     public void OnHit(float damage)
