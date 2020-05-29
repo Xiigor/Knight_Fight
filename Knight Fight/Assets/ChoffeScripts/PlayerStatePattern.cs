@@ -103,6 +103,7 @@ public class PlayerStatePattern : MonoBehaviour
         commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         audioPlayer = GetComponent<AudioPlayer>();
         animator = GetComponent<Animator>();
+        ragdollHandler = GetComponent<PlayerRagdollHandler>();
 
     }
 
@@ -390,9 +391,10 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void Dash()
     {
-        GameObject DashParticle = Instantiate(particleDashEffect, DashEffectPosition.position, DashEffectPosition.rotation);
-        Destroy(DashParticle, 3);
-        transform.Translate(lastMove * dashSpeed * Time.deltaTime, Space.World);
+        //GameObject DashParticle = Instantiate(particleDashEffect, DashEffectPosition.position, DashEffectPosition.rotation);
+        //Destroy(DashParticle, 3);
+        //transform.Translate(lastMove * dashSpeed * Time.deltaTime, Space.World);
+        OnHit(101);
     }
 
     public void ThrowItem()

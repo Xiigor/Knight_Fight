@@ -102,10 +102,11 @@ MonoBehaviour:
   - {fileID: 2370405287477283772}
   - {fileID: 1208186068522179241}
   - {fileID: 2462815878732563443}
-  hitVfx: {fileID: 0}
   playClashEffect: {fileID: 409059710143449962, guid: f24dac5746d27994ea87b268cf7401af,
     type: 3}
   clashEffectPosition: {fileID: 193304540285971993}
+  playSmokeEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
+    type: 3}
   thisWepType: 0
   launchDir: 0
   animationDuration: 0.5
@@ -125,6 +126,7 @@ MonoBehaviour:
   heldRotation: {x: -89.14301, y: 0.002, z: -9.665001}
   rb: {fileID: 0}
   col: {fileID: 0}
+  weaponSpawnManager: {fileID: 0}
   durabilityDecrement: 0
 --- !u!54 &5901604308676461943
 Rigidbody:

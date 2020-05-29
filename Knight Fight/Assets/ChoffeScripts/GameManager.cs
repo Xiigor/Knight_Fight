@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
 
     public void OnStart()
     {
-        if(readyPlayers.Count >= 2)
+        if(readyPlayers.Count >= 1)
         {
             alivePlayers.Clear();
             combinedStartingHealth = 0f;
