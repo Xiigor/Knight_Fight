@@ -38,6 +38,7 @@ public class WeaponSwordPattern : WeaponBaseClass
     {
         Debug.Log("Enters attack");
         col.enabled = true;
+        audioPlayer.Attacking();
         if(attackVfx != null)
         {
             foreach (ParticleSystem particle in attackVfx)

@@ -237,6 +237,7 @@ public class PlayerStatePattern : MonoBehaviour
         }
         else
         {
+            audioPlayer.PlayerPunching();
             leftFist.SetActive(true);
         }
     }

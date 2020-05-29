@@ -60,6 +60,7 @@ public class WeaponBananaTreePattern : WeaponBaseClass
         newAttack = true;
         attackActive = true;
         timeDelayTimer = -0.5f;
+        audioPlayer.Attacking();
     }
     public override void EndAttack()
     {
