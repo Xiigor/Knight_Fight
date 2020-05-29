@@ -103,10 +103,11 @@ MonoBehaviour:
   - {fileID: 2469285579942071918}
   - {fileID: 1325645958401007483}
   - {fileID: 2345347173571380769}
-  hitVfx: {fileID: 0}
   playClashEffect: {fileID: 409059710143449962, guid: f24dac5746d27994ea87b268cf7401af,
     type: 3}
   clashEffectPosition: {fileID: 7335070484312538988}
+  playSmokeEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
+    type: 3}
   thisWepType: 1
   launchDir: 0
   animationDuration: 1.1
@@ -212,11 +213,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4218256224390019239}
     m_Modifications:
-    - target: {fileID: 3665597746666717770, guid: 87e205d2052d3b14ca17f817e148483b,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword_trail2
-      objectReference: {fileID: 0}
     - target: {fileID: 7769788892399406680, guid: 87e205d2052d3b14ca17f817e148483b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -271,6 +267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3665597746666717770, guid: 87e205d2052d3b14ca17f817e148483b,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword_trail2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87e205d2052d3b14ca17f817e148483b, type: 3}

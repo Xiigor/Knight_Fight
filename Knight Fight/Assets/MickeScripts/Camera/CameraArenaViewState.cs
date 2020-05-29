@@ -61,12 +61,12 @@ public class CameraArenaViewState : CameraAbstractClass
             p_camera.transform.RotateAround(p_camera.centerPoint.transform.position, -Vector3.up, p_camera.rotationSpeed * Time.deltaTime);
         }
 
-        if (p_camera.transform.position.x < - 10.25f)
+        if (p_camera.transform.position.x < p_camera.maxRotationX)
         {
             p_camera.rotatingCounterClockwise = false;
         }
 
-        if (p_camera.transform.position.x > 6.25f)
+        if (p_camera.transform.position.x > p_camera.maxRotationY)
         {
             p_camera.rotatingCounterClockwise = true;
         }

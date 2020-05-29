@@ -98,10 +98,11 @@ MonoBehaviour:
   audioPlayer: {fileID: 0}
   attackVfx: []
   hitVfx: {fileID: 0}
-  swordTrailPosition: {fileID: 0}
-  playAttackEffect: {fileID: 0}
-  playClashEffect: {fileID: 0}
+  playClashEffect: {fileID: 409059710143449962, guid: f24dac5746d27994ea87b268cf7401af,
+    type: 3}
   clashEffectPosition: {fileID: 0}
+  playSmokeEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
+    type: 3}
   thisWepType: 3
   launchDir: 0
   animationDuration: 0.3
@@ -153,7 +154,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &1151491915774711193
 MonoBehaviour:
   m_ObjectHideFlags: 0

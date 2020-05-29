@@ -41,7 +41,7 @@ public class WeaponThrowable : WeaponBaseClass
         if (attackActive == true)
         {
             timeDelayCol += Time.deltaTime;
-            if (timeDelayCol >= 0.5)
+            if (timeDelayCol >= 0.15)
             {
                 Physics.IgnoreCollision(parentPlayer.GetComponent<Collider>(), col, false);
                 timeDelayCol = 0;
@@ -95,6 +95,9 @@ public class WeaponThrowable : WeaponBaseClass
         currentDurability -= durabilityDecrement;
         if (currentDurability <= 0)
         {
+            //Rök effekt här
+            GameObject smokeEffect = Instantiate(playSmokeEffect, transform.position, Quaternion.identity);
+            Destroy(smokeEffect, 3);
             Destroy(this.gameObject);
         }
     }
@@ -111,6 +114,8 @@ public class WeaponThrowable : WeaponBaseClass
 
         if (collision.gameObject.tag == playerTag && currentState == thrownState)
         {
+            GameObject hitParticle = Instantiate(playClashEffect, transform.position, Quaternion.identity);
+            Destroy(hitParticle, 3);
             //ChangeDurability(durabilityHitPlayer);
             playerHit = true;
         }

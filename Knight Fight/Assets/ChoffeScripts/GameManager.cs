@@ -97,7 +97,8 @@ public class GameManager : MonoBehaviour
         //inputDevices = new List<Gamepad>();
         inputDevices = new List<InputDevice>();
         readyPlayers = new List<GameObject>();
-        ToMenu();
+        gameState = menuState;
+        gameState.OnStateEnter();
 
         //foreach (Gamepad index in Gamepad.all)
         //    inputDevices.Add(index);
@@ -116,7 +117,7 @@ public class GameManager : MonoBehaviour
 
     public void OnStart()
     {
-        if(readyPlayers.Count >= 1)
+        if(readyPlayers.Count >= 2)
         {
             alivePlayers.Clear();
             combinedStartingHealth = 0f;
@@ -285,9 +286,13 @@ public class GameManager : MonoBehaviour
     {
         if (gameState != menuState)
         {
-            gameState = menuState;
-            gameState.OnStateEnter();
-            commentatorScript.ChangeState(commentatorScript.inactiveState);
+            if (counterManager.countdownIsDone)
+            {
+                gameState = menuState;
+                gameState.OnStateEnter();
+                commentatorScript.ChangeState(commentatorScript.inactiveState);
+            }
+
         }
     }
     public void CheckForRoundWinner()
@@ -299,9 +304,7 @@ public class GameManager : MonoBehaviour
             {
                 roundWinner = player;
                 player.GetComponent<PlayerScoreTracker>().IncrementScore();
-            }
-            
-            //CheckForWinner();
+            }         
 
         }
     }
@@ -313,6 +316,7 @@ public class GameManager : MonoBehaviour
             gameState = winState;
             gameState.OnStateEnter();
             commentatorScript.victoryTrigger = true;
+            commentatorScript.introducingTrigger = true;
         }
         else
         {
