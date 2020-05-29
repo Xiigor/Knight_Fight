@@ -78,7 +78,6 @@ public class WeaponThrowable : WeaponBaseClass
         if (0 == (int)throwableType)
         {
             gameObject.layer = 14;
-            Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer);
             col.material.bounciness = 1;
             col.material.dynamicFriction = 0;
             col.material.staticFriction = 0;
