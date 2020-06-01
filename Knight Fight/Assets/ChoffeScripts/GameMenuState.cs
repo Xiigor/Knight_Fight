@@ -24,7 +24,8 @@ public class GameMenuState : GameIState
         manager.crowdMoodSetter.SetMood(0);
         manager.weaponSpawnManager.DestroyWeapons();
         manager.audioManager.StartMenuMusic();
-        manager.cameraScript.ChangeState(manager.cameraScript.arenaViewState);
+      
+        //manager.cameraScript.ChangeState(manager.cameraScript.arenaViewState);
         manager.menuCanvas.gameObject.SetActive(true);
 
         manager.player1NotReady.SetActive(true);

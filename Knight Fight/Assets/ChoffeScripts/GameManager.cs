@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour
 
     //lists used by the gamemanager
     //private List<Gamepad> inputDevices;
+
     private List<InputDevice> inputDevices;
+
     public List<GameObject> readyPlayers;
     public List<GameObject> alivePlayers;
 
@@ -95,7 +97,9 @@ public class GameManager : MonoBehaviour
         projectileDespawner = GetComponent<ProjectileDespawner>();
 
         //inputDevices = new List<Gamepad>();
+
         inputDevices = new List<InputDevice>();
+
         readyPlayers = new List<GameObject>();
         gameState = menuState;
         gameState.OnStateEnter();

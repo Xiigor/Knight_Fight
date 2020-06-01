@@ -91,6 +91,7 @@ public class CameraStatePattern : MonoBehaviour
     void Start()
     {
         currentState = arenaViewState;
+        currentState.Enter();
     }
 
     void LateUpdate()
