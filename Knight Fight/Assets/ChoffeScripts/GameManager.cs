@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour
 
     //lists used by the gamemanager
     //private List<Gamepad> inputDevices;
+
     private List<InputDevice> inputDevices;
+
     public List<GameObject> readyPlayers;
     public List<GameObject> alivePlayers;
 
@@ -95,12 +97,18 @@ public class GameManager : MonoBehaviour
         projectileDespawner = GetComponent<ProjectileDespawner>();
 
         //inputDevices = new List<Gamepad>();
+
         inputDevices = new List<InputDevice>();
+
         readyPlayers = new List<GameObject>();
-        ToMenu();
+        gameState = menuState;
+        gameState.OnStateEnter();
 
         //foreach (Gamepad index in Gamepad.all)
+        //{
         //    inputDevices.Add(index);
+        //}
+
         foreach (InputDevice index in InputSystem.devices)
         {
             inputDevices.Add(index);
@@ -285,9 +293,13 @@ public class GameManager : MonoBehaviour
     {
         if (gameState != menuState)
         {
-            gameState = menuState;
-            gameState.OnStateEnter();
-            commentatorScript.ChangeState(commentatorScript.inactiveState);
+            if (counterManager.countdownIsDone)
+            {
+                gameState = menuState;
+                gameState.OnStateEnter();
+                commentatorScript.ChangeState(commentatorScript.inactiveState);
+            }
+
         }
     }
     public void CheckForRoundWinner()
@@ -299,9 +311,7 @@ public class GameManager : MonoBehaviour
             {
                 roundWinner = player;
                 player.GetComponent<PlayerScoreTracker>().IncrementScore();
-            }
-            
-            //CheckForWinner();
+            }         
 
         }
     }
@@ -313,6 +323,7 @@ public class GameManager : MonoBehaviour
             gameState = winState;
             gameState.OnStateEnter();
             commentatorScript.victoryTrigger = true;
+            commentatorScript.introducingTrigger = true;
         }
         else
         {

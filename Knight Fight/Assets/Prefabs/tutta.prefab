@@ -162,10 +162,11 @@ MonoBehaviour:
   - {fileID: 6882434307762981096}
   - {fileID: 8044089015008303613}
   - {fileID: 6722646618445562023}
-  hitVfx: {fileID: 0}
   playClashEffect: {fileID: 409059710143449962, guid: f24dac5746d27994ea87b268cf7401af,
     type: 3}
   clashEffectPosition: {fileID: 4585464018693862093}
+  playSmokeEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
+    type: 3}
   thisWepType: 0
   launchDir: 0
   animationDuration: 0.5
@@ -185,6 +186,7 @@ MonoBehaviour:
   heldRotation: {x: 90, y: 0, z: 90}
   rb: {fileID: 0}
   col: {fileID: 0}
+  weaponSpawnManager: {fileID: 0}
   durabilityDecrement: 2
 --- !u!114 &8062123980072483211
 MonoBehaviour:
@@ -198,12 +200,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
-  weaponBreak: 
+  attack: event:/Weapons/Weapon_Buisine_Attack
+  attackHitPlayer: event:/Player/Player_Hurt_Buisine
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Buisine
+  weaponBreak: event:/Weapons/Weapon_Break
 --- !u!1001 &5153376792425957665
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,11 +17,13 @@ public class CommentatorIntroducingState : CommentatorAbstractClass
 
     public override void Execute()
     {
-        if (p_commentator.allowedToSpeak)
+        if (p_commentator.allowedToSpeak && p_commentator.introducingTrigger)
         {
             Debug.Log("HELLOOOO EVERYONE!!!"); //REPLACE THIS LINE WITH ACTUAL AUDIO FUNCTION! 
 
             p_commentator.audioCom.Intro();
+
+            p_commentator.introducingTrigger = false;
             p_commentator.allowedToSpeak = false;
         }
 
@@ -46,6 +48,6 @@ public class CommentatorIntroducingState : CommentatorAbstractClass
     public override void Exit()
     {
         p_commentator.hardSilenceTimer = p_commentator.postIntroTimer;
-        p_commentator.hiddenCooldownTimer = 0.0f;
+        p_commentator.boredCooldownTimer = 0.0f;
     }
 }

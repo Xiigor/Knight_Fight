@@ -24,13 +24,18 @@ public class CommentatorStatePattern : MonoBehaviour
     // **** COMMENTATOR GENERAL VARIABLES **** //
     [HideInInspector] public float postIntroTimer = 0.0f;
     [HideInInspector] public float hardSilenceTimer = 0.0f;
-    [HideInInspector] public float hiddenCooldownTimer = 0.0f;
+    [HideInInspector] public float randomCooldownTimer = 0.0f;
+    [HideInInspector] public float boredCooldownTimer = 0.0f;
+
     [HideInInspector] public bool allowedToSpeak = false;
 
     // **** COMMENTATOR COOLDOWN VARIABLES **** //
     [Header("Speaking Frequency")]
 
+    [HideInInspector] public bool introducingTrigger = true;
+    [HideInInspector] public bool randomTrigger = false;
     [HideInInspector] public bool boredTrigger = false;
+    [HideInInspector] public bool rareWeaponTrigger = false;
     [HideInInspector] public bool deathTrigger = false;
     [HideInInspector] public bool victoryTrigger = false;
 
@@ -39,11 +44,14 @@ public class CommentatorStatePattern : MonoBehaviour
 
     [Header("Soft Silence Duration Between Comments")]
     public float silencePostIntro = 9.0f;
-    public float secondsUntilBored = 12.0f;
+    public float randomSpeechFrequency = 25.0f;
+    public float secondsUntilBored = 22.0f;
 
 
     void Awake()
     {
+        introducingTrigger = true;
+
         inactiveState = new CommentatorInactiveState(this);
         introducingState = new CommentatorIntroducingState(this);
         silentState = new CommentatorSilentState(this);

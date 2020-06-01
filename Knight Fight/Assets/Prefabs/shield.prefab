@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2677155628498754710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4755347653441428833}
+  m_Layer: 0
+  m_Name: Clash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4755347653441428833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2677155628498754710}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000000005960465, y: -0.000000005960465, z: 0.0000000667572}
+  m_LocalScale: {x: 0.06666667, y: 0.06666667, z: 0.04}
+  m_Children: []
+  m_Father: {fileID: 5331380925647362053}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9198469664338340374
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,6 +45,7 @@ GameObject:
   - component: {fileID: -6590734781350358389}
   - component: {fileID: 6388895703569463830}
   - component: {fileID: 1151491915774711193}
+  - component: {fileID: 8313223716346922592}
   m_Layer: 12
   m_Name: shield
   m_TagString: Weapon
@@ -32,7 +63,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 25}
-  m_Children: []
+  m_Children:
+  - {fileID: 4755347653441428833}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,10 +129,9 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
   attackVfx: []
-  hitVfx: {fileID: 0}
   playClashEffect: {fileID: 409059710143449962, guid: f24dac5746d27994ea87b268cf7401af,
     type: 3}
-  clashEffectPosition: {fileID: 0}
+  clashEffectPosition: {fileID: 4755347653441428833}
   playSmokeEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
     type: 3}
   thisWepType: 3
@@ -122,6 +153,7 @@ MonoBehaviour:
   heldRotation: {x: -84.444, y: -71.983, z: 71.494}
   rb: {fileID: 0}
   col: {fileID: 0}
+  weaponSpawnManager: {fileID: 0}
   attackThrowForce: 15
   durabilityDecrement: 0.5
   throwableType: 0
@@ -154,7 +186,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &1151491915774711193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,9 +199,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
-  weaponBreak: 
+  attack: event:/Weapons/Weapon_Shield_Throw
+  attackHitPlayer: event:/Player/Player_Hurt_Shield
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Shield
+  weaponBreak: event:/Weapons/Weapon_Break
+--- !u!114 &8313223716346922592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9198469664338340374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d69e4519495c04ab0d5bb4484ceff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThrowableBounceEnviroment: event:/Weapons/Weapon_Shield_Bounce

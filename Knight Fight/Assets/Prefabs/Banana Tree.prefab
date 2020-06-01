@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5079598580226857123}
   - component: {fileID: 1532018363818828890}
   - component: {fileID: 6502775142401346757}
-  - component: {fileID: 3074380982248475247}
   - component: {fileID: 5064546498832317085}
   - component: {fileID: 8288112916411633739}
+  - component: {fileID: 7981932028082807184}
   m_Layer: 12
   m_Name: Banana Tree
   m_TagString: Weapon
@@ -103,7 +103,6 @@ MonoBehaviour:
   - {fileID: 7628914842149424458}
   - {fileID: 6484709016178531423}
   - {fileID: 7716824863364924677}
-  hitVfx: {fileID: 0}
   playClashEffect: {fileID: 0}
   clashEffectPosition: {fileID: 0}
   playSmokeEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
@@ -127,27 +126,14 @@ MonoBehaviour:
   heldRotation: {x: -68.635, y: 83.494, z: -82.39301}
   rb: {fileID: 0}
   col: {fileID: 0}
-  durabilityDecrement: 2
+  weaponSpawnManager: {fileID: 0}
+  durabilityDecrement: 5
   weaponAmmo: {fileID: 4919378358298003015, guid: 23d0a37fe18f40849874064a95206a90,
     type: 3}
   projectileSpawnPoint: {fileID: 3704923970173398912}
   timeDelayProjectile: 0.1
   upSpeedProjectile: 0.5
   swordVel: {x: 0, y: 0, z: 0}
---- !u!64 &3074380982248475247
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972219624891994246}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5386889098701397442, guid: 865ecebad27585d4c97cb45d6725ec70, type: 3}
 --- !u!54 &5064546498832317085
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -180,8 +166,22 @@ MonoBehaviour:
   attackHitPlayer: event:/Player/Player_Hurt_BananaTree
   throwWep: event:/Weapons/Weapon_Throw
   ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
-  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
-  weaponBreak: 
+  weaponPickup: event:/Weapons/Weapon_Pickup_BananaTree
+  weaponBreak: event:/Weapons/Weapon_Break
+--- !u!136 &7981932028082807184
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972219624891994246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.02
+  m_Height: 0.27
+  m_Direction: 1
+  m_Center: {x: -0.01, y: -0.01, z: -0.01}
 --- !u!1 &3704923970173398912
 GameObject:
   m_ObjectHideFlags: 0

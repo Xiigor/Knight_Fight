@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5174995584168739473}
   - component: {fileID: 1508088480203030120}
   - component: {fileID: 1413263593142885157}
-  - component: {fileID: 1665800199608777037}
   - component: {fileID: -1014411451439020821}
   - component: {fileID: 7274361680642678636}
+  - component: {fileID: 3077199674722006171}
   m_Layer: 12
   m_Name: excaliboulder_new
   m_TagString: Weapon
@@ -103,10 +103,11 @@ MonoBehaviour:
   - {fileID: 2469285579942071918}
   - {fileID: 1325645958401007483}
   - {fileID: 2345347173571380769}
-  hitVfx: {fileID: 0}
   playClashEffect: {fileID: 409059710143449962, guid: f24dac5746d27994ea87b268cf7401af,
     type: 3}
   clashEffectPosition: {fileID: 7335070484312538988}
+  playSmokeEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
+    type: 3}
   thisWepType: 1
   launchDir: 0
   animationDuration: 1.1
@@ -126,21 +127,8 @@ MonoBehaviour:
   heldRotation: {x: -54.057, y: 125.464, z: -134.157}
   rb: {fileID: 0}
   col: {fileID: 0}
+  weaponSpawnManager: {fileID: 0}
   durabilityDecrement: 0
---- !u!64 &1665800199608777037
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923546299004750516}
-  m_Material: {fileID: 13400000, guid: 3442604f4cfd0334f9134a524b2c1d19, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5681882860113884372, guid: 2609b3341b12bbf4a900d56658ec248e, type: 3}
 --- !u!54 &-1014411451439020821
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -174,7 +162,20 @@ MonoBehaviour:
   throwWep: event:/Weapons/Weapon_Throw
   ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
   weaponPickup: event:/Weapons/Weapon_Pickup_Generic
-  weaponBreak: 
+  weaponBreak: event:/Weapons/Weapon_Break
+--- !u!65 &3077199674722006171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923546299004750516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.77743155, y: 2.5921931, z: 0.42144504}
+  m_Center: {x: -0.0272502, y: 0.23159432, z: -0.0065324455}
 --- !u!1 &5502389359432327917
 GameObject:
   m_ObjectHideFlags: 0

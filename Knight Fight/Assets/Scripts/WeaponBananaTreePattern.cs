@@ -57,6 +57,7 @@ public class WeaponBananaTreePattern : WeaponBaseClass
     public override void Attack()
     {
         gameObject.GetComponent<Collider>().enabled = true;
+        audioPlayer.Attacking();
         newAttack = true;
         attackActive = true;
         timeDelayTimer = -0.5f;
@@ -75,6 +76,7 @@ public class WeaponBananaTreePattern : WeaponBaseClass
         {
             GameObject smokeParticle = Instantiate(playSmokeEffect, transform.position, Quaternion.identity);
             Destroy(smokeParticle, 3);
+            audioPlayer.WeaponBreaking();
             parentPlayer.GetComponent<PlayerStatePattern>().weaponDestroyed = true;
             Destroy(this.gameObject);
         }

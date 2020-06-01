@@ -11,7 +11,6 @@ abstract public class WeaponBaseClass : MonoBehaviour
     [HideInInspector] public WeaponEquippedState equippedState;
     [HideInInspector] public WeaponThrownState thrownState;
     public ParticleSystem[] attackVfx = null;
-    public GameObject hitVfx = null;
 
     public GameObject playClashEffect;
     public Transform clashEffectPosition;
@@ -42,6 +41,7 @@ abstract public class WeaponBaseClass : MonoBehaviour
     public Vector3 heldRotation;
     public Rigidbody rb;
     public Collider col;
+    public WeaponSpawnManager weaponSpawnManager;
 
     public abstract void Attack();
     public abstract void EndAttack();
@@ -58,26 +58,29 @@ abstract public class WeaponBaseClass : MonoBehaviour
         transform.localEulerAngles = heldRotation;
     }
 
-    public void BreakWeapon()
+    public void OnDestroy()
     {
-        //destroy the weapon and all traces of it
+        GameObject spawnParticle = Instantiate(playSmokeEffect, transform.position, Quaternion.identity);
+        Destroy(spawnParticle, 3);
+        weaponSpawnManager = GameObject.FindObjectOfType<WeaponSpawnManager>();
+        weaponSpawnManager.DestroySingleWeapon(this.gameObject);
     }
 
 
-    public void SetParentPlayer(Collision collision)
-    {
+    //public void SetParentPlayer(Collision collision)
+    //{
 
 
-        parentPlayer = collision.gameObject;
-        if(thisWepType == Weapontype.spellbook)
-        {
-            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().leftHandGameobject.transform);
-        }
-        else
-        {
-            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
-        }
-    }
+    //    parentPlayer = collision.gameObject;
+    //    if(thisWepType == Weapontype.spellbook)
+    //    {
+    //        transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().leftHandGameobject.transform);
+    //    }
+    //    else
+    //    {
+    //        transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
+    //    }
+    //}
 
     public void SetParentPlayer(GameObject collision)
     {
