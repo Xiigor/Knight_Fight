@@ -35,4 +35,9 @@ public class ProjectileGroundedState : ProjectileIState
     {
 
     }
+
+    public void CollisionEnter(Collision col)
+    {
+       
+    }
 }

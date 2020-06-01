@@ -37,5 +37,7 @@ abstract public class ProjectileBase : MonoBehaviour
     public abstract void StateChanger(ProjectileIState newState);
 
     public abstract void OnCollisionStay(Collision collision);
-    
+    public abstract void OnCollisionEnter(Collision collision);
+
+
 }
