@@ -4172,6 +4172,10 @@ PrefabInstance:
       propertyPath: ragdollRig
       value: 
       objectReference: {fileID: 1712810150}
+    - target: {fileID: 888531736, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
+      propertyPath: playerPunch
+      value: event:/Player/Player_Hurt_Unarmed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c576bfc1e3461b419c41780dde5c959, type: 3}
 --- !u!1001 &393599817
@@ -18446,6 +18450,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1600775050638498849, guid: 6d56b38eb60ece647adb7b23647054ce,
+        type: 3}
+      propertyPath: playerPunch
+      value: event:/Player/Player_Hurt_Unarmed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d56b38eb60ece647adb7b23647054ce, type: 3}
 --- !u!1001 &2288300693371800058
@@ -18535,6 +18544,11 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 1617081871}
+    - target: {fileID: 5525362062602730511, guid: e3432f0e36f48d6409025e8f4455c873,
+        type: 3}
+      propertyPath: playerPunch
+      value: event:/Player/Player_Hurt_Unarmed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3432f0e36f48d6409025e8f4455c873, type: 3}
 --- !u!1 &3840116081516977819 stripped
@@ -19576,6 +19590,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 398567234193459030, guid: ca3bdb139643ba8429af0b64a49cabf6,
+        type: 3}
+      propertyPath: playerPunch
+      value: event:/Player/Player_Hurt_Unarmed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca3bdb139643ba8429af0b64a49cabf6, type: 3}

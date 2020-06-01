@@ -13,7 +13,6 @@ public class PlayerWinState : PlayerIState
 
     public void OnStateEnter()
     {
-        player.transform.Rotate(0,-90,0);
         player.animator.SetBool("Win", true);
     }
 

@@ -106,6 +106,7 @@ public class WeaponThrowable : WeaponBaseClass
             //Rök effekt här
             GameObject smokeEffect = Instantiate(playSmokeEffect, transform.position, Quaternion.identity);
             Destroy(smokeEffect, 3);
+            audioPlayer.WeaponBreaking();
             Destroy(this.gameObject);
         }
     }

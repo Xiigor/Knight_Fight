@@ -234,6 +234,7 @@ public class PlayerStatePattern : MonoBehaviour
         }
         else
         {
+            audioPlayer.PlayerPunching();
             leftFist.SetActive(true);
         }
     }
@@ -387,10 +388,9 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void Dash()
     {
-        //GameObject DashParticle = Instantiate(particleDashEffect, DashEffectPosition.position, DashEffectPosition.rotation);
-        //Destroy(DashParticle, 3);
-        //transform.Translate(lastMove * dashSpeed * Time.deltaTime, Space.World);
-        OnHit(101);
+        GameObject DashParticle = Instantiate(particleDashEffect, DashEffectPosition.position, DashEffectPosition.rotation);
+        Destroy(DashParticle, 3);
+        transform.Translate(lastMove * dashSpeed * Time.deltaTime, Space.World);
     }
 
     public void ThrowItem()

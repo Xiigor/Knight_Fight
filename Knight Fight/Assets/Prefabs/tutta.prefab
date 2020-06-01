@@ -186,6 +186,7 @@ MonoBehaviour:
   heldRotation: {x: 90, y: 0, z: 90}
   rb: {fileID: 0}
   col: {fileID: 0}
+  weaponSpawnManager: {fileID: 0}
   durabilityDecrement: 2
 --- !u!114 &8062123980072483211
 MonoBehaviour:
@@ -199,11 +200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
+  attack: event:/Weapons/Weapon_Excaliboulder_Attack
+  attackHitPlayer: event:/Weapons/Weapon_Buisine_Attack
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Generic
   weaponBreak: 
 --- !u!1001 &5153376792425957665
 PrefabInstance:
@@ -212,6 +213,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2018137169584655605}
     m_Modifications:
+    - target: {fileID: 3665597746666717770, guid: 87e205d2052d3b14ca17f817e148483b,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword_trail2
+      objectReference: {fileID: 0}
     - target: {fileID: 7769788892399406680, guid: 87e205d2052d3b14ca17f817e148483b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -266,11 +272,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3665597746666717770, guid: 87e205d2052d3b14ca17f817e148483b,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword_trail2
       objectReference: {fileID: 0}
     - target: {fileID: 3834435365164566804, guid: 87e205d2052d3b14ca17f817e148483b,
         type: 3}
