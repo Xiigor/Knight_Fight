@@ -102,4 +102,9 @@ public class ProjectileFlyingState : ProjectileIState
             ChangeState(projectile.groundedState);
         }
     }
+
+    public void CollisionEnter(Collision col)
+    {
+        
+    }
 }

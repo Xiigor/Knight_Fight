@@ -10,4 +10,6 @@ public interface ProjectileIState
     void ChangeState(ProjectileIState newState);
     void CollisionStay(Collision col);
 
+    void CollisionEnter(Collision col);
+
 }
