@@ -424,7 +424,7 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void OnHit(float damage)
     {
-        commentatorScript.hiddenCooldownTimer = 0.0f;
+        commentatorScript.boredCooldownTimer = 0.0f;
         audioPlayer.PlayerHurting();
         gameManager.DecrementCombinedHealth(damage);
         currentState.TakeDamage(damage);

@@ -21,7 +21,8 @@ public class CommentatorSilentState : CommentatorAbstractClass
         {
             Debug.Log("Silent");
 
-            p_commentator.hiddenCooldownTimer += Time.deltaTime;
+            p_commentator.randomCooldownTimer += Time.deltaTime;
+            p_commentator.boredCooldownTimer += Time.deltaTime;
 
             if (p_commentator.hardSilenceTimer < p_commentator.hardSilenceDuration)
             {
@@ -29,7 +30,13 @@ public class CommentatorSilentState : CommentatorAbstractClass
             }
         }
 
-        if (p_commentator.hiddenCooldownTimer > p_commentator.secondsUntilBored)
+        if (p_commentator.randomCooldownTimer > p_commentator.randomSpeechFrequency)
+        {
+            p_commentator.randomTrigger = true;
+            p_commentator.ChangeState(p_commentator.speakingState);
+        }
+
+        if (p_commentator.boredCooldownTimer > p_commentator.secondsUntilBored)
         {
             p_commentator.boredTrigger = true;
             p_commentator.ChangeState(p_commentator.speakingState);
@@ -51,6 +58,7 @@ public class CommentatorSilentState : CommentatorAbstractClass
     public override void Exit()
     {
         p_commentator.hardSilenceTimer = 0.0f;
-        p_commentator.hiddenCooldownTimer = 0.0f;
+        p_commentator.randomCooldownTimer = 0.0f;
+        p_commentator.boredCooldownTimer = 0.0f;
     }
 }
