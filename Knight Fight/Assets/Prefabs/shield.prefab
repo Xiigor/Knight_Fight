@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2677155628498754710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4755347653441428833}
+  m_Layer: 0
+  m_Name: Clash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4755347653441428833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2677155628498754710}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000000005960465, y: -0.000000005960465, z: 0.0000000667572}
+  m_LocalScale: {x: 0.06666667, y: 0.06666667, z: 0.04}
+  m_Children: []
+  m_Father: {fileID: 5331380925647362053}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9198469664338340374
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,7 +62,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 25}
-  m_Children: []
+  m_Children:
+  - {fileID: 4755347653441428833}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,17 +128,16 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
   attackVfx: []
-  hitVfx: {fileID: 0}
   playClashEffect: {fileID: 409059710143449962, guid: f24dac5746d27994ea87b268cf7401af,
     type: 3}
-  clashEffectPosition: {fileID: 0}
+  clashEffectPosition: {fileID: 4755347653441428833}
   playSmokeEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
     type: 3}
   thisWepType: 3
   launchDir: 0
   animationDuration: 0.3
   durability: 5
-  damage: 50
+  damage: 35
   thrownDamage: 1
   thrownForce: 20
   throwAngle: 0.25
@@ -122,6 +152,7 @@ MonoBehaviour:
   heldRotation: {x: -84.444, y: -71.983, z: 71.494}
   rb: {fileID: 0}
   col: {fileID: 0}
+  weaponSpawnManager: {fileID: 0}
   attackThrowForce: 15
   durabilityDecrement: 0.5
   throwableType: 0

@@ -67,20 +67,20 @@ abstract public class WeaponBaseClass : MonoBehaviour
     }
 
 
-    public void SetParentPlayer(Collision collision)
-    {
+    //public void SetParentPlayer(Collision collision)
+    //{
 
 
-        parentPlayer = collision.gameObject;
-        if(thisWepType == Weapontype.spellbook)
-        {
-            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().leftHandGameobject.transform);
-        }
-        else
-        {
-            transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
-        }
-    }
+    //    parentPlayer = collision.gameObject;
+    //    if(thisWepType == Weapontype.spellbook)
+    //    {
+    //        transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().leftHandGameobject.transform);
+    //    }
+    //    else
+    //    {
+    //        transform.SetParent(collision.gameObject.GetComponent<PlayerStatePattern>().rightHandGameobject.transform);
+    //    }
+    //}
 
     public void SetParentPlayer(GameObject collision)
     {

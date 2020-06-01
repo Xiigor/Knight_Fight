@@ -15,6 +15,7 @@ public class PlayerDeadState : PlayerIState
 
     public void OnStateEnter()
     {
+        player.ThrowItem();
         player.cameraScript.objectsFollowedByCamera.Remove(player.gameObject);
         player.gameManager.alivePlayers.Remove(player.gameObject);
         player.EnableRagdoll();
@@ -25,6 +26,11 @@ public class PlayerDeadState : PlayerIState
         if (player.cameraScript.objectsFollowedByCamera.Count > 1)
         {
             player.commentatorScript.deathTrigger = true;
+        }
+
+        if(player.cameraScript.objectsFollowedByCamera.Count == 0)
+        {
+            player.commentatorScript.drawTrigger = true;
         }
 
         for(int i = 0; i < player.crowdParent.childCount; i++)

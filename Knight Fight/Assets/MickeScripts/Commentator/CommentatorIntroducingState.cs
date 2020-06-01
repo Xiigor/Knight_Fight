@@ -17,11 +17,13 @@ public class CommentatorIntroducingState : CommentatorAbstractClass
 
     public override void Execute()
     {
-        if (p_commentator.allowedToSpeak)
+        if (p_commentator.allowedToSpeak && p_commentator.introducingTrigger)
         {
             Debug.Log("HELLOOOO EVERYONE!!!"); //REPLACE THIS LINE WITH ACTUAL AUDIO FUNCTION! 
 
             p_commentator.audioCom.Intro();
+
+            p_commentator.introducingTrigger = false;
             p_commentator.allowedToSpeak = false;
         }
 

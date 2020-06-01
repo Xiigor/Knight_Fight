@@ -135,6 +135,9 @@
 		<property name="length">
 			<value>0.35999999999999999</value>
 		</property>
+		<property name="volume">
+			<value>2</value>
+		</property>
 		<property name="pitch">
 			<value>-5</value>
 		</property>
@@ -311,8 +314,14 @@
 	</object>
 	<object class="MixerBusFader" id="{53e6f815-a2c1-4613-a22a-13cfa45c0000}" />
 	<object class="ThreeEQEffect" id="{4bf0b305-0317-4801-a72c-d850e2b0d466}">
-		<property name="lowGain">
-			<value>-4</value>
+		<property name="midGain">
+			<value>3</value>
+		</property>
+		<property name="highGain">
+			<value>3.5</value>
+		</property>
+		<property name="crossoverSlope">
+			<value>0</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{8353bf8e-2099-4100-b52f-c1f37a07d34c}">

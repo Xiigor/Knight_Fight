@@ -102,17 +102,18 @@ MonoBehaviour:
   - {fileID: 2370405287477283772}
   - {fileID: 1208186068522179241}
   - {fileID: 2462815878732563443}
-  hitVfx: {fileID: 0}
   playClashEffect: {fileID: 409059710143449962, guid: f24dac5746d27994ea87b268cf7401af,
     type: 3}
   clashEffectPosition: {fileID: 193304540285971993}
+  playSmokeEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
+    type: 3}
   thisWepType: 0
   launchDir: 0
   animationDuration: 0.5
   durability: 10
-  damage: 15
+  damage: 24
   thrownDamage: 10
-  thrownForce: 23
+  thrownForce: 12
   throwAngle: 0.25
   attackActive: 0
   environmentTag: Environment
@@ -125,6 +126,7 @@ MonoBehaviour:
   heldRotation: {x: -89.14301, y: 0.002, z: -9.665001}
   rb: {fileID: 0}
   col: {fileID: 0}
+  weaponSpawnManager: {fileID: 0}
   durabilityDecrement: 0
 --- !u!54 &5901604308676461943
 Rigidbody:
@@ -171,8 +173,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.28472364, y: 1.9778624, z: 0.11717345}
-  m_Center: {x: -0.0016860068, y: 0.075060844, z: 0.00489866}
+  m_Size: {x: 0.28472364, y: 2.304309, z: 0.11717345}
+  m_Center: {x: -0.0016860068, y: 0.23828411, z: 0.00489866}
 --- !u!1 &8587903523261477134
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +212,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3123577848166001346}
     m_Modifications:
+    - target: {fileID: 3665597746666717770, guid: 87e205d2052d3b14ca17f817e148483b,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword_trail2
+      objectReference: {fileID: 0}
     - target: {fileID: 7769788892399406680, guid: 87e205d2052d3b14ca17f817e148483b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -264,11 +271,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3665597746666717770, guid: 87e205d2052d3b14ca17f817e148483b,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword_trail2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87e205d2052d3b14ca17f817e148483b, type: 3}

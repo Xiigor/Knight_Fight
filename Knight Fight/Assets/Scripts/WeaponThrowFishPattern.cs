@@ -83,6 +83,7 @@ public class WeaponThrowFishPattern : WeaponBaseClass
         currentDurability -= durabilityDecrement;
         if (currentDurability <= 0)
         {
+            audioPlayer.WeaponBreaking();
             parentPlayer.GetComponent<PlayerStatePattern>().weaponDestroyed = true;
             Destroy(this.gameObject);
         }

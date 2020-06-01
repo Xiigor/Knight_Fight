@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
 
     public void OnStart()
     {
-        if(readyPlayers.Count >= 2)
+        if(readyPlayers.Count >= 1)
         {
             alivePlayers.Clear();
             combinedStartingHealth = 0f;
@@ -316,6 +316,7 @@ public class GameManager : MonoBehaviour
             gameState = winState;
             gameState.OnStateEnter();
             commentatorScript.victoryTrigger = true;
+            commentatorScript.introducingTrigger = true;
         }
         else
         {

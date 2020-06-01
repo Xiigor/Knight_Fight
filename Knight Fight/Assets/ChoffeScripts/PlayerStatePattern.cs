@@ -103,6 +103,7 @@ public class PlayerStatePattern : MonoBehaviour
         commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         audioPlayer = GetComponent<AudioPlayer>();
         animator = GetComponent<Animator>();
+        ragdollHandler = GetComponent<PlayerRagdollHandler>();
 
     }
 
@@ -169,10 +170,6 @@ public class PlayerStatePattern : MonoBehaviour
             RemoveWep();
             weaponDestroyed = false;
         }
-        if (currentState == deadState)
-        {
-            ThrowItem();
-        }
 
     }
     public int GetPlayerIndex()
@@ -237,6 +234,7 @@ public class PlayerStatePattern : MonoBehaviour
         }
         else
         {
+            audioPlayer.PlayerPunching();
             leftFist.SetActive(true);
         }
     }

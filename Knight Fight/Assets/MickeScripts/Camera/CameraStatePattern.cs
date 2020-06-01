@@ -48,6 +48,9 @@ public class CameraStatePattern : MonoBehaviour
 
     public GameObject centerPoint;
 
+    public float maxRotationX = -10.25f;
+    public float maxRotationY = 6.25f;
+
     public float rotationSpeed = 2.5f;
 
     [HideInInspector] public bool rotatingCounterClockwise;

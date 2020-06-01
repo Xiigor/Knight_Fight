@@ -38,6 +38,7 @@ public class WeaponSwordPattern : WeaponBaseClass
     {
         Debug.Log("Enters attack");
         col.enabled = true;
+        audioPlayer.Attacking();
         if(attackVfx != null)
         {
             foreach (ParticleSystem particle in attackVfx)
@@ -68,6 +69,7 @@ public class WeaponSwordPattern : WeaponBaseClass
         if (currentDurability <= 0)
         {
             parentPlayer.GetComponent<PlayerStatePattern>().weaponDestroyed = true;
+            audioPlayer.WeaponBreaking();
             Destroy(this.gameObject);
         }
     }
@@ -82,7 +84,6 @@ public class WeaponSwordPattern : WeaponBaseClass
         currentState.CollisionEnter(collision);
         if (collision.gameObject.tag == playerTag && newAttack == true)
         {
-            //playClashEffect = GameObject.Find("Spark");
             GameObject playClashParticle = Instantiate(playClashEffect, clashEffectPosition.position, clashEffectPosition.rotation);
             Destroy(playClashParticle, 3);
             ChangeDurability(durabilityDecrement);

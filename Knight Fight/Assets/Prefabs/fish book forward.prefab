@@ -126,16 +126,16 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   audioPlayer: {fileID: 0}
   attackVfx: []
-  hitVfx: {fileID: 0}
   playClashEffect: {fileID: 0}
   clashEffectPosition: {fileID: 0}
+  playSmokeEffect: {fileID: 0}
   thisWepType: 2
   launchDir: 0
-  animationDuration: 0.75
-  durability: 10
+  animationDuration: 0.4
+  durability: 3
   damage: 5
   thrownDamage: 5
-  thrownForce: 20
+  thrownForce: 17
   throwAngle: 0.25
   attackActive: 0
   environmentTag: Environment
@@ -148,6 +148,7 @@ MonoBehaviour:
   heldRotation: {x: 51.524, y: -54.521, z: -143.663}
   rb: {fileID: 0}
   col: {fileID: 0}
+  weaponSpawnManager: {fileID: 0}
   durabilityDecrement: 1
   weaponAmmo: {fileID: 1227325187089670069, guid: 98101021b9486b040ae02c335bb568f3,
     type: 3}
