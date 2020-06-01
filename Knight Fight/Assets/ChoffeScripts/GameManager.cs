@@ -101,7 +101,10 @@ public class GameManager : MonoBehaviour
         gameState.OnStateEnter();
 
         //foreach (Gamepad index in Gamepad.all)
+        //{
         //    inputDevices.Add(index);
+        //}
+
         foreach (InputDevice index in InputSystem.devices)
         {
             inputDevices.Add(index);

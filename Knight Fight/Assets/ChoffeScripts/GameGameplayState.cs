@@ -63,7 +63,7 @@ public class GameGameplayState : GameIState
         }
         if (manager.internalRoundDelayTimer >= manager.newRoundDelayDuration)
         {
-            //manager.CheckForWinner();
+            manager.CheckForWinner();
         }
     }
 }

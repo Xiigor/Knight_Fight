@@ -59,10 +59,6 @@ public class PlayerRagdollHandler : MonoBehaviour
             destination.position = source.position;
             destination.rotation = source.rotation;
             ResetRagdollTransforms(source, destination);
-            //destination.transform.GetChild(i).position = source.transform.GetChild(i).position;
-            //destination.transform.GetChild(i).rotation = source.transform.GetChild(i).rotation;
-            //destinationGameObject.transform.GetChild(i).localPosition = sourceTransform.transform.GetChild(i).localPosition;
-            //destinationGameObject.transform.GetChild(i).localEulerAngles = sourceTransform.transform.GetChild(i).localEulerAngles;
         }
     }
 

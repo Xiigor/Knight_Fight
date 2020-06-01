@@ -391,7 +391,6 @@ public class PlayerStatePattern : MonoBehaviour
         GameObject DashParticle = Instantiate(particleDashEffect, DashEffectPosition.position, DashEffectPosition.rotation);
         Destroy(DashParticle, 3);
         transform.Translate(lastMove * dashSpeed * Time.deltaTime, Space.World);
-        OnHit(101);
     }
 
     public void ThrowItem()
