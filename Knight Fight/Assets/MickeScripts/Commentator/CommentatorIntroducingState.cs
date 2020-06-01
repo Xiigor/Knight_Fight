@@ -48,6 +48,6 @@ public class CommentatorIntroducingState : CommentatorAbstractClass
     public override void Exit()
     {
         p_commentator.hardSilenceTimer = p_commentator.postIntroTimer;
-        p_commentator.hiddenCooldownTimer = 0.0f;
+        p_commentator.boredCooldownTimer = 0.0f;
     }
 }

@@ -27,11 +27,6 @@ public class PlayerDeadState : PlayerIState
             player.commentatorScript.deathTrigger = true;
         }
 
-        if(player.cameraScript.objectsFollowedByCamera.Count == 0)
-        {
-            player.commentatorScript.drawTrigger = true;
-        }
-
         for(int i = 0; i < player.crowdParent.childCount; i++)
         {
             Transform crowd = player.crowdParent.GetChild(i);
