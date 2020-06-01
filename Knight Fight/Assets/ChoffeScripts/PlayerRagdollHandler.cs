@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerRagdollHandler : MonoBehaviour
 {
     public List<Rigidbody> rigidbodies;
-    public GameObject animRig;
-    public GameObject ragdollRig;
+    public Transform animRig;
+    public Transform ragdollRig;
 
     public void Awake()
     {
@@ -18,8 +18,9 @@ public class PlayerRagdollHandler : MonoBehaviour
 
     public void SetRagdollActive()
     {
-        animRig.SetActive(false);
-        ragdollRig.SetActive(true);
+        ragdollRig.gameObject.SetActive(true);
+        ResetRagdollTransforms(animRig, ragdollRig);
+        
         foreach(Rigidbody index in ragdollRig.GetComponentsInChildren<Rigidbody>())
         {
             index.isKinematic = false;
@@ -28,16 +29,15 @@ public class PlayerRagdollHandler : MonoBehaviour
             if (index.GetComponent<Collider>())
             {
                 index.GetComponent<Collider>().enabled = true;
-            }
-            
+            }        
         }
-        
+        animRig.gameObject.SetActive(false);
     }
     public void SetRagdollInactive()
     {
-        animRig.SetActive(true);
+        animRig.gameObject.SetActive(true);
         ResetRagdollTransforms(animRig, ragdollRig);
-        ragdollRig.SetActive(false);
+        
         foreach (Rigidbody index in ragdollRig.GetComponentsInChildren<Rigidbody>())
         {
             index.isKinematic = true;
@@ -47,14 +47,22 @@ public class PlayerRagdollHandler : MonoBehaviour
                 index.GetComponent<Collider>().enabled = false;
             }
         }
+        ragdollRig.gameObject.SetActive(false);
     }
 
-    private void ResetRagdollTransforms(GameObject source, GameObject destination)
+    private void ResetRagdollTransforms(Transform sourceTransform, Transform destinationTransform)
     {
-        for(int i = 0; i < destination.transform.childCount; i++)
+        for(int i = 0; i < sourceTransform.transform.childCount; i++)
         {
-            destination.transform.GetChild(i).position = source.transform.GetChild(i).position;
-            destination.transform.GetChild(i).rotation = source.transform.GetChild(i).rotation;
+            Transform source = sourceTransform.GetChild(i);
+            Transform destination = destinationTransform.GetChild(i);
+            destination.position = source.position;
+            destination.rotation = source.rotation;
+            ResetRagdollTransforms(source, destination);
+            //destination.transform.GetChild(i).position = source.transform.GetChild(i).position;
+            //destination.transform.GetChild(i).rotation = source.transform.GetChild(i).rotation;
+            //destinationGameObject.transform.GetChild(i).localPosition = sourceTransform.transform.GetChild(i).localPosition;
+            //destinationGameObject.transform.GetChild(i).localEulerAngles = sourceTransform.transform.GetChild(i).localEulerAngles;
         }
     }
 

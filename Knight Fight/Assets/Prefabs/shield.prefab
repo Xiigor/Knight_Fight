@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: -6590734781350358389}
   - component: {fileID: 6388895703569463830}
   - component: {fileID: 1151491915774711193}
+  - component: {fileID: 8313223716346922592}
   m_Layer: 12
   m_Name: shield
   m_TagString: Weapon
@@ -198,9 +199,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5723d5b350ca443acdd43dbd0fcfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 
-  attackHitPlayer: 
-  throwWep: 
-  ThrownWepHitEnvironment: 
-  weaponPickup: 
-  weaponBreak: 
+  attack: event:/Weapons/Weapon_Shield_Throw
+  attackHitPlayer: event:/Player/Player_Hurt_Shield
+  throwWep: event:/Weapons/Weapon_Throw
+  ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
+  weaponPickup: event:/Weapons/Weapon_Pickup_Shield
+  weaponBreak: event:/Weapons/Weapon_Break
+--- !u!114 &8313223716346922592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9198469664338340374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d69e4519495c04ab0d5bb4484ceff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThrowableBounceEnviroment: event:/Weapons/Weapon_Shield_Bounce

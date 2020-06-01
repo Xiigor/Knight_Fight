@@ -76,7 +76,11 @@ public class WeaponSpawnManager : MonoBehaviour
 
     public void DestroySingleWeapon(GameObject weapon)
     {
-        activeWeaponsList.Remove(weapon);
+        if (activeWeaponsList.Contains(weapon))
+        {
+            activeWeaponsList.Remove(weapon);
+        }
+        
     }
 
 }

@@ -15,7 +15,12 @@ public class PlayerDeadState : PlayerIState
 
     public void OnStateEnter()
     {
-        player.ThrowItem();
+        
+        if (player.weapon != null)
+        {
+            player.ThrowItem();
+        }
+
         player.cameraScript.objectsFollowedByCamera.Remove(player.gameObject);
         player.gameManager.alivePlayers.Remove(player.gameObject);
         player.EnableRagdoll();

@@ -75,7 +75,18 @@ public class WeaponThrownState : WeaponIState
         // här kan man lägga in att olika ljud ska spelas baserat på föremål man träffar.
         if (col.gameObject.tag == weapon.environmentTag)
         {
-            weapon.audioPlayer.ThrownWepHittingEnvironment();
+            if(weapon.thisWepType == WeaponBaseClass.Weapontype.throwable)
+            {
+                if ((int)weapon.GetComponent<WeaponThrowable>().throwableType == 0)
+                {
+                    weapon.GetComponent<audioThrowable>().Bounceing();
+                }
+            }
+
+            else
+            {
+                weapon.audioPlayer.ThrownWepHittingEnvironment();
+            } 
         }
         if (col.gameObject.tag == weapon.playerTag)
         {

@@ -16,7 +16,7 @@ public class PlayerStatePattern : MonoBehaviour
     [HideInInspector] public GameManager gameManager;
     [HideInInspector] public CameraStatePattern cameraScript;
     [HideInInspector] public CommentatorStatePattern commentatorScript;
-    public PlayerRagdollHandler ragdollHandler;
+    
     public GameObject cameraObject;
 
     [HideInInspector] public PlayerBasicState basicState;
@@ -73,11 +73,11 @@ public class PlayerStatePattern : MonoBehaviour
     Vector3 lastMove;
     public float maxHealth = 100f;
     public float health;
-
+    [HideInInspector] public PlayerRagdollHandler ragdollHandler;
     [HideInInspector] public Collider col;
-    public Rigidbody rb;
+    [HideInInspector] public Rigidbody rb;
     [HideInInspector] public AudioPlayer audioPlayer;
-    public Animator animator;
+    [HideInInspector] public Animator animator;
 
 
 
@@ -114,6 +114,7 @@ public class PlayerStatePattern : MonoBehaviour
         transform.position = spawnPosition.transform.position;
         health = maxHealth;
         tag = playerTag;
+        DisableRagdoll();
         currentState = idleState;
         currentState.OnStateEnter();
         internalGCDTimer = globalCD;
@@ -125,11 +126,10 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void OnDisable()
     {
-        //GameObject spawnParticle = Instantiate(spawnEffect, spawnEffectPosition.position, spawnEffectPosition.rotation);
-        //Destroy(spawnParticle, 3);
-        transform.position = spawnPosition.transform.position;
+        
         GameObject dieParticle = Instantiate(spawnEffect, spawnEffectPosition.position, spawnEffectPosition.rotation);
-        Destroy(dieParticle, 3);
+        //Destroy(dieParticle, 3);
+        transform.position = spawnPosition.transform.position;
     }
 
     private void FixedUpdate()
@@ -391,6 +391,7 @@ public class PlayerStatePattern : MonoBehaviour
         GameObject DashParticle = Instantiate(particleDashEffect, DashEffectPosition.position, DashEffectPosition.rotation);
         Destroy(DashParticle, 3);
         transform.Translate(lastMove * dashSpeed * Time.deltaTime, Space.World);
+        OnHit(101);
     }
 
     public void ThrowItem()
