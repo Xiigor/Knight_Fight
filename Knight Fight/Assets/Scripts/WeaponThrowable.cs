@@ -10,6 +10,8 @@ public class WeaponThrowable : WeaponBaseClass
     private float timeDelay = 0;
     private float timeDelayCol = 0;
     private bool playerHit = false;
+    private bool thrown = false;
+    private Vector3 constSpeed;
     public enum ThrowableType { throwableWeapon, trashWeapon};
     public ThrowableType throwableType;
 
@@ -59,7 +61,11 @@ public class WeaponThrowable : WeaponBaseClass
                 timeDelay = 0;
             }
         }
-     }
+        if (thrown == true)
+        {
+            rb.velocity = rb.velocity.normalized * attackThrowForce;
+        }
+    }
 
      public override void Attack()
      {
@@ -71,6 +77,7 @@ public class WeaponThrowable : WeaponBaseClass
         attackActive = true;
         if (0 == (int)throwableType)
         {
+            gameObject.layer = 14;
             col.material.bounciness = 1;
             col.material.dynamicFriction = 0;
             col.material.staticFriction = 0;
@@ -83,6 +90,7 @@ public class WeaponThrowable : WeaponBaseClass
             transform.rotation = Quaternion.Euler(90, 0, 0);
             rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
             rb.velocity = parentPlayer.transform.forward * attackThrowForce;
+            thrown = true;
         }
 
         RemoveParentPlayer();
@@ -119,6 +127,7 @@ public class WeaponThrowable : WeaponBaseClass
             //ChangeDurability(durabilityHitPlayer);
             playerHit = true;
         }
+        
     }
 
     public override void OnCollisionStay(Collision collision)
