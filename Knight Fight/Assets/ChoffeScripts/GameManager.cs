@@ -302,6 +302,7 @@ public class GameManager : MonoBehaviour
             {
                 gameState = menuState;
                 gameState.OnStateEnter();
+                cameraScript.cameraRestored = false;
                 commentatorScript.ChangeState(commentatorScript.inactiveState);
             }
 

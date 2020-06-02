@@ -181,7 +181,7 @@ public class CameraStatePattern : MonoBehaviour
             gameCamera.fieldOfView = 60.0f;
 
             gameFinished = false;
-            //cameraRestored = true;
+            cameraRestored = true;
         }
     }
 }

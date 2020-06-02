@@ -9,172 +9,21 @@
 [LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000002B38F48DC38 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000299F040C6D8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 51563744
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 371040
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000CDBE59F31C
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA58D1C320
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA58D1C2F0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA58D1C3F0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA58D1C4B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B3972783F8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JoinMumble6', format=2, channels=1, frequency=48000, lengthbytes=16896, lengthpcm=34222, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.151855.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 51563744
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 371040
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000CDBE59F31C
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA58D1C320
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA58D1C2F0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA58D1C3F0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA58D1C4B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B3972783F8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JoinMumble3', format=2, channels=1, frequency=48000, lengthbytes=23328, lengthpcm=69395, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.129404.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 51563744
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 371040
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000CDBE59F31C
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA58D1C320
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA58D1C2F0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA58D1C3F0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA58D1C4B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B3972783F8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JoinMumble5', format=2, channels=1, frequency=48000, lengthbytes=22912, lengthpcm=46581, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.131203.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 51563744
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 371040
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000CDBE59F31C
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA58D1C320
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA58D1C2F0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA58D1C3F0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA58D1C4B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B3972783F8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JoinMumble4', format=2, channels=1, frequency=48000, lengthbytes=23872, lengthpcm=87457, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.114674.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 51563744
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 371040
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000CDBE59F31C
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA58D1C320
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA58D1C2F0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA58D1C3F0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA58D1C4B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B3972783F8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JoinMumble1', format=2, channels=1, frequency=48000, lengthbytes=25600, lengthpcm=78901, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.139865.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 51563744
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 371040
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000CDBE59F31C
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA58D1C320
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA58D1C2F0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA58D1C3F0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA58D1C4B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B3972783F8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JoinMumble2', format=2, channels=1, frequency=48000, lengthbytes=30496, lengthpcm=61790, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.102829.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 51563744
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 371040
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000CDBE59F31C
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA58D1C320
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA58D1C2F0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA58D1C3F0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA58D1C4B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B397277DC8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='DunkDunk', format=2, channels=2, frequency=48000, lengthbytes=33632, lengthpcm=27867, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.384125.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 51563744
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 371040
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000CDBE59F31C
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA58D1C320
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA58D1C2F0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA58D1C3F0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA58D1C4B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002B397277DC8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Selection', format=2, channels=2, frequency=48000, lengthbytes=197600, lengthpcm=198810, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.539917.
-[LOG] SoundI::release                          :  (000002B396BF9CC8)
-[LOG] SoundI::release                          :     Cymbal - Trimmed (000002B3A4610AB8)
-[LOG] SoundI::release                          :  (000002B38F76C558)
-[LOG] SoundI::release                          :     JoinMumble6 (000002B3A4611618)
-[LOG] SoundI::release                          :  (000002B38F76C9A8)
-[LOG] SoundI::release                          :     JoinMumble1 (000002B3972D4008)
-[LOG] SoundI::release                          :  (000002B38F76CF68)
-[LOG] SoundI::release                          :     JoinMumble2 (000002B3972D44E8)
-[LOG] SoundI::release                          :  (000002B38F76F7A8)
-[LOG] SoundI::release                          :     JoinMumble5 (000002B3A4603438)
-[LOG] SoundI::release                          :  (000002B38F76CC88)
-[LOG] SoundI::release                          :     JoinMumble4 (000002B3A46047B8)
-[LOG] SoundI::release                          : crowdIdle (000002B38F415AF8)
-[LOG] SoundI::release                          :     crowdIdle (000002B3A460F738)
-[LOG] SoundI::release                          :     crowdIdle (000002B38F4161B8)
-[LOG] SoundI::release                          : Patrik_Menu_Loop_90bpm (000002B38F258678)
-[LOG] SoundI::release                          :     Patrik_Menu_Loop_90bpm (000002B3A46117B8)
-[LOG] SoundI::release                          :     Patrik_Menu_Loop_90bpm (000002B38F258168)
-[LOG] SoundI::release                          :  (000002B38F76C6C8)
-[LOG] SoundI::release                          :     JoinMumble3 (000002B3A460F598)
-[LOG] SoundI::release                          :  (000002B38F76DDC8)
-[LOG] SoundI::release                          :     DunkDunk (000002B3972D1428)
-[LOG] SoundI::release                          :  (000002B38F76FBF8)
-[LOG] SoundI::release                          :     Selection (000002B3972D2468)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.

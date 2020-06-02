@@ -46,6 +46,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!135 &7249096711664012437
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7982741905242481868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.18301955
+  m_Center: {x: 0.02, y: 0.000000013446881, z: 0}
 --- !u!114 &3122101404804297536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +101,7 @@ MonoBehaviour:
   thisWepType: 3
   launchDir: 0
   animationDuration: 0.3
-  durability: 10
+  durability: 1
   damage: 8
   thrownDamage: 8
   thrownForce: 25
@@ -106,21 +119,8 @@ MonoBehaviour:
   col: {fileID: 0}
   weaponSpawnManager: {fileID: 0}
   attackThrowForce: 0
-  durabilityDecrement: 0
+  durabilityDecrement: 1
   throwableType: 1
---- !u!135 &7249096711664012437
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7982741905242481868}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.18301955
-  m_Center: {x: 0.02, y: 0.000000013446881, z: 0}
 --- !u!1001 &2155403849107848645
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -60,7 +60,7 @@ public class ProjectileFish : ProjectileBase
 
         if (collision.gameObject.tag == playerTag)
         {
-            audioPlayer.Play();
+            //audioPlayer.Play();
         }
     }
 }
