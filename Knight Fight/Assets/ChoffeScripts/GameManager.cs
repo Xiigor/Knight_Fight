@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
 
         readyPlayers = new List<GameObject>();
         gameState = menuState;
-        gameState.OnStateEnter();
+        AwakeSetup();
 
         //foreach (Gamepad index in Gamepad.all)
         //{
@@ -113,6 +113,11 @@ public class GameManager : MonoBehaviour
         {
             inputDevices.Add(index);
         }
+    }
+    public void AwakeSetup()
+    {
+        audioManager.StartMenuMusic();
+        crowdMoodSetter.SetMood(0);
     }
 
     public void Update()
