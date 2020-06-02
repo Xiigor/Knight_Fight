@@ -128,7 +128,7 @@ public class PlayerStatePattern : MonoBehaviour
     {
         
         GameObject dieParticle = Instantiate(spawnEffect, spawnEffectPosition.position, spawnEffectPosition.rotation);
-        //Destroy(dieParticle, 3);
+        Destroy(dieParticle, 3);
         transform.position = spawnPosition.transform.position;
     }
 

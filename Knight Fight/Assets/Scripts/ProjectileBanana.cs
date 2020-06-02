@@ -8,14 +8,13 @@ public class ProjectileBanana : ProjectileBase
     // Start is called before the first frame update
     private float internalDespawnTimer = 0f;
     private float despawnTimer = 0f;
-    [HideInInspector] public StudioEventEmitter audioPlayer;
     private void Awake()
     {
         flyingState = new ProjectileFlyingState(this);
         groundedState = new ProjectileGroundedState(this);
         rb = GetComponent<Rigidbody>();
         despawnTimer = Random.Range(despawnTimerMin, despawnTimerMax);
-        audioPlayer = GetComponent<StudioEventEmitter>();
+        audioPlayer = GetComponent<AudioProjectile>();
     }
 
     private void Start()

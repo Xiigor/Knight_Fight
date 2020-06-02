@@ -105,6 +105,9 @@ public class ProjectileFlyingState : ProjectileIState
 
     public void CollisionEnter(Collision col)
     {
-        
+        if(col.gameObject.tag == projectile.playerTag)
+        {
+            projectile.audioPlayer.HittingPlayer();
+        }
     }
 }

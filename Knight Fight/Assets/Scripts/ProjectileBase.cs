@@ -22,6 +22,7 @@ abstract public class ProjectileBase : MonoBehaviour
     [HideInInspector] public ProjectileFlyingState flyingState;
     [HideInInspector] public ProjectileGroundedState groundedState;
     public Rigidbody rb;
+    public AudioProjectile audioPlayer;
 
     public float ProjectileSpeed = 15f;
     public string playerTag = "Player";
@@ -30,7 +31,7 @@ abstract public class ProjectileBase : MonoBehaviour
     {
         Debug.Log("puff");
         GameObject spawnParticle = Instantiate(spawnEffect, transform.position, Quaternion.identity);
-        //instansiera rökpuffen här
+        Destroy(spawnParticle, 3);
     }
 
     public abstract void LaunchPos(GameObject parent);

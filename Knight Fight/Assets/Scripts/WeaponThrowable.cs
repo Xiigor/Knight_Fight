@@ -133,7 +133,11 @@ public class WeaponThrowable : WeaponBaseClass
 
     public override void OnCollisionStay(Collision collision)
     {
-        currentState.CollisionStay(collision);
+        if(currentState == thrownState && thrown == false)
+        {
+            currentState.CollisionStay(collision);
+        }
+        
     }
 
 }

@@ -4825,6 +4825,7 @@ GameObject:
   - component: {fileID: 6685577080297784779}
   - component: {fileID: 8379540266831383776}
   - component: {fileID: -4519891905091529357}
+  - component: {fileID: 7037883633597744088}
   m_Layer: 15
   m_Name: fish 1
   m_TagString: Projectile
@@ -4953,6 +4954,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.09973257, y: 0.04179672, z: 0.045086537}
   m_Center: {x: 0.010058768, y: -0.002928812, z: 0.000954967}
+--- !u!114 &7037883633597744088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227325187089670069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b14c514c67e284d8ba2b2b2a56831a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPlayer: event:/Player/Player_Hurt_Fish
 --- !u!1 &1932954880325039169
 GameObject:
   m_ObjectHideFlags: 0

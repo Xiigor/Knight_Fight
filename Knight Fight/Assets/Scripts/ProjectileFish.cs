@@ -7,7 +7,6 @@ public class ProjectileFish : ProjectileBase
 {
     private float internalDespawnTimer = 0f;
     private float despawnTimer = 0f;
-    [HideInInspector] public StudioEventEmitter audioPlayer;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -15,7 +14,8 @@ public class ProjectileFish : ProjectileBase
         groundedState = new ProjectileGroundedState(this);
         rb = GetComponent<Rigidbody>();
         despawnTimer = Random.Range(despawnTimerMin, despawnTimerMax);
-        audioPlayer = GetComponent<StudioEventEmitter>();
+        audioPlayer = GetComponent<AudioProjectile>();
+
 
     }
 

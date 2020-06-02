@@ -156,32 +156,25 @@ public class CameraStatePattern : MonoBehaviour
     public void SmoothRestoreCamera()
     {
         restoreTimer += Time.deltaTime;
+        gameCamera.fieldOfView = 60.0f;
 
-        if (transform.position != initialCameraPosition)
+        transform.position = Vector3.SmoothDamp(transform.position, initialCameraPosition, ref velocity, initialSmoothness);
+        transform.rotation = Quaternion.Lerp(transform.rotation, initialCameraRotation, Time.deltaTime);
+
+        if (restoreTimer > 1.75f)
         {
-            gameCamera.fieldOfView = 60.0f;
-
-            transform.position = Vector3.SmoothDamp(transform.position, initialCameraPosition, ref velocity, initialSmoothness);
-            transform.rotation = Quaternion.Lerp(transform.rotation, initialCameraRotation, Time.deltaTime);
-          
-            if (restoreTimer > 1.75f)
-            {
-                restoreTimer = 0.0f;
-                cameraRestored = true;
-            }
+            restoreTimer = 0.0f;
+            cameraRestored = true;
         }
     }
 
     public void InstantRestoreCamera()
     {
-        if (transform.position != initialCameraPosition)
-        {
-            transform.position = initialCameraPosition;
-            transform.rotation = initialCameraRotation;
-            gameCamera.fieldOfView = 60.0f;
+        transform.position = initialCameraPosition;
+        transform.rotation = initialCameraRotation;
+        gameCamera.fieldOfView = 60.0f;
 
-            gameFinished = false;
-            cameraRestored = true;
-        }
+        gameFinished = false;
+        cameraRestored = true;
     }
 }
