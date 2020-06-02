@@ -19,6 +19,10 @@ public class GameMenuState : GameIState
         }
         manager.projectileDespawner.DestroyObjectsWithTag(manager.groundedProjectileTag);
         manager.projectileDespawner.DestroyObjectsWithTag(manager.projectileTag);
+        manager.projectileDespawner.DestroyObjectsWithTag(manager.inputHandlerTag);
+
+        manager.inputManagerScript.RemoveDevices();
+
         manager.winbanner.SetActive(false);
         manager.DisablePlayers();
         manager.crowdMoodSetter.SetMood(0);
@@ -47,5 +51,6 @@ public class GameMenuState : GameIState
     public void UpdateState()
     {
         manager.SetRoundsText();
+        //manager.UpdateInputDevices();
     }
 }

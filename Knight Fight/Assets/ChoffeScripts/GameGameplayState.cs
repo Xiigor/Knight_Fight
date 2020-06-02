@@ -21,6 +21,7 @@ public class GameGameplayState : GameIState
         manager.projectileDespawner.DestroyObjectsWithTag(manager.groundedProjectileTag);
         manager.projectileDespawner.DestroyObjectsWithTag(manager.projectileTag);
         manager.counterManager.countdownIsDone = false;
+
         manager.ResetMusicParams();
         manager.DisablePlayers();
         manager.AddPlayersForCamera();
@@ -46,7 +47,8 @@ public class GameGameplayState : GameIState
         if (manager.counterManager.countdownIsDone == true)
         {
             manager.EnablePlayers();
-            manager.inputManagerScript.trigger = true;
+            //manager.inputManagerScript.trigger = true;
+            manager.inputManagerScript.SpawnPlayers();
             //cm.countdownIsDone = false;
 
         }
@@ -54,7 +56,6 @@ public class GameGameplayState : GameIState
 
         if(manager.newRoundProcessStarted == false)
         {
-            //Disablas bara för testning, enablas när vfx implementation är klar.
             manager.CheckForRoundWinner();
         }
         if (manager.newRoundProcessStarted)

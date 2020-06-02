@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     //lists used by the gamemanager
     //private List<Gamepad> inputDevices;
 
-    private List<InputDevice> inputDevices;
+    public List<InputDevice> inputDevices;
 
     public List<GameObject> readyPlayers;
     public List<GameObject> alivePlayers;
@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
     public Canvas menuCanvas;
     public GameObject gameMenu;
     [HideInInspector] public CameraStatePattern cameraScript;
-    public GameObject inputManagerObject;
     [HideInInspector] public PlayerInputManager inputManagerScript;
     [HideInInspector] public CommentatorStatePattern commentatorScript;
     public CrowdMoodSetter crowdMoodSetter;
@@ -78,6 +77,7 @@ public class GameManager : MonoBehaviour
     //Tags
     public string groundedProjectileTag = "GroundedProjectile";
     public string projectileTag = "Projectile";
+    public string inputHandlerTag = "InputHandler";
 
     public void Awake()
     {
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
         winState = new GameWinState(this);
 
         cameraScript = cameraObject.GetComponent<CameraStatePattern>();
-        inputManagerScript = inputManagerObject.GetComponent<PlayerInputManager>();
+        inputManagerScript = GameObject.FindObjectOfType<PlayerInputManager>();
         audioManager = GetComponent<AudioMenu>();
         commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
@@ -108,16 +108,12 @@ public class GameManager : MonoBehaviour
         //{
         //    inputDevices.Add(index);
         //}
-
-        foreach (InputDevice index in InputSystem.devices)
-        {
-            inputDevices.Add(index);
-        }
     }
     public void AwakeSetup()
     {
         audioManager.StartMenuMusic();
         crowdMoodSetter.SetMood(0);
+        AddInputDevices();
     }
 
     public void Update()
@@ -151,15 +147,28 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void SpawnPlayers()
+    //public void SpawnPlayers()
+    //{
+    //    inputManagerScript.trigger = true;
+    //}
+
+    public void AddInputDevices()
     {
-        inputManagerScript.trigger = true;
+        foreach (InputDevice index in InputSystem.devices)
+        {
+            inputDevices.Add(index);
+        }
     }
 
     public void OnJoin(CallbackContext context)
     {
         if (gameState == menuState && gameMenu.active)
         {
+            if (!inputDevices.Contains(context.control.device))
+            {
+                inputDevices.Add(context.control.device);
+                Debug.Log("added " + context.control.device);
+            }
             if(context.control.device == inputDevices[0])
             {
                 if (!readyPlayers.Contains(player1))
