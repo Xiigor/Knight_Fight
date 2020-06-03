@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerStatePattern : MonoBehaviour
 {
+    public GameObject HitMarkEffect;
     public GameObject spawnEffect;
     public GameObject particleDashEffect;
     public Transform spawnEffectPosition;
@@ -424,6 +425,8 @@ public class PlayerStatePattern : MonoBehaviour
 
     public void OnHit(float damage)
     {
+        GameObject playHitmarkEffect = Instantiate(HitMarkEffect, transform.position, Quaternion.identity);
+        Destroy(playHitmarkEffect, 3);
         commentatorScript.boredCooldownTimer = 0.0f;
         audioPlayer.PlayerHurting();
         gameManager.DecrementCombinedHealth(damage);
