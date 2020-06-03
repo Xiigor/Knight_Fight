@@ -246,60 +246,6 @@ public class GameManager : MonoBehaviour
  
     }
 
-    //public void OnLeave(CallbackContext context)
-    //{
-    //    if (gameState == menuState && gameMenu.active)
-    //    {
-    //        if (context.control.device == inputDevices[0])
-    //        {
-    //            if (readyPlayers.Contains(player1))
-    //            {
-    //                audioManager.PlayerLeft();
-    //                player1NotReady.SetActive(true);
-    //                player1Ready.SetActive(false);
-    //                inputManagerScript.player1 = false;
-    //                readyPlayers.Remove(player1);
-    //            }
-
-    //        }
-    //        else if (context.control.device == inputDevices[1])
-    //        {
-    //            if (readyPlayers.Contains(player2))
-    //            {
-    //                audioManager.PlayerLeft();
-    //                player2NotReady.SetActive(true);
-    //                player2Ready.SetActive(false);
-    //                inputManagerScript.player2 = false;
-    //                readyPlayers.Remove(player2);
-    //            }
-
-    //        }
-    //        else if (context.control.device == inputDevices[2])
-    //        {
-    //            if (readyPlayers.Contains(player3))
-    //            {
-    //                audioManager.PlayerLeft();
-    //                player3NotReady.SetActive(true);
-    //                player3Ready.SetActive(false);
-    //                inputManagerScript.player3 = false;
-    //                readyPlayers.Remove(player3);
-    //            }
-
-    //        }
-    //        else if (context.control.device == inputDevices[3])
-    //        {
-    //            if (readyPlayers.Contains(player4))
-    //            {
-    //                audioManager.PlayerLeft();
-    //                player4NotReady.SetActive(true);
-    //                player4Ready.SetActive(false);
-    //                inputManagerScript.player4 = false;
-    //                readyPlayers.Remove(player4);
-    //            }
-    //        }
-    //    }
-    //}
-
     public void AddPlayersForCamera()
     {
         cameraScript.objectsFollowedByCamera.Clear();

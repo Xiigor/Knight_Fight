@@ -49,7 +49,7 @@ public class GameGameplayState : GameIState
             manager.EnablePlayers();
             //manager.inputManagerScript.trigger = true;
             manager.inputManagerScript.SpawnPlayers();
-            //cm.countdownIsDone = false;
+            //manager.counterManager.countdownIsDone = false;
 
         }
         manager.weaponSpawnManager.TimerUpdater();
