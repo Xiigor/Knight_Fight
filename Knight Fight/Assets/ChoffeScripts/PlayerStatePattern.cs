@@ -433,6 +433,10 @@ public class PlayerStatePattern : MonoBehaviour
         {
             particle.Play();
         }
+        foreach (ParticleSystem particle in onHitVfx)
+        {
+            particle.Stop();
+        }
     }
 
     public void EnableRagdoll()
