@@ -59,7 +59,8 @@ public class WeaponSpawnManager : MonoBehaviour
         newWeapon.transform.position = spawnPos;
         newWeapon.transform.rotation = spawnPoint.transform.rotation;
         spawnPoint.GetComponent<WeaponSpawnPoint>().RandomThrowSpeed();
-        newWeapon.GetComponent<Rigidbody>().velocity += (newWeapon.transform.forward * spawnPoint.GetComponent<WeaponSpawnPoint>().randomForwardSpeed) + (newWeapon.transform.up * spawnPoint.GetComponent<WeaponSpawnPoint>().randomUpSpeed);
+        newWeapon.GetComponent<Rigidbody>().velocity += (spawnPoint.transform.forward * spawnPoint.GetComponent<WeaponSpawnPoint>().randomForwardSpeed) 
+            + (spawnPoint.transform.up * spawnPoint.GetComponent<WeaponSpawnPoint>().randomUpSpeed);
         activeWeaponsList.Add(newWeapon);
 
     }

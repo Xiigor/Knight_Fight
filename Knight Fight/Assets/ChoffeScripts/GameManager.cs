@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
 
     public void AddInputDevices()
     {
-        foreach (InputDevice index in InputSystem.devices)
+        foreach (Gamepad index in Gamepad.all)
         {
             inputDevices.Add(index);
         }

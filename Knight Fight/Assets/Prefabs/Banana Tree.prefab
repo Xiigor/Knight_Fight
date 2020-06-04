@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6502775142401346757}
   - component: {fileID: 5064546498832317085}
   - component: {fileID: 8288112916411633739}
-  - component: {fileID: 7981932028082807184}
+  - component: {fileID: -1155261167065584208}
   m_Layer: 12
   m_Name: Banana Tree
   m_TagString: Weapon
@@ -168,8 +168,8 @@ MonoBehaviour:
   ThrownWepHitEnvironment: event:/Weapons/Weapon_Hit_Ground
   weaponPickup: event:/Weapons/Weapon_Pickup_BananaTree
   weaponBreak: event:/Weapons/Weapon_Break
---- !u!136 &7981932028082807184
-CapsuleCollider:
+--- !u!65 &-1155261167065584208
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -178,10 +178,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.02
-  m_Height: 0.27
-  m_Direction: 1
-  m_Center: {x: -0.01, y: -0.01, z: -0.01}
+  serializedVersion: 2
+  m_Size: {x: 0.033847135, y: 0.29386783, z: 0.045537252}
+  m_Center: {x: -0.011157048, y: 0.00010228158, z: -0.0066932375}
 --- !u!1 &3704923970173398912
 GameObject:
   m_ObjectHideFlags: 0
