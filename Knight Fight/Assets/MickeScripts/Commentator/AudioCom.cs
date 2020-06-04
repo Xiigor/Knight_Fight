@@ -10,6 +10,14 @@ public class AudioCom : MonoBehaviour
     public FMOD.Studio.EventInstance onWin;
 
     [EventRef]
+    public string onDead;
+    public FMOD.Studio.EventInstance onDeath;
+
+    [EventRef]
+    public string onRandom;
+    public FMOD.Studio.EventInstance onRandomTrigger;
+
+    [EventRef]
     public string bored;
     public FMOD.Studio.EventInstance boredDialogue;
 
@@ -22,6 +30,8 @@ public class AudioCom : MonoBehaviour
         onWin.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         boredDialogue.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         introduction.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        onDeath.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        onRandomTrigger.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
 
@@ -30,6 +40,20 @@ public class AudioCom : MonoBehaviour
         InterruptSpeech();
         onWin = RuntimeManager.CreateInstance(onVictory);
         onWin.start();
+    }
+
+    public void OnDeath()
+    {
+        InterruptSpeech();
+        onDeath = RuntimeManager.CreateInstance(onDead);
+        onDeath.start();
+    }
+
+    public void OnRandomTrigger()
+    {
+        InterruptSpeech();
+        onRandomTrigger = RuntimeManager.CreateInstance(onRandom);
+        onRandomTrigger.start();
     }
 
     public void Bored()

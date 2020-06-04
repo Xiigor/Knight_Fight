@@ -20,7 +20,7 @@ public class CommentatorSpeakingState : CommentatorAbstractClass
         if (p_commentator.randomTrigger)
         {
             Debug.Log("FROGS ARE GREEN AND ROSES ARE BLUE!!"); //REPLACE WITH AN ACTUAL AUDIO FUNCTION!!!
-
+            p_commentator.audioCom.OnRandomTrigger();
             p_commentator.randomTrigger = false;
             p_commentator.allowedToSpeak = false;
 
@@ -30,7 +30,7 @@ public class CommentatorSpeakingState : CommentatorAbstractClass
         if (p_commentator.boredTrigger)
         {
             Debug.Log("ANYTHING GOING ON YO?!"); //REPLACE WITH AN ACTUAL AUDIO FUNCTION!!!
-
+           
             p_commentator.audioCom.Bored();
 
             p_commentator.boredTrigger = false;
@@ -52,6 +52,7 @@ public class CommentatorSpeakingState : CommentatorAbstractClass
         if (p_commentator.deathTrigger)
         {
             Debug.Log("PLAYER HAS DIED!!"); //REPLACE WITH ACTUAL AUDIO FUNCTION!!!
+            p_commentator.audioCom.OnDeath();
             p_commentator.deathTrigger = false;
             p_commentator.allowedToSpeak = false;
 
