@@ -105,10 +105,6 @@ public class PlayerStatePattern : MonoBehaviour
         audioPlayer = GetComponent<AudioPlayer>();
         animator = GetComponent<Animator>();
         ragdollHandler = GetComponent<PlayerRagdollHandler>();
-        foreach (ParticleSystem particle in onHitVfx)
-        {
-            particle.Stop();
-        }
     }
 
     public void OnEnable()
@@ -125,6 +121,11 @@ public class PlayerStatePattern : MonoBehaviour
         internalDashTimer = dashCD;
         weapon = null;
         Physics.IgnoreLayerCollision(gameObject.layer, UnequippedLayer, false);
+        foreach (ParticleSystem particle in onHitVfx)
+        {
+            particle.Stop();
+        }
+
 
     }
 
@@ -436,10 +437,11 @@ public class PlayerStatePattern : MonoBehaviour
         {
             particle.Play();
         }
-        foreach (ParticleSystem particle in onHitVfx)
-        {
-            particle.Stop();
-        }
+        Debug.Log("Hello!!?");
+        //foreach (ParticleSystem particle in onHitVfx)
+        //{
+        //    particle.Stop();
+        //}
     }
 
     public void EnableRagdoll()
