@@ -105,7 +105,10 @@ public class PlayerStatePattern : MonoBehaviour
         audioPlayer = GetComponent<AudioPlayer>();
         animator = GetComponent<Animator>();
         ragdollHandler = GetComponent<PlayerRagdollHandler>();
-
+        foreach (ParticleSystem particle in onHitVfx)
+        {
+            particle.Stop();
+        }
     }
 
     public void OnEnable()
