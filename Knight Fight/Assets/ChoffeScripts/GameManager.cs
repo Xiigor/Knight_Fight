@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     //lists used by the gamemanager
     //private List<Gamepad> inputDevices;
 
-    private List<InputDevice> inputDevices;
+    public List<InputDevice> inputDevices;
 
     public List<GameObject> readyPlayers;
     public List<GameObject> alivePlayers;
@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
     public Canvas menuCanvas;
     public GameObject gameMenu;
     [HideInInspector] public CameraStatePattern cameraScript;
-    public GameObject inputManagerObject;
     [HideInInspector] public PlayerInputManager inputManagerScript;
     [HideInInspector] public CommentatorStatePattern commentatorScript;
     public CrowdMoodSetter crowdMoodSetter;
@@ -78,6 +77,7 @@ public class GameManager : MonoBehaviour
     //Tags
     public string groundedProjectileTag = "GroundedProjectile";
     public string projectileTag = "Projectile";
+    public string inputHandlerTag = "InputHandler";
 
     public void Awake()
     {
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
         winState = new GameWinState(this);
 
         cameraScript = cameraObject.GetComponent<CameraStatePattern>();
-        inputManagerScript = inputManagerObject.GetComponent<PlayerInputManager>();
+        inputManagerScript = GameObject.FindObjectOfType<PlayerInputManager>();
         audioManager = GetComponent<AudioMenu>();
         commentatorScript = cameraObject.GetComponent<CommentatorStatePattern>();
         weaponSpawnManager = GetComponent<WeaponSpawnManager>();
@@ -108,21 +108,16 @@ public class GameManager : MonoBehaviour
         //{
         //    inputDevices.Add(index);
         //}
-
-        foreach (InputDevice index in InputSystem.devices)
-        {
-            inputDevices.Add(index);
-        }
     }
     public void AwakeSetup()
     {
         audioManager.StartMenuMusic();
         crowdMoodSetter.SetMood(0);
+        AddInputDevices();
     }
 
     public void Update()
     {
-        //Debug.Log(gameState);
         gameState.UpdateState();
 
     }
@@ -151,15 +146,23 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void SpawnPlayers()
+    public void AddInputDevices()
     {
-        inputManagerScript.trigger = true;
+        foreach (InputDevice index in InputSystem.devices)
+        {
+            inputDevices.Add(index);
+        }
     }
 
     public void OnJoin(CallbackContext context)
     {
         if (gameState == menuState && gameMenu.active)
         {
+            if (!inputDevices.Contains(context.control.device))
+            {
+                inputDevices.Add(context.control.device);
+                Debug.Log("added " + context.control.device);
+            }
             if(context.control.device == inputDevices[0])
             {
                 if (!readyPlayers.Contains(player1))
@@ -169,6 +172,14 @@ public class GameManager : MonoBehaviour
                     player1Ready.SetActive(true);
                     inputManagerScript.player1 = true;
                     readyPlayers.Add(player1);
+                }
+                else
+                {
+                    audioManager.PlayerLeft();
+                    player1NotReady.SetActive(true);
+                    player1Ready.SetActive(false);
+                    inputManagerScript.player1 = false;
+                    readyPlayers.Remove(player1);
                 }
             }
             else if (context.control.device == inputDevices[1])
@@ -180,6 +191,14 @@ public class GameManager : MonoBehaviour
                     player2Ready.SetActive(true);
                     inputManagerScript.player2 = true;
                     readyPlayers.Add(player2);
+                }
+                else
+                {
+                    audioManager.PlayerLeft();
+                    player2NotReady.SetActive(true);
+                    player2Ready.SetActive(false);
+                    inputManagerScript.player2 = false;
+                    readyPlayers.Remove(player2);
                 }
 
             }
@@ -193,6 +212,14 @@ public class GameManager : MonoBehaviour
                     inputManagerScript.player3 = true;
                     readyPlayers.Add(player3);
                 }
+                else
+                {
+                    audioManager.PlayerLeft();
+                    player3NotReady.SetActive(true);
+                    player3Ready.SetActive(false);
+                    inputManagerScript.player3 = false;
+                    readyPlayers.Remove(player3);
+                }
 
             }
             else if (context.control.device == inputDevices[3])
@@ -205,55 +232,7 @@ public class GameManager : MonoBehaviour
                     inputManagerScript.player4 = true;
                     readyPlayers.Add(player4);
                 }
-
-            }
-        }
- 
-    }
-
-    public void OnLeave(CallbackContext context)
-    {
-        if (gameState == menuState && gameMenu.active)
-        {
-            if (context.control.device == inputDevices[0])
-            {
-                if (readyPlayers.Contains(player1))
-                {
-                    audioManager.PlayerLeft();
-                    player1NotReady.SetActive(true);
-                    player1Ready.SetActive(false);
-                    inputManagerScript.player1 = false;
-                    readyPlayers.Remove(player1);
-                }
-
-            }
-            else if (context.control.device == inputDevices[1])
-            {
-                if (readyPlayers.Contains(player2))
-                {
-                    audioManager.PlayerLeft();
-                    player2NotReady.SetActive(true);
-                    player2Ready.SetActive(false);
-                    inputManagerScript.player2 = false;
-                    readyPlayers.Remove(player2);
-                }
-
-            }
-            else if (context.control.device == inputDevices[2])
-            {
-                if (readyPlayers.Contains(player3))
-                {
-                    audioManager.PlayerLeft();
-                    player3NotReady.SetActive(true);
-                    player3Ready.SetActive(false);
-                    inputManagerScript.player3 = false;
-                    readyPlayers.Remove(player3);
-                }
-
-            }
-            else if (context.control.device == inputDevices[3])
-            {
-                if (readyPlayers.Contains(player4))
+                else
                 {
                     audioManager.PlayerLeft();
                     player4NotReady.SetActive(true);
@@ -261,8 +240,10 @@ public class GameManager : MonoBehaviour
                     inputManagerScript.player4 = false;
                     readyPlayers.Remove(player4);
                 }
+
             }
         }
+ 
     }
 
     public void AddPlayersForCamera()

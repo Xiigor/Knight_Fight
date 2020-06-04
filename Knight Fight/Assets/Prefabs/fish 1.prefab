@@ -4912,8 +4912,8 @@ MonoBehaviour:
   spawnEffect: {fileID: 4724833577360013260, guid: 524763befb86aa449ad27147cd06b36c,
     type: 3}
   damage: 15
-  despawnTimerMin: 15
-  despawnTimerMax: 30
+  despawnTimerMin: 8
+  despawnTimerMax: 16
   parentObject: {fileID: 0}
   player: {fileID: 0}
   spellBook: {fileID: 0}
@@ -4922,9 +4922,9 @@ MonoBehaviour:
   projectileTransform: {fileID: 0}
   i: 1
   rb: {fileID: 8379540266831383776}
+  audioPlayer: {fileID: 0}
   ProjectileSpeed: 35
   playerTag: Player
-  audioPlayer: {fileID: 0}
 --- !u!54 &8379540266831383776
 Rigidbody:
   m_ObjectHideFlags: 0

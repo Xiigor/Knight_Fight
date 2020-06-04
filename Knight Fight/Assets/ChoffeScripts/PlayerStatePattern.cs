@@ -10,6 +10,7 @@ public class PlayerStatePattern : MonoBehaviour
     public GameObject particleDashEffect;
     public Transform spawnEffectPosition;
     public Transform DashEffectPosition;
+    public ParticleSystem[] onHitVfx = null;
 
     public Transform crowdParent;
     public PlayerIState currentState;
@@ -428,6 +429,10 @@ public class PlayerStatePattern : MonoBehaviour
         audioPlayer.PlayerHurting();
         gameManager.DecrementCombinedHealth(damage);
         currentState.TakeDamage(damage);
+        foreach (ParticleSystem particle in onHitVfx)
+        {
+            particle.Play();
+        }
     }
 
     public void EnableRagdoll()

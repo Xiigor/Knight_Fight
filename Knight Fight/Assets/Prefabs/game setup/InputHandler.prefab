@@ -80,7 +80,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
     m_ActionId: 0f16c0ee-573c-4e97-af4f-adf35d02cf15
-    m_ActionName: Gameplay/Move[/DualShock4GamepadHID/leftStick,/DualShock4GamepadHID/leftStick]
+    m_ActionName: Gameplay/Move[/DualShock4GamepadHID/leftStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -3343980690059528241}
@@ -97,7 +97,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
     m_ActionId: 230f9f2f-03f7-4774-bc77-ce3669454596
-    m_ActionName: Gameplay/Dash[/DualShock4GamepadHID/buttonSouth,/DualShock4GamepadHID/buttonSouth]
+    m_ActionName: Gameplay/Dash[/DualShock4GamepadHID/buttonSouth,/Keyboard/z]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -3343980690059528241}
@@ -114,7 +114,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
     m_ActionId: f333faed-cc0e-4877-a7da-ef77e264d505
-    m_ActionName: Gameplay/ThrowWep[/DualShock4GamepadHID/buttonWest,/DualShock4GamepadHID/buttonWest]
+    m_ActionName: Gameplay/ThrowWep[/DualShock4GamepadHID/buttonWest,/Keyboard/x]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -3343980690059528241}
@@ -131,25 +131,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
     m_ActionId: 53f458f9-940b-459d-857c-a95f67605689
-    m_ActionName: Gameplay/Attack[/DualShock4GamepadHID/buttonEast,/DualShock4GamepadHID/buttonEast]
+    m_ActionName: Gameplay/Attack[/DualShock4GamepadHID/buttonEast,/Keyboard/c]
   - m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
     m_ActionId: 27949091-c09b-4a61-ad7e-1cdc3cbe9d7d
-    m_ActionName: MenuInput/Join[/DualShock4GamepadHID/start]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-    m_ActionId: 2d07fe4d-0c9f-4155-a989-05aef151110d
-    m_ActionName: MenuInput/Leave[/DualShock4GamepadHID/buttonEast]
+    m_ActionName: MenuInput/Join[/DualShock4GamepadHID/buttonNorth,/Keyboard/x]
   - m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
     m_ActionId: b79cf0bb-555c-4463-8311-e6b56c900a37
-    m_ActionName: MenuInput/ToMenu[/DualShock4GamepadHID/start]
+    m_ActionName: MenuInput/ToMenu[/DualShock4GamepadHID/start,/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -167,3 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ca08c7769ed23478958c71d8714ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commentatorScript: {fileID: 0}
