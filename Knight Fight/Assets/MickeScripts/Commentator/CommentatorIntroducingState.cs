@@ -13,6 +13,7 @@ public class CommentatorIntroducingState : CommentatorAbstractClass
     public override void Enter()
     {
         p_commentator.allowedToSpeak = true;
+        p_commentator.commentatorImage.SetActive(true);
     }
 
     public override void Execute()
@@ -49,5 +50,6 @@ public class CommentatorIntroducingState : CommentatorAbstractClass
     {
         p_commentator.hardSilenceTimer = p_commentator.postIntroTimer;
         p_commentator.boredCooldownTimer = 0.0f;
+        p_commentator.commentatorImage.SetActive(false);
     }
 }

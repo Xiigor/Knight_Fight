@@ -10,6 +10,7 @@ public class CommentatorStatePattern : MonoBehaviour
 
     private GameObject cameraObject;
     private GameObject playerObject;
+    public GameObject commentatorImage;
 
     [HideInInspector] public CommentatorInactiveState inactiveState;
     [HideInInspector] public CommentatorIntroducingState introducingState;

@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public GameObject cameraObject;
     public Canvas menuCanvas;
     public GameObject gameMenu;
+    public GameObject commentatorImage;
     [HideInInspector] public CameraStatePattern cameraScript;
     [HideInInspector] public PlayerInputManager inputManagerScript;
     [HideInInspector] public CommentatorStatePattern commentatorScript;
@@ -124,7 +125,7 @@ public class GameManager : MonoBehaviour
 
     public void OnStart()
     {
-        if(readyPlayers.Count >= 1)
+        if(readyPlayers.Count >= 2)
         {
             alivePlayers.Clear();
             combinedStartingHealth = 0f;
@@ -148,7 +149,11 @@ public class GameManager : MonoBehaviour
 
     public void AddInputDevices()
     {
-        foreach (Gamepad index in Gamepad.all)
+        //foreach (Gamepad index in Gamepad.all)
+        //{
+        //    inputDevices.Add(index);
+        //}
+        foreach(InputDevice index in InputDevice.all)
         {
             inputDevices.Add(index);
         }
@@ -158,6 +163,8 @@ public class GameManager : MonoBehaviour
     {
         if (gameState == menuState && gameMenu.active)
         {
+            if (context.performed)
+            {
             if (!inputDevices.Contains(context.control.device))
             {
                 inputDevices.Add(context.control.device);
@@ -168,6 +175,7 @@ public class GameManager : MonoBehaviour
                 if (!readyPlayers.Contains(player1))
                 {
                     audioManager.PlayerJoined();
+                    Debug.Log("beep");
                     player1NotReady.SetActive(false);
                     player1Ready.SetActive(true);
                     inputManagerScript.player1 = true;
@@ -176,6 +184,7 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     audioManager.PlayerLeft();
+                    Debug.Log("bop");
                     player1NotReady.SetActive(true);
                     player1Ready.SetActive(false);
                     inputManagerScript.player1 = false;
@@ -187,6 +196,7 @@ public class GameManager : MonoBehaviour
                 if (!readyPlayers.Contains(player2))
                 {
                     audioManager.PlayerJoined();
+                    
                     player2NotReady.SetActive(false);
                     player2Ready.SetActive(true);
                     inputManagerScript.player2 = true;
@@ -195,6 +205,7 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     audioManager.PlayerLeft();
+                    
                     player2NotReady.SetActive(true);
                     player2Ready.SetActive(false);
                     inputManagerScript.player2 = false;
@@ -242,6 +253,8 @@ public class GameManager : MonoBehaviour
                 }
 
             }
+            }
+            
         }
  
     }
