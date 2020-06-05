@@ -23,7 +23,7 @@ public class AudioSettings : MonoBehaviour
 
     public Slider commentatorVolumeSlider;
     public FMOD.Studio.VCA commentator;
-    public float commentatorVolume = 50f;
+    public float commentatorVolume = 75f;
     public TextMeshProUGUI commentatorVolumeText;
 
     public Slider crowdVolumeSlider;

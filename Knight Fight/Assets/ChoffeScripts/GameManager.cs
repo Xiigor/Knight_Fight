@@ -105,10 +105,6 @@ public class GameManager : MonoBehaviour
         gameState = menuState;
         AwakeSetup();
 
-        //foreach (Gamepad index in Gamepad.all)
-        //{
-        //    inputDevices.Add(index);
-        //}
     }
     public void AwakeSetup()
     {
@@ -149,14 +145,14 @@ public class GameManager : MonoBehaviour
 
     public void AddInputDevices()
     {
-        //foreach (Gamepad index in Gamepad.all)
-        //{
-        //    inputDevices.Add(index);
-        //}
-        foreach(InputDevice index in InputDevice.all)
+        foreach (Gamepad index in Gamepad.all)
         {
             inputDevices.Add(index);
         }
+        //foreach(InputDevice index in InputDevice.all)
+        //{
+        //    inputDevices.Add(index);
+        //}
     }
 
     public void OnJoin(CallbackContext context)
